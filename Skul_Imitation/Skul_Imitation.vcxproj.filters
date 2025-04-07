@@ -40,27 +40,6 @@
     <Filter Include="Manager\KeyManager">
       <UniqueIdentifier>{b6be9c75-8a34-49c4-96d2-7f0c225e3e52}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Manager\LineMgr">
-      <UniqueIdentifier>{c2b696c3-3f7f-48d3-bfbb-f49730e655ae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\LineMgr\Line">
-      <UniqueIdentifier>{3a7211b7-bfbe-48ae-b4c2-8a98868dc10e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\SceneMgr">
-      <UniqueIdentifier>{575de360-8dfc-45e2-b64e-3a0bbc85928e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\ScrollMgr">
-      <UniqueIdentifier>{66e5ff2a-8597-4161-845d-072d08755aa5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\ObjMgr">
-      <UniqueIdentifier>{1038006b-349c-4056-a41b-43aec31e6d8e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\TileMgr">
-      <UniqueIdentifier>{3724316b-2efb-4fff-ae7f-1eca37aac353}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\TileMgr\Tile">
-      <UniqueIdentifier>{ad6ad49c-5863-4359-8428-2e1046787991}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. Scene">
       <UniqueIdentifier>{5cee39f5-32d9-43fc-93a4-79a353cf892d}</UniqueIdentifier>
     </Filter>
@@ -70,9 +49,6 @@
     <Filter Include="02. Scene\Menu">
       <UniqueIdentifier>{4056f71f-a1f4-46af-a21c-408efe39679a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. Scene\Logo">
-      <UniqueIdentifier>{fc1a7bcb-b968-4ba0-9937-0d8c78d64ac7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. Scene\Stage">
       <UniqueIdentifier>{f50110ba-8ee1-4b92-9dbd-239f5e772f0d}</UniqueIdentifier>
     </Filter>
@@ -81,6 +57,36 @@
     </Filter>
     <Filter Include="01. Obj\Button">
       <UniqueIdentifier>{a37225fa-2134-4262-a5ba-6eb501c9c27a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\Title">
+      <UniqueIdentifier>{fc1a7bcb-b968-4ba0-9937-0d8c78d64ac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\00. Player">
+      <UniqueIdentifier>{128c2caf-dc51-41e3-b591-f83d7853e949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\CameraManager">
+      <UniqueIdentifier>{c2834919-d8da-41f1-aad3-bd91d942e805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\LineManager">
+      <UniqueIdentifier>{c2b696c3-3f7f-48d3-bfbb-f49730e655ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\LineManager\Line">
+      <UniqueIdentifier>{3a7211b7-bfbe-48ae-b4c2-8a98868dc10e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ObjManager">
+      <UniqueIdentifier>{1038006b-349c-4056-a41b-43aec31e6d8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\SceneManager">
+      <UniqueIdentifier>{575de360-8dfc-45e2-b64e-3a0bbc85928e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ScrollManager">
+      <UniqueIdentifier>{66e5ff2a-8597-4161-845d-072d08755aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\TileManager">
+      <UniqueIdentifier>{3724316b-2efb-4fff-ae7f-1eca37aac353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\TileManager\Tile">
+      <UniqueIdentifier>{ad6ad49c-5863-4359-8428-2e1046787991}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -124,25 +130,25 @@
       <Filter>Manager\KeyManager</Filter>
     </ClInclude>
     <ClInclude Include="CLineMgr.h">
-      <Filter>Manager\LineMgr</Filter>
+      <Filter>Manager\LineManager</Filter>
     </ClInclude>
     <ClInclude Include="CLine.h">
-      <Filter>Manager\LineMgr\Line</Filter>
+      <Filter>Manager\LineManager\Line</Filter>
     </ClInclude>
     <ClInclude Include="CObjMgr.h">
-      <Filter>Manager\ObjMgr</Filter>
+      <Filter>Manager\ObjManager</Filter>
     </ClInclude>
     <ClInclude Include="CSceneMgr.h">
-      <Filter>Manager\SceneMgr</Filter>
+      <Filter>Manager\SceneManager</Filter>
     </ClInclude>
     <ClInclude Include="CScrollMgr.h">
-      <Filter>Manager\ScrollMgr</Filter>
+      <Filter>Manager\ScrollManager</Filter>
     </ClInclude>
     <ClInclude Include="CTileMgr.h">
-      <Filter>Manager\TileMgr</Filter>
+      <Filter>Manager\TileManager</Filter>
     </ClInclude>
     <ClInclude Include="CTile.h">
-      <Filter>Manager\TileMgr\Tile</Filter>
+      <Filter>Manager\TileManager\Tile</Filter>
     </ClInclude>
     <ClInclude Include="CEdit.h">
       <Filter>02. Scene\Edit</Filter>
@@ -150,8 +156,8 @@
     <ClInclude Include="CMenu.h">
       <Filter>02. Scene\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="CLogo.h">
-      <Filter>02. Scene\Logo</Filter>
+    <ClInclude Include="CTitle.h">
+      <Filter>02. Scene\Title</Filter>
     </ClInclude>
     <ClInclude Include="CStage.h">
       <Filter>02. Scene\Stage</Filter>
@@ -164,6 +170,12 @@
     </ClInclude>
     <ClInclude Include="CButton.h">
       <Filter>01. Obj\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>01. Obj\00. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CCameraMgr.h">
+      <Filter>Manager\CameraManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -192,25 +204,25 @@
       <Filter>Manager\KeyManager</Filter>
     </ClCompile>
     <ClCompile Include="CLineMgr.cpp">
-      <Filter>Manager\LineMgr</Filter>
+      <Filter>Manager\LineManager</Filter>
     </ClCompile>
     <ClCompile Include="CLine.cpp">
-      <Filter>Manager\LineMgr\Line</Filter>
+      <Filter>Manager\LineManager\Line</Filter>
     </ClCompile>
     <ClCompile Include="CObjMgr.cpp">
-      <Filter>Manager\ObjMgr</Filter>
+      <Filter>Manager\ObjManager</Filter>
     </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
-      <Filter>Manager\SceneMgr</Filter>
+      <Filter>Manager\SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="CScrollMgr.cpp">
-      <Filter>Manager\ScrollMgr</Filter>
+      <Filter>Manager\ScrollManager</Filter>
     </ClCompile>
     <ClCompile Include="CTileMgr.cpp">
-      <Filter>Manager\TileMgr</Filter>
+      <Filter>Manager\TileManager</Filter>
     </ClCompile>
     <ClCompile Include="CTile.cpp">
-      <Filter>Manager\TileMgr\Tile</Filter>
+      <Filter>Manager\TileManager\Tile</Filter>
     </ClCompile>
     <ClCompile Include="CEdit.cpp">
       <Filter>02. Scene\Edit</Filter>
@@ -218,8 +230,8 @@
     <ClCompile Include="CMenu.cpp">
       <Filter>02. Scene\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="CLogo.cpp">
-      <Filter>02. Scene\Logo</Filter>
+    <ClCompile Include="CTitle.cpp">
+      <Filter>02. Scene\Title</Filter>
     </ClCompile>
     <ClCompile Include="CStage.cpp">
       <Filter>02. Scene\Stage</Filter>
@@ -232,6 +244,12 @@
     </ClCompile>
     <ClCompile Include="CButton.cpp">
       <Filter>01. Obj\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>01. Obj\00. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CCameraMgr.cpp">
+      <Filter>Manager\CameraManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

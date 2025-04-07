@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CLogo.h"
+#include "CTitle.h"
 #include "CMenu.h"
 #include "CStage.h"
 #include "CEdit.h"
@@ -8,7 +8,7 @@
 class CSceneMgr
 {
 public:
-	enum SCENEID { SC_LOGO, SC_MENU, SC_EDIT, SC_STAGE, SC_END };
+	enum SCENEID { SC_TITLE, SC_MENU, SC_EDIT, SC_STAGE, SC_END };
 
 private:
 	CSceneMgr();
