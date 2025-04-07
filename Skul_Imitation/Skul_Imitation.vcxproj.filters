@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="00. MainGame">
+      <UniqueIdentifier>{63e38140-986b-4d7d-9791-03b044489d5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj">
+      <UniqueIdentifier>{86f66da8-7e2f-49fe-b4af-d5ada4d42cef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{50e03ed4-33af-46d2-959a-35bfb13fcdad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern">
+      <UniqueIdentifier>{40c34516-bc07-46ba-add2-599e7ca6bc89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\AbstractFactory">
+      <UniqueIdentifier>{fe37c5fd-9ae4-4de7-b38f-ba65095d123a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\BmpManager">
+      <UniqueIdentifier>{d7c1d66c-66f2-46a8-99a0-09c2194ae101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\BmpManager\MyBmp">
+      <UniqueIdentifier>{672d53cb-23f0-4192-aca9-ce80605185ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\CollisionManager">
+      <UniqueIdentifier>{befd0430-9075-45ee-94c8-00c2d1f639eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\KeyManager">
+      <UniqueIdentifier>{b6be9c75-8a34-49c4-96d2-7f0c225e3e52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\LineMgr">
+      <UniqueIdentifier>{c2b696c3-3f7f-48d3-bfbb-f49730e655ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\LineMgr\Line">
+      <UniqueIdentifier>{3a7211b7-bfbe-48ae-b4c2-8a98868dc10e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\SceneMgr">
+      <UniqueIdentifier>{575de360-8dfc-45e2-b64e-3a0bbc85928e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ScrollMgr">
+      <UniqueIdentifier>{66e5ff2a-8597-4161-845d-072d08755aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ObjMgr">
+      <UniqueIdentifier>{1038006b-349c-4056-a41b-43aec31e6d8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\TileMgr">
+      <UniqueIdentifier>{3724316b-2efb-4fff-ae7f-1eca37aac353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\TileMgr\Tile">
+      <UniqueIdentifier>{ad6ad49c-5863-4359-8428-2e1046787991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene">
+      <UniqueIdentifier>{5cee39f5-32d9-43fc-93a4-79a353cf892d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\Edit">
+      <UniqueIdentifier>{78229097-efcc-4f3b-a255-5a5d8a1d75d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\Menu">
+      <UniqueIdentifier>{4056f71f-a1f4-46af-a21c-408efe39679a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\Logo">
+      <UniqueIdentifier>{fc1a7bcb-b968-4ba0-9937-0d8c78d64ac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\Stage">
+      <UniqueIdentifier>{f50110ba-8ee1-4b92-9dbd-239f5e772f0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\Mouse">
+      <UniqueIdentifier>{f95fdea8-4581-4576-b65a-e3a770daa9d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\Button">
+      <UniqueIdentifier>{a37225fa-2134-4262-a5ba-6eb501c9c27a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Skul_Imitation.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CMainGame.h">
+      <Filter>00. MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CObj.h">
+      <Filter>01. Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="CAbstractFactory.h">
+      <Filter>Pattern\AbstractFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="CMyBmp.h">
+      <Filter>Manager\BmpManager\MyBmp</Filter>
+    </ClInclude>
+    <ClInclude Include="CBmpMgr.h">
+      <Filter>Manager\BmpManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollisionMgr.h">
+      <Filter>Manager\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyMgr.h">
+      <Filter>Manager\KeyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CLineMgr.h">
+      <Filter>Manager\LineMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CLine.h">
+      <Filter>Manager\LineMgr\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMgr.h">
+      <Filter>Manager\ObjMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CScrollMgr.h">
+      <Filter>Manager\ScrollMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CTileMgr.h">
+      <Filter>Manager\TileMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CTile.h">
+      <Filter>Manager\TileMgr\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="CEdit.h">
+      <Filter>02. Scene\Edit</Filter>
+    </ClInclude>
+    <ClInclude Include="CMenu.h">
+      <Filter>02. Scene\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogo.h">
+      <Filter>02. Scene\Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="CStage.h">
+      <Filter>02. Scene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>02. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CMouse.h">
+      <Filter>01. Obj\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="CButton.h">
+      <Filter>01. Obj\Button</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Skul_Imitation.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CMainGame.cpp">
+      <Filter>00. MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CObj.cpp">
+      <Filter>01. Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyBmp.cpp">
+      <Filter>Manager\BmpManager\MyBmp</Filter>
+    </ClCompile>
+    <ClCompile Include="CBmpMgr.cpp">
+      <Filter>Manager\BmpManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollisionMgr.cpp">
+      <Filter>Manager\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyMgr.cpp">
+      <Filter>Manager\KeyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineMgr.cpp">
+      <Filter>Manager\LineMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CLine.cpp">
+      <Filter>Manager\LineMgr\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjMgr.cpp">
+      <Filter>Manager\ObjMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>Manager\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CScrollMgr.cpp">
+      <Filter>Manager\ScrollMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CTileMgr.cpp">
+      <Filter>Manager\TileMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CTile.cpp">
+      <Filter>Manager\TileMgr\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="CEdit.cpp">
+      <Filter>02. Scene\Edit</Filter>
+    </ClCompile>
+    <ClCompile Include="CMenu.cpp">
+      <Filter>02. Scene\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogo.cpp">
+      <Filter>02. Scene\Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="CStage.cpp">
+      <Filter>02. Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>02. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CMouse.cpp">
+      <Filter>01. Obj\Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="CButton.cpp">
+      <Filter>01. Obj\Button</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Skul_Imitation.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Skul_Imitation.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
