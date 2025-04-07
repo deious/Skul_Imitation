@@ -18,7 +18,7 @@ CEdit::~CEdit()
 void CEdit::Initialize()
 {
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Edit/Tile.bmp", L"Tile");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Edit/Tile.bmp", L"Tile");
 	CTileMgr::Get_Instance()->Initialize();
 }
 
