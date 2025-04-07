@@ -6,6 +6,8 @@
 #include "CAbstractFactory.h"
 #include "CScrollMgr.h"
 #include "CTileMgr.h"
+#include "CPlayer.h"
+#include "CCameraMgr.h"
 
 CStage::CStage()
 {
@@ -18,11 +20,13 @@ CStage::~CStage()
 
 void CStage::Initialize()
 {
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Ground.bmp", L"Ground");
+    CCameraMgr::Get_Instance()->Set_Resolution(800, 600);
+    CCameraMgr::Get_Instance()->Set_MapSize(1796, 688);
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Map.bmp", L"Ground");
 
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Edit/Tile.bmp", L"Tile");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Edit/Tile.bmp", L"Tile");
     //CLineMgr::Get_Instance()->Initialize();
-    //CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create_Obj());
+    CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create_Obj());
 
     //CTileMgr::Get_Instance()->Load_Tile();
 
@@ -37,6 +41,7 @@ int CStage::Update()
 {
     CObjMgr::Get_Instance()->Update();
     CTileMgr::Get_Instance()->Update();
+    CCameraMgr::Get_Instance()->Update();
 
     return 0;
 }
@@ -54,10 +59,17 @@ void CStage::Render(HDC hDC)
     int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
     int		iScrollY = (INT)CScrollMgr::Get_Instance()->Get_ScrollY();
 
-    BitBlt(hDC,
+    /*BitBlt(hDC,
         iScrollX,
         iScrollY,
         1920, 1280,
+        hGroundDC,
+        0, 0,
+        SRCCOPY);*/
+    BitBlt(hDC,
+        iScrollX,
+        iScrollY,
+        1796, 688,
         hGroundDC,
         0, 0,
         SRCCOPY);

@@ -4,7 +4,7 @@
 CSceneMgr* CSceneMgr::m_pInstance = nullptr;
 
 CSceneMgr::CSceneMgr() : m_pScene(nullptr)
-, m_eCurScene(SC_LOGO), m_ePreScene(SC_END)
+, m_eCurScene(SC_TITLE), m_ePreScene(SC_END)
 {
 }
 
@@ -23,8 +23,8 @@ void CSceneMgr::Scene_Change(SCENEID eID)
 
 		switch (m_eCurScene)
 		{
-		case SC_LOGO:
-			m_pScene = new CLogo;
+		case SC_TITLE:
+			m_pScene = new CTitle;
 			break;
 
 		case SC_MENU:
