@@ -29,7 +29,7 @@ void CMenu::Initialize()
 	pButton->Set_FrameKey(L"Exit");
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BUTTON, pButton);
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Menu/Menu.bmp", L"Menu");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Title/Title.bmp", L"Title");
 }
 
 int CMenu::Update()
@@ -47,7 +47,7 @@ void CMenu::Late_Update()
 
 void CMenu::Render(HDC hDC)
 {
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Menu");
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Title");
 
 	BitBlt(hDC,
 		0,

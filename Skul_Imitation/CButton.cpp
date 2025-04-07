@@ -18,9 +18,9 @@ void CButton::Initialize()
 	m_tInfo.fCX = 150.f;
 	m_tInfo.fCY = 150.f;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Button/Start.bmp", L"Start");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Button/Edit.bmp", L"Edit");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Button/Exit.bmp", L"Exit");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/Start.bmp", L"Start");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/Edit.bmp", L"Edit");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/Exit.bmp", L"Exit");
 
 	m_eRender = RENDER_UI;
 }

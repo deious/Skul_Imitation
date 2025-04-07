@@ -25,8 +25,9 @@ void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Back.bmp", L"Back");
-	CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_LOGO);
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Back.bmp", L"Back");
+	//CBmpMgr::Get_Instance()->Insert_Bmp(L"C:\\Users\\gkstj\\OneDrive\\¹ÙÅÁ È­¸é\\Project\\Skul_Imitation\\Skul_Imitation\\Image\\Back.bmp", L"Back");
+	CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_MENU);
 }
 
 void CMainGame::Update()
@@ -55,8 +56,8 @@ void CMainGame::Render()
 		m_dwTime = GetTickCount64();
 	}
 
-	if (CSceneMgr::SC_LOGO == CSceneMgr::Get_Instance()->Get_SceneID())
-		return;
+	/*if (CSceneMgr::SC_LOGO == CSceneMgr::Get_Instance()->Get_SceneID())
+		return;*/
 
 
 	HDC		hBackDC = CBmpMgr::Get_Instance()->Find_Image(L"Back");
