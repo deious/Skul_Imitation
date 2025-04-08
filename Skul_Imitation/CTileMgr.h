@@ -1,47 +1,35 @@
 #pragma once
 
 #include "CTile.h"
+#include "CQuadTree.h"
 
 class CTileMgr
 {
 private:
 	CTileMgr();
-	~CTileMgr();
+	virtual ~CTileMgr();
 
 public:
-	void	Initialize();
-	void	Update();
-	void	Late_Update();
-	void	Render(HDC hDC);
-	void	Release();
+	void				Initialize();
+	void				Update();
+	void				Late_Update();
+	void				Render(HDC hDC);
+	void				Release();
 
 public:
-	void	Picking_Tile(POINT _pt, int _iDrawID, int _iOption);
-	void    Save_Tile();
-	void    Load_Tile();
+	//void				Picking_Tile(POINT _pt, int _iDrawID, int _iOption);
+	//void				Save_Tile();
+	void				Load_Tile();
 
 public:
-	static CTileMgr* Get_Instance()
-	{
-		if (!m_pInstance)
-		{
-			m_pInstance = new CTileMgr;
-		}
-
-		return m_pInstance;
-	}
-
-	static void	Destroy_Instance()
-	{
-		if (m_pInstance)
-		{
-			delete m_pInstance;
-			m_pInstance = nullptr;
-		}
-	}
+	static CTileMgr*	Get_Instance();
+	CQuadTree*			Get_Tree();
+	static void			Destroy_Instance();
+	void				Set_ShowTile();
 
 private:
-	static CTileMgr* m_pInstance;
+	static CTileMgr*	m_pInstance;
 	vector<CObj*>		m_vecTile;
-
+	CQuadTree*			m_pQuadTree = nullptr;
+	bool				m_bShowTile = false;
 };

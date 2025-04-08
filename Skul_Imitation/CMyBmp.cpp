@@ -11,6 +11,8 @@ CMyBmp::~CMyBmp()
 	Release();
 }
 
+HDC CMyBmp::Get_MemDC() { return m_hMemDC; }
+
 void CMyBmp::Load_Bmp(const TCHAR* pFilePath)
 {
 	/*TCHAR szPath[MAX_PATH] = { 0 };

@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CCollisionMgr.h"
+#include "CCameraMgr.h"
 
 void CCollisionMgr::Collision_Rect(list<CObj*> DstList, list<CObj*> SrcList)
 {
@@ -110,4 +111,59 @@ bool CCollisionMgr::Check_Rect(CObj* pDst, CObj* pSrc, float* pWidth, float* pHe
 	}
 
 	return false;
+}
+
+bool CCollisionMgr::RectCollision(const RECT& rectA, const RECT& rectB)
+{
+	return !(rectA.right < rectB.left || rectA.left > rectB.right ||
+		rectA.bottom < rectB.top || rectA.top > rectB.bottom);
+}
+
+void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
+{
+	if (!pPlayer || !pQuadTree)
+		return;
+
+	RECT camRect = CCameraMgr::Get_Instance()->Get_CameraRect();
+	std::vector<Tile> tiles;
+	pQuadTree->Query(camRect, tiles); // 현재 화면 타일만 조회
+
+	RECT playerRect = *pPlayer->Get_Rect();
+
+	for (const auto& tile : tiles) 
+	{
+		RECT tileRect = {
+			tile.x - TILECX / 2,
+			tile.y - TILECY / 2,
+			tile.x + TILECX / 2,
+			tile.y + TILECY / 2
+		};
+
+		if (RectCollision(playerRect, tileRect))
+		{
+			int overlapY = playerRect.bottom - tileRect.top;
+			int overlapX = 0;
+
+			if (playerRect.bottom <= tileRect.bottom && playerRect.top < tileRect.top) {
+				// 바닥 위에 있음
+				pPlayer->Set_Pos(pPlayer->Get_Info()->fX, tileRect.top - (playerRect.bottom - playerRect.top) / 2);
+				OutputDebugString(L"[바닥 충돌] 위에서 착지\n");
+			}
+			else if (playerRect.top >= tileRect.top && playerRect.bottom > tileRect.bottom) {
+				// 머리 부딪힘
+				pPlayer->Set_Pos(pPlayer->Get_Info()->fX, tileRect.bottom + (playerRect.bottom - playerRect.top) / 2);
+				OutputDebugString(L"[천장 충돌] 위로 충돌\n");
+			}
+			else if (playerRect.right > tileRect.left && playerRect.left < tileRect.left) {
+				// 왼쪽 벽 충돌
+				pPlayer->Set_Pos(tileRect.left - (playerRect.right - playerRect.left) / 2, pPlayer->Get_Info()->fY);
+				OutputDebugString(L"[오른쪽 충돌] 왼쪽 벽에 부딪힘\n");
+			}
+			else if (playerRect.left < tileRect.right && playerRect.right > tileRect.right) {
+				// 오른쪽 벽 충돌
+				pPlayer->Set_Pos(tileRect.right + (playerRect.right - playerRect.left) / 2, pPlayer->Get_Info()->fY);
+				OutputDebugString(L"[왼쪽 충돌] 오른쪽 벽에 부딪힘\n");
+			}
+		}
+	}
 }

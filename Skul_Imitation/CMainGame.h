@@ -6,7 +6,7 @@ class CMainGame
 {
 public:
 	CMainGame();
-	~CMainGame();
+	virtual ~CMainGame();
 
 public:
 	void		Initialize();
@@ -16,9 +16,9 @@ public:
 	void		Release();
 
 private:
-	HDC		m_hDC;
+	HDC			m_hDC;
 
-	ULONGLONG		m_dwTime;
+	ULONGLONG	m_dwTime;
 	int			m_iFPS;
 	TCHAR		m_szFPS[32];
 

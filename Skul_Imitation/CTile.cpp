@@ -3,7 +3,7 @@
 #include "CBmpMgr.h"
 #include "CScrollMgr.h"
 
-CTile::CTile() : m_iDrawID(0), m_iOption(0)
+CTile::CTile() : m_iOption(0)
 {
 }
 
@@ -11,6 +11,12 @@ CTile::~CTile()
 {
 	Release();
 }
+
+int CTile::Get_Option() { return m_iOption; }
+//int CTile::Get_DrawID() { return m_iDrawID; }
+
+//void CTile::Set_DrawID(int iDrawID) { m_iDrawID = iDrawID; }
+void CTile::Set_Option(int iOption) { m_iOption = iOption; }
 
 void CTile::Initialize()
 {
@@ -33,19 +39,30 @@ void CTile::Late_Update()
 
 void CTile::Render(HDC hDC)
 {
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Tile");
+	// 타일을 그려줄 필요가 없음
 
-	int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
-	int		iScrollY = (INT)CScrollMgr::Get_Instance()->Get_ScrollY();
+	//HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Tile");
 
-	BitBlt(hDC,
-		m_tRect.left + iScrollX,
-		m_tRect.top + iScrollY,
-		TILECX, TILECY,
-		hMemDC,
-		m_iDrawID * TILECX,
-		0,
-		SRCCOPY);
+	//int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
+	//int		iScrollY = (INT)CScrollMgr::Get_Instance()->Get_ScrollY();
+
+	///*BitBlt(hDC,
+	//	m_tRect.left + iScrollX,
+	//	m_tRect.top + iScrollY,
+	//	TILECX, TILECY,
+	//	hMemDC,
+	//	m_iDrawID * TILECX,
+	//	0,
+	//	SRCCOPY);*/
+
+	//BitBlt(hDC,
+	//	m_tRect.left + iScrollX,
+	//	m_tRect.top + iScrollY,
+	//	TILECX, TILECY,
+	//	hMemDC,
+	//	0,
+	//	0,
+	//	SRCCOPY);
 }
 
 void CTile::Release()

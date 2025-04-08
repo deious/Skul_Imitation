@@ -46,3 +46,22 @@ void CBmpMgr::Release()
 	for_each(m_mapBit.begin(), m_mapBit.end(), DeleteMap());
 	m_mapBit.clear();
 }
+
+CBmpMgr* CBmpMgr::Get_Instance()
+{
+	if (!m_pInstance)
+	{
+		m_pInstance = new CBmpMgr;
+	}
+
+	return m_pInstance;
+}
+
+void CBmpMgr::Destroy_Instance()
+{
+	if (m_pInstance)
+	{
+		delete m_pInstance;
+		m_pInstance = nullptr;
+	}
+}

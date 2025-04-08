@@ -9,7 +9,7 @@ public:
 	~CMyBmp();
 
 public:
-	HDC		Get_MemDC() { return m_hMemDC; }
+	HDC			Get_MemDC();
 
 public:
 	void		Load_Bmp(const TCHAR* pFilePath);
@@ -17,8 +17,8 @@ public:
 
 
 private:
-	HDC		m_hMemDC;
+	HDC			m_hMemDC;
 
-	HBITMAP	m_hBitmap;
-	HBITMAP	m_hOldbmp;
+	HBITMAP		m_hBitmap;
+	HBITMAP		m_hOldbmp;
 };

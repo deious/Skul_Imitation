@@ -145,6 +145,7 @@
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineMgr.h" />
     <ClInclude Include="CPlayer.h" />
+    <ClInclude Include="CQuadTree.h" />
     <ClInclude Include="CTitle.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CMenu.h" />
@@ -175,6 +176,7 @@
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineMgr.cpp" />
     <ClCompile Include="CPlayer.cpp" />
+    <ClCompile Include="CQuadTree.cpp" />
     <ClCompile Include="CTitle.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CMenu.cpp" />

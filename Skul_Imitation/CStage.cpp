@@ -8,6 +8,7 @@
 #include "CTileMgr.h"
 #include "CPlayer.h"
 #include "CCameraMgr.h"
+#include "CCollisionMgr.h"
 
 CStage::CStage()
 {
@@ -28,7 +29,7 @@ void CStage::Initialize()
     //CLineMgr::Get_Instance()->Initialize();
     CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create_Obj());
 
-    //CTileMgr::Get_Instance()->Load_Tile();
+    CTileMgr::Get_Instance()->Load_Tile();
 
     /*for (int i = 0; i < 3; ++i)
     {
@@ -39,6 +40,7 @@ void CStage::Initialize()
 
 int CStage::Update()
 {
+    Key_Input();
     CObjMgr::Get_Instance()->Update();
     CTileMgr::Get_Instance()->Update();
     CCameraMgr::Get_Instance()->Update();
@@ -49,6 +51,8 @@ int CStage::Update()
 void CStage::Late_Update()
 {
     CObjMgr::Get_Instance()->Late_Update();
+    // 여기서 충돌 처리 시키면 될거 같은데?
+    //CCollisionMgr::PlayerToTile();
     // CTileMgr::Get_Instance()->Late_Update();
 }
 
@@ -56,8 +60,10 @@ void CStage::Render(HDC hDC)
 {
     HDC		hGroundDC = CBmpMgr::Get_Instance()->Find_Image(L"Ground");
 
-    int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
-    int		iScrollY = (INT)CScrollMgr::Get_Instance()->Get_ScrollY();
+    /*int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
+    int		iScrollY = (INT)CScrollMgr::Get_Instance()->Get_ScrollY();*/
+
+    POINT camPos = CCameraMgr::Get_Instance()->Get_CameraPos();
 
     /*BitBlt(hDC,
         iScrollX,
@@ -67,24 +73,30 @@ void CStage::Render(HDC hDC)
         0, 0,
         SRCCOPY);*/
     BitBlt(hDC,
-        iScrollX,
-        iScrollY,
+        0,
+        0,
         1796, 688,
         hGroundDC,
-        0, 0,
+        camPos.x, camPos.y,
         SRCCOPY);
 
     //CLineMgr::Get_Instance()->Render(hDC);
 
 
-    //CTileMgr::Get_Instance()->Render(hDC);
-
+    CTileMgr::Get_Instance()->Render(hDC);
     CObjMgr::Get_Instance()->Render(hDC);
-
-
 }
 
 void CStage::Release()
 {
     //CTileMgr::Get_Instance()->Destroy_Instance();
+}
+
+void CStage::Key_Input()
+{
+    if (GetAsyncKeyState('P'))
+    {
+        MessageBox(g_hWnd, L"p 클릭", _T("Fail"), MB_OK);
+        CTileMgr::Get_Instance()->Set_ShowTile();
+    }
 }

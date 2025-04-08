@@ -22,3 +22,5 @@ void CLine::Render(HDC hDC)
 	MoveToEx(hDC, (int)m_tInfo.tLeft.fX + iScrollX, (int)m_tInfo.tLeft.fY, nullptr);
 	LineTo(hDC, (int)m_tInfo.tRight.fX + iScrollX, (int)m_tInfo.tRight.fY);
 }
+
+const LINE& CLine::Get_Info() const { return m_tInfo; }

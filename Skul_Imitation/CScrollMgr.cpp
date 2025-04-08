@@ -11,6 +11,12 @@ CScrollMgr::~CScrollMgr()
 {
 }
 
+float CScrollMgr::Get_ScrollX() { return m_fScrollX; }
+float CScrollMgr::Get_ScrollY() { return m_fScrollY; }
+
+void CScrollMgr::Set_ScrollX(float fX) { m_fScrollX += fX; }
+void CScrollMgr::Set_ScrollY(float fY) { m_fScrollY += fY; }
+
 void CScrollMgr::Scroll_Lock()
 {
 	if (0.f < m_fScrollX)
@@ -25,4 +31,23 @@ void CScrollMgr::Scroll_Lock()
 	if (WINCY - 1280 > m_fScrollY)
 		m_fScrollY = WINCY - 1280;
 
+}
+
+CScrollMgr* CScrollMgr::Get_Instance()
+{
+	if (!m_pInstance)
+	{
+		m_pInstance = new CScrollMgr;
+	}
+
+	return m_pInstance;
+}
+
+void CScrollMgr::Destroy_Instance()
+{
+	if (m_pInstance)
+	{
+		delete m_pInstance;
+		m_pInstance = nullptr;
+	}
 }
