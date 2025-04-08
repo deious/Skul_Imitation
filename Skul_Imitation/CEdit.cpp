@@ -78,11 +78,11 @@ void CEdit::Key_Input()
 		pt.y -= (int)CScrollMgr::Get_Instance()->Get_ScrollY();
 
 
-		CTileMgr::Get_Instance()->Picking_Tile(pt, 1, 1);
+		//CTileMgr::Get_Instance()->Picking_Tile(pt, 1, 1);
 	}
 
-	if (CKeyMgr::Get_Instance()->Key_Down('S'))
-		CTileMgr::Get_Instance()->Save_Tile();
+	/*if (CKeyMgr::Get_Instance()->Key_Down('S'))
+		CTileMgr::Get_Instance()->Save_Tile();*/
 
 	if (CKeyMgr::Get_Instance()->Key_Down('L'))
 		CTileMgr::Get_Instance()->Load_Tile();

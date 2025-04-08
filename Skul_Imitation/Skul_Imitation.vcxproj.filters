@@ -88,6 +88,12 @@
     <Filter Include="Manager\TileManager\Tile">
       <UniqueIdentifier>{ad6ad49c-5863-4359-8428-2e1046787991}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tree">
+      <UniqueIdentifier>{bca68d92-7f42-4d21-bdde-cd37e27f5a42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree\QuadTree">
+      <UniqueIdentifier>{c736fce7-dd7b-486f-9856-2024afab5b6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -177,6 +183,9 @@
     <ClInclude Include="CCameraMgr.h">
       <Filter>Manager\CameraManager</Filter>
     </ClInclude>
+    <ClInclude Include="CQuadTree.h">
+      <Filter>Tree\QuadTree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -250,6 +259,9 @@
     </ClCompile>
     <ClCompile Include="CCameraMgr.cpp">
       <Filter>Manager\CameraManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CQuadTree.cpp">
+      <Filter>Tree\QuadTree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

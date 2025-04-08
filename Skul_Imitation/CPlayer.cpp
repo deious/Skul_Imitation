@@ -7,6 +7,8 @@
 #include "CScrollMgr.h"
 #include "CBmpMgr.h"
 #include "CCameraMgr.h"
+#include "CCollisionMgr.h"
+#include "CTileMgr.h"
 
 
 CPlayer::CPlayer() : m_fVelocity(0.f), m_fTime(0.f), m_bJump(false)
@@ -71,7 +73,8 @@ void CPlayer::Late_Update()
 	Key_Input();
 	Offset();
 	Motion_Change();
-	CCameraMgr::Get_Instance()->Set_Target(m_tInfo.fX, m_tInfo.fX);
+	CCameraMgr::Get_Instance()->Set_Target(m_tInfo.fX, m_tInfo.fY);
+	CCollisionMgr::PlayerToTile(this, CTileMgr::Get_Instance()->Get_Tree());
 	//Jump();
 }
 
@@ -84,22 +87,22 @@ void CPlayer::Render(HDC hDC)
 
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 
-	GdiTransparentBlt(hDC,/// 복사 받을 dc
-		m_tRect.left + iScrollX,		// 복사 받을 위치 좌표 left
-		m_tRect.top + iScrollY,					// 복사 받을 위치 좌표 top
-		(int)m_tInfo.fCX,				// 복사 받을 가로 사이즈
-		(int)m_tInfo.fCY,				// 복사 받을 세로 사이즈
-		hMemDC,							// 복사할 이미지 dc
-		m_tFrame.iStart * (int)m_tInfo.fCX,
-		m_tFrame.iMotion * (int)m_tInfo.fCY,							// 복사할 이미지의 left, top
-		(int)m_tInfo.fCX,				// 복사할 이미지의 가로
-		(int)m_tInfo.fCY,				// 복사할 이미지의 세로
-		RGB(255, 0, 255));			// 제거할 이미지 색상 값
+	//GdiTransparentBlt(hDC,/// 복사 받을 dc
+	//	m_tRect.left + iScrollX,		// 복사 받을 위치 좌표 left
+	//	m_tRect.top + iScrollY,					// 복사 받을 위치 좌표 top
+	//	(int)m_tInfo.fCX,				// 복사 받을 가로 사이즈
+	//	(int)m_tInfo.fCY,				// 복사 받을 세로 사이즈
+	//	hMemDC,							// 복사할 이미지 dc
+	//	m_tFrame.iStart * (int)m_tInfo.fCX,
+	//	m_tFrame.iMotion * (int)m_tInfo.fCY,							// 복사할 이미지의 left, top
+	//	(int)m_tInfo.fCX,				// 복사할 이미지의 가로
+	//	(int)m_tInfo.fCY,				// 복사할 이미지의 세로
+	//	RGB(255, 0, 255));			// 제거할 이미지 색상 값
 
-	/*POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
+	POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
 
-	int drawX = screenPos.x - (int)(m_tInfo.fCX / 2);
-	int drawY = screenPos.y - (int)(m_tInfo.fCY / 2);
+	int drawX = screenPos.x - (int)(m_tInfo.fCX * 0.5f);
+	int drawY = screenPos.y - (int)(m_tInfo.fCY * 0.5f);
 
 	GdiTransparentBlt(hDC,
 		drawX,
@@ -112,7 +115,7 @@ void CPlayer::Render(HDC hDC)
 		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
 		RGB(255, 0, 255)
-	);*/
+	);
 }
 
 void CPlayer::Release()

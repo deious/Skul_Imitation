@@ -11,45 +11,29 @@ private:
 	~CObjMgr();
 
 public:
-	CObj* Get_Player() { return m_ObjList[OBJ_PLAYER].front(); }
+	CObj*				Get_Player();
+	CObj*				Get_Target(OBJID eID, CObj* pObj);
 
-	CObj* Get_Target(OBJID eID, CObj* pObj);
-
-
-public:
-	void		Add_Object(OBJID eID, CObj* pObj);
-	void		Update();
-	void		Late_Update();
-	void		Render(HDC hDC);
-	void		Release();
-
-	void		Delete_Object(OBJID eID);
 
 public:
-	static CObjMgr* Get_Instance()
-	{
-		if (!m_pInstance)
-		{
-			m_pInstance = new CObjMgr;
-		}
+	void				Add_Object(OBJID eID, CObj* pObj);
+	void				Update();
+	void				Late_Update();
+	void				Render(HDC hDC);
+	void				Release();
 
-		return m_pInstance;
-	}
+	void				Delete_Object(OBJID eID);
 
-	static void	Destroy_Instance()
-	{
-		if (m_pInstance)
-		{
-			delete m_pInstance;
-			m_pInstance = nullptr;
-		}
-	}
+public:
+	static CObjMgr*		Get_Instance();
+
+	static void			Destroy_Instance();
 
 private:
-	list<CObj*>		m_ObjList[OBJ_END];
-	list<CObj*>		m_RenderList[RENDER_END];
+	list<CObj*>			m_ObjList[OBJ_END];
+	list<CObj*>			m_RenderList[RENDER_END];
 
-	static CObjMgr* m_pInstance;
+	static CObjMgr*		m_pInstance;
 
 
 };

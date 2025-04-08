@@ -15,41 +15,25 @@ private:
 	~CSceneMgr();
 
 public:
-	SCENEID		Get_SceneID() { return m_eCurScene; }
+	SCENEID				Get_SceneID();
 
 public:
-	void		Scene_Change(SCENEID eID);
-	void		Update();
-	void		Late_Update();
-	void		Render(HDC hDC);
-	void		Release();
+	void				Scene_Change(SCENEID eID);
+	void				Update();
+	void				Late_Update();
+	void				Render(HDC hDC);
+	void				Release();
 
 public:
-	static CSceneMgr* Get_Instance()
-	{
-		if (!m_pInstance)
-		{
-			m_pInstance = new CSceneMgr;
-		}
-
-		return m_pInstance;
-	}
-
-	static void	Destroy_Instance()
-	{
-		if (m_pInstance)
-		{
-			delete m_pInstance;
-			m_pInstance = nullptr;
-		}
-	}
+	static CSceneMgr*	Get_Instance();
+	static void			Destroy_Instance();
 
 private:
-	static CSceneMgr* m_pInstance;
-	CScene* m_pScene;
+	static CSceneMgr*	m_pInstance;
+	CScene*				m_pScene;
 
-	SCENEID		 m_eCurScene;
-	SCENEID		 m_ePreScene;
+	SCENEID				m_eCurScene;
+	SCENEID				m_ePreScene;
 
 };
 
