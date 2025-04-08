@@ -13,6 +13,8 @@ CObjMgr::~CObjMgr()
 	Release();
 }
 
+CObj* CObjMgr::Get_Player() { return m_ObjList[OBJ_PLAYER].front(); }
+
 CObj* CObjMgr::Get_Target(OBJID eID, CObj* pObj)
 {
 	if (m_ObjList[eID].empty())
@@ -128,4 +130,23 @@ void CObjMgr::Delete_Object(OBJID eID)
 		Safe_Delete<CObj*>(pObj);
 	}
 	m_ObjList[eID].clear();
+}
+
+CObjMgr* CObjMgr::Get_Instance()
+{
+	if (!m_pInstance)
+	{
+		m_pInstance = new CObjMgr;
+	}
+
+	return m_pInstance;
+}
+
+void CObjMgr::Destroy_Instance()
+{
+	if (m_pInstance)
+	{
+		delete m_pInstance;
+		m_pInstance = nullptr;
+	}
 }

@@ -10,39 +10,20 @@ private:
 	~CLineMgr();
 
 public:
-	bool	Collision_Line(float _fX, float* pY);
-	void	Load_Line();
+	bool				Collision_Line(float _fX, float* pY);
+	void				Load_Line();
 
 public:
-	void	Initialize();
-	void	Render(HDC hDC);
-	void	Release();
+	void				Initialize();
+	void				Render(HDC hDC);
+	void				Release();
 
 public:
-	static CLineMgr* Get_Instance()
-	{
-		if (!m_pInstance)
-		{
-			m_pInstance = new CLineMgr;
-		}
-
-		return m_pInstance;
-	}
-
-	static void	Destroy_Instance()
-	{
-		if (m_pInstance)
-		{
-			delete m_pInstance;
-			m_pInstance = nullptr;
-		}
-	}
+	static CLineMgr*	Get_Instance();
+	static void			Destroy_Instance();
 
 private:
-	static CLineMgr* m_pInstance;
-
-	list<CLine*>	m_Linelist;
-
-
+	static CLineMgr*	m_pInstance;
+	list<CLine*>		m_Linelist;
 };
 
