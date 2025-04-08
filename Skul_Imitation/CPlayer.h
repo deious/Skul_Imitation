@@ -10,29 +10,29 @@ public:
 	virtual ~CPlayer();
 
 public:
-	void Initialize() override;
-	int Update() override;
-	void Late_Update() override;
-	void Render(HDC hDC) override;
-	void Release() override;
+	void		Initialize() override;
+	int			Update() override;
+	void		Late_Update() override;
+	void		Render(HDC hDC) override;
+	void		Release() override;
 
 private:
-	void	Key_Input();
-	void	Jump();
+	void		Key_Input();
+	void		Jump();
 
-	void	Offset();
-	void	Motion_Change();
+	void		Offset();
+	void		Motion_Change();
 
 private:
-	POINT					m_tPosin;
+	POINT		m_tPosin;
 
-	bool					m_bJump;
-	float					m_fVelocity;
-	float					m_fTime;
+	bool		m_bJump;
+	float		m_fVelocity;
+	float		m_fTime;
 
-	MSTATE					m_eCurMotion;
-	MSTATE					m_ePreMotion;
+	MSTATE		m_eCurMotion;
+	MSTATE		m_ePreMotion;
 
-	bool					m_bStretch;
+	bool		m_bStretch;
 
 };

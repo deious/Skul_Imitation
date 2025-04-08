@@ -98,3 +98,22 @@ void CLineMgr::Release()
 	for_each(m_Linelist.begin(), m_Linelist.end(), Safe_Delete<CLine*>);
 	m_Linelist.clear();
 }
+
+CLineMgr* CLineMgr::Get_Instance()
+{
+	if (!m_pInstance)
+	{
+		m_pInstance = new CLineMgr;
+	}
+
+	return m_pInstance;
+}
+
+void CLineMgr::Destroy_Instance()
+{
+	if (m_pInstance)
+	{
+		delete m_pInstance;
+		m_pInstance = nullptr;
+	}
+}

@@ -55,3 +55,22 @@ void CKeyMgr::Update()
 			m_bKeyState[i] = !m_bKeyState[i];
 	}
 }
+
+CKeyMgr* CKeyMgr::Get_Instance()
+{
+	if (!m_pInstance)
+	{
+		m_pInstance = new CKeyMgr;
+	}
+
+	return m_pInstance;
+}
+
+void CKeyMgr::Destroy_Instance()
+{
+	if (m_pInstance)
+	{
+		delete m_pInstance;
+		m_pInstance = nullptr;
+	}
+}

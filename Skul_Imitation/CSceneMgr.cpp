@@ -13,6 +13,8 @@ CSceneMgr::~CSceneMgr()
 	Release();
 }
 
+CSceneMgr::SCENEID CSceneMgr::Get_SceneID() { return m_eCurScene; }			// 오류 가능성 존재 나중에 체크해볼것
+
 void CSceneMgr::Scene_Change(SCENEID eID)
 {
 	m_eCurScene = eID;
@@ -65,4 +67,23 @@ void CSceneMgr::Render(HDC hDC)
 void CSceneMgr::Release()
 {
 	Safe_Delete(m_pScene);
+}
+
+CSceneMgr* CSceneMgr::Get_Instance()
+{
+	if (!m_pInstance)
+	{
+		m_pInstance = new CSceneMgr;
+	}
+
+	return m_pInstance;
+}
+
+void CSceneMgr::Destroy_Instance()
+{
+	if (m_pInstance)
+	{
+		delete m_pInstance;
+		m_pInstance = nullptr;
+	}
 }
