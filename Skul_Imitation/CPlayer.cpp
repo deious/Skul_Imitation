@@ -9,10 +9,10 @@
 #include "CCameraMgr.h"
 #include "CCollisionMgr.h"
 #include "CTileMgr.h"
+#include "CIdleState.h"
 
 
-CPlayer::CPlayer() : m_fVelocity(0.f), m_fTime(0.f), m_bJump(false)
-, m_eCurMotion(IDLE), m_ePreMotion(MS_END)
+CPlayer::CPlayer() : m_pCurState(nullptr), m_bJump(false), m_fGravity(0.f), m_fTime(0.f)
 {
 	ZeroMemory(&m_tPosin, sizeof(POINT));
 }
@@ -32,17 +32,10 @@ void CPlayer::Initialize()
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/maja2.bmp", L"Player");
 
-	/*CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Player/Player_DOWN.bmp", L"Player_DOWN");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Player/Player_UP.bmp", L"Player_UP");*/
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");
 
-	/*CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Player/Player_LU.bmp", L"Player_LU");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Player/Player_RU.bmp", L"Player_RU");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Player/Player_LD.bmp", L"Player_LD");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Player/Player_RD.bmp", L"Player_RD");*/
-
-	m_pFrameKey = L"Player_DOWN";
+	m_pFrameKey = L"Player_RIGHT";
 
 	m_tFrame.iStart = 0;
 	m_tFrame.iEnd = 3;
@@ -51,54 +44,36 @@ void CPlayer::Initialize()
 	m_tFrame.dwTime = GetTickCount64();
 	m_tFrame.dwFrameSpeed = 200;
 
-	m_eCurMotion = IDLE;
+	//m_eCurMotion = MSTATE::IDLE;
 	m_eRender = RENDER_GAMEOBJECT;
-	m_bStretch = false;
-
+	ChangeState(new CIdleState());
+	//m_bStretch = false;
 }
 
 int CPlayer::Update()
 {
-
 	__super::Update_Rect();
-
-
 
 	return NOEVENT;
 }
 void CPlayer::Late_Update()
 {
+	if (m_pCurState)
+		m_pCurState->Update(this);
 
-	__super::Move_Frame();
-	Key_Input();
-	Offset();
-	Motion_Change();
+	Apply_Gravity();
 	CCameraMgr::Get_Instance()->Set_Target(m_tInfo.fX, m_tInfo.fY);
 	CCollisionMgr::PlayerToTile(this, CTileMgr::Get_Instance()->Get_Tree());
-	//Jump();
 }
-
-
 
 void CPlayer::Render(HDC hDC)
 {
-	int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
-	int		iScrollY = (INT)CScrollMgr::Get_Instance()->Get_ScrollY();
+	if (m_eDir == EDirection::LEFT)
+		m_pFrameKey = L"Player_LEFT";
+	else
+		m_pFrameKey = L"Player_RIGHT";
 
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
-
-	//GdiTransparentBlt(hDC,/// 복사 받을 dc
-	//	m_tRect.left + iScrollX,		// 복사 받을 위치 좌표 left
-	//	m_tRect.top + iScrollY,					// 복사 받을 위치 좌표 top
-	//	(int)m_tInfo.fCX,				// 복사 받을 가로 사이즈
-	//	(int)m_tInfo.fCY,				// 복사 받을 세로 사이즈
-	//	hMemDC,							// 복사할 이미지 dc
-	//	m_tFrame.iStart * (int)m_tInfo.fCX,
-	//	m_tFrame.iMotion * (int)m_tInfo.fCY,							// 복사할 이미지의 left, top
-	//	(int)m_tInfo.fCX,				// 복사할 이미지의 가로
-	//	(int)m_tInfo.fCY,				// 복사할 이미지의 세로
-	//	RGB(255, 0, 255));			// 제거할 이미지 색상 값
-
 	POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
 
 	int drawX = screenPos.x - (int)(m_tInfo.fCX * 0.5f);
@@ -120,49 +95,289 @@ void CPlayer::Render(HDC hDC)
 
 void CPlayer::Release()
 {
+	if (m_pCurState)
+	{
+		m_pCurState->Exit(this);
+		delete m_pCurState;
+		m_pCurState = nullptr;
+	}
 }
 
-void CPlayer::Key_Input()
+void CPlayer::ChangeState(CState* pNewState)
 {
-	if (GetAsyncKeyState(VK_LEFT))
+	if (m_pCurState)
 	{
-		m_tInfo.fX -= m_fSpeed;
-		m_eCurMotion = WALK;
-		m_pFrameKey = L"Player_LEFT";
+		m_pCurState->Exit(this);
+		delete m_pCurState;
 	}
-
-	else if (GetAsyncKeyState(VK_RIGHT))
-	{
-		m_tInfo.fX += m_fSpeed;
-		m_eCurMotion = WALK;
-		m_pFrameKey = L"Player_RIGHT";
-	}
-
-	else if (GetAsyncKeyState(VK_UP))
-	{
-		m_tInfo.fY -= m_fSpeed;
-		m_eCurMotion = WALK;
-		m_pFrameKey = L"Player_UP";
-	}
-
-	else if (GetAsyncKeyState(VK_DOWN))
-	{
-		m_tInfo.fY += m_fSpeed;
-		m_eCurMotion = WALK;
-		m_pFrameKey = L"Player_DOWN";
-	}
-
-	else if (CKeyMgr::Get_Instance()->Key_Up(VK_SPACE))
-	{
-		m_bJump = true;
-		m_eCurMotion = WALK;
-		m_pFrameKey = L"Player_UP";
-	}
-
-	else
-		m_eCurMotion = IDLE;
-
+	m_pCurState = pNewState;
+	m_pCurState->Enter(this);
 }
+
+void CPlayer::Update_PlayerRect()
+{
+	Update_Rect();
+}
+
+float CPlayer::Get_Speed() const { return m_fSpeed; }
+float CPlayer::Get_JumpPower() const
+{
+	return JUMP_POWER;
+}
+float CPlayer::Get_Gravity() const
+{
+	return m_fGravity;
+}
+float CPlayer::Get_GravityAccel() const
+{
+	return GRAVITY_ACCEL;
+}
+float CPlayer::Get_GravityMax() const
+{
+	return GRAVITY_MAX;
+}
+bool CPlayer::Get_IsJump() const
+{
+	return m_bJump;
+}
+bool CPlayer::Get_UseGravity() const
+{
+	return m_bUseGravity;
+}
+EDirection CPlayer::Get_Direction() const { return m_eDir; }
+
+DWORD CPlayer::Get_DashDuration() const
+{
+	return m_dwDashDuration;
+}
+
+void CPlayer::Set_Gravity(float f)
+{
+	m_fGravity = f;
+}
+
+void CPlayer::Set_Jump(bool b)
+{
+	m_bJump = b;
+}
+
+//void CPlayer::Key_Input()
+//{
+//	if (CKeyMgr::Get_Instance()->Key_Down('X') && !m_bJump)
+//	{
+//		if (!m_bAttack)
+//		{
+//			m_bAttack = true;
+//			m_iComboCount = 0;
+//			m_dwLastAttackTime = GetTickCount64();
+//			m_eCurMotion = MSTATE::ATTACK;
+//			m_bForceMotionChange = true;
+//		}
+//		else if (!m_bAttackInputQueued && m_iComboCount < 2)
+//		{
+//			m_bAttackInputQueued = true;
+//			m_dwLastAttackTime = GetTickCount64();
+//		}
+//		return;
+//	}
+//
+//	if (m_bAttack)
+//	{
+//		// 공격 외 키가 눌리면 공격 중단
+//		if (GetAsyncKeyState(VK_LEFT) || GetAsyncKeyState(VK_RIGHT) ||
+//			GetAsyncKeyState('C') || GetAsyncKeyState('Z') || GetAsyncKeyState('F'))
+//		{
+//			m_bAttack = false;
+//			m_iComboCount = 0;
+//			m_eCurMotion = MSTATE::IDLE;  // 또는 WALK, JUMP 등으로 바꾸기
+//			m_bForceMotionChange = true;
+//		}
+//
+//		return;
+//	}
+//
+//	// 공중일 때는 이동만 허용
+//	if (m_bJump)
+//	{
+//		if (GetAsyncKeyState(VK_LEFT))
+//		{
+//			m_tInfo.fX -= m_fSpeed;
+//			m_pFrameKey = L"Player_LEFT";
+//		}
+//		else if (GetAsyncKeyState(VK_RIGHT))
+//		{
+//			m_tInfo.fX += m_fSpeed;
+//			m_pFrameKey = L"Player_RIGHT";
+//		}
+//		return;
+//	}
+//
+//	if (GetAsyncKeyState(VK_LEFT))
+//	{
+//		m_tInfo.fX -= m_fSpeed;
+//		m_eCurMotion = MSTATE::WALK;
+//		m_pFrameKey = L"Player_LEFT";
+//	}
+//	else if (GetAsyncKeyState(VK_RIGHT))
+//	{
+//		m_tInfo.fX += m_fSpeed;
+//		m_eCurMotion = MSTATE::WALK;
+//		m_pFrameKey = L"Player_RIGHT";
+//	}
+//	else if (GetAsyncKeyState('Z'))					// 대쉬 -> 쿨 타임 필요
+//	{
+//		if (m_pFrameKey == L"Player_LEFT")
+//		{
+//			m_tInfo.fX += -m_fSpeed * 3.f;
+//		}
+//		else
+//		{
+//			m_tInfo.fX += m_fSpeed * 3.f;
+//		}
+//
+//		m_eCurMotion = MSTATE::DASH;
+//		//m_pFrameKey = L"Player_DASH";
+//	}
+//	else if (GetAsyncKeyState('F'))					// 상호작용
+//	{
+//		m_tInfo.fY += m_fSpeed;
+//		m_eCurMotion = MSTATE::INTERACTION;
+//		//m_pFrameKey = L"Player_INTERACTION";
+//	}
+//	else if (!m_bAttack && !m_bJump && m_eCurMotion != MSTATE::IDLE)
+//	{
+//		m_eCurMotion = MSTATE::IDLE;
+//		m_bForceMotionChange = true;
+//	}
+//	/*else 
+//	{
+//		m_eCurMotion = MSTATE::IDLE;
+//		m_bForceMotionChange = true;
+//	}*/
+//
+//}
+
+
+//void CPlayer::Apply_Gravity()
+//{
+//	//float fLandY = 0.f;
+//	//bool bOnGround = CLineMgr::Get_Instance()->Collision_Line(m_tInfo.fX, &fLandY);
+//
+//	//if (!bOnGround || m_tInfo.fY < fLandY)
+//	//{
+//	//	//m_bJump = true;
+//
+//	//	// 중력 증가
+//	//	m_fGravity += GRAVITY_ACCEL;
+//	//	if (m_fGravity > GRAVITY_MAX)
+//	//		m_fGravity = GRAVITY_MAX;
+//
+//	//	m_tInfo.fY += m_fGravity;
+//
+//	//	if (m_fGravity < 0.f && m_eCurMotion != MSTATE::RISING && m_eCurMotion != MSTATE::JUMPSTART)
+//	//	{
+//	//		m_eCurMotion = MSTATE::RISING;
+//	//		m_bForceMotionChange = true;
+//	//	}
+//	//	else if (m_fGravity > 0.f && m_eCurMotion != MSTATE::FALL)
+//	//	{
+//	//		m_eCurMotion = MSTATE::FALL;
+//	//		m_bForceMotionChange = true;
+//	//	}
+//	//}
+//	//else
+//	//{
+//	//	if (m_bJump || m_eCurMotion == MSTATE::FALL || m_eCurMotion == MSTATE::RISING)
+//	//	{
+//	//		m_bJump = false;
+//	//		m_fGravity = 0.f;
+//	//		m_tInfo.fY = fLandY;
+//
+//	//		m_eCurMotion = MSTATE::IDLE;
+//	//		m_bForceMotionChange = true;
+//	//	}
+//	//}
+//	float fLandY = 0.f;
+//	bool bOnGround = CLineMgr::Get_Instance()->Collision_Line(m_tInfo.fX, &fLandY);
+//
+//	if (!bOnGround || m_tInfo.fY < fLandY)
+//	{
+//		m_fGravity += GRAVITY_ACCEL;
+//		if (m_fGravity > GRAVITY_MAX)
+//			m_fGravity = GRAVITY_MAX;
+//
+//		m_tInfo.fY += m_fGravity;
+//
+//		// 공격 중이면 점프 상태로 전이하지 않음
+//		if (!m_bAttack)
+//		{
+//			if (m_fGravity < 0.f && m_eCurMotion != MSTATE::RISING && m_eCurMotion != MSTATE::JUMPSTART)
+//			{
+//				m_eCurMotion = MSTATE::RISING;
+//				m_bForceMotionChange = true;
+//			}
+//			else if (m_fGravity > 0.f && m_eCurMotion != MSTATE::FALL)
+//			{
+//				m_eCurMotion = MSTATE::FALL;
+//				m_bForceMotionChange = true;
+//			}
+//		}
+//	}
+//	else
+//	{
+//		if (m_bJump || m_eCurMotion == MSTATE::FALL || m_eCurMotion == MSTATE::RISING)
+//		{
+//			m_bJump = false;
+//			m_fGravity = 0.f;
+//			m_tInfo.fY = fLandY;
+//
+//			//if (!m_bAttack) // 공격 중이면 IDLE로 바꾸지 말 것
+//			//{
+//			//	m_eCurMotion = MSTATE::IDLE;
+//			//	m_bForceMotionChange = true;
+//			//}
+//			if (m_bAttack)
+//			{
+//				m_bAttack = false; // 점프 끝나면 공격도 초기화
+//				m_bAttackInputQueued = false;
+//				m_iComboCount = 0;
+//			}
+//
+//			m_eCurMotion = MSTATE::IDLE;
+//			m_bForceMotionChange = true;
+//		}
+//	}
+//}
+
+void CPlayer::Apply_Gravity()
+{
+	if (!m_bUseGravity)
+	{
+		return;
+	}
+
+	float fLandY = 0.f;
+	bool bOnGround = CLineMgr::Get_Instance()->Collision_Line(m_tInfo.fX, &fLandY);
+
+	if (!bOnGround || m_tInfo.fY < fLandY)
+	{
+		m_fGravity += GRAVITY_ACCEL;
+		if (m_fGravity > GRAVITY_MAX)
+			m_fGravity = GRAVITY_MAX;
+
+		m_tInfo.fY += m_fGravity;
+	}
+	else
+	{
+		if (m_bJump)
+		{
+			m_bJump = false;
+			m_fGravity = 0.f;
+			m_tInfo.fY = fLandY;
+		}
+	}
+}
+
 
 //void CPlayer::Jump()
 //{
@@ -189,86 +404,209 @@ void CPlayer::Key_Input()
 //	}
 //}
 
-void CPlayer::Offset()
+//void CPlayer::Attack(bool bAnimEnd)
+//{
+//	//if (m_bJump) return;
+//
+//	if (GetTickCount64() - m_dwLastAttackTime > COMBO_MAX_DELAY)
+//	{
+//		m_bAttack = false;
+//		m_bAttackInputQueued = false;
+//		m_iComboCount = 0;
+//		m_eCurMotion = MSTATE::IDLE;
+//		m_bForceMotionChange = true;
+//		return;
+//	}
+//
+//	if (bAnimEnd)
+//	{
+//		if (m_bAttackInputQueued && m_iComboCount < 2)
+//		{
+//			++m_iComboCount;
+//			m_bAttackInputQueued = false;
+//			m_dwLastAttackTime = GetTickCount64();
+//			m_eCurMotion = MSTATE::ATTACK;
+//			m_bForceMotionChange = true;
+//		}
+//		else
+//		{
+//			m_bAttack = false;
+//			m_iComboCount = 0;
+//			m_eCurMotion = MSTATE::IDLE;
+//			m_bForceMotionChange = true;
+//		}
+//	}
+//}
+
+//void CPlayer::Attack()
+//{
+//	// 콤보 유지시간 초과 시 리셋
+//	if (m_bAttack && GetTickCount64() - m_dwLastAttackTime > COMBO_MAX_DELAY)
+//	{
+//		m_bAttackInputQueued = false;
+//		m_bAttack = false;
+//		m_iComboCount = 0;
+//		m_eCurMotion = MSTATE::IDLE;
+//		m_bForceMotionChange = true;
+//		return;
+//	}
+//
+//	bool bAnimEnd = __super::Move_Frame(); // 여기서 애니메이션 상태 확인도 포함
+//
+//	if (!m_bAttack)
+//	{
+//		m_bAttack = true;
+//		m_iComboCount = 0;
+//		m_dwLastAttackTime = GetTickCount64();
+//		m_eCurMotion = MSTATE::ATTACK;
+//		m_bForceMotionChange = true;
+//	}
+//	else
+//	{
+//		if (bAnimEnd)
+//		{
+//			if (m_bAttackInputQueued && m_iComboCount < 2)
+//			{
+//				++m_iComboCount;
+//				m_bAttackInputQueued = false;
+//				m_dwLastAttackTime = GetTickCount64();
+//				m_eCurMotion = MSTATE::ATTACK;
+//				m_bForceMotionChange = true;
+//			}
+//			else
+//			{
+//				m_bAttack = false;
+//				m_iComboCount = 0;
+//				m_eCurMotion = MSTATE::IDLE;
+//				m_bForceMotionChange = true;
+//			}
+//		}
+//	}
+//}
+
+//void CPlayer::Jump()
+//{
+//	m_tInfo.fY -= m_fSpeed;
+//}
+
+//void CPlayer::Motion_Change()
+//{
+//	if (m_ePreMotion != m_eCurMotion || m_bForceMotionChange)
+//	{
+//		m_tFrame.iStart = 0;
+//		switch (m_eCurMotion)
+//		{
+//		case MSTATE::IDLE:
+//			m_tFrame.iEnd = 3;
+//			m_tFrame.iMotion = 0;
+//			m_tFrame.dwFrameSpeed = 200;
+//			break;
+//
+//		case MSTATE::WALK:
+//			m_tFrame.iEnd = 7;
+//			m_tFrame.iMotion = 1;
+//			m_tFrame.dwFrameSpeed = 200;
+//			break;
+//
+//		case MSTATE::ATTACK:
+//			switch (m_iComboCount)
+//			{
+//			case 0: // 1타
+//				m_tFrame.iEnd = 4;
+//				m_tFrame.iMotion = 6;
+//				break;
+//			case 1: // 2타
+//				m_tFrame.iEnd = 3;
+//				m_tFrame.iMotion = 7;
+//				break;
+//			case 2: // 3타
+//				m_tFrame.iEnd = 3;
+//				m_tFrame.iMotion = 8;
+//				break;
+//			}
+//			m_tFrame.dwFrameSpeed = 100;
+//			break;
+//		case MSTATE::DASH:
+//			m_tFrame.iEnd = 0;
+//			m_tFrame.iMotion = 2;
+//			m_tFrame.dwFrameSpeed = 200;
+//			break;
+//
+//		case MSTATE::JUMPSTART:
+//			m_tFrame.iEnd = 1;
+//			m_tFrame.iMotion = 4;
+//			m_tFrame.dwFrameSpeed = 200;
+//			break;
+//
+//		case MSTATE::RISING:
+//			m_tFrame.iEnd = 1;
+//			m_tFrame.iMotion = 5;
+//			m_tFrame.dwFrameSpeed = 200;
+//			break;
+//
+//		case MSTATE::FALL:
+//			m_tFrame.iEnd = 2;
+//			m_tFrame.iMotion = 6;
+//			m_tFrame.dwFrameSpeed = 200;
+//			break;
+//
+//		case MSTATE::HIT:
+//			m_tFrame.iEnd = 1;
+//			m_tFrame.iMotion = 3;
+//
+//			m_tFrame.dwFrameSpeed = 200;
+//			break;
+//
+//		case MSTATE::DEATH:
+//			m_tFrame.iEnd = 3;
+//			m_tFrame.iMotion = 4;
+//
+//			m_tFrame.dwFrameSpeed = 200;
+//			break;
+//		}
+//
+//		m_tFrame.dwTime = GetTickCount64();
+//		m_ePreMotion = m_eCurMotion;
+//		m_bForceMotionChange = false;
+//	}
+//
+//}
+
+void CPlayer::Set_Frame(int iStart, int iEnd, int iMotion, DWORD dwSpeed)
 {
-	int		iOffsetMinX = 100;
-	int		iOffsetMaxX = 700;
-
-	int		iOffsetMinY = 100;
-	int		iOffsetMaxY = 500;
-
-	int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
-	int		iScrollY = (INT)CScrollMgr::Get_Instance()->Get_ScrollY();
-
-
-	if (iOffsetMinX > m_tInfo.fX + iScrollX)
-		CScrollMgr::Get_Instance()->Set_ScrollX(m_fSpeed);
-
-	if (iOffsetMaxX < m_tInfo.fX + iScrollX)
-		CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
-
-	if (iOffsetMinY > m_tInfo.fY + iScrollY)
-		CScrollMgr::Get_Instance()->Set_ScrollY(m_fSpeed);
-
-	if (iOffsetMaxY < m_tInfo.fY + iScrollY)
-		CScrollMgr::Get_Instance()->Set_ScrollY(-m_fSpeed);
-
+	m_tFrame.iStart = iStart;
+	m_tFrame.iEnd = iEnd;
+	m_tFrame.iMotion = iMotion;
+	m_tFrame.dwTime = GetTickCount64();
+	m_tFrame.dwFrameSpeed = dwSpeed;
 }
 
-void CPlayer::Motion_Change()
+void CPlayer::Set_FrameKey(const TCHAR* pKey)
 {
-	if (m_ePreMotion != m_eCurMotion)
-	{
-		switch (m_eCurMotion)
-		{
-		case IDLE:
-			m_tFrame.iStart = 0;
-			m_tFrame.iEnd = 3;
-			m_tFrame.iMotion = 0;
-
-			m_tFrame.dwTime = GetTickCount64();
-			m_tFrame.dwFrameSpeed = 200;
-			break;
-
-		case WALK:
-			m_tFrame.iStart = 0;
-			m_tFrame.iEnd = 7;
-			m_tFrame.iMotion = 1;
-
-			m_tFrame.dwTime = GetTickCount64();
-			m_tFrame.dwFrameSpeed = 200;
-			break;
-
-		case ATTACK:
-			m_tFrame.iStart = 0;
-			m_tFrame.iEnd = 4;
-			m_tFrame.iMotion = 6;
-
-			m_tFrame.dwTime = GetTickCount64();
-			m_tFrame.dwFrameSpeed = 200;
-			break;
-
-		case HIT:
-			m_tFrame.iStart = 0;
-			m_tFrame.iEnd = 1;
-			m_tFrame.iMotion = 3;
-
-			m_tFrame.dwTime = GetTickCount64();
-			m_tFrame.dwFrameSpeed = 200;
-			break;
-
-		case DEATH:
-			m_tFrame.iStart = 0;
-			m_tFrame.iEnd = 3;
-			m_tFrame.iMotion = 4;
-
-			m_tFrame.dwTime = GetTickCount64();
-			m_tFrame.dwFrameSpeed = 200;
-			break;
-		}
-
-		m_ePreMotion = m_eCurMotion;
-	}
-
+	m_pFrameKey = pKey;
 }
 
+void CPlayer::Set_Direction(EDirection eDir)
+{
+	m_eDir = eDir;
+}
+
+void CPlayer::Set_LastDashTime()
+{
+	m_dwLastDashTime = GetTickCount64();
+}
+
+void CPlayer::Set_UseGravity()
+{
+	m_bUseGravity = !m_bUseGravity;
+}
+
+bool CPlayer::Move_Frame()
+{
+	return __super::Move_Frame();
+}
+
+bool CPlayer::Dash_Check() const
+{
+	return GetTickCount64() - m_dwLastDashTime > m_dwDashCooldown;
+}

@@ -33,7 +33,7 @@ public:
 
 protected:
 	void			Update_Rect();
-	void			Move_Frame();
+	bool			Move_Frame();
 
 protected:
 	INFO			m_tInfo;
