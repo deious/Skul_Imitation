@@ -19,6 +19,7 @@ public:
 	void				Add_Object(OBJID eID, CObj* pObj);
 	void				Update();
 	void				Late_Update();
+	void				Add_UI(RENDERID eID, CObj* pObj);
 	void				Render(HDC hDC);
 	void				Release();
 
