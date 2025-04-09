@@ -94,6 +94,14 @@ void CObjMgr::Late_Update()
 	//CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_MONSTER], m_ObjList[OBJ_PLAYER]);
 }
 
+void CObjMgr::Add_UI(RENDERID eID, CObj* pObj)
+{
+	if ((RENDER_END <= eID) || (nullptr == pObj))
+		return;
+
+	m_RenderList[eID].push_back(pObj);
+}
+
 void CObjMgr::Render(HDC hDC)
 {
 	for (size_t i = 0; i < RENDER_END; ++i)
