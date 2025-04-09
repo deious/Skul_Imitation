@@ -94,6 +94,9 @@
     <Filter Include="Tree\QuadTree">
       <UniqueIdentifier>{c736fce7-dd7b-486f-9856-2024afab5b6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\00. Player\State">
+      <UniqueIdentifier>{e4b5e376-41e0-4d5c-8ff9-b678f0188637}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -186,6 +189,33 @@
     <ClInclude Include="CQuadTree.h">
       <Filter>Tree\QuadTree</Filter>
     </ClInclude>
+    <ClInclude Include="EPlayerState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CIdleState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CWalkState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CAttackState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CDashState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CJumpStartState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CRisingState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CFallState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -262,6 +292,27 @@
     </ClCompile>
     <ClCompile Include="CQuadTree.cpp">
       <Filter>Tree\QuadTree</Filter>
+    </ClCompile>
+    <ClCompile Include="CIdleState.cpp">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CWalkState.cpp">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CAttackState.cpp">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CDashState.cpp">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CJumpStartState.cpp">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CRisingState.cpp">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CFallState.cpp">
+      <Filter>01. Obj\00. Player\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
