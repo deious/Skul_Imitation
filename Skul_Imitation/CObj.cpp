@@ -42,15 +42,27 @@ void CObj::Update_Rect()
 
 }
 
-void CObj::Move_Frame()
+bool CObj::Move_Frame()
 {
-	if (m_tFrame.dwTime + m_tFrame.dwFrameSpeed < GetTickCount64())
+	/*if (m_tFrame.dwTime + m_tFrame.dwFrameSpeed < GetTickCount64())
 	{
 		m_tFrame.iStart++;
 		m_tFrame.dwTime = GetTickCount64();
 
 		if (m_tFrame.iStart > m_tFrame.iEnd)
 			m_tFrame.iStart = 0;
+	}*/
+	if (m_tFrame.dwTime + m_tFrame.dwFrameSpeed < GetTickCount64())
+	{
+		++m_tFrame.iStart;
+		m_tFrame.dwTime = GetTickCount64();
+
+		if (m_tFrame.iStart > m_tFrame.iEnd)
+		{
+			m_tFrame.iStart = 0;
+			return true;
+		}
 	}
 
+	return false;
 }

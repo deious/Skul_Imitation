@@ -1,0 +1,6 @@
+#pragma once
+enum class EPlayerState
+{
+	IDLE, WALK, DASH, JUMPSTART, RISING, FALL, ATTACK, HIT, DEATH, INTERACTION, MS_END
+};
+
