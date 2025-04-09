@@ -136,16 +136,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CAbstractFactory.h" />
+    <ClInclude Include="CAttackState.h" />
     <ClInclude Include="CCameraMgr.h" />
     <ClInclude Include="CBmpMgr.h" />
     <ClInclude Include="CButton.h" />
     <ClInclude Include="CCollisionMgr.h" />
+    <ClInclude Include="CDashState.h" />
     <ClInclude Include="CEdit.h" />
+    <ClInclude Include="CFallState.h" />
+    <ClInclude Include="CIdleState.h" />
+    <ClInclude Include="CJumpStartState.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineMgr.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CQuadTree.h" />
+    <ClInclude Include="CRisingState.h" />
+    <ClInclude Include="CState.h" />
     <ClInclude Include="CTitle.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CMenu.h" />
@@ -159,7 +166,9 @@
     <ClInclude Include="CStage.h" />
     <ClInclude Include="CTile.h" />
     <ClInclude Include="CTileMgr.h" />
+    <ClInclude Include="CWalkState.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="EPlayerState.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -167,16 +176,22 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CAttackState.cpp" />
     <ClCompile Include="CCameraMgr.cpp" />
     <ClCompile Include="CBmpMgr.cpp" />
     <ClCompile Include="CButton.cpp" />
     <ClCompile Include="CCollisionMgr.cpp" />
+    <ClCompile Include="CDashState.cpp" />
     <ClCompile Include="CEdit.cpp" />
+    <ClCompile Include="CFallState.cpp" />
+    <ClCompile Include="CIdleState.cpp" />
+    <ClCompile Include="CJumpStartState.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineMgr.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CQuadTree.cpp" />
+    <ClCompile Include="CRisingState.cpp" />
     <ClCompile Include="CTitle.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CMenu.cpp" />
@@ -190,6 +205,7 @@
     <ClCompile Include="CStage.cpp" />
     <ClCompile Include="CTile.cpp" />
     <ClCompile Include="CTileMgr.cpp" />
+    <ClCompile Include="CWalkState.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
