@@ -9,6 +9,10 @@
 #include "CPlayer.h"
 #include "CCameraMgr.h"
 #include "CCollisionMgr.h"
+#include "CUIPortrait.h"
+#include "CUIHealthBar.h"
+#include "CUIMgr.h"
+#include "CUISkul.h"
 
 CStage::CStage()
 {
@@ -26,8 +30,17 @@ void CStage::Initialize()
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Map.bmp", L"Ground");
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Edit/Tile.bmp", L"Tile");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Player_Frame.bmp", L"pFrame");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Hp_Bar.bmp", L"hBar");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Skul_Icon.bmp", L"sIcon");
     //CLineMgr::Get_Instance()->Initialize();
     CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create_Obj());
+    /*pButton = CAbstractFactory<CButton>::Create_Obj(600.f, 400.f);
+    pButton->Set_FrameKey(L"Exit");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_BUTTON, pButton);*/
+    CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIPortrait>::Create_Obj());
+    CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIHealthBar>::Create_Obj());
+    CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUISkul>::Create_Obj());
 
     CTileMgr::Get_Instance()->Load_Tile();
 
@@ -44,6 +57,7 @@ int CStage::Update()
     CObjMgr::Get_Instance()->Update();
     CTileMgr::Get_Instance()->Update();
     CCameraMgr::Get_Instance()->Update();
+    CUIMgr::Get_Instance()->Update();
 
     return 0;
 }
@@ -51,6 +65,7 @@ int CStage::Update()
 void CStage::Late_Update()
 {
     CObjMgr::Get_Instance()->Late_Update();
+    CUIMgr::Get_Instance()->Late_Update();
     // 여기서 충돌 처리 시키면 될거 같은데?
     //CCollisionMgr::PlayerToTile();
     // CTileMgr::Get_Instance()->Late_Update();
@@ -59,6 +74,7 @@ void CStage::Late_Update()
 void CStage::Render(HDC hDC)
 {
     HDC		hGroundDC = CBmpMgr::Get_Instance()->Find_Image(L"Ground");
+    //HDC		hGroundDC = CBmpMgr::Get_Instance()->Find_Image(L"pFrame");
 
     /*int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
     int		iScrollY = (INT)CScrollMgr::Get_Instance()->Get_ScrollY();*/
@@ -85,6 +101,7 @@ void CStage::Render(HDC hDC)
 
     CTileMgr::Get_Instance()->Render(hDC);
     CObjMgr::Get_Instance()->Render(hDC);
+    CUIMgr::Get_Instance()->Render(hDC);
 }
 
 void CStage::Release()

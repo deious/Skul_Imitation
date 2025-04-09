@@ -166,6 +166,11 @@
     <ClInclude Include="CStage.h" />
     <ClInclude Include="CTile.h" />
     <ClInclude Include="CTileMgr.h" />
+    <ClInclude Include="CUIHealthBar.h" />
+    <ClInclude Include="CUIMgr.h" />
+    <ClInclude Include="CUIPortrait.h" />
+    <ClInclude Include="CUISkul.h" />
+    <ClInclude Include="CUIWallet.h" />
     <ClInclude Include="CWalkState.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="EPlayerState.h" />
@@ -205,6 +210,11 @@
     <ClCompile Include="CStage.cpp" />
     <ClCompile Include="CTile.cpp" />
     <ClCompile Include="CTileMgr.cpp" />
+    <ClCompile Include="CUIHealthBar.cpp" />
+    <ClCompile Include="CUIMgr.cpp" />
+    <ClCompile Include="CUIPortrait.cpp" />
+    <ClCompile Include="CUISkul.cpp" />
+    <ClCompile Include="CUIWallet.cpp" />
     <ClCompile Include="CWalkState.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

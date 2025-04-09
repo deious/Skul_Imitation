@@ -97,6 +97,12 @@
     <Filter Include="01. Obj\00. Player\State">
       <UniqueIdentifier>{e4b5e376-41e0-4d5c-8ff9-b678f0188637}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{f805044d-57ee-4e16-af3e-8b2ba74c20a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\UIManager">
+      <UniqueIdentifier>{5b6c22f5-f598-4b73-801d-87ea94b4f46c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -216,6 +222,21 @@
     <ClInclude Include="CFallState.h">
       <Filter>01. Obj\00. Player\State</Filter>
     </ClInclude>
+    <ClInclude Include="CUIPortrait.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIHealthBar.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIWallet.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIMgr.h">
+      <Filter>Manager\UIManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CUISkul.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -313,6 +334,21 @@
     </ClCompile>
     <ClCompile Include="CFallState.cpp">
       <Filter>01. Obj\00. Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIPortrait.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIHealthBar.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIWallet.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIMgr.cpp">
+      <Filter>Manager\UIManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CUISkul.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
