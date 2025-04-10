@@ -62,8 +62,8 @@ void CPlayer::Late_Update()
 		m_pCurState->Update(this);
 
 	Apply_Gravity();
-	CCameraMgr::Get_Instance()->Set_Target(m_tInfo.fX, m_tInfo.fY);
 	CCollisionMgr::PlayerToTile(this, CTileMgr::Get_Instance()->Get_Tree());
+	CCameraMgr::Get_Instance()->Set_Target(m_tInfo.fX, m_tInfo.fY);
 }
 
 void CPlayer::Render(HDC hDC)

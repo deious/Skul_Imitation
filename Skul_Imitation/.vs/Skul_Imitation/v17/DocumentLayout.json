@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CCollisionMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CCollisionMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -33,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIHealthBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIHealthBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -81,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWallet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIWallet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CCollisionMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CCollisionMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSceneMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -325,24 +325,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CUISkul.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.cpp",
-              "RelativeDocumentMoniker": "CUISkul.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.cpp",
-              "RelativeToolTip": "CUISkul.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T15:48:27.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "CUISkul.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.h",
               "RelativeDocumentMoniker": "CUISkul.h",
@@ -350,12 +337,11 @@
               "RelativeToolTip": "CUISkul.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T15:48:14.784Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T15:48:14.784Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "CUIMgr.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.cpp",
               "RelativeDocumentMoniker": "CUIMgr.cpp",
@@ -363,12 +349,11 @@
               "RelativeToolTip": "CUIMgr.cpp",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAADEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T15:40:41.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T15:40:41.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "CStage.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CStage.cpp",
               "RelativeDocumentMoniker": "CStage.cpp",
@@ -381,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CObjMgr.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.cpp",
               "RelativeDocumentMoniker": "CObjMgr.cpp",
@@ -389,12 +374,11 @@
               "RelativeToolTip": "CObjMgr.cpp",
               "ViewState": "AQIAAHUAAAAAAAAAAAAAAIAAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T09:27:04.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:27:04.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "CUIHealthBar.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIHealthBar.cpp",
               "RelativeDocumentMoniker": "CUIHealthBar.cpp",
@@ -402,12 +386,11 @@
               "RelativeToolTip": "CUIHealthBar.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T13:52:00.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T13:52:00.932Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CUIHealthBar.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIHealthBar.h",
               "RelativeDocumentMoniker": "CUIHealthBar.h",
@@ -415,12 +398,11 @@
               "RelativeToolTip": "CUIHealthBar.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T13:51:11.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T13:51:11.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "CUIPortrait.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIPortrait.cpp",
               "RelativeDocumentMoniker": "CUIPortrait.cpp",
@@ -428,12 +410,11 @@
               "RelativeToolTip": "CUIPortrait.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T13:50:54.779Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T13:50:54.779Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CButton.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CButton.cpp",
               "RelativeDocumentMoniker": "CButton.cpp",
@@ -441,12 +422,11 @@
               "RelativeToolTip": "CButton.cpp",
               "ViewState": "AQIAAC4AAAAAAAAAAAASwDwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T09:30:43.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:30:43.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "CObj.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObj.h",
               "RelativeDocumentMoniker": "CObj.h",
@@ -454,8 +434,7 @@
               "RelativeToolTip": "CObj.h",
               "ViewState": "AQIAAB0AAAAAAAAAAAASwCYAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:34:18.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:34:18.813Z"
             },
             {
               "$type": "Document",
@@ -465,14 +444,14 @@
               "RelativeDocumentMoniker": "CPlayer.cpp",
               "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CPlayer.cpp",
               "RelativeToolTip": "CPlayer.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAVAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAEEAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-07T14:36:42.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CObj.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObj.cpp",
               "RelativeDocumentMoniker": "CObj.cpp",
@@ -480,12 +459,11 @@
               "RelativeToolTip": "CObj.cpp",
               "ViewState": "AQIAAA4AAAAAAAAAAAASwCMAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T07:31:51.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:31:51.43Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CPlayer.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CPlayer.h",
               "RelativeDocumentMoniker": "CPlayer.h",
@@ -493,12 +471,35 @@
               "RelativeToolTip": "CPlayer.h",
               "ViewState": "AQIAACQAAAAAAAAAAAAAACEAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T14:36:34.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T14:36:34.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 2,
+              "Title": "CCollisionMgr.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CCollisionMgr.cpp",
+              "RelativeDocumentMoniker": "CCollisionMgr.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CCollisionMgr.cpp",
+              "RelativeToolTip": "CCollisionMgr.cpp",
+              "ViewState": "AQIAAKUBAAAAAAAAAAAiwM8BAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-07T09:32:02.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CUISkul.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.cpp",
+              "RelativeDocumentMoniker": "CUISkul.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.cpp",
+              "RelativeToolTip": "CUISkul.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-09T15:48:27.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "CUIMgr.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.h",
               "RelativeDocumentMoniker": "CUIMgr.h",
@@ -506,12 +507,11 @@
               "RelativeToolTip": "CUIMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T15:40:24.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T15:40:24.288Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "CAbstractFactory.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CAbstractFactory.h",
               "RelativeDocumentMoniker": "CAbstractFactory.h",
@@ -519,12 +519,11 @@
               "RelativeToolTip": "CAbstractFactory.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T15:09:42.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T15:09:42.898Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "CUIWallet.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWallet.cpp",
               "RelativeDocumentMoniker": "CUIWallet.cpp",
@@ -532,25 +531,11 @@
               "RelativeToolTip": "CUIWallet.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T13:54:07.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T13:54:07.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CCollisionMgr.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CCollisionMgr.cpp",
-              "RelativeDocumentMoniker": "CCollisionMgr.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CCollisionMgr.cpp",
-              "RelativeToolTip": "CCollisionMgr.cpp",
-              "ViewState": "AQIAAF0BAAAAAAAAAAAiwM8BAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T09:32:02.494Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Define.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\Define.h",
               "RelativeDocumentMoniker": "Define.h",
@@ -558,12 +543,11 @@
               "RelativeToolTip": "Define.h",
               "ViewState": "AQIAADMAAAAAAAAAAAASwBgAAABYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T04:17:36.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T04:17:36.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "pch.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\pch.h",
               "RelativeDocumentMoniker": "pch.h",
@@ -571,8 +555,7 @@
               "RelativeToolTip": "pch.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T04:17:38.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T04:17:38.092Z"
             },
             {
               "$type": "Document",
@@ -584,8 +567,7 @@
               "RelativeToolTip": "CSceneMgr.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T12:34:23.784Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T12:34:23.784Z"
             },
             {
               "$type": "Document",
@@ -597,12 +579,11 @@
               "RelativeToolTip": "CObjMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:27:06.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:27:06.087Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CScene.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CScene.cpp",
               "RelativeDocumentMoniker": "CScene.cpp",
@@ -610,12 +591,11 @@
               "RelativeToolTip": "CScene.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T09:23:05.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:23:05.799Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "CScene.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CScene.h",
               "RelativeDocumentMoniker": "CScene.h",
@@ -623,8 +603,7 @@
               "RelativeToolTip": "CScene.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:23:01.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:23:01.433Z"
             },
             {
               "$type": "Document",
@@ -636,8 +615,7 @@
               "RelativeToolTip": "CMenu.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T09:21:01.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:21:01.795Z"
             },
             {
               "$type": "Document",
@@ -649,8 +627,7 @@
               "RelativeToolTip": "CCameraMgr.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T15:45:08.718Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T15:45:08.718Z"
             },
             {
               "$type": "Document",
@@ -662,8 +639,7 @@
               "RelativeToolTip": "CBmpMgr.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-08T01:56:59.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T01:56:59.012Z"
             },
             {
               "$type": "Document",
@@ -675,8 +651,7 @@
               "RelativeToolTip": "CMainGame.cpp",
               "ViewState": "AQIAAC0AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T08:57:28.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T08:57:28.939Z"
             },
             {
               "$type": "Document",
@@ -688,8 +663,7 @@
               "RelativeToolTip": "CUIPortrait.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T13:50:04.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T13:50:04.048Z"
             },
             {
               "$type": "Document",
@@ -701,8 +675,7 @@
               "RelativeToolTip": "CUIWallet.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T13:53:52.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T13:53:52.581Z"
             },
             {
               "$type": "Document",
@@ -714,8 +687,7 @@
               "RelativeToolTip": "CJumpStartState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T11:20:12.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T11:20:12.307Z"
             },
             {
               "$type": "Document",
@@ -727,8 +699,7 @@
               "RelativeToolTip": "CWalkState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T07:49:00.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:49:00.512Z"
             },
             {
               "$type": "Document",
@@ -740,8 +711,7 @@
               "RelativeToolTip": "CButton.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:30:34.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:30:34.956Z"
             },
             {
               "$type": "Document",
@@ -753,8 +723,7 @@
               "RelativeToolTip": "CRisingState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAABIwCcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T11:25:23.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T11:25:23.177Z"
             },
             {
               "$type": "Document",
@@ -766,8 +735,7 @@
               "RelativeToolTip": "CIdleState.cpp",
               "ViewState": "AQIAAAMAAAAAAAAAAABIwBcAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T07:43:29.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:43:29.6Z"
             },
             {
               "$type": "Document",
@@ -779,8 +747,7 @@
               "RelativeToolTip": "CAttackState.cpp",
               "ViewState": "AQIAAA8AAAAAAAAAAABIwDkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T07:51:08.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:51:08.311Z"
             },
             {
               "$type": "Document",
@@ -792,8 +759,7 @@
               "RelativeToolTip": "CFallState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T11:29:47.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T11:29:47.105Z"
             },
             {
               "$type": "Document",
@@ -805,8 +771,7 @@
               "RelativeToolTip": "Skul_Imitation.cpp",
               "ViewState": "AQIAAD4AAAAAAAAAAAD4v04AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T08:45:35.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T08:45:35.833Z"
             },
             {
               "$type": "Document",
@@ -818,8 +783,7 @@
               "RelativeToolTip": "CDashState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T08:38:32.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T08:38:32.549Z"
             },
             {
               "$type": "Document",
@@ -831,8 +795,7 @@
               "RelativeToolTip": "CWalkState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T07:48:17.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:48:17.53Z"
             },
             {
               "$type": "Document",
@@ -844,8 +807,7 @@
               "RelativeToolTip": "CJumpStartState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T11:19:56.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T11:19:56.085Z"
             },
             {
               "$type": "Document",
@@ -857,8 +819,7 @@
               "RelativeToolTip": "CRisingState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T11:25:08.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T11:25:08.143Z"
             },
             {
               "$type": "Document",
@@ -870,8 +831,7 @@
               "RelativeToolTip": "CState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T07:40:06.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:40:06.667Z"
             },
             {
               "$type": "Document",
@@ -883,8 +843,7 @@
               "RelativeToolTip": "CDashState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T08:38:15.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T08:38:15.761Z"
             },
             {
               "$type": "Document",
@@ -896,8 +855,7 @@
               "RelativeToolTip": "CAttackState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T07:50:28.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:50:28.79Z"
             },
             {
               "$type": "Document",
@@ -909,8 +867,7 @@
               "RelativeToolTip": "CFallState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T11:29:34.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T11:29:34.54Z"
             },
             {
               "$type": "Document",
@@ -922,8 +879,7 @@
               "RelativeToolTip": "CCollisionMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:32:11.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:32:11.885Z"
             },
             {
               "$type": "Document",
@@ -935,8 +891,7 @@
               "RelativeToolTip": "CIdleState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T07:43:11.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:43:11.719Z"
             },
             {
               "$type": "Document",
@@ -948,8 +903,7 @@
               "RelativeToolTip": "EPlayerState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T07:37:53.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:37:53.969Z"
             },
             {
               "$type": "Document",
@@ -961,8 +915,7 @@
               "RelativeToolTip": "CTileMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T02:23:48.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:23:48.368Z"
             },
             {
               "$type": "Document",
@@ -974,8 +927,7 @@
               "RelativeToolTip": "CQuadTree.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T04:15:07.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T04:15:07.734Z"
             },
             {
               "$type": "Document",
@@ -987,8 +939,7 @@
               "RelativeToolTip": "CTileMgr.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-08T01:47:49.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T01:47:49.502Z"
             },
             {
               "$type": "Document",
@@ -1000,8 +951,7 @@
               "RelativeToolTip": "CTile.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-08T01:47:55.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T01:47:55.487Z"
             },
             {
               "$type": "Document",
@@ -1013,8 +963,7 @@
               "RelativeToolTip": "CKeyMgr.cpp",
               "ViewState": "AQIAACIAAAAAAAAAAABAwB8AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-08T02:03:53.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:03:53.092Z"
             },
             {
               "$type": "Document",
@@ -1026,8 +975,7 @@
               "RelativeToolTip": "CTile.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T01:47:56.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T01:47:56.834Z"
             },
             {
               "$type": "Document",
@@ -1039,8 +987,7 @@
               "RelativeToolTip": "CScrollMgr.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-08T02:21:56.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:21:56.795Z"
             },
             {
               "$type": "Document",
@@ -1052,8 +999,7 @@
               "RelativeToolTip": "CLineMgr.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-08T02:06:04.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:06:04.076Z"
             },
             {
               "$type": "Document",
@@ -1065,8 +1011,7 @@
               "RelativeToolTip": "CCameraMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T15:44:40.659Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T15:44:40.659Z"
             },
             {
               "$type": "Document",
@@ -1078,8 +1023,7 @@
               "RelativeToolTip": "CMenu.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:20:56.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:20:56.934Z"
             },
             {
               "$type": "Document",
@@ -1091,8 +1035,7 @@
               "RelativeToolTip": "CEdit.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T01:54:00.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T01:54:00.874Z"
             },
             {
               "$type": "Document",
@@ -1104,8 +1047,7 @@
               "RelativeToolTip": "CEdit.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T13:32:15.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T13:32:15.961Z"
             },
             {
               "$type": "Document",
@@ -1117,8 +1059,7 @@
               "RelativeToolTip": "CMouse.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:29:57.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:29:57.37Z"
             },
             {
               "$type": "Document",
@@ -1130,8 +1071,7 @@
               "RelativeToolTip": "CMouse.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T09:30:04.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:30:04.207Z"
             },
             {
               "$type": "Document",
@@ -1143,8 +1083,7 @@
               "RelativeToolTip": "CMainGame.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T08:57:17.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T08:57:17.294Z"
             },
             {
               "$type": "Document",
@@ -1156,8 +1095,7 @@
               "RelativeToolTip": "CQuadTree.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-08T04:15:33.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T04:15:33.42Z"
             },
             {
               "$type": "Document",
@@ -1169,8 +1107,7 @@
               "RelativeToolTip": "CStage.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:22:34.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:22:34.608Z"
             },
             {
               "$type": "Document",
@@ -1182,8 +1119,7 @@
               "RelativeToolTip": "CKeyMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T02:04:08.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:04:08.194Z"
             },
             {
               "$type": "Document",
@@ -1195,8 +1131,7 @@
               "RelativeToolTip": "pch.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T09:23:27.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:23:27.706Z"
             },
             {
               "$type": "Document",
@@ -1208,8 +1143,7 @@
               "RelativeToolTip": "CScrollMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T02:21:58.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:21:58.631Z"
             },
             {
               "$type": "Document",
@@ -1221,8 +1155,7 @@
               "RelativeToolTip": "CLineMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T02:06:05.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:06:05.507Z"
             },
             {
               "$type": "Document",
@@ -1234,8 +1167,7 @@
               "RelativeToolTip": "CLine.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T02:05:24.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:05:24.548Z"
             },
             {
               "$type": "Document",
@@ -1247,8 +1179,7 @@
               "RelativeToolTip": "CLine.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-08T02:05:21.257Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T02:05:21.257Z"
             },
             {
               "$type": "Document",
@@ -1260,8 +1191,7 @@
               "RelativeToolTip": "CSceneMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T12:34:38.922Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T12:34:38.922Z"
             },
             {
               "$type": "Document",
@@ -1273,8 +1203,7 @@
               "RelativeToolTip": "CTitle.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T09:21:57.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:21:57.062Z"
             },
             {
               "$type": "Document",
@@ -1286,8 +1215,7 @@
               "RelativeToolTip": "CTitle.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:21:49.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T09:21:49.187Z"
             },
             {
               "$type": "Document",
@@ -1299,8 +1227,7 @@
               "RelativeToolTip": "CMyBmp.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-07T12:47:45.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T12:47:45.318Z"
             },
             {
               "$type": "Document",
@@ -1312,8 +1239,7 @@
               "RelativeToolTip": "CMyBmp.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-08T01:55:39.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T01:55:39.292Z"
             },
             {
               "$type": "Document",
@@ -1325,8 +1251,7 @@
               "RelativeToolTip": "CBmpMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T12:28:36.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T12:28:36.201Z"
             },
             {
               "$type": "Document",
@@ -1350,8 +1275,7 @@
               "RelativeToolTip": "Skul_Imitation.rc",
               "ViewState": "AQIAAC8AAAAAAAAAAAASwEQAAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-04-07T14:08:43.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T14:08:43.093Z"
             }
           ]
         }
