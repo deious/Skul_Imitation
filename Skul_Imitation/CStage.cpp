@@ -13,6 +13,8 @@
 #include "CUIHealthBar.h"
 #include "CUIMgr.h"
 #include "CUISkul.h"
+#include "CKeyMgr.h"
+#include "CBoss.h"
 
 CStage::CStage()
 {
@@ -30,17 +32,18 @@ void CStage::Initialize()
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Map.bmp", L"Ground");
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Edit/Tile.bmp", L"Tile");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Player_Frame.bmp", L"pFrame");
+    /*CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Player_Frame.bmp", L"pFrame");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Hp_Bar.bmp", L"hBar");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Skul_Icon.bmp", L"sIcon");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Skul_Icon.bmp", L"sIcon");*/
     //CLineMgr::Get_Instance()->Initialize();
     CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create_Obj());
+    CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create_Obj());
     /*pButton = CAbstractFactory<CButton>::Create_Obj(600.f, 400.f);
     pButton->Set_FrameKey(L"Exit");
     CObjMgr::Get_Instance()->Add_Object(OBJ_BUTTON, pButton);*/
-    CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIPortrait>::Create_Obj());
+    /*CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIPortrait>::Create_Obj());
     CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIHealthBar>::Create_Obj());
-    CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUISkul>::Create_Obj());
+    CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUISkul>::Create_Obj());*/
 
     CTileMgr::Get_Instance()->Load_Tile();
 
@@ -66,6 +69,7 @@ void CStage::Late_Update()
 {
     CObjMgr::Get_Instance()->Late_Update();
     CUIMgr::Get_Instance()->Late_Update();
+    CCollisionMgr::Collision_Attack();
     // 여기서 충돌 처리 시키면 될거 같은데?
     //CCollisionMgr::PlayerToTile();
     // CTileMgr::Get_Instance()->Late_Update();
@@ -111,9 +115,10 @@ void CStage::Release()
 
 void CStage::Key_Input()
 {
-    if (GetAsyncKeyState('P'))
+    if (CKeyMgr::Get_Instance()->Key_Down('P'))
     {
-        MessageBox(g_hWnd, L"p 클릭", _T("Fail"), MB_OK);
-        CTileMgr::Get_Instance()->Set_ShowTile();
+        //MessageBox(g_hWnd, L"p 클릭", _T("Fail"), MB_OK);
+        //CTileMgr::Get_Instance()->Set_ShowTile();
+        CKeyMgr::Get_Instance()->Set_ShowAll();
     }
 }

@@ -10,6 +10,7 @@
 #include "CCollisionMgr.h"
 #include "CTileMgr.h"
 #include "CIdleState.h"
+#include "CAttackCollider.h"
 
 
 CPlayer::CPlayer() : m_pCurState(nullptr), m_bJump(false), m_fGravity(0.f), m_fTime(0.f)
@@ -28,9 +29,12 @@ void CPlayer::Initialize()
 	m_fSpeed = 3.f;
 	m_fDistance = 100.f;
 	m_fVelocity = 20.f;
+	m_iHp = 100;
 	m_bDead = false;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/maja2.bmp", L"Player");
+	m_pHitBox = new CHitBox(m_tInfo.fX, m_tInfo.fY, 30.f, 55.f);
+
+	//CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/maja2.bmp", L"Player");
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");
@@ -44,14 +48,13 @@ void CPlayer::Initialize()
 	m_tFrame.dwTime = GetTickCount64();
 	m_tFrame.dwFrameSpeed = 200;
 
-	//m_eCurMotion = MSTATE::IDLE;
 	m_eRender = RENDER_GAMEOBJECT;
 	ChangeState(new CIdleState());
-	//m_bStretch = false;
 }
 
 int CPlayer::Update()
 {
+	//m_pHitBox->Set_Pos(m_tInfo.fX, m_tInfo.fY);
 	__super::Update_Rect();
 
 	return NOEVENT;
@@ -62,6 +65,7 @@ void CPlayer::Late_Update()
 		m_pCurState->Update(this);
 
 	Apply_Gravity();
+	m_pHitBox->Set_Pos(m_tInfo.fX, m_tInfo.fY);
 	CCollisionMgr::PlayerToTile(this, CTileMgr::Get_Instance()->Get_Tree());
 	CCameraMgr::Get_Instance()->Set_Target(m_tInfo.fX, m_tInfo.fY);
 }
@@ -91,6 +95,34 @@ void CPlayer::Render(HDC hDC)
 		(int)m_tInfo.fCY,
 		RGB(255, 0, 255)
 	);
+
+	if (CKeyMgr::Get_Instance()->Get_ShowAll())
+	{
+		m_pHitBox->Render(hDC);
+
+		POINT screen = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
+
+		RECT rc = {
+			screen.x - (LONG)(m_tInfo.fCX * 0.5f),
+			screen.y - (LONG)(m_tInfo.fCY * 0.5f),
+			screen.x + (LONG)(m_tInfo.fCX * 0.5f),
+			screen.y + (LONG)(m_tInfo.fCY * 0.5f)
+		};
+
+		HBRUSH hBrush = CreateSolidBrush(RGB(255, 255, 0));
+		FrameRect(hDC, &rc, hBrush);
+		DeleteObject(hBrush);
+
+		if (GetTickCount64() - m_dwHitTime < 1000)
+		{
+			if (m_bShowHitText)
+			{
+				POINT screen = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY - 80);
+				TextOut(hDC, screen.x, screen.y, L"플레이어 맞았음!", lstrlen(L"플레이어 히트"));
+				m_bShowHitText = false;
+			}
+		}
+	}
 }
 
 void CPlayer::Release()
@@ -101,6 +133,8 @@ void CPlayer::Release()
 		delete m_pCurState;
 		m_pCurState = nullptr;
 	}
+
+	Safe_Delete(m_pHitBox);
 }
 
 void CPlayer::ChangeState(CState* pNewState)
@@ -117,6 +151,11 @@ void CPlayer::ChangeState(CState* pNewState)
 void CPlayer::Update_PlayerRect()
 {
 	Update_Rect();
+}
+
+int CPlayer::Get_CurFrame() const
+{
+	return m_tFrame.iStart;
 }
 
 float CPlayer::Get_Speed() const { return m_fSpeed; }
@@ -159,6 +198,56 @@ void CPlayer::Set_Gravity(float f)
 void CPlayer::Set_Jump(bool b)
 {
 	m_bJump = b;
+}
+
+void CPlayer::Create_AttackCollider(int iCombo)
+{
+	float offsetX = (m_eDir == EDirection::RIGHT) ? 30.f : -30.f;
+	//float offsetY = -m_tInfo.fCY;
+	float width = 60.f;
+	float height = 40.f;
+	int damage = 20;
+
+	switch (iCombo)
+	{
+	case 1:
+		width = 70.f;
+		damage = 25;
+		break;
+	case 2:
+		width = 80.f;
+		damage = 30;
+		break;
+	}
+
+	auto* pCol = new CAttackCollider(
+		this,
+		m_tInfo.fX + offsetX,
+		m_tInfo.fY,
+		30.f, 20.f,                     // 콜라이더 크기
+		0.f, 0.2f,                      // 생성 지연 없음, 0.2초 유지
+		CAttackCollider::ColliderType::Static,
+		ETeam::Player,
+		damage                              // 데미지
+	);
+	pCol->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(OBJ_COLLIDER, pCol);
+	//CObjMgr::Get_Instance()->Add_Object(OBJID::OBJ_COLLIDER, pCol);
+}
+
+void CPlayer::OnHit(CAttackCollider* pCol)
+{
+	m_dwHitTime = GetTickCount64();
+	//MessageBox(g_hWnd, L"플레이어 히트", _T("Fail"), MB_OK);
+	if (GetTickCount64() - m_dwLastHitTime < 500)  // 0.5초 무적
+		return;
+
+	m_dwLastHitTime = GetTickCount64();
+
+	m_bShowHitText = true;
+	m_iHp -= pCol->Get_Damage();
+	if (m_iHp <= 0)
+		Set_Dead();
 }
 
 //void CPlayer::Key_Input()
@@ -377,200 +466,6 @@ void CPlayer::Apply_Gravity()
 		}
 	}
 }
-
-
-//void CPlayer::Jump()
-//{
-//	float	fY(0.f);
-//
-//	bool bLineCol = CLineMgr::Get_Instance()->Collision_Line(m_tInfo.fX, &fY);
-//
-//	if (m_bJump)
-//	{
-//		m_tInfo.fY -= (m_fVelocity * m_fTime) - (9.8f * m_fTime * m_fTime * 0.5f);
-//		m_fTime += 0.2f;
-//
-//		if (bLineCol && (fY < m_tInfo.fY))
-//		{
-//			m_bJump = false;
-//			m_fTime = 0.f;
-//
-//			m_tInfo.fY = fY;
-//		}
-//	}
-//	else if (bLineCol)
-//	{
-//		m_tInfo.fY = fY;
-//	}
-//}
-
-//void CPlayer::Attack(bool bAnimEnd)
-//{
-//	//if (m_bJump) return;
-//
-//	if (GetTickCount64() - m_dwLastAttackTime > COMBO_MAX_DELAY)
-//	{
-//		m_bAttack = false;
-//		m_bAttackInputQueued = false;
-//		m_iComboCount = 0;
-//		m_eCurMotion = MSTATE::IDLE;
-//		m_bForceMotionChange = true;
-//		return;
-//	}
-//
-//	if (bAnimEnd)
-//	{
-//		if (m_bAttackInputQueued && m_iComboCount < 2)
-//		{
-//			++m_iComboCount;
-//			m_bAttackInputQueued = false;
-//			m_dwLastAttackTime = GetTickCount64();
-//			m_eCurMotion = MSTATE::ATTACK;
-//			m_bForceMotionChange = true;
-//		}
-//		else
-//		{
-//			m_bAttack = false;
-//			m_iComboCount = 0;
-//			m_eCurMotion = MSTATE::IDLE;
-//			m_bForceMotionChange = true;
-//		}
-//	}
-//}
-
-//void CPlayer::Attack()
-//{
-//	// 콤보 유지시간 초과 시 리셋
-//	if (m_bAttack && GetTickCount64() - m_dwLastAttackTime > COMBO_MAX_DELAY)
-//	{
-//		m_bAttackInputQueued = false;
-//		m_bAttack = false;
-//		m_iComboCount = 0;
-//		m_eCurMotion = MSTATE::IDLE;
-//		m_bForceMotionChange = true;
-//		return;
-//	}
-//
-//	bool bAnimEnd = __super::Move_Frame(); // 여기서 애니메이션 상태 확인도 포함
-//
-//	if (!m_bAttack)
-//	{
-//		m_bAttack = true;
-//		m_iComboCount = 0;
-//		m_dwLastAttackTime = GetTickCount64();
-//		m_eCurMotion = MSTATE::ATTACK;
-//		m_bForceMotionChange = true;
-//	}
-//	else
-//	{
-//		if (bAnimEnd)
-//		{
-//			if (m_bAttackInputQueued && m_iComboCount < 2)
-//			{
-//				++m_iComboCount;
-//				m_bAttackInputQueued = false;
-//				m_dwLastAttackTime = GetTickCount64();
-//				m_eCurMotion = MSTATE::ATTACK;
-//				m_bForceMotionChange = true;
-//			}
-//			else
-//			{
-//				m_bAttack = false;
-//				m_iComboCount = 0;
-//				m_eCurMotion = MSTATE::IDLE;
-//				m_bForceMotionChange = true;
-//			}
-//		}
-//	}
-//}
-
-//void CPlayer::Jump()
-//{
-//	m_tInfo.fY -= m_fSpeed;
-//}
-
-//void CPlayer::Motion_Change()
-//{
-//	if (m_ePreMotion != m_eCurMotion || m_bForceMotionChange)
-//	{
-//		m_tFrame.iStart = 0;
-//		switch (m_eCurMotion)
-//		{
-//		case MSTATE::IDLE:
-//			m_tFrame.iEnd = 3;
-//			m_tFrame.iMotion = 0;
-//			m_tFrame.dwFrameSpeed = 200;
-//			break;
-//
-//		case MSTATE::WALK:
-//			m_tFrame.iEnd = 7;
-//			m_tFrame.iMotion = 1;
-//			m_tFrame.dwFrameSpeed = 200;
-//			break;
-//
-//		case MSTATE::ATTACK:
-//			switch (m_iComboCount)
-//			{
-//			case 0: // 1타
-//				m_tFrame.iEnd = 4;
-//				m_tFrame.iMotion = 6;
-//				break;
-//			case 1: // 2타
-//				m_tFrame.iEnd = 3;
-//				m_tFrame.iMotion = 7;
-//				break;
-//			case 2: // 3타
-//				m_tFrame.iEnd = 3;
-//				m_tFrame.iMotion = 8;
-//				break;
-//			}
-//			m_tFrame.dwFrameSpeed = 100;
-//			break;
-//		case MSTATE::DASH:
-//			m_tFrame.iEnd = 0;
-//			m_tFrame.iMotion = 2;
-//			m_tFrame.dwFrameSpeed = 200;
-//			break;
-//
-//		case MSTATE::JUMPSTART:
-//			m_tFrame.iEnd = 1;
-//			m_tFrame.iMotion = 4;
-//			m_tFrame.dwFrameSpeed = 200;
-//			break;
-//
-//		case MSTATE::RISING:
-//			m_tFrame.iEnd = 1;
-//			m_tFrame.iMotion = 5;
-//			m_tFrame.dwFrameSpeed = 200;
-//			break;
-//
-//		case MSTATE::FALL:
-//			m_tFrame.iEnd = 2;
-//			m_tFrame.iMotion = 6;
-//			m_tFrame.dwFrameSpeed = 200;
-//			break;
-//
-//		case MSTATE::HIT:
-//			m_tFrame.iEnd = 1;
-//			m_tFrame.iMotion = 3;
-//
-//			m_tFrame.dwFrameSpeed = 200;
-//			break;
-//
-//		case MSTATE::DEATH:
-//			m_tFrame.iEnd = 3;
-//			m_tFrame.iMotion = 4;
-//
-//			m_tFrame.dwFrameSpeed = 200;
-//			break;
-//		}
-//
-//		m_tFrame.dwTime = GetTickCount64();
-//		m_ePreMotion = m_eCurMotion;
-//		m_bForceMotionChange = false;
-//	}
-//
-//}
 
 void CPlayer::Set_Frame(int iStart, int iEnd, int iMotion, DWORD dwSpeed)
 {

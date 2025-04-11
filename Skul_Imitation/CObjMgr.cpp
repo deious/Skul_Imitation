@@ -43,6 +43,11 @@ CObj* CObjMgr::Get_Target(OBJID eID, CObj* pObj)
 	return pTarget;
 }
 
+list<CObj*>& CObjMgr::Get_ObjList(OBJID eID)
+{
+	return m_ObjList[eID];
+}
+
 void CObjMgr::Add_Object(OBJID eID, CObj* pObj)
 {
 	if ((OBJ_END <= eID) || (nullptr == pObj))

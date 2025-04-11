@@ -13,7 +13,7 @@ private:
 public:
 	CObj*				Get_Player();
 	CObj*				Get_Target(OBJID eID, CObj* pObj);
-
+	list<CObj*>&		Get_ObjList(OBJID eID);
 
 public:
 	void				Add_Object(OBJID eID, CObj* pObj);

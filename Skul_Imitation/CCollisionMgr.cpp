@@ -2,6 +2,8 @@
 #include "CCollisionMgr.h"
 #include "CCameraMgr.h"
 #include "CPlayer.h"
+#include "CAttackCollider.h"
+#include "CObjMgr.h"
 
 void CCollisionMgr::Collision_Rect(list<CObj*> DstList, list<CObj*> SrcList)
 {
@@ -374,6 +376,67 @@ bool CCollisionMgr::RectCollision(const RECT& rectA, const RECT& rectB)
 //	}
 //}
 
+void CCollisionMgr::Collision_Attack()
+{
+	list<CObj*>& colliderList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_COLLIDER);
+	list<CObj*>& playerList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_PLAYER);
+	list<CObj*>& monsterList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_MONSTER);
+	list<CObj*>& bossList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_BOSS);
+
+	for (auto& pCollider : colliderList)
+	{
+		if (!dynamic_cast<CAttackCollider*>(pCollider)->IsActive())
+		{
+			OutputDebugString(L"[충돌 검사 건너뜀] 비활성화 상태\n");
+			continue;
+		}
+
+		ETeam team = dynamic_cast<CAttackCollider*>(pCollider)->Get_Team();
+
+		wchar_t szDebug[128];
+		swprintf_s(szDebug, L"[콜라이더 검사 시작] 팀: %d\n", (int)team);
+		OutputDebugString(szDebug);
+
+		if (team == ETeam::Player)
+		{
+			CheckCollisionWithTargets(pCollider, monsterList);
+			CheckCollisionWithTargets(pCollider, bossList);
+		}
+		else if (team == ETeam::Enemy)
+		{
+			CheckCollisionWithTargets(pCollider, playerList);
+		}
+	}
+}
+
+
+void CCollisionMgr::CheckCollisionWithTargets(CObj* pCollider, list<CObj*>& targets)
+{
+	RECT rcCollider = *pCollider->Get_Rect();
+	//RECT& playerRect = pPlayer->Get_HitBox()->Get_Rect();
+
+	for (auto& pTarget : targets)
+	{
+		if (pTarget->Get_Dead())
+			continue;
+		//RECT rcCollider = *pCollider->Get_Rect();
+		//if (CCollisionMgr::RectCollision(rcCollider, *pTarget->Get_Rect()))
+		//{
+		//	pTarget->OnHit(dynamic_cast<CAttackCollider*>(pCollider));
+		//	//pCollider->Set_Dead();
+		//	break;
+		//}
+		OutputDebugString(L"→ 충돌 검사 대상 접근\n");
+		if (CCollisionMgr::RectCollision(rcCollider, pTarget->Get_HitBox()->Get_Rect()))
+		{
+			OutputDebugString(L"[히트 발생!] \n");
+			pTarget->OnHit(dynamic_cast<CAttackCollider*>(pCollider));
+			//pCollider->Set_Dead();
+			break;
+		}
+	}
+}
+
 void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 {
 	if (!pPlayer || !pQuadTree)
@@ -383,7 +446,8 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 	std::vector<Tile> tiles;
 	pQuadTree->Query(camRect, tiles);
 
-	RECT playerRect = *pPlayer->Get_Rect();
+	//RECT playerRect = *pPlayer->Get_Rect();
+	RECT& playerRect = pPlayer->Get_HitBox()->Get_Rect();
 	int halfW = (playerRect.right - playerRect.left) / 2;
 	int halfH = (playerRect.bottom - playerRect.top) / 2;
 
@@ -411,18 +475,23 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 			{
 				// 바닥 충돌
 				pPlayer->Set_Pos(curX, tileRect.top - halfH);
-				dynamic_cast<CPlayer*>(pPlayer)->Set_Gravity(0.f);
-				dynamic_cast<CPlayer*>(pPlayer)->Set_Jump(false);
+				pPlayer->Set_Gravity(0.f);
+				pPlayer->Set_Jump(false);
+				//dynamic_cast<CPlayer*>(pPlayer)->Set_Gravity(0.f);
+				//dynamic_cast<CPlayer*>(pPlayer)->Set_Jump(false);
 			}
 			else if (playerRect.top < tileRect.bottom && playerRect.bottom > tileRect.bottom)
 			{
 				// 천장 충돌
 				pPlayer->Set_Pos(curX, tileRect.bottom + halfH);
-				dynamic_cast<CPlayer*>(pPlayer)->Set_Gravity(0.f);
+				pPlayer->Set_Gravity(0.f);
+				//dynamic_cast<CPlayer*>(pPlayer)->Set_Gravity(0.f);
 			}
 
-			dynamic_cast<CPlayer*>(pPlayer)->Update_PlayerRect();
-			playerRect = *pPlayer->Get_Rect();
+			//dynamic_cast<CPlayer*>(pPlayer)->Update_PlayerRect();
+			pPlayer->Update_Rect();
+			//playerRect = *pPlayer->Get_Rect();
+			playerRect = pPlayer->Get_HitBox()->Get_Rect();
 		}
 	}
 
@@ -457,8 +526,10 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 				pPlayer->Set_Pos(tileRect.right + halfW, curY);
 			}
 
-			dynamic_cast<CPlayer*>(pPlayer)->Update_PlayerRect();
-			playerRect = *pPlayer->Get_Rect();
+			//dynamic_cast<CPlayer*>(pPlayer)->Update_PlayerRect();
+			pPlayer->Update_Rect();
+			//playerRect = *pPlayer->Get_Rect();
+			playerRect = pPlayer->Get_HitBox()->Get_Rect();
 		}
 	}
 }
