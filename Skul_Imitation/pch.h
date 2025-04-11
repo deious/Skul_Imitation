@@ -14,6 +14,7 @@
 #include <algorithm>
 #include <map>
 #include <vector>
+#include <functional>
 
 #ifdef _DEBUG
 

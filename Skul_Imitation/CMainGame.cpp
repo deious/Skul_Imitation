@@ -10,6 +10,10 @@
 #include "CBmpMgr.h"
 #include "CSceneMgr.h"
 #include "CTileMgr.h"
+#include "CUIMgr.h"
+#include "CUIPortrait.h"
+#include "CUIHealthBar.h"
+#include "CUISkul.h"
 
 CMainGame::CMainGame() :m_dwTime(GetTickCount64()), m_iFPS(0)
 {
@@ -25,9 +29,24 @@ void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
 
+	/*m_hMemDC = CreateCompatibleDC(m_hDC);
+	m_hBackBmp = CreateCompatibleBitmap(m_hDC, WINCX, WINCY);
+	m_hOldBmp = (HBITMAP)SelectObject(m_hMemDC, m_hBackBmp);*/
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Back.bmp", L"Back");
 	//CBmpMgr::Get_Instance()->Insert_Bmp(L"C:\\Users\\gkstj\\OneDrive\\바탕 화면\\Project\\Skul_Imitation\\Skul_Imitation\\Image\\Back.bmp", L"Back");
 	CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_MENU);
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Player_Frame.bmp", L"pFrame");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Hp_Bar.bmp", L"hBar");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Skul_Icon.bmp", L"sIcon");
+
+	CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIPortrait>::Create_Obj());
+	CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIHealthBar>::Create_Obj());
+	CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUISkul>::Create_Obj());
+
+	m_hMemDC = CreateCompatibleDC(m_hDC);
+	m_hBackBmp = CreateCompatibleBitmap(m_hDC, WINCX, WINCY);
+	m_hOldBmp = (HBITMAP)SelectObject(m_hMemDC, m_hBackBmp);
 }
 
 void CMainGame::Update()
@@ -71,6 +90,14 @@ void CMainGame::Render()
 		hBackDC,
 		0, 0,
 		SRCCOPY);
+
+	//Rectangle(m_hMemDC, 0, 0, WINCX, WINCY);
+
+	// 현재 씬 렌더
+	//CSceneMgr::Get_Instance()->Render(m_hMemDC); // ← 이때 Stage::Render() 호출됨
+
+	// 백버퍼 → 화면 출력
+	//BitBlt(m_hDC, 0, 0, WINCX, WINCY, m_hMemDC, 0, 0, SRCCOPY);
 }
 
 void CMainGame::Release()
@@ -84,4 +111,7 @@ void CMainGame::Release()
 	CLineMgr::Destroy_Instance();
 
 	ReleaseDC(g_hWnd, m_hDC);
+	/*SelectObject(m_hMemDC, m_hOldBmp);
+	DeleteObject(m_hBackBmp);
+	DeleteDC(m_hMemDC);*/
 }

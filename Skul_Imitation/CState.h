@@ -1,10 +1,11 @@
 #pragma once
 #include "Define.h"
+#include "Istate.h"
 #include "EPlayerState.h"
 
 class CPlayer;
 
-class CState
+class CState : public IState<CPlayer>
 {
 public:
     virtual ~CState() = default;

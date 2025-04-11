@@ -4,6 +4,7 @@
 #include "CBmpMgr.h"
 #include "CScrollMgr.h"
 #include "CCameraMgr.h"
+#include "CKeyMgr.h"
 
 
 CTileMgr* CTileMgr::m_pInstance = nullptr;
@@ -88,7 +89,7 @@ void CTileMgr::Render(HDC hDC)
 		}
 	}
 
-	if (m_bShowTile && m_pQuadTree) 
+	if (CKeyMgr::Get_Instance()->Get_ShowAll() && m_pQuadTree)
 	{
 		//MessageBox(g_hWnd, L"보여주기 진입", _T("Fail"), MB_OK);
 		std::vector<Tile> debugTiles;
@@ -256,7 +257,7 @@ void CTileMgr::Load_Tile()
 
 	CloseHandle(hFile);
 
-	MessageBox(g_hWnd, L"불러오기 성공", _T("성공"), MB_OK);
+	//MessageBox(g_hWnd, L"불러오기 성공", _T("성공"), MB_OK);
 }
 
 CTileMgr* CTileMgr::Get_Instance()

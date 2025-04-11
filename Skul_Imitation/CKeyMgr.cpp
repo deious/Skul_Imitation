@@ -32,6 +32,16 @@ bool CKeyMgr::Key_Down(int _iKey)
 	return false;
 }
 
+bool CKeyMgr::Set_ShowAll()
+{
+	return m_bShowAll = !m_bShowAll;
+}
+
+bool CKeyMgr::Get_ShowAll() const
+{
+	return m_bShowAll;
+}
+
 
 bool CKeyMgr::Key_Up(int _iKey)
 {
@@ -43,6 +53,7 @@ bool CKeyMgr::Key_Up(int _iKey)
 
 	return false;
 }
+
 
 void CKeyMgr::Update()
 {

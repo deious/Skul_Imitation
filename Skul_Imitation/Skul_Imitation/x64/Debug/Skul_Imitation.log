@@ -1,8 +1,30 @@
-﻿  CPlayer.cpp
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CPlayer.cpp(65,60): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  CAttackState.cpp
+  CCollisionMgr.cpp
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(477,41): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(486,44): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(521,36): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(526,37): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
+  
+  CDashState.cpp
+  CFallState.cpp
+  CIdleState.cpp
+  CJumpStartState.cpp
+  CPlayer.cpp
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CPlayer.cpp(70,60): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/CPlayer.cpp'을(를) 컴파일하는 중)
   
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CPlayer.cpp(65,48): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CPlayer.cpp(70,48): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/CPlayer.cpp'을(를) 컴파일하는 중)
   
+  CRisingState.cpp
+  CStage.cpp
+  CWalkState.cpp
+  코드를 생성하고 있습니다...
   Skul_Imitation.vcxproj -> C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\x64\Debug\Skul_Imitation.exe

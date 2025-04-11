@@ -22,6 +22,7 @@ public:
 	void		Render(HDC hDC) override;
 	void		Release() override;
 
+public:
 	void		ChangeState(CState* pNewState);
 	void		Update_PlayerRect();
 	bool		Move_Frame();
@@ -33,6 +34,7 @@ public:
 	void		Set_LastDashTime();
 	void		Set_UseGravity();
 
+	int			Get_CurFrame() const;
 	float		Get_Speed() const;
 	float		Get_JumpPower() const;
 	float		Get_Gravity() const;
@@ -47,7 +49,8 @@ public:
 
 	void Set_Jump(bool b);
 
-
+	void Create_AttackCollider(int iCombo);
+	void OnHit(CAttackCollider* pCol) override;
 
 private:
 	void		Apply_Gravity();
@@ -57,8 +60,11 @@ private:
 	CState*		m_pCurState;
 	EDirection	m_eDir = EDirection::RIGHT;
 
+	int			m_iHp;
+
 	bool		m_bJump;
 	bool		m_bUseGravity = true;
+	bool		m_bShowHitText = false;
 
 	float		m_fVelocity;
 	float		m_fGravity = 0.f;
@@ -69,7 +75,9 @@ private:
 	const float GRAVITY_MAX = 10.f;			// 최대 낙하 속도 제한
 	const float JUMP_POWER = -10.f;
 
+	ULONGLONG m_dwHitTime = 0;
 	ULONGLONG m_dwLastDashTime = 0;   // 마지막 대시 시각
+	ULONGLONG m_dwLastHitTime = 0;
 	const DWORD m_dwDashCooldown = 2000;
 	const DWORD m_dwDashDuration = 300;
 

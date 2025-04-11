@@ -135,8 +135,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BehaviorNode.h" />
     <ClInclude Include="CAbstractFactory.h" />
+    <ClInclude Include="CAttackCollider.h" />
     <ClInclude Include="CAttackState.h" />
+    <ClInclude Include="CBoss.h" />
+    <ClInclude Include="CBossAttackState.h" />
+    <ClInclude Include="CBossIdleState.h" />
     <ClInclude Include="CCameraMgr.h" />
     <ClInclude Include="CBmpMgr.h" />
     <ClInclude Include="CButton.h" />
@@ -144,6 +149,7 @@
     <ClInclude Include="CDashState.h" />
     <ClInclude Include="CEdit.h" />
     <ClInclude Include="CFallState.h" />
+    <ClInclude Include="CHitBox.h" />
     <ClInclude Include="CIdleState.h" />
     <ClInclude Include="CJumpStartState.h" />
     <ClInclude Include="CKeyMgr.h" />
@@ -175,13 +181,19 @@
     <ClInclude Include="Define.h" />
     <ClInclude Include="EPlayerState.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="IState.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Skul_Imitation.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BehaviorNode.cpp" />
+    <ClCompile Include="CAttackCollider.cpp" />
     <ClCompile Include="CAttackState.cpp" />
+    <ClCompile Include="CBoss.cpp" />
+    <ClCompile Include="CBossAttackState.cpp" />
+    <ClCompile Include="CBossIdleState.cpp" />
     <ClCompile Include="CCameraMgr.cpp" />
     <ClCompile Include="CBmpMgr.cpp" />
     <ClCompile Include="CButton.cpp" />
@@ -189,6 +201,7 @@
     <ClCompile Include="CDashState.cpp" />
     <ClCompile Include="CEdit.cpp" />
     <ClCompile Include="CFallState.cpp" />
+    <ClCompile Include="CHitBox.cpp" />
     <ClCompile Include="CIdleState.cpp" />
     <ClCompile Include="CJumpStartState.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
@@ -216,6 +229,7 @@
     <ClCompile Include="CUISkul.cpp" />
     <ClCompile Include="CUIWallet.cpp" />
     <ClCompile Include="CWalkState.cpp" />
+    <ClCompile Include="IState.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
