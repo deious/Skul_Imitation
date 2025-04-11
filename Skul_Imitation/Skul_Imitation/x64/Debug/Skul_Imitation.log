@@ -1,30 +1,14 @@
-﻿  CAttackState.cpp
-  CCollisionMgr.cpp
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(477,41): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(486,44): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(521,36): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(526,37): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-  CDashState.cpp
-  CFallState.cpp
-  CIdleState.cpp
-  CJumpStartState.cpp
-  CPlayer.cpp
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CPlayer.cpp(70,60): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CPlayer.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CPlayer.cpp(70,48): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CPlayer.cpp'을(를) 컴파일하는 중)
-  
-  CRisingState.cpp
-  CStage.cpp
-  CWalkState.cpp
-  코드를 생성하고 있습니다...
-  Skul_Imitation.vcxproj -> C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\x64\Debug\Skul_Imitation.exe
+﻿CSoundMgr.obj : error LNK2019: FMOD_System_Create"public: void __cdecl CSoundMgr::Initialize(void)" (?Initialize@CSoundMgr@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_System_Release"public: void __cdecl CSoundMgr::Release(void)" (?Release@CSoundMgr@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_System_Init"public: void __cdecl CSoundMgr::Initialize(void)" (?Initialize@CSoundMgr@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_System_Close"public: void __cdecl CSoundMgr::Release(void)" (?Release@CSoundMgr@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_System_Update"private: void __cdecl CSoundMgr::LoadSoundFile(void)" (?LoadSoundFile@CSoundMgr@@AEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_System_CreateSound"private: void __cdecl CSoundMgr::LoadSoundFile(void)" (?LoadSoundFile@CSoundMgr@@AEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_System_PlaySound"public: void __cdecl CSoundMgr::PlayBGM(wchar_t const *,float)" (?PlayBGM@CSoundMgr@@QEAAXPEB_WM@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_Sound_Release"public: void __cdecl CSoundMgr::Release(void)" (?Release@CSoundMgr@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_Channel_Stop"public: void __cdecl CSoundMgr::StopAll(void)" (?StopAll@CSoundMgr@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_Channel_SetVolume"public: void __cdecl CSoundMgr::PlayBGM(wchar_t const *,float)" (?PlayBGM@CSoundMgr@@QEAAXPEB_WM@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_Channel_IsPlaying"public: void __cdecl CSoundMgr::PlaySound(wchar_t const *,enum CHANNELID,float)" (?PlaySound@CSoundMgr@@QEAAXPEB_WW4CHANNELID@@M@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+CSoundMgr.obj : error LNK2019: FMOD_Channel_SetMode"public: void __cdecl CSoundMgr::PlayBGM(wchar_t const *,float)" (?PlayBGM@CSoundMgr@@QEAAXPEB_WM@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+fmodex_vc.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\x64\Debug\Skul_Imitation.exe : fatal error LNK1120: 12개의 확인할 수 없는 외부 참조입니다.

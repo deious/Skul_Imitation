@@ -4,6 +4,7 @@
 #include"CAbstractFactory.h"
 #include "CButton.h"
 #include "CBmpMgr.h"
+#include "CSoundMgr.h"
 
 
 CMenu::CMenu()
@@ -30,6 +31,7 @@ void CMenu::Initialize()
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BUTTON, pButton);
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Title/Title.bmp", L"Title");
+	CSoundMgr::Get_Instance()->PlayBGM(L"TitleBgm.wav", 1.f);
 }
 
 int CMenu::Update()
@@ -62,5 +64,6 @@ void CMenu::Render(HDC hDC)
 
 void CMenu::Release()
 {
+	CSoundMgr::Get_Instance()->StopAll();
 	CObjMgr::Get_Instance()->Delete_Object(OBJ_BUTTON);
 }
