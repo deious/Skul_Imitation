@@ -21,5 +21,7 @@ private:
 	ULONGLONG	m_dwTime;
 	int			m_iFPS;
 	TCHAR		m_szFPS[32];
-
+	HDC			m_hMemDC = nullptr;
+	HBITMAP		m_hBackBmp = nullptr;
+	HBITMAP		m_hOldBmp = nullptr;
 };
