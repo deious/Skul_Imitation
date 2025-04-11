@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CObj.h"
+#include "CAttackCollider.h"
 
 CObj::CObj() : m_fSpeed(0.f), m_eDir(DIR_END), m_bDead(false), m_fDistance(0.f), m_fAngle(0.f)
 , m_pTarget(nullptr), m_pFrameKey(L""), m_eRender(RENDER_END)
@@ -31,7 +32,18 @@ void CObj::Set_PosY(float _fY) { m_tInfo.fY += _fY; }
 void CObj::Set_FrameKey(const TCHAR* pFrameKey) { m_pFrameKey = pFrameKey; }
 void CObj::Set_RenderID(RENDERID eID) { m_eRender = eID; }
 
+CHitBox* CObj::Get_HitBox() const { return m_pHitBox; }
+
+void CObj::Set_Jump(bool b)
+{
+}
+
 RENDERID CObj::Get_RenderID() { return m_eRender; }
+
+void CObj::Set_Gravity(float fGravity)
+{
+	
+}
 
 void CObj::Update_Rect()
 {

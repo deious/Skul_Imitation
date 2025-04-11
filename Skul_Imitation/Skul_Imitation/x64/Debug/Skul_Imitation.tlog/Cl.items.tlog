@@ -1,4 +1,9 @@
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\BehaviorNode.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\BehaviorNode.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CAttackCollider.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CAttackCollider.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CAttackState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CAttackState.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBoss.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CBoss.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossAttackState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CBossAttackState.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossIdleState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CBossIdleState.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCameraMgr.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CCameraMgr.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBmpMgr.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CBmpMgr.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CButton.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CButton.obj
@@ -6,6 +11,7 @@ C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCol
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CDashState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CDashState.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CEdit.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CEdit.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CFallState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CFallState.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CHitBox.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CHitBox.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CIdleState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CIdleState.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CJumpStartState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CJumpStartState.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CKeyMgr.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CKeyMgr.obj
@@ -33,5 +39,6 @@ C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CUIP
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CUISkul.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CUISkul.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CUIWallet.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CUIWallet.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CWalkState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\CWalkState.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\IState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\IState.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\pch.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\pch.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\x64\Debug\Skul_Imitation.obj

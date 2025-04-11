@@ -103,6 +103,15 @@
     <Filter Include="Manager\UIManager">
       <UniqueIdentifier>{5b6c22f5-f598-4b73-801d-87ea94b4f46c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\01. Boss">
+      <UniqueIdentifier>{ad362d1a-a4c4-46e7-bd5c-9b9548a9443f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree\BehaviorTree">
+      <UniqueIdentifier>{a0be47f6-c8f0-4061-bb28-66a841bb6534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\01. Boss\State">
+      <UniqueIdentifier>{a50c6654-fa82-4262-9424-d7b2668bfe9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -237,6 +246,27 @@
     <ClInclude Include="CUISkul.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="BehaviorNode.h">
+      <Filter>Tree\BehaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="CBoss.h">
+      <Filter>01. Obj\01. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="IState.h">
+      <Filter>01. Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="CAttackCollider.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossAttackState.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossIdleState.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CHitBox.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -349,6 +379,27 @@
     </ClCompile>
     <ClCompile Include="CUISkul.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviorNode.cpp">
+      <Filter>Tree\BehaviorTree</Filter>
+    </ClCompile>
+    <ClCompile Include="CBoss.cpp">
+      <Filter>01. Obj\01. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="IState.cpp">
+      <Filter>01. Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="CAttackCollider.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossAttackState.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossIdleState.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CHitBox.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

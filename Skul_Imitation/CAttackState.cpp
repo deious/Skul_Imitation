@@ -35,6 +35,12 @@ void CAttackState::Update(CPlayer* pPlayer)
         return;
     }
 
+    if (!m_bColliderSpawned && pPlayer->Get_CurFrame() == 2)
+    {
+        pPlayer->Create_AttackCollider(m_iCombo);
+        m_bColliderSpawned = true;
+    }
+
     m_bAnimEnd = pPlayer->Move_Frame();
 
     if (m_bAnimEnd)

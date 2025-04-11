@@ -18,12 +18,11 @@ public:
     void                Set_Resolution(int width, int height);
 
     POINT               Get_CameraPos() const;
+    RECT                WorldToScreenRect(const RECT& worldRect);
 
 private:
-    POINT               m_Pos;         // 카메라 좌측 상단
-    POINT               m_Target;      // 따라갈 타겟 위치
+    POINT               m_Pos;
+    POINT               m_Target;
     SIZE                m_MapSize;
     SIZE                m_Resolution;
 };
-
-

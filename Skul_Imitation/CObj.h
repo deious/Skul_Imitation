@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Define.h"
+#include "CHitBox.h"
+
+class CAttackCollider;
 
 class CObj
 {
@@ -23,6 +26,7 @@ public:
 	void			Set_PosY(float _fY);
 	void			Set_FrameKey(const TCHAR* pFrameKey);
 	void			Set_RenderID(RENDERID eID);
+	CHitBox*		Get_HitBox() const;
 
 public:
 	virtual void	Initialize()PURE;
@@ -30,9 +34,15 @@ public:
 	virtual void	Late_Update()PURE;	// UPDATE 연산이 끝난 이후
 	virtual void	Render(HDC hDC)PURE;
 	virtual void	Release()PURE;
+	virtual void	Update_Rect();
+
+public:
+	virtual void	OnHit(CAttackCollider* pCol) {};
+	virtual void	Set_Gravity(float gravity);
+	virtual void	Set_Jump(bool b);
 
 protected:
-	void			Update_Rect();
+	//void			Update_Rect();
 	bool			Move_Frame();
 
 protected:
@@ -48,5 +58,6 @@ protected:
 	bool			m_bDead;
 
 	CObj*			m_pTarget;
+	CHitBox*		m_pHitBox = nullptr;
 	const TCHAR*	m_pFrameKey;
 };
