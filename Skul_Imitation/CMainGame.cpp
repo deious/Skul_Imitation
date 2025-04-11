@@ -14,6 +14,7 @@
 #include "CUIPortrait.h"
 #include "CUIHealthBar.h"
 #include "CUISkul.h"
+#include "CSoundMgr.h"
 
 CMainGame::CMainGame() :m_dwTime(GetTickCount64()), m_iFPS(0)
 {
@@ -32,7 +33,7 @@ void CMainGame::Initialize()
 	/*m_hMemDC = CreateCompatibleDC(m_hDC);
 	m_hBackBmp = CreateCompatibleBitmap(m_hDC, WINCX, WINCY);
 	m_hOldBmp = (HBITMAP)SelectObject(m_hMemDC, m_hBackBmp);*/
-
+	CSoundMgr::Get_Instance()->Initialize();
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Back.bmp", L"Back");
 	//CBmpMgr::Get_Instance()->Insert_Bmp(L"C:\\Users\\gkstj\\OneDrive\\¹ÙÅÁ È­¸é\\Project\\Skul_Imitation\\Skul_Imitation\\Image\\Back.bmp", L"Back");
 	CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_MENU);
@@ -102,6 +103,7 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
+	CSoundMgr::Destroy_Instance();
 	CTileMgr::Destroy_Instance();
 	CSceneMgr::Destroy_Instance();
 	CBmpMgr::Destroy_Instance();
