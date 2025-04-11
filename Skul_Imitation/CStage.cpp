@@ -15,6 +15,7 @@
 #include "CUISkul.h"
 #include "CKeyMgr.h"
 #include "CBoss.h"
+#include "CSoundMgr.h"
 
 CStage::CStage()
 {
@@ -46,7 +47,7 @@ void CStage::Initialize()
     CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUISkul>::Create_Obj());*/
 
     CTileMgr::Get_Instance()->Load_Tile();
-
+    CSoundMgr::Get_Instance()->PlayBGM(L"TutorialBgm.wav", 1.f);
     /*for (int i = 0; i < 3; ++i)
     {
         CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, CAbstractFactory<CMonster>::Create_Obj(float(rand() % WINCX), float(rand() % WINCY)));
