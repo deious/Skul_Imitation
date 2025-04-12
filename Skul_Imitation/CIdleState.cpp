@@ -6,6 +6,7 @@
 #include "CAttackState.h"
 #include "CDashState.h"
 #include "CJumpStartState.h"
+#include "CSkillState.h"
 
 void CIdleState::Enter(CPlayer* pPlayer)
 {
@@ -24,6 +25,18 @@ void CIdleState::Update(CPlayer* pPlayer)
     if (CKeyMgr::Get_Instance()->Key_Down('X'))
     {
         pPlayer->ChangeState(new CAttackState());
+        return;
+    }
+
+    if (CKeyMgr::Get_Instance()->Key_Down('A'))
+    {
+        pPlayer->ChangeState(new CSkillState(ESkillType::SkillA));
+        return;
+    }
+
+    if (CKeyMgr::Get_Instance()->Key_Down('S'))
+    {
+        pPlayer->ChangeState(new CSkillState(ESkillType::SkillS));
         return;
     }
 

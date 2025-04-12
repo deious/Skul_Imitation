@@ -158,7 +158,11 @@
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CQuadTree.h" />
     <ClInclude Include="CRisingState.h" />
+    <ClInclude Include="CSkillState.h" />
+    <ClInclude Include="CSkulHead.h" />
+    <ClInclude Include="CSkulHeadNormal.h" />
     <ClInclude Include="CState.h" />
+    <ClInclude Include="CThrownHead.h" />
     <ClInclude Include="CTitle.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CMenu.h" />
@@ -218,6 +222,10 @@
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CQuadTree.cpp" />
     <ClCompile Include="CRisingState.cpp" />
+    <ClCompile Include="CSkillState.cpp" />
+    <ClCompile Include="CSkulHead.cpp" />
+    <ClCompile Include="CSkulHeadNormal.cpp" />
+    <ClCompile Include="CThrownHead.cpp" />
     <ClCompile Include="CTitle.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CMenu.cpp" />
