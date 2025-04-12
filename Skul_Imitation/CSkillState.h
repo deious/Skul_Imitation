@@ -1,13 +1,9 @@
 #pragma once
+#include "pch.h"
+#include "Define.h"
 #include "CState.h"
 
 class CPlayer;
-
-enum class ESkillType
-{
-    SkillA,
-    SkillS
-};
 
 class CSkillState : public CState
 {

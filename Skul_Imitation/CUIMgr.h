@@ -16,6 +16,19 @@ public:
     void Render(HDC hDC);
     void Release();
 
+    template <typename T>
+    T* Get_UI()
+    {
+        for (auto& pUI : m_vecUI)
+        {
+            T* casted = dynamic_cast<T*>(pUI);
+            if (casted)
+                return casted;
+        }
+
+        return nullptr;
+    }
+
 private:
     CUIMgr() = default;
     ~CUIMgr();
@@ -24,3 +37,4 @@ private:
     static CUIMgr* m_pInstance;
     vector<CObj*> m_vecUI;
 };
+
