@@ -38,13 +38,13 @@ void CWalkState::Update(CPlayer* pPlayer)
     {
         pPlayer->Set_PosX(-pPlayer->Get_Speed());
         //pPlayer->Set_FrameKey(L"Player_LEFT");
-        pPlayer->Set_Direction(EDirection::LEFT);
+        pPlayer->Set_Direction(DIRECTION::DIR_LEFT);
     }
     else if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
     {
         pPlayer->Set_PosX(pPlayer->Get_Speed());
         //pPlayer->Set_FrameKey(L"Player_RIGHT");
-        pPlayer->Set_Direction(EDirection::RIGHT);
+        pPlayer->Set_Direction(DIRECTION::DIR_RIGHT);
     }
     else
     {

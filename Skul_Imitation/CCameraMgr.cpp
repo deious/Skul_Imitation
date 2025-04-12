@@ -83,3 +83,14 @@ RECT CCameraMgr::WorldToScreenRect(const RECT& worldRect)
 
     return screenRect;
 }
+
+RECT CCameraMgr::SetAndGet_ExtendedCameraRect(int marginX, int marginY) const
+{
+    return
+    {
+        m_Pos.x - marginX,
+        m_Pos.y - marginY,
+        m_Pos.x + m_Resolution.cx + marginX,
+        m_Pos.y + m_Resolution.cy + marginY
+    };
+}
