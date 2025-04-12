@@ -1,6 +1,6 @@
 #pragma once
 #include "CObj.h"
-#include "CSkulHead.h";
+#include "CSkulHead.h"
 
 //enum class MSTATE { IDLE, WALK, DASH, JUMPSTART, RISING, FALL, ATTACK, HIT, DEATH, INTERACTION, MS_END };
 class CState;
@@ -26,6 +26,9 @@ public:
 public:
 	void		ChangeState(CState* pNewState);
 	void		Update_PlayerRect();
+	void		Create_AttackCollider(int iCombo);
+	void		OnHit(CAttackCollider* pCol) override;
+	void		Swap_Awaken(CSkulHead* pAwaken);
 	bool		Move_Frame();
 	bool		Dash_Check() const;
 
@@ -34,8 +37,14 @@ public:
 	void		Set_Direction(DIRECTION eDir);
 	void		Set_LastDashTime();
 	void		Set_UseGravity();
+	void		Set_Skul(CSkulHead* pNewSkul);     // 새 스컬 설정
+	void		Swap_Skul();
+	void		Set_Gravity(float f);
+	void		Set_Jump(bool b);
+	void		Set_Awaken();
 
 	int			Get_CurFrame() const;
+	int			Get_EndFrame() const;
 	float		Get_Speed() const;
 	float		Get_JumpPower() const;
 	float		Get_Gravity() const;
@@ -47,13 +56,6 @@ public:
 	DWORD		Get_DashDuration() const;
 	CSkulHead*	Get_Skul() const;
 
-	void Set_Gravity(float f);
-
-	void Set_Jump(bool b);
-
-	void Create_AttackCollider(int iCombo);
-	void OnHit(CAttackCollider* pCol) override;
-
 private:
 	void		Apply_Gravity();
 
@@ -62,6 +64,7 @@ private:
 	CState*		m_pCurState;
 	DIRECTION	m_eDir = DIRECTION::DIR_RIGHT;
 	CSkulHead*	m_pSkul;
+	CSkulHead*	m_pStoredSkul = nullptr;   // 보조 슬롯에 보관 중
 
 	int			m_iHp;
 

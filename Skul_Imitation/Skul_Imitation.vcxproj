@@ -161,6 +161,8 @@
     <ClInclude Include="CSkillState.h" />
     <ClInclude Include="CSkulHead.h" />
     <ClInclude Include="CSkulHeadNormal.h" />
+    <ClInclude Include="CSkulSamurai.h" />
+    <ClInclude Include="CSkulZinSamurai.h" />
     <ClInclude Include="CState.h" />
     <ClInclude Include="CThrownHead.h" />
     <ClInclude Include="CTitle.h" />
@@ -225,6 +227,8 @@
     <ClCompile Include="CSkillState.cpp" />
     <ClCompile Include="CSkulHead.cpp" />
     <ClCompile Include="CSkulHeadNormal.cpp" />
+    <ClCompile Include="CSkulSamurai.cpp" />
+    <ClCompile Include="CSkulZinSamurai.cpp" />
     <ClCompile Include="CThrownHead.cpp" />
     <ClCompile Include="CTitle.cpp" />
     <ClCompile Include="CMainGame.cpp" />

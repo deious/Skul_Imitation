@@ -15,11 +15,40 @@ void CAttackState::Enter(CPlayer* pPlayer)
 {
     m_dwLastAttackTime = GetTickCount64();
 
+    int iStart, iEnd, iMotion;
+    ULONGLONG dwFrameSpeed;
     switch (m_iCombo)
     {
-    case 0: pPlayer->Set_Frame(0, 4, 6, 100); break; // 1Ÿ
-    case 1: pPlayer->Set_Frame(0, 3, 7, 100); break; // 2Ÿ
-    case 2: pPlayer->Set_Frame(0, 3, 8, 100); break; // 3Ÿ
+    case 0:
+    {
+        FRAME* tempFrame = pPlayer->Get_Skul()->Get_AllFrame();
+        iStart = tempFrame[SKUL_ATTACK].iStart;
+        iEnd = tempFrame[SKUL_ATTACK].iEnd;
+        iMotion = tempFrame[SKUL_ATTACK].iMotion;
+        dwFrameSpeed = tempFrame[SKUL_ATTACK].dwFrameSpeed;
+        pPlayer->Set_Frame(iStart, iEnd, iMotion, dwFrameSpeed); break;
+        //pPlayer->Set_Frame(0, 4, 6, 100); break; // 1Ÿ
+    }
+    case 1:
+    {
+        FRAME* tempFrame = pPlayer->Get_Skul()->Get_AllFrame();
+        iStart = tempFrame[SKUL_ATTACK2].iStart;
+        iEnd = tempFrame[SKUL_ATTACK2].iEnd;
+        iMotion = tempFrame[SKUL_ATTACK2].iMotion;
+        dwFrameSpeed = tempFrame[SKUL_ATTACK2].dwFrameSpeed;
+        pPlayer->Set_Frame(iStart, iEnd, iMotion, dwFrameSpeed); break;
+        //pPlayer->Set_Frame(0, 3, 7, 100); break; // 2Ÿ
+    }
+    case 2:
+    {
+        FRAME* tempFrame = pPlayer->Get_Skul()->Get_AllFrame();
+        iStart = tempFrame[SKUL_ATTACK3].iStart;
+        iEnd = tempFrame[SKUL_ATTACK3].iEnd;
+        iMotion = tempFrame[SKUL_ATTACK3].iMotion;
+        dwFrameSpeed = tempFrame[SKUL_ATTACK3].dwFrameSpeed;
+        pPlayer->Set_Frame(iStart, iEnd, iMotion, dwFrameSpeed); break;
+        //pPlayer->Set_Frame(0, 3, 8, 100); break; // 3Ÿ
+    }
     }
 }
 
