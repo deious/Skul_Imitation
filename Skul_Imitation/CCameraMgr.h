@@ -20,6 +20,8 @@ public:
     POINT               Get_CameraPos() const;
     RECT                WorldToScreenRect(const RECT& worldRect);
 
+    RECT                SetAndGet_ExtendedCameraRect(int marginX, int marginY) const;
+
 private:
     POINT               m_Pos;
     POINT               m_Target;

@@ -1,10 +1,11 @@
 #pragma once
 #include "CObj.h"
+#include "CSkulHead.h";
 
 //enum class MSTATE { IDLE, WALK, DASH, JUMPSTART, RISING, FALL, ATTACK, HIT, DEATH, INTERACTION, MS_END };
 class CState;
 
-enum class EDirection { LEFT, RIGHT };
+//enum class EDirection { LEFT, RIGHT };
 
 class CPlayer : public CObj
 {
@@ -30,7 +31,7 @@ public:
 
 	void		Set_Frame(int iStart, int iEnd, int iMotion, DWORD dwSpeed);
 	void		Set_FrameKey(const TCHAR* pKey);
-	void		Set_Direction(EDirection eDir);
+	void		Set_Direction(DIRECTION eDir);
 	void		Set_LastDashTime();
 	void		Set_UseGravity();
 
@@ -42,8 +43,9 @@ public:
 	float		Get_GravityMax() const;
 	bool		Get_IsJump() const;
 	bool		Get_UseGravity() const;
-	EDirection	Get_Direction() const;
+	DIRECTION	Get_Direction() const;
 	DWORD		Get_DashDuration() const;
+	CSkulHead*	Get_Skul() const;
 
 	void Set_Gravity(float f);
 
@@ -58,7 +60,8 @@ private:
 private:
 	POINT		m_tPosin;
 	CState*		m_pCurState;
-	EDirection	m_eDir = EDirection::RIGHT;
+	DIRECTION	m_eDir = DIRECTION::DIR_RIGHT;
+	CSkulHead*	m_pSkul;
 
 	int			m_iHp;
 

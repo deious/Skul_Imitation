@@ -38,6 +38,7 @@ public:
 
 public:
 	virtual void	OnHit(CAttackCollider* pCol) {};
+	virtual void	OnTileCollision(float landY) {};
 	virtual void	Set_Gravity(float gravity);
 	virtual void	Set_Jump(bool b);
 

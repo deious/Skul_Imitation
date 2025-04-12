@@ -21,12 +21,12 @@ void CRisingState::Update(CPlayer* pPlayer)
     if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
     {
         pPlayer->Set_PosX(-pPlayer->Get_Speed());
-        pPlayer->Set_Direction(EDirection::LEFT);
+        pPlayer->Set_Direction(DIRECTION::DIR_LEFT);
     }
     else if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
     {
         pPlayer->Set_PosX(pPlayer->Get_Speed());
-        pPlayer->Set_Direction(EDirection::RIGHT);
+        pPlayer->Set_Direction(DIRECTION::DIR_RIGHT);
     }
 
     float gravity = pPlayer->Get_Gravity() + pPlayer->Get_GravityAccel();

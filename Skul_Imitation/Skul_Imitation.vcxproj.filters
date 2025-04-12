@@ -115,6 +115,9 @@
     <Filter Include="Manager\SoundManager">
       <UniqueIdentifier>{5b33e887-68ec-4fd4-8066-389785cf96de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\Skul">
+      <UniqueIdentifier>{aad9d677-096b-40eb-8910-6cbc86b782a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -294,6 +297,18 @@
     <ClInclude Include="fmod_output.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CSkulHead.h">
+      <Filter>01. Obj\Skul</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkulHeadNormal.h">
+      <Filter>01. Obj\Skul</Filter>
+    </ClInclude>
+    <ClInclude Include="CThrownHead.h">
+      <Filter>01. Obj\Skul</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkillState.h">
+      <Filter>01. Obj\00. Player\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -430,6 +445,18 @@
     </ClCompile>
     <ClCompile Include="CSoundMgr.cpp">
       <Filter>Manager\SoundManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkulHead.cpp">
+      <Filter>01. Obj\Skul</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkulHeadNormal.cpp">
+      <Filter>01. Obj\Skul</Filter>
+    </ClCompile>
+    <ClCompile Include="CThrownHead.cpp">
+      <Filter>01. Obj\Skul</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkillState.cpp">
+      <Filter>01. Obj\00. Player\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
