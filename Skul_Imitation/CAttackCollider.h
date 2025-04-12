@@ -4,7 +4,8 @@
 enum class ETeam
 {
     Player,
-    Enemy
+    Enemy,
+    Head
 };
 
 class CAttackCollider : public CObj

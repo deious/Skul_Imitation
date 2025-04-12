@@ -380,6 +380,7 @@ void CCollisionMgr::Collision_Attack()
 {
 	list<CObj*>& colliderList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_COLLIDER);
 	list<CObj*>& playerList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_PLAYER);
+	list<CObj*>& headList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_HEAD);
 	list<CObj*>& monsterList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_MONSTER);
 	list<CObj*>& bossList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_BOSS);
 
@@ -405,6 +406,32 @@ void CCollisionMgr::Collision_Attack()
 		else if (team == ETeam::Enemy)
 		{
 			CheckCollisionWithTargets(pCollider, playerList);
+			CheckCollisionWithTargets(pCollider, headList);
+		}
+		else if (team == ETeam::Head)
+		{
+			CheckCollisionWithTargets(pCollider, monsterList);
+			CheckCollisionWithTargets(pCollider, bossList);
+			CheckHeadCollisionWithPlayer(pCollider, playerList);
+		}
+	}
+}
+
+void CCollisionMgr::CheckHeadCollisionWithPlayer(CObj* pCollider, list<CObj*>& playerList)
+{
+	RECT rcCollider = *pCollider->Get_Rect();
+
+	for (auto& pTarget : playerList)
+	{
+		if (pTarget->Get_Dead())
+			continue;
+
+		if (RectCollision(rcCollider, *pTarget->Get_Rect()))
+		{
+			OutputDebugString(L"[머리 - 플레이어 충돌] 쿨 초기화 + 회수\n");
+			//dynamic_cast<CPlayer*>(pTarget)->Reset_SkulSkill();
+			pCollider->Set_Dead(); // 머리 제거
+			break;
 		}
 	}
 }
@@ -442,7 +469,8 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 	if (!pPlayer || !pQuadTree)
 		return;
 
-	RECT camRect = CCameraMgr::Get_Instance()->Get_CameraRect();
+	//RECT camRect = CCameraMgr::Get_Instance()->Get_CameraRect();
+	RECT camRect = CCameraMgr::Get_Instance()->SetAndGet_ExtendedCameraRect(600, 600);
 	std::vector<Tile> tiles;
 	pQuadTree->Query(camRect, tiles);
 
@@ -477,6 +505,7 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 				pPlayer->Set_Pos(curX, tileRect.top - halfH);
 				pPlayer->Set_Gravity(0.f);
 				pPlayer->Set_Jump(false);
+				pPlayer->OnTileCollision(tileRect.top - halfH);
 				//dynamic_cast<CPlayer*>(pPlayer)->Set_Gravity(0.f);
 				//dynamic_cast<CPlayer*>(pPlayer)->Set_Jump(false);
 			}
@@ -519,11 +548,13 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 			{
 				// 왼쪽 벽
 				pPlayer->Set_Pos(tileRect.left - halfW, curY);
+				//pPlayer->OnTileCollision(tileRect.top - halfH);
 			}
 			else if (playerRect.left < tileRect.right && playerRect.right > tileRect.right)
 			{
 				// 오른쪽 벽
 				pPlayer->Set_Pos(tileRect.right + halfW, curY);
+				//pPlayer->OnTileCollision(tileRect.top - halfH);
 			}
 
 			//dynamic_cast<CPlayer*>(pPlayer)->Update_PlayerRect();

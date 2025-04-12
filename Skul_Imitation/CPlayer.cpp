@@ -11,9 +11,10 @@
 #include "CTileMgr.h"
 #include "CIdleState.h"
 #include "CAttackCollider.h"
+#include "CSkulHeadNormal.h"
 
 
-CPlayer::CPlayer() : m_pCurState(nullptr), m_bJump(false), m_fGravity(0.f), m_fTime(0.f)
+CPlayer::CPlayer() : m_pCurState(nullptr), m_bJump(false), m_fGravity(0.f), m_fTime(0.f), m_pSkul(nullptr)
 {
 	ZeroMemory(&m_tPosin, sizeof(POINT));
 }
@@ -25,16 +26,16 @@ CPlayer::~CPlayer()
 
 void CPlayer::Initialize()
 {
-	m_tInfo = { 100.f, WINCY >> 1, 64.f, 64.f };
+	m_tInfo = { 100.f, WINCY >> 1, 100.f, 100.f };
 	m_fSpeed = 3.f;
 	m_fDistance = 100.f;
 	m_fVelocity = 20.f;
 	m_iHp = 100;
 	m_bDead = false;
+	m_pSkul = new CSkulHeadNormal();
+	//m_pSkul->Initialize();
 
 	m_pHitBox = new CHitBox(m_tInfo.fX, m_tInfo.fY, 30.f, 55.f);
-
-	//CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/maja2.bmp", L"Player");
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");
@@ -72,7 +73,7 @@ void CPlayer::Late_Update()
 
 void CPlayer::Render(HDC hDC)
 {
-	if (m_eDir == EDirection::LEFT)
+	if (m_eDir == DIRECTION::DIR_LEFT)
 		m_pFrameKey = L"Player_LEFT";
 	else
 		m_pFrameKey = L"Player_RIGHT";
@@ -183,12 +184,14 @@ bool CPlayer::Get_UseGravity() const
 {
 	return m_bUseGravity;
 }
-EDirection CPlayer::Get_Direction() const { return m_eDir; }
+DIRECTION CPlayer::Get_Direction() const { return m_eDir; }
 
 DWORD CPlayer::Get_DashDuration() const
 {
 	return m_dwDashDuration;
 }
+
+CSkulHead* CPlayer::Get_Skul() const { return m_pSkul; }
 
 void CPlayer::Set_Gravity(float f)
 {
@@ -202,7 +205,7 @@ void CPlayer::Set_Jump(bool b)
 
 void CPlayer::Create_AttackCollider(int iCombo)
 {
-	float offsetX = (m_eDir == EDirection::RIGHT) ? 30.f : -30.f;
+	float offsetX = (m_eDir == DIRECTION::DIR_RIGHT) ? 30.f : -30.f;
 	//float offsetY = -m_tInfo.fCY;
 	float width = 60.f;
 	float height = 40.f;
@@ -481,7 +484,7 @@ void CPlayer::Set_FrameKey(const TCHAR* pKey)
 	m_pFrameKey = pKey;
 }
 
-void CPlayer::Set_Direction(EDirection eDir)
+void CPlayer::Set_Direction(DIRECTION eDir)
 {
 	m_eDir = eDir;
 }

@@ -23,7 +23,7 @@ void CDashState::Update(CPlayer* pPlayer)
         return;
     }
 
-    if (pPlayer->Get_Direction() == EDirection::LEFT)
+    if (pPlayer->Get_Direction() == DIRECTION::DIR_LEFT)
     {
         pPlayer->Set_PosX(-pPlayer->Get_Speed() * 3.f);
     }
