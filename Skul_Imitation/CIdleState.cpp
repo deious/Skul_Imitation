@@ -40,6 +40,18 @@ void CIdleState::Update(CPlayer* pPlayer)
         return;
     }
 
+    if (CKeyMgr::Get_Instance()->Key_Down('D'))
+    {
+        pPlayer->ChangeState(new CSkillState(ESkillType::SkillD));
+        return;
+    }
+
+    if (CKeyMgr::Get_Instance()->Key_Down('F'))
+    {
+        pPlayer->Set_Awaken();
+        return;
+    }
+
     if (CKeyMgr::Get_Instance()->Key_Down('Z') && pPlayer->Dash_Check())
     {
         pPlayer->Set_LastDashTime();

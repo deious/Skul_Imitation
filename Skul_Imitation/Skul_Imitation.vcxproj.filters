@@ -309,6 +309,12 @@
     <ClInclude Include="CSkillState.h">
       <Filter>01. Obj\00. Player\State</Filter>
     </ClInclude>
+    <ClInclude Include="CSkulSamurai.h">
+      <Filter>01. Obj\Skul</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkulZinSamurai.h">
+      <Filter>01. Obj\Skul</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -457,6 +463,12 @@
     </ClCompile>
     <ClCompile Include="CSkillState.cpp">
       <Filter>01. Obj\00. Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkulSamurai.cpp">
+      <Filter>01. Obj\Skul</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkulZinSamurai.cpp">
+      <Filter>01. Obj\Skul</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CUISkul.h"
 #include "CBmpMgr.h"
+#include "CPlayer.h"
 
 void CUISkul::Initialize()
 {
@@ -31,4 +32,9 @@ void CUISkul::Render(HDC hDC)
 
 void CUISkul::Release()
 {
+}
+
+void CUISkul::Set_IconKey(CPlayer* pPlayer)
+{
+    m_pFrameKey = pPlayer->Get_Skul()->Get_IconKey();
 }

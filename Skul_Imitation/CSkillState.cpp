@@ -12,15 +12,20 @@ void CSkillState::Enter(CPlayer* pPlayer)
 
     if (m_eType == ESkillType::SkillA)
         pPlayer->Get_Skul()->UseSkillA(pPlayer);
-    else
+    else if (m_eType == ESkillType::SkillS)
         pPlayer->Get_Skul()->UseSkillS(pPlayer);
-
+    else if (m_eType == ESkillType::SkillD)
+        pPlayer->Get_Skul()->UseSkillD(pPlayer);
     m_dwStartTime = GetTickCount64();
 }
 
 void CSkillState::Update(CPlayer* pPlayer)
 {
-    if (GetTickCount64() - m_dwStartTime > 300) // 애니 끝나면 복귀
+    pPlayer->Move_Frame();
+    //if (GetTickCount64() - m_dwStartTime > 300) // 애니 끝나면 복귀
+    //    pPlayer->ChangeState(new CIdleState());
+
+    if (pPlayer->Get_CurFrame() >= pPlayer->Get_EndFrame())
         pPlayer->ChangeState(new CIdleState());
 }
 
