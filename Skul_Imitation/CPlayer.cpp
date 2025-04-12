@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "Define.h"
 #include "CPlayer.h"
 #include "CAbstractFactory.h"
 #include "CObjMgr.h"
@@ -12,6 +13,10 @@
 #include "CIdleState.h"
 #include "CAttackCollider.h"
 #include "CSkulHeadNormal.h"
+#include "CUISkul.h"
+#include "CUIMgr.h"
+#include "CSkulSamurai.h"
+#include "CSkulZinSamurai.h"
 
 
 CPlayer::CPlayer() : m_pCurState(nullptr), m_bJump(false), m_fGravity(0.f), m_fTime(0.f), m_pSkul(nullptr)
@@ -37,8 +42,8 @@ void CPlayer::Initialize()
 
 	m_pHitBox = new CHitBox(m_tInfo.fX, m_tInfo.fY, 30.f, 55.f);
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");
+	/*CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");*/
 
 	m_pFrameKey = L"Player_RIGHT";
 
@@ -48,6 +53,12 @@ void CPlayer::Initialize()
 
 	m_tFrame.dwTime = GetTickCount64();
 	m_tFrame.dwFrameSpeed = 200;
+
+	CSkulHead* pNewSkul = new CSkulSamurai();  // 새 스컬 생성
+	//CSkulHead* pNewSkul = new CSkulZinSamurai();
+	//pNewSkul->Initialize();
+
+	Set_Skul(pNewSkul);							// 테스트용 등록 나중에 변경 가능
 
 	m_eRender = RENDER_GAMEOBJECT;
 	ChangeState(new CIdleState());
@@ -73,10 +84,18 @@ void CPlayer::Late_Update()
 
 void CPlayer::Render(HDC hDC)
 {
-	if (m_eDir == DIRECTION::DIR_LEFT)
-		m_pFrameKey = L"Player_LEFT";
-	else
-		m_pFrameKey = L"Player_RIGHT";
+
+	m_pFrameKey = this->Get_Skul()->Get_FrameKey(this);
+	//if (m_eDir == DIRECTION::DIR_LEFT)
+	//{
+	//	//m_pFrameKey = L"Player_LEFT";
+	//	m_pFrameKey = this->Get_Skul()->Get_FrameKey(this);
+	//}
+	//else
+	//{
+	//	//m_pFrameKey = L"Player_RIGHT";
+	//	m_pFrameKey = this->Get_Skul()->Get_FrameKey(this);
+	//}
 
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 	POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
@@ -159,6 +178,11 @@ int CPlayer::Get_CurFrame() const
 	return m_tFrame.iStart;
 }
 
+int CPlayer::Get_EndFrame() const
+{
+	return m_tFrame.iEnd;
+}
+
 float CPlayer::Get_Speed() const { return m_fSpeed; }
 float CPlayer::Get_JumpPower() const
 {
@@ -201,6 +225,15 @@ void CPlayer::Set_Gravity(float f)
 void CPlayer::Set_Jump(bool b)
 {
 	m_bJump = b;
+}
+
+void CPlayer::Set_Awaken()
+{
+	if (m_pSkul->Get_SkulId() == L"Samurai")
+	{
+		CSkulHead* pNewSkul = new CSkulZinSamurai();
+		Swap_Awaken(pNewSkul);
+	}
 }
 
 void CPlayer::Create_AttackCollider(int iCombo)
@@ -497,6 +530,50 @@ void CPlayer::Set_LastDashTime()
 void CPlayer::Set_UseGravity()
 {
 	m_bUseGravity = !m_bUseGravity;
+}
+
+void CPlayer::Set_Skul(CSkulHead* pNewSkul)
+{
+	if (!m_pSkul)
+		m_pSkul = pNewSkul;
+	else
+		m_pStoredSkul = pNewSkul;
+}
+
+void CPlayer::Swap_Awaken(CSkulHead* pAwaken)
+{
+	if (!m_pSkul) return;  // 보조 슬롯 비어있으면 스왑 불가
+
+	swap(m_pSkul, pAwaken);
+
+	// UI 업데이트
+	CUISkul* pUI = CUIMgr::Get_Instance()->Get_UI<CUISkul>();
+	if (pUI)
+		pUI->Set_FrameKey(m_pSkul->Get_IconKey());
+
+	FRAME* tempFrame = m_pSkul->Get_AllFrame();
+	m_tFrame.iStart = tempFrame[SKUL_IDLE].iStart;
+	m_tFrame.iEnd = tempFrame[SKUL_IDLE].iEnd;
+
+	//delete tempFrame;
+}
+
+void CPlayer::Swap_Skul()
+{
+	if (!m_pStoredSkul) return;  // 보조 슬롯 비어있으면 스왑 불가
+
+	swap(m_pSkul, m_pStoredSkul);
+
+	// UI 업데이트
+	CUISkul* pUI = CUIMgr::Get_Instance()->Get_UI<CUISkul>();
+	if (pUI)
+		pUI->Set_FrameKey(m_pSkul->Get_IconKey());
+
+	FRAME* tempFrame = m_pSkul->Get_AllFrame();
+	m_tFrame.iStart = tempFrame[SKUL_IDLE].iStart;
+	m_tFrame.iEnd = tempFrame[SKUL_IDLE].iEnd;
+
+	//delete tempFrame;
 }
 
 bool CPlayer::Move_Frame()

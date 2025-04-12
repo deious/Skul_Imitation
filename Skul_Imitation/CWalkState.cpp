@@ -9,7 +9,8 @@
 
 void CWalkState::Enter(CPlayer* pPlayer)
 {
-    pPlayer->Set_Frame(0, 7, 1, 200);
+    FRAME* tempFrame = pPlayer->Get_Skul()->Get_AllFrame();
+    pPlayer->Set_Frame(tempFrame[SKUL_WALK].iStart, tempFrame[SKUL_WALK].iEnd, tempFrame[SKUL_WALK].iMotion, tempFrame[SKUL_WALK].dwFrameSpeed);
     //pPlayer->Set_FrameKey(L"Player_RIGHT");
 }
 
