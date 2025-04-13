@@ -9,6 +9,9 @@
 #include "CCollisionMgr.h"
 #include "CTileMgr.h"
 #include "CKeyMgr.h"
+#include "CBossDuoDashFromEdge.h"
+#include "CBossDuoDive.h"
+#include "CBossDashAttack.h"
 
 CBoss::CBoss()
 {
@@ -32,10 +35,13 @@ void CBoss::Initialize()
     if (m_iBossID == 0)
     {
         CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_2_1.bmp", L"Boss_1");
+        m_pFrameKey = L"Boss_1";
     }
     else
     {
+        MessageBox(g_hWnd, L"보스 2번 생성", _T("Fail"), MB_OK);
         CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_2_2.bmp", L"Boss_2");
+        m_pFrameKey = L"Boss_2";
     }
 
     //CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_2_Awaken.bmp", L"Boss_Awaken");
@@ -46,7 +52,7 @@ void CBoss::Initialize()
 
     m_tFrame.dwTime = GetTickCount64();
     m_tFrame.dwFrameSpeed = 200;
-    m_pFrameKey = L"Boss_1";
+    //m_pFrameKey = L"Boss_1";
     m_dwHitTime = GetTickCount64();
     ChangeState(new CBossIdleState());
     BuildBehaviorTree();
@@ -57,13 +63,13 @@ int CBoss::Update()
     if (m_bDead)
         return DEAD;
 
-    // AI 실행 (행동트리 기반)
     if (m_pAI)
         m_pAI->Run();
 
-    // 현재 상태 동작 실행
     if (m_pCurState)
         m_pCurState->Update(this);
+
+    m_tInfo.fX += m_fSpeed * DELTA_TIME;
 
     __super::Update_Rect();
     /*m_HitBox.Set_Pos(m_tInfo.fX, m_tInfo.fY);*/
@@ -73,7 +79,10 @@ int CBoss::Update()
 void CBoss::Late_Update()
 {
     Apply_Gravity();
-    m_pHitBox->Set_Pos(m_tInfo.fX, m_tInfo.fY);
+    //m_tInfo.fX += m_fSpeed * DELTA_TIME;
+    m_pHitBox->Set_Pos(m_tInfo.fX - 15.f, m_tInfo.fY);
+    m_pHitBox->Update_Rect();
+    //__super::Update_Rect();
     CCollisionMgr::PlayerToTile(this, CTileMgr::Get_Instance()->Get_Tree());
 }
 
@@ -87,6 +96,16 @@ void CBoss::Render(HDC hDC)
 
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
     POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
+
+    wchar_t hpText[32];
+    swprintf_s(hpText, L"HP: %d", m_iHp); // 보스 체력
+
+    TextOut(hDC,
+        screenPos.x,
+        screenPos.y - 50,
+        hpText,
+        (int)wcslen(hpText)
+    );
 
     int drawX = screenPos.x - (int)(m_tInfo.fCX * 0.5f);
     int drawY = screenPos.y - (int)(m_tInfo.fCY * 0.5f);
@@ -150,16 +169,45 @@ void CBoss::ChangeState(IState<CBoss>* pNewState)
 
 void CBoss::BuildBehaviorTree()
 {
-    static float fTimer = 0.f;
+    //static float fTimer = 0.f;
+
+    //m_pAI = new ActionNode([this]() {
+    //    static float elapsed = 0.f;
+    //    elapsed += DELTA_TIME;
+
+    //    if (elapsed >= 5.0f)
+    //    {
+    //        elapsed = 0.f;
+    //        //this->ChangeState(new CBossDuoDashFromEdge());
+    //        //this->ChangeState(new CBossDuoDive());
+    //        this->ChangeState(new CBossDashAttack());
+    //    }
+
+    //    return true;
+    //    });
 
     m_pAI = new ActionNode([this]() {
         static float elapsed = 0.f;
         elapsed += DELTA_TIME;
 
-        if (elapsed >= 2.0f)
+        if (elapsed >= 5.0f)
         {
             elapsed = 0.f;
-            this->ChangeState(new CBossAttackState());
+
+            int randPattern = rand() % 3;
+
+            switch (randPattern)
+            {
+            case 0:
+                this->ChangeState(new CBossDuoDashFromEdge());
+                break;
+            case 1:
+                this->ChangeState(new CBossDuoDive());
+                break;
+            case 2:
+                this->ChangeState(new CBossDashAttack());
+                break;
+            }
         }
 
         return true;
@@ -195,13 +243,34 @@ bool CBoss::ShouldSyncAttack() const
     return false;
 }
 
+int CBoss::Get_ID()
+{
+    return m_iBossID;
+}
+
+float CBoss::Get_Speed()
+{
+    return m_fSpeed;
+}
+
+CBoss* CBoss::Get_PairBoss() const
+{
+    return m_pPairBoss;
+}
+
 void CBoss::Set_ID(int id)
 {
     m_iBossID = id;
 }
 
+void CBoss::Set_Speed(float fSpeed)
+{
+    m_fSpeed = fSpeed;
+}
+
 void CBoss::Set_PairBoss(CBoss* pOther)
 {
+    m_pPairBoss = pOther;
 }
 
 void CBoss::Set_Frame(int iStart, int iEnd, int iMotion, DWORD dwSpeed)

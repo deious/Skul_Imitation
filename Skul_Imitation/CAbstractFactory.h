@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CObj.h"
+#include "CBoss.h"
 
 template<typename T>
 class CAbstractFactory
@@ -13,6 +14,15 @@ public:
 	static CObj* Create_Obj()
 	{
 		CObj* pObj = new T;
+		pObj->Initialize();
+
+		return pObj;
+	}
+
+	static CObj* Create_Obj(int _id)
+	{
+		CObj* pObj = new T;
+		dynamic_cast<CBoss*>(pObj)->Set_ID(_id);
 		pObj->Initialize();
 
 		return pObj;

@@ -6,6 +6,8 @@
 #include "CWalkState.h"
 #include "CDashState.h"
 #include "CJumpStartState.h"
+#include "CObjMgr.h"
+#include "CBoss.h"
 
 CAttackState::CAttackState(int iCombo) : m_iCombo(iCombo)
 {
@@ -13,6 +15,20 @@ CAttackState::CAttackState(int iCombo) : m_iCombo(iCombo)
 
 void CAttackState::Enter(CPlayer* pPlayer)
 {
+    list<CObj*>& bossList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_BOSS);
+    for (CObj* pObj : bossList)
+    {
+        if (!pObj || pObj->Get_Dead()) continue;
+
+        CBoss* pBoss = dynamic_cast<CBoss*>(pObj);
+        if (!pBoss) continue;
+
+        CHitBox* pHitBox = pBoss->Get_HitBox();
+        if (!pHitBox) continue;
+
+        pHitBox->Reset_HitCount();
+        pHitBox->Set_MaxHits(1);
+    }
     m_dwLastAttackTime = GetTickCount64();
 
     int iStart, iEnd, iMotion;

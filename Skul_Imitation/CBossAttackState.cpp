@@ -16,9 +16,8 @@ void CBossAttackState::Update(CBoss* pBoss)
 {
     m_fElapsed += DELTA_TIME;
 
-    if (!m_bAttacked && m_fElapsed >= 0.2f) // 살짝 딜레이 후 콜라이더 생성
+    if (!m_bAttacked && m_fElapsed >= 0.2f)
     {
-        // 콜라이더 생성
         float x = pBoss->Get_Info()->fX + 50.f;
         float y = pBoss->Get_Info()->fY;
         CAttackCollider* pCol = new CAttackCollider(
@@ -33,7 +32,7 @@ void CBossAttackState::Update(CBoss* pBoss)
         m_bAttacked = true;
     }
 
-    if (m_fElapsed >= 1.0f) // 공격 후 1초 지나면 상태 복귀
+    if (m_fElapsed >= 1.0f)
     {
         pBoss->ChangeState(new CBossIdleState());
     }

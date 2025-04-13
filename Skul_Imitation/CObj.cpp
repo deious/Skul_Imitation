@@ -38,6 +38,11 @@ void CObj::Set_Jump(bool b)
 {
 }
 
+float CObj::Get_Speed()
+{
+	return m_fSpeed;
+}
+
 RENDERID CObj::Get_RenderID() { return m_eRender; }
 
 void CObj::Set_Gravity(float fGravity)
