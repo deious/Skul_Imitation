@@ -4,6 +4,7 @@
 #include "CPlayer.h"
 #include "CAttackCollider.h"
 #include "CObjMgr.h"
+#include "CBoss.h"
 
 void CCollisionMgr::Collision_Rect(list<CObj*> DstList, list<CObj*> SrcList)
 {
@@ -439,6 +440,10 @@ void CCollisionMgr::CheckHeadCollisionWithPlayer(CObj* pCollider, list<CObj*>& p
 
 void CCollisionMgr::CheckCollisionWithTargets(CObj* pCollider, list<CObj*>& targets)
 {
+	CAttackCollider* pAtkCol = dynamic_cast<CAttackCollider*>(pCollider);
+	if (!pAtkCol || !pAtkCol->IsActive())
+		return;
+
 	RECT rcCollider = *pCollider->Get_Rect();
 	//RECT& playerRect = pPlayer->Get_HitBox()->Get_Rect();
 
@@ -446,17 +451,23 @@ void CCollisionMgr::CheckCollisionWithTargets(CObj* pCollider, list<CObj*>& targ
 	{
 		if (pTarget->Get_Dead())
 			continue;
-		//RECT rcCollider = *pCollider->Get_Rect();
-		//if (CCollisionMgr::RectCollision(rcCollider, *pTarget->Get_Rect()))
-		//{
-		//	pTarget->OnHit(dynamic_cast<CAttackCollider*>(pCollider));
-		//	//pCollider->Set_Dead();
-		//	break;
-		//}
+
+		CHitBox* pHitBox = pTarget->Get_HitBox();
+		if (!pHitBox)
+			continue;
+
 		OutputDebugString(L"→ 충돌 검사 대상 접근\n");
 		if (CCollisionMgr::RectCollision(rcCollider, pTarget->Get_HitBox()->Get_Rect()))
 		{
+			if (pAtkCol->Get_Hit(pTarget))
+				continue;
+
+			if (!pHitBox->Can_Hit())
+				continue;
+
 			OutputDebugString(L"[히트 발생!] \n");
+			pAtkCol->Insert_Hit(pTarget);
+			pHitBox->Add_Hit();
 			pTarget->OnHit(dynamic_cast<CAttackCollider*>(pCollider));
 			//pCollider->Set_Dead();
 			break;
@@ -540,26 +551,54 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 		int overlapX = min(playerRect.right, tileRect.right) - max(playerRect.left, tileRect.left);
 		int overlapY = min(playerRect.bottom, tileRect.bottom) - max(playerRect.top, tileRect.top);
 
-		if (overlapX <= overlapY) // X축 충돌
-		{
-			float curY = pPlayer->Get_Info()->fY;
+		float moveDir = pPlayer->Get_Speed();
 
+		//overlapX <= overlapY
+		//if (overlapX <= overlapY) // X축 충돌
+		//{
+		//	float curY = pPlayer->Get_Info()->fY;
+
+		//	if (playerRect.right > tileRect.left && playerRect.left < tileRect.left)
+		//	{
+		//		pPlayer->Set_Pos(tileRect.left - halfW, curY);
+		//		//pPlayer->OnTileCollision(tileRect.top - halfH);
+		//	}
+		//	else if (playerRect.left < tileRect.right && playerRect.right > tileRect.right)
+		//	{
+		//		// 오른쪽 벽
+		//		pPlayer->Set_Pos(tileRect.right + halfW, curY);
+		//		//pPlayer->OnTileCollision(tileRect.top - halfH);
+		//	}
+
+
+		//	//dynamic_cast<CPlayer*>(pPlayer)->Update_PlayerRect();
+		//	pPlayer->Update_Rect();
+		//	//playerRect = *pPlayer->Get_Rect();
+		//	playerRect = pPlayer->Get_HitBox()->Get_Rect();
+		//}
+		const int margin = 10;
+
+		if (overlapX <= overlapY)
+		{
+			float rightGap = abs(playerRect.right - tileRect.left);
+			float leftGap = abs(playerRect.left - tileRect.right);
+
+			if (rightGap <= margin || leftGap <= margin)
+				continue;
+
+			// 왼쪽 벽 충돌
 			if (playerRect.right > tileRect.left && playerRect.left < tileRect.left)
 			{
-				// 왼쪽 벽
-				pPlayer->Set_Pos(tileRect.left - halfW, curY);
-				//pPlayer->OnTileCollision(tileRect.top - halfH);
+				pPlayer->Set_Pos(tileRect.left - halfW, pPlayer->Get_Info()->fY);
+				OutputDebugString(L"[오른쪽 이동 중 + 왼쪽 벽 충돌]\n");
 			}
+			// 오른쪽 벽 충돌
 			else if (playerRect.left < tileRect.right && playerRect.right > tileRect.right)
 			{
-				// 오른쪽 벽
-				pPlayer->Set_Pos(tileRect.right + halfW, curY);
-				//pPlayer->OnTileCollision(tileRect.top - halfH);
+				pPlayer->Set_Pos(tileRect.right + halfW, pPlayer->Get_Info()->fY);
 			}
 
-			//dynamic_cast<CPlayer*>(pPlayer)->Update_PlayerRect();
 			pPlayer->Update_Rect();
-			//playerRect = *pPlayer->Get_Rect();
 			playerRect = pPlayer->Get_HitBox()->Get_Rect();
 		}
 	}

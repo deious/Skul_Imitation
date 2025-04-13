@@ -84,7 +84,6 @@ void CPlayer::Late_Update()
 
 void CPlayer::Render(HDC hDC)
 {
-
 	m_pFrameKey = this->Get_Skul()->Get_FrameKey(this);
 	//if (m_eDir == DIRECTION::DIR_LEFT)
 	//{
@@ -99,6 +98,16 @@ void CPlayer::Render(HDC hDC)
 
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 	POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
+
+	wchar_t hpText[32];
+	swprintf_s(hpText, L"HP: %d", m_iHp); // 플레이어 체력
+
+	TextOut(hDC,
+		screenPos.x,
+		screenPos.y - 50,
+		hpText,
+		(int)wcslen(hpText)
+	);
 
 	int drawX = screenPos.x - (int)(m_tInfo.fCX * 0.5f);
 	int drawY = screenPos.y - (int)(m_tInfo.fCY * 0.5f);

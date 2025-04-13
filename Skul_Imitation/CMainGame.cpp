@@ -95,6 +95,11 @@ void CMainGame::Render()
 
 	CSceneMgr::Get_Instance()->Render(hBackDC);
 
+	if (!m_hDC)
+	{
+		OutputDebugString(L"[문제] MainGame의 m_hDC가 nullptr입니다!\n");
+	}
+
 	BitBlt(m_hDC,
 		0,
 		0,
