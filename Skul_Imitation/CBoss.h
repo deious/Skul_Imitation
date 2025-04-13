@@ -37,7 +37,12 @@ public:
     bool IsDead() const;
     bool ShouldSyncAttack() const;
 
+    int   Get_ID();
+    float Get_Speed();
+    CBoss* Get_PairBoss() const;
+
     void Set_ID(int id);
+    void Set_Speed(float fSpeed);
     void Set_PairBoss(CBoss* pOther);
     void Set_Frame(int iStart, int iEnd, int iMotion, DWORD dwSpeed);
     void Set_FrameKey(const TCHAR* pKey);
@@ -48,6 +53,7 @@ private:
 
     float		m_fGravity = 0.f;
     float       m_fAITimer = 0.f;
+    float       m_fSpeed = 0.f;
 
     CBoss* m_pPairBoss;
     BehaviorNode* m_pAI;

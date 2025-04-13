@@ -315,6 +315,27 @@
     <ClInclude Include="CSkulZinSamurai.h">
       <Filter>01. Obj\Skul</Filter>
     </ClInclude>
+    <ClInclude Include="CBossDuoDashFromEdge.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossShootLightning.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossDashAttack.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossDive.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossDuoDive.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossDuoShootingLightning.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossStage.h">
+      <Filter>02. Scene\Stage</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -469,6 +490,27 @@
     </ClCompile>
     <ClCompile Include="CSkulZinSamurai.cpp">
       <Filter>01. Obj\Skul</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossDuoDashFromEdge.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossShootLightning.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossDashAttack.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossDive.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossDuoDive.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossDuoShootingLightning.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossStage.cpp">
+      <Filter>02. Scene\Stage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,14 @@ C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CAtt
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CAttackState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CAttackState.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBoss.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBoss.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossAttackState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossAttackState.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossDashAttack.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossDashAttack.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossDuoDashFromEdge.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossDuoDashFromEdge.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossDive.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossDive.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossDuoDive.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossDuoDive.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossDuoShootingLightning.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossDuoShootingLightning.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossIdleState.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossIdleState.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossShootLightning.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossShootLightning.obj
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBossStage.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBossStage.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCameraMgr.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CCameraMgr.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CBmpMgr.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CBmpMgr.obj
 C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CButton.cpp;C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Skul_Imitation\Debug\CButton.obj

@@ -84,6 +84,6 @@ void CEdit::Key_Input()
 	/*if (CKeyMgr::Get_Instance()->Key_Down('S'))
 		CTileMgr::Get_Instance()->Save_Tile();*/
 
-	if (CKeyMgr::Get_Instance()->Key_Down('L'))
-		CTileMgr::Get_Instance()->Load_Tile();
+	/*if (CKeyMgr::Get_Instance()->Key_Down('L'))
+		CTileMgr::Get_Instance()->Load_Tile();*/
 }
