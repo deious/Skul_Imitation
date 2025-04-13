@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CObjMgr.h"
 #include "CCollisionMgr.h"
+#include "CSceneMgr.h"
 
 CObjMgr* CObjMgr::m_pInstance = nullptr;
 
@@ -128,11 +129,21 @@ void CObjMgr::Render(HDC hDC)
 
 void CObjMgr::Release()
 {
-
-	for (size_t i = 0; i < OBJ_END; ++i)
+	/*for (size_t i = 0; i < OBJ_END; ++i)
 	{
 		for_each(m_ObjList[i].begin(), m_ObjList[i].end(), Safe_Delete<CObj*>);
 		m_ObjList[i].clear();
+	}*/
+
+	for (size_t i = 0; i < OBJ_END; ++i)
+	{
+		m_ObjList[i].remove_if([](CObj* pObj) {
+			if (pObj == CSceneMgr::Get_Instance()->Get_Player())
+				return false;
+
+			Safe_Delete(pObj);
+			return true;
+			});
 	}
 }
 

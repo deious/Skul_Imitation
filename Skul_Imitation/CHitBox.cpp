@@ -27,6 +27,12 @@ void CHitBox::Set_Size(float cx, float cy)
     Update_Rect();
 }
 
+void CHitBox::Set_LastHitFrame(DWORD frame) { m_dwLastHitFrame = frame; }
+
+void CHitBox::Set_MaxHits(int iMaxHits) { m_iMaxHits = iMaxHits; }
+
+void CHitBox::Reset_HitCount() { m_iHitCount = 0; }
+
 void CHitBox::Update_Rect()
 {
     m_tRect.left = LONG(m_tInfo.fX - m_tInfo.fCX * 0.5f);
@@ -43,6 +49,11 @@ POINT CHitBox::Get_Center() const
 {
     return { (int)m_tInfo.fX, (int)m_tInfo.fY };
 }
+DWORD CHitBox::Get_LastHitFrame() const
+{
+    return m_dwLastHitFrame;
+}
+
 
 void CHitBox::Render(HDC hDC)
 {
@@ -54,3 +65,12 @@ void CHitBox::Render(HDC hDC)
     FrameRect(hDC, &drawRc, hBrush);
     DeleteObject(hBrush);
 }
+
+int CHitBox::Get_MaxHit() const
+{
+    return m_iMaxHits;
+}
+
+void CHitBox::Add_Hit() { ++m_iHitCount; }
+
+bool CHitBox::Can_Hit() const { return m_iHitCount < m_iMaxHits; }

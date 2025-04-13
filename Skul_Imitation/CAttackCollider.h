@@ -1,5 +1,7 @@
 #pragma once
+#include "pch.h"
 #include "CObj.h"
+#include "Define.h"
 
 enum class ETeam
 {
@@ -30,6 +32,8 @@ public:
     bool IsActive() const;
     ETeam Get_Team() const;
     int Get_Damage() const;
+    bool Get_Hit(CObj* pTarget) const;
+    void Insert_Hit(CObj* pTarget);
 
 private:
     CObj* m_pOwner;
@@ -42,4 +46,6 @@ private:
     ETeam m_eTeam;
     int m_iDamage;
     bool m_bActive;
+
+    unordered_set<CObj*> m_HitTargets;
 };

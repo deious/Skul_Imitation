@@ -16,6 +16,7 @@
 #include <unordered_map>
 #include <vector>
 #include <functional>
+#include <unordered_set>
 
 #include "fmod.h"
 #include "fmod.hpp"

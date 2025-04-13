@@ -194,9 +194,75 @@ void CTileMgr::Release()
 //	MessageBox(g_hWnd, L"저장하기 성공", _T("성공"), MB_OK);
 //}
 
-void CTileMgr::Load_Tile()
+//void CTileMgr::Load_Tile()
+//{
+//	HANDLE	hFile = CreateFile(L"./Data/map.dat", // 파일 이름을 포함한 경로
+//		GENERIC_READ,  // 파일 용도(GENERIC_WRITE : 쓰기(저장), GENERIC_READ : 읽기(불러오기))
+//		NULL,			// 공유 방식(NULL인 경우 공유하지 않음)
+//		NULL,			// 보안 설정(NULL인 경우 기본값으로 설정)
+//		OPEN_EXISTING,	// 생성 방식(CREATE_ALWAYS : 쓰기 전용, OPEN_EXISTING : 읽기 전용)
+//		FILE_ATTRIBUTE_NORMAL, // 파일 속성(숨김, 읽기 전용 파일 등) : 아무런 속성이 없는 일반 형식
+//		NULL);	// 생성될 파일의 속성을 제공할 템플릿 파일(안쓸것이기 때문에 NULL)
+//
+//	if (hFile == INVALID_HANDLE_VALUE)
+//	{
+//		MessageBox(g_hWnd, L"Load File", _T("Fail"), MB_OK);
+//		return;
+//	}
+//
+//	DWORD	dwByte(0);
+//	INFO	tInfo{};
+//	int x, y;
+//	//int		iDrawID(0);
+//	int		iOption(0);
+//
+//	Release();
+//	RECT mapRect = { 0, 0, TILEX * TILECX, TILEY * TILECY };
+//	m_pQuadTree = new CQuadTree(mapRect, 10, 5);
+//
+//	while (true)
+//	{
+//		ReadFile(hFile, &tInfo, sizeof(INFO), &dwByte, nullptr);
+//		//ReadFile(hFile, &iDrawID, sizeof(int), &dwByte, nullptr);
+//		ReadFile(hFile, &iOption, sizeof(int), &dwByte, nullptr);
+//
+//		if (0 == dwByte)
+//			break;
+//
+//		//if (!ReadFile(hFile, &tInfo, sizeof(INFO), &dwByte, nullptr) || dwByte == 0) break;  -> 임시 주석처리
+//		//if (!ReadFile(hFile, &iDrawID, sizeof(int), &dwByte, nullptr) || dwByte == 0) break;
+//		/*if (!ReadFile(hFile, &x, sizeof(int), &dwByte, nullptr) || dwByte == 0) break;
+//		if (!ReadFile(hFile, &y, sizeof(int), &dwByte, nullptr) || dwByte == 0) break;
+//		if (!ReadFile(hFile, &iOption, sizeof(int), &dwByte, nullptr) || dwByte == 0) break;*/
+//
+//		CObj* pTile = CAbstractFactory<CTile>::Create_Obj(tInfo.fX, tInfo.fY);
+//		//CObj* pTile = CAbstractFactory<CTile>::Create_Obj(x, y);
+//		//dynamic_cast<CTile*>(pTile)->Set_DrawID(iDrawID);
+//		dynamic_cast<CTile*>(pTile)->Set_Option(iOption);
+//		m_vecTile.push_back(pTile);
+//
+//		/*wchar_t msg[100];
+//		swprintf_s(msg, 100, L"Tile 위치: (%d, %d), 타입: %d", x, y, iOption);
+//
+//		MessageBox(g_hWnd, msg, L"타일 디버그", MB_OK);*/
+//
+//		if (iOption == 1)
+//		{
+//			Tile tile = { (int)tInfo.fX, (int)tInfo.fY, iOption };
+//			//Tile tile = { x, y, iOption };
+//			m_pQuadTree->Insert(tile);
+//			//MessageBox(g_hWnd, L"충돌 타일 존재", _T("Fail"), MB_OK);
+//		}
+//	}
+//
+//	CloseHandle(hFile);
+//
+//	//MessageBox(g_hWnd, L"불러오기 성공", _T("성공"), MB_OK);
+//}
+
+void CTileMgr::Load_Tile(const wstring& strFileName)
 {
-	HANDLE	hFile = CreateFile(L"./Data/map.dat", // 파일 이름을 포함한 경로
+	HANDLE	hFile = CreateFile(strFileName.c_str(), // 파일 이름을 포함한 경로
 		GENERIC_READ,  // 파일 용도(GENERIC_WRITE : 쓰기(저장), GENERIC_READ : 읽기(불러오기))
 		NULL,			// 공유 방식(NULL인 경우 공유하지 않음)
 		NULL,			// 보안 설정(NULL인 경우 기본값으로 설정)
@@ -223,41 +289,23 @@ void CTileMgr::Load_Tile()
 	while (true)
 	{
 		ReadFile(hFile, &tInfo, sizeof(INFO), &dwByte, nullptr);
-		//ReadFile(hFile, &iDrawID, sizeof(int), &dwByte, nullptr);
 		ReadFile(hFile, &iOption, sizeof(int), &dwByte, nullptr);
 
 		if (0 == dwByte)
 			break;
 
-		//if (!ReadFile(hFile, &tInfo, sizeof(INFO), &dwByte, nullptr) || dwByte == 0) break;  -> 임시 주석처리
-		//if (!ReadFile(hFile, &iDrawID, sizeof(int), &dwByte, nullptr) || dwByte == 0) break;
-		/*if (!ReadFile(hFile, &x, sizeof(int), &dwByte, nullptr) || dwByte == 0) break;
-		if (!ReadFile(hFile, &y, sizeof(int), &dwByte, nullptr) || dwByte == 0) break;
-		if (!ReadFile(hFile, &iOption, sizeof(int), &dwByte, nullptr) || dwByte == 0) break;*/
-
 		CObj* pTile = CAbstractFactory<CTile>::Create_Obj(tInfo.fX, tInfo.fY);
-		//CObj* pTile = CAbstractFactory<CTile>::Create_Obj(x, y);
-		//dynamic_cast<CTile*>(pTile)->Set_DrawID(iDrawID);
 		dynamic_cast<CTile*>(pTile)->Set_Option(iOption);
 		m_vecTile.push_back(pTile);
-
-		/*wchar_t msg[100];
-		swprintf_s(msg, 100, L"Tile 위치: (%d, %d), 타입: %d", x, y, iOption);
-
-		MessageBox(g_hWnd, msg, L"타일 디버그", MB_OK);*/
 
 		if (iOption == 1)
 		{
 			Tile tile = { (int)tInfo.fX, (int)tInfo.fY, iOption };
-			//Tile tile = { x, y, iOption };
 			m_pQuadTree->Insert(tile);
-			//MessageBox(g_hWnd, L"충돌 타일 존재", _T("Fail"), MB_OK);
 		}
 	}
 
 	CloseHandle(hFile);
-
-	//MessageBox(g_hWnd, L"불러오기 성공", _T("성공"), MB_OK);
 }
 
 CTileMgr* CTileMgr::Get_Instance()

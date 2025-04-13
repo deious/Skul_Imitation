@@ -19,8 +19,8 @@ public:
 public:
 	//void				Picking_Tile(POINT _pt, int _iDrawID, int _iOption);
 	//void				Save_Tile();
-	void				Load_Tile();
-
+	//void				Load_Tile();
+	void				Load_Tile(const wstring& strFileName);
 public:
 	static CTileMgr*	Get_Instance();
 	CQuadTree*			Get_Tree();

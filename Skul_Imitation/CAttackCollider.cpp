@@ -86,3 +86,7 @@ void CAttackCollider::Release() {}
 bool CAttackCollider::IsActive() const { return m_bActive; }
 ETeam CAttackCollider::Get_Team() const { return m_eTeam; }
 int CAttackCollider::Get_Damage() const { return m_iDamage; }
+
+bool CAttackCollider::Get_Hit(CObj* pTarget) const { return m_HitTargets.count(pTarget) > 0; }
+
+void CAttackCollider::Insert_Hit(CObj* pTarget) { m_HitTargets.insert(pTarget); }

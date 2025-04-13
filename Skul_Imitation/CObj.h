@@ -41,6 +41,7 @@ public:
 	virtual void	OnTileCollision(float landY) {};
 	virtual void	Set_Gravity(float gravity);
 	virtual void	Set_Jump(bool b);
+	virtual float	Get_Speed();
 
 protected:
 	//void			Update_Rect();
