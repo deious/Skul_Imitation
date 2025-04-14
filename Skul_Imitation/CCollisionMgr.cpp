@@ -469,6 +469,8 @@ void CCollisionMgr::CheckCollisionWithTargets(CObj* pCollider, list<CObj*>& targ
 			pAtkCol->Insert_Hit(pTarget);
 			pHitBox->Add_Hit();
 			pTarget->OnHit(dynamic_cast<CAttackCollider*>(pCollider));
+			pHitBox->Reset_HitCount();
+			pHitBox->Set_MaxHits(1);
 			//pCollider->Set_Dead();
 			break;
 		}
@@ -576,7 +578,7 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 		//	//playerRect = *pPlayer->Get_Rect();
 		//	playerRect = pPlayer->Get_HitBox()->Get_Rect();
 		//}
-		const int margin = 10;
+		const int margin = 10;//10ÀÌ¿´À½
 
 		if (overlapX <= overlapY)
 		{
