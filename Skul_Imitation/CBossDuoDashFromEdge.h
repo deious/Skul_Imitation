@@ -8,6 +8,7 @@ public:
     void Enter(CBoss* pBoss) override;
     void Update(CBoss* pBoss) override;
     void Exit(CBoss* pBoss) override;
+    EBossStateType GetType() override;
 
 private:
     float m_fWaitTime = 0.f;

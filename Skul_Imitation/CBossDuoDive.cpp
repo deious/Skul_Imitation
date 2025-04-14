@@ -4,6 +4,7 @@
 #include "CObjMgr.h"
 #include "CBossIdleState.h"
 #include "CPlayer.h"
+#include "CBossController.h"
 
 void CBossDuoDive::Enter(CBoss* pBoss)
 {
@@ -29,6 +30,7 @@ void CBossDuoDive::Enter(CBoss* pBoss)
     //float spawnX = pBoss->Get_Info()->fX;
     float spawnX = CObjMgr::Get_Instance()->Get_Player()->Get_Info()->fX;
     pBoss->Set_Pos(spawnX, -200.f);
+    pBoss->Set_Frame(0, 10, 8, 50);
 }
 
 void CBossDuoDive::Update(CBoss* pBoss)
@@ -38,8 +40,9 @@ void CBossDuoDive::Update(CBoss* pBoss)
     if (!m_bDived && m_fWaitTime >= 0.5f)
     {
         float curY = pBoss->Get_Info()->fY;
-        if (curY < m_fTargetY)
+        if (curY < 450.f)
         {
+            //m_fTargetY
             pBoss->Set_Pos(pBoss->Get_Info()->fX, curY + m_fDiveSpeed);
         }
         else
@@ -47,7 +50,7 @@ void CBossDuoDive::Update(CBoss* pBoss)
             m_bDived = true;
 
             CAttackCollider* pCol = new CAttackCollider(
-                pBoss, pBoss->Get_Info()->fX, m_fTargetY,
+                pBoss, pBoss->Get_Info()->fX, 450.f,
                 100.f, 50.f, 0.f, 0.3f,
                 CAttackCollider::ColliderType::Follow,
                 ETeam::Enemy,
@@ -60,11 +63,20 @@ void CBossDuoDive::Update(CBoss* pBoss)
 
     if (m_bDived && m_fWaitTime > 1.5f)
     {
-        pBoss->ChangeState(new CBossIdleState());
+        //pBoss->ChangeState(new CBossIdleState());
+        if (pBoss->Get_ID() == g_iNextWaitBossID)
+            pBoss->ChangeState(new CBossWaitState());
+        else
+            pBoss->ChangeState(new CBossIdleState());
     }
 }
 
 void CBossDuoDive::Exit(CBoss* pBoss)
 {
     pBoss->Set_Speed(0.f);
+}
+
+EBossStateType CBossDuoDive::GetType()
+{
+    return EBossStateType::DuoDive;
 }

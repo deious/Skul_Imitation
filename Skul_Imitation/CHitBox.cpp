@@ -35,10 +35,24 @@ void CHitBox::Reset_HitCount() { m_iHitCount = 0; }
 
 void CHitBox::Update_Rect()
 {
-    m_tRect.left = LONG(m_tInfo.fX - m_tInfo.fCX * 0.5f);
+    float fx = m_tInfo.fX + m_vOffset.x;
+    float fy = m_tInfo.fY + m_vOffset.y;
+
+    m_tRect.left = LONG(fx - m_tInfo.fCX * 0.5f);
+    m_tRect.top = LONG(fy - m_tInfo.fCY * 0.5f);
+    m_tRect.right = LONG(fx + m_tInfo.fCX * 0.5f);
+    m_tRect.bottom = LONG(fy + m_tInfo.fCY * 0.5f);
+
+    /*m_tRect.left = LONG(m_tInfo.fX - m_tInfo.fCX * 0.5f);
     m_tRect.top = LONG(m_tInfo.fY - m_tInfo.fCY * 0.5f);
     m_tRect.right = LONG(m_tInfo.fX + m_tInfo.fCX * 0.5f);
-    m_tRect.bottom = LONG(m_tInfo.fY + m_tInfo.fCY * 0.5f);
+    m_tRect.bottom = LONG(m_tInfo.fY + m_tInfo.fCY * 0.5f);*/
+}
+
+void CHitBox::Set_Offset(float x, float y)
+{
+    m_vOffset = { x, y };
+    Update_Rect();
 }
 
 const RECT& CHitBox::Get_Rect() const { return m_tRect; }

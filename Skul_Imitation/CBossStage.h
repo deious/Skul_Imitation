@@ -1,5 +1,8 @@
 #pragma once
 #include "CScene.h"
+
+class CBossController;
+
 class CBossStage : public CScene
 {
 public:
@@ -15,4 +18,5 @@ public:
 
 private:
 	void		Key_Input();
+	CBossController* pController = nullptr;
 };

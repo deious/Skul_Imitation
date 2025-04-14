@@ -26,6 +26,14 @@ void CBossDashAttack::Enter(CBoss* pBoss)
 
     fDirection = (pPlayer->Get_Info()->fX > pBoss->Get_Info()->fX) ? 1.f : -1.f;
     pBoss->Set_Speed(fDirection * m_fDashSpeed);
+    if (fDirection > 0)
+    {
+        pBoss->Set_Frame(0, 4, 4, 100);
+    }
+    else
+    {
+        pBoss->Set_Frame(0, 4, 5, 100);
+    }
 
     /*WCHAR szBuffer[128];
     swprintf_s(szBuffer, L"[Enter] 보스 방향: %.1f, 속도: %.1f\n", fDirection, pBoss->Get_Speed());
@@ -73,4 +81,9 @@ void CBossDashAttack::Update(CBoss* pBoss)
 void CBossDashAttack::Exit(CBoss* pBoss)
 {
     pBoss->Set_Speed(0.f);
+}
+
+EBossStateType CBossDashAttack::GetType()
+{
+    return EBossStateType::DashAttack;
 }

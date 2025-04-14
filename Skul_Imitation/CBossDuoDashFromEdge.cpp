@@ -4,6 +4,7 @@
 #include "CObjMgr.h"
 #include "CPlayer.h"
 #include "CBossIdleState.h"
+#include "CBossController.h"
 
 constexpr float kStartWaitDuration = 0.5f; // 돌진 전 대기시간
 
@@ -29,7 +30,7 @@ void CBossDuoDashFromEdge::Enter(CBoss* pBoss)
     m_bDashed = false;
 
     float groundY = 400.f; // 예시 값
-    float screenWidth = 1280.f;
+    float screenWidth = WINCX;
 
     // ID로 왼쪽/오른쪽 구분
     if (pBoss->Get_ID() == 0)
@@ -55,7 +56,7 @@ void CBossDuoDashFromEdge::Update(CBoss* pBoss)
         pBoss->Set_Speed(direction * m_fDashSpeed);
 
         m_bDashed = true;
-        pBoss->Set_Frame(0, 6, 4, 100);
+        pBoss->Set_Frame(0, 5, 9, 100);
 
         float x = pBoss->Get_Info()->fX + 50.f;
         float y = pBoss->Get_Info()->fY;
@@ -77,7 +78,11 @@ void CBossDuoDashFromEdge::Update(CBoss* pBoss)
         if (m_fDashTime >= 1.0f) // 이제 진짜 "돌진 시간" 기준
         {
             pBoss->Set_Speed(0.f);
-            pBoss->ChangeState(new CBossIdleState());
+            //pBoss->ChangeState(new CBossIdleState());
+            if (pBoss->Get_ID() == g_iNextWaitBossID)
+                pBoss->ChangeState(new CBossWaitState());
+            else
+                pBoss->ChangeState(new CBossIdleState());
         }
     }
 }
@@ -85,4 +90,9 @@ void CBossDuoDashFromEdge::Update(CBoss* pBoss)
 void CBossDuoDashFromEdge::Exit(CBoss* pBoss)
 {
     pBoss->Set_Speed(0.f); // 멈춤
+}
+
+EBossStateType CBossDuoDashFromEdge::GetType()
+{
+    return EBossStateType::DuoDash;
 }

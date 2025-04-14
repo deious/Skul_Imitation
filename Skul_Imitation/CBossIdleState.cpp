@@ -9,3 +9,8 @@ void CBossIdleState::Enter(CBoss* pBoss)
 void CBossIdleState::Update(CBoss* pBoss) {}
 
 void CBossIdleState::Exit(CBoss* pBoss) {}
+
+EBossStateType CBossIdleState::GetType()
+{
+	return EBossStateType::Idle;
+}
