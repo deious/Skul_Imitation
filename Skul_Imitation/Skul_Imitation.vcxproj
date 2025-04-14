@@ -141,6 +141,7 @@
     <ClInclude Include="CAttackState.h" />
     <ClInclude Include="CBoss.h" />
     <ClInclude Include="CBossAttackState.h" />
+    <ClInclude Include="CBossController.h" />
     <ClInclude Include="CBossDashAttack.h" />
     <ClInclude Include="CBossDuoDashFromEdge.h" />
     <ClInclude Include="CBossDive.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="CBossIdleState.h" />
     <ClInclude Include="CBossShootLightning.h" />
     <ClInclude Include="CBossStage.h" />
+    <ClInclude Include="CBossWaitState.h" />
     <ClInclude Include="CCameraMgr.h" />
     <ClInclude Include="CBmpMgr.h" />
     <ClInclude Include="CButton.h" />
@@ -160,9 +162,11 @@
     <ClInclude Include="CIdleState.h" />
     <ClInclude Include="CJumpStartState.h" />
     <ClInclude Include="CKeyMgr.h" />
+    <ClInclude Include="CLightningProjectile.h" />
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineMgr.h" />
     <ClInclude Include="CPlayer.h" />
+    <ClInclude Include="CProjectile.h" />
     <ClInclude Include="CQuadTree.h" />
     <ClInclude Include="CRisingState.h" />
     <ClInclude Include="CSkillState.h" />
@@ -192,6 +196,7 @@
     <ClInclude Include="CUIWallet.h" />
     <ClInclude Include="CWalkState.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="EBossStateType.h" />
     <ClInclude Include="EPlayerState.h" />
     <ClInclude Include="fmod.h" />
     <ClInclude Include="fmod.hpp" />
@@ -214,6 +219,7 @@
     <ClCompile Include="CAttackState.cpp" />
     <ClCompile Include="CBoss.cpp" />
     <ClCompile Include="CBossAttackState.cpp" />
+    <ClCompile Include="CBossController.cpp" />
     <ClCompile Include="CBossDashAttack.cpp" />
     <ClCompile Include="CBossDuoDashFromEdge.cpp" />
     <ClCompile Include="CBossDive.cpp" />
@@ -222,6 +228,7 @@
     <ClCompile Include="CBossIdleState.cpp" />
     <ClCompile Include="CBossShootLightning.cpp" />
     <ClCompile Include="CBossStage.cpp" />
+    <ClCompile Include="CBossWaitState.cpp" />
     <ClCompile Include="CCameraMgr.cpp" />
     <ClCompile Include="CBmpMgr.cpp" />
     <ClCompile Include="CButton.cpp" />
@@ -233,9 +240,11 @@
     <ClCompile Include="CIdleState.cpp" />
     <ClCompile Include="CJumpStartState.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
+    <ClCompile Include="CLightningProjectile.cpp" />
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineMgr.cpp" />
     <ClCompile Include="CPlayer.cpp" />
+    <ClCompile Include="CProjectile.cpp" />
     <ClCompile Include="CQuadTree.cpp" />
     <ClCompile Include="CRisingState.cpp" />
     <ClCompile Include="CSkillState.cpp" />
