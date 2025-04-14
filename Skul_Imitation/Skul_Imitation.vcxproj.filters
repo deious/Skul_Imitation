@@ -336,6 +336,21 @@
     <ClInclude Include="CBossStage.h">
       <Filter>02. Scene\Stage</Filter>
     </ClInclude>
+    <ClInclude Include="CProjectile.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CLightningProjectile.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="EBossStateType.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossController.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossWaitState.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -511,6 +526,18 @@
     </ClCompile>
     <ClCompile Include="CBossStage.cpp">
       <Filter>02. Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="CProjectile.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CLightningProjectile.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossController.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossWaitState.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

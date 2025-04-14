@@ -12,6 +12,7 @@ public:
     void Set_Size(float cx, float cy);
     void Set_LastHitFrame(DWORD frame);
     void Set_MaxHits(int iMaxHits);
+    void Set_Offset(float x, float y);
     void Reset_HitCount();
     void Update_Rect();
 
@@ -32,4 +33,6 @@ private:
     INFO m_tInfo;
     RECT m_tRect;
     DWORD m_dwLastHitFrame = 0;
+
+    Vec2 m_vOffset = { 0.f, 0.f };
 };

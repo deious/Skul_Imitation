@@ -12,9 +12,13 @@
 #include "CBossDuoDashFromEdge.h"
 #include "CBossDuoDive.h"
 #include "CBossDashAttack.h"
+#include "CBossDuoShootingLightning.h"
+//#include "CBossStage.cpp"
+#include "CBossWaitState.h"
 
 CBoss::CBoss()
 {
+    m_pCurState = nullptr;
 }
 
 CBoss::~CBoss()
@@ -25,6 +29,7 @@ void CBoss::Initialize()
 {
     m_tInfo = { 700.f, WINCY >> 1, 128.f, 128.f };
     m_pHitBox = new CHitBox(m_tInfo.fX, m_tInfo.fY, 30.f, 80.f);
+    //m_pHitBox->Set_Offset(0.f, -20.f);
     m_fSpeed = 3.f;
     m_fDistance = 100.f;
     //m_fVelocity = 20.f;
@@ -39,8 +44,8 @@ void CBoss::Initialize()
     }
     else
     {
-        MessageBox(g_hWnd, L"보스 2번 생성", _T("Fail"), MB_OK);
-        CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_2_2.bmp", L"Boss_2");
+        //MessageBox(g_hWnd, L"보스 2번 생성", _T("Fail"), MB_OK);
+        CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_2_1.bmp", L"Boss_2");
         m_pFrameKey = L"Boss_2";
     }
 
@@ -55,7 +60,7 @@ void CBoss::Initialize()
     //m_pFrameKey = L"Boss_1";
     m_dwHitTime = GetTickCount64();
     ChangeState(new CBossIdleState());
-    BuildBehaviorTree();
+    //BuildBehaviorTree();
 }
 
 int CBoss::Update()
@@ -63,8 +68,10 @@ int CBoss::Update()
     if (m_bDead)
         return DEAD;
 
-    if (m_pAI)
-        m_pAI->Run();
+    //CheckAndUpdateBehaviorTree();
+
+    /*if (m_pAI)
+        m_pAI->Run()*/;
 
     if (m_pCurState)
         m_pCurState->Update(this);
@@ -72,6 +79,7 @@ int CBoss::Update()
     m_tInfo.fX += m_fSpeed * DELTA_TIME;
 
     __super::Update_Rect();
+    Move_Frame();
     /*m_HitBox.Set_Pos(m_tInfo.fX, m_tInfo.fY);*/
     return 0;
 }
@@ -186,27 +194,89 @@ void CBoss::BuildBehaviorTree()
     //    return true;
     //    });
 
-    m_pAI = new ActionNode([this]() {
-        static float elapsed = 0.f;
-        elapsed += DELTA_TIME;
+    //m_pAI = new ActionNode([this]() {
+    //    static float elapsed = 0.f;
+    //    elapsed += DELTA_TIME;
 
-        if (elapsed >= 5.0f)
+    //    if (elapsed >= 5.0f)
+    //    {
+    //        elapsed = 0.f;
+
+    //        int randPattern = rand() % 4;
+
+    //        switch (randPattern)
+    //        {
+    //        case 0:
+    //            this->ChangeState(new CBossDuoDashFromEdge());
+    //            //this->ChangeState(new CBossDuoShootingLightning());
+    //            break;
+    //        case 1:
+    //            this->ChangeState(new CBossDuoDive());
+    //            //this->ChangeState(new CBossDuoShootingLightning());
+    //            break;
+    //        case 2:
+    //            this->ChangeState(new CBossDashAttack());
+    //            //this->ChangeState(new CBossDuoShootingLightning());
+    //            break;
+    //        case 3:
+    //            this->ChangeState(new CBossDuoShootingLightning());
+    //            break;
+    //        }
+    //    }
+
+    //    return true;
+    //    });
+
+    m_pAI = new ActionNode([this]() {
+        static float fTeamTimer = 0.f;
+        static float fSoloTimer = 0.f;
+
+        fTeamTimer += DELTA_TIME;
+        fSoloTimer += DELTA_TIME;
+
+        CBoss* pair = m_pPairBoss;
+
+        // 팀 패턴 실행
+        if (m_iBossID == 0 && fTeamTimer >= 10.f)
         {
-            elapsed = 0.f;
+            fTeamTimer = 0.f;
 
             int randPattern = rand() % 3;
-
             switch (randPattern)
             {
             case 0:
                 this->ChangeState(new CBossDuoDashFromEdge());
+                if (pair) pair->ChangeState(new CBossDuoDashFromEdge());
                 break;
             case 1:
                 this->ChangeState(new CBossDuoDive());
+                if (pair) pair->ChangeState(new CBossDuoDive());
                 break;
             case 2:
-                this->ChangeState(new CBossDashAttack());
+                this->ChangeState(new CBossDuoShootingLightning());
+                if (pair) pair->ChangeState(new CBossDuoShootingLightning());
                 break;
+            }
+
+            // 둘 중 한 명 대기
+            if (pair)
+            {
+                int pick = rand() % 2;
+                if (pick == 0)
+                    this->ChangeState(new CBossWaitState());
+                else
+                    pair->ChangeState(new CBossWaitState());
+            }
+        }
+
+        // 단독 패턴 (각 보스 개별로 수행)
+        if (fSoloTimer >= 2.f)
+        {
+            fSoloTimer = 0.f;
+
+            if (m_pCurState && m_pCurState->GetType() != EBossStateType::Wait)
+            {
+                this->ChangeState(new CBossDashAttack());
             }
         }
 
@@ -226,6 +296,40 @@ void CBoss::BuildBehaviorTree()
 
     //    return true;
     //    });
+}
+
+void CBoss::BuildSoloBehaviorTree()
+{
+    if (m_pAI) delete m_pAI;
+
+    m_pAI = new ActionNode([this]() {
+        static float soloElapsed = 0.f;
+        soloElapsed += DELTA_TIME;
+
+        if (soloElapsed >= 2.0f)
+        {
+            soloElapsed = 0.f;
+            int pattern = rand() % 4;
+
+            switch (pattern)
+            {
+            case 0:
+                this->ChangeState(new CBossDashAttack());
+                break;
+            case 1:
+                this->ChangeState(new CBossDuoDive());
+                break;
+            case 2:
+                this->ChangeState(new CBossDashAttack());
+                break;
+            case 3:
+                this->ChangeState(new CBossDuoDive());
+                break;
+            }
+        }
+
+        return true;
+        });
 }
 
 bool CBoss::IsAwakened() const
@@ -268,6 +372,13 @@ void CBoss::Set_Speed(float fSpeed)
     m_fSpeed = fSpeed;
 }
 
+EBossStateType CBoss::Get_CurStateType() const
+{
+    if (m_pCurState)
+        return m_pCurState->GetType();
+    return EBossStateType::None;
+}
+
 void CBoss::Set_PairBoss(CBoss* pOther)
 {
     m_pPairBoss = pOther;
@@ -287,19 +398,32 @@ void CBoss::Set_FrameKey(const TCHAR* pKey)
     m_pFrameKey = pKey;
 }
 
+void CBoss::Set_Gravity()
+{
+    m_bUseGravity = !m_bUseGravity;
+}
+
 void CBoss::OnHit(CAttackCollider* pCol)
 {
     m_dwHitTime = GetTickCount64();
     m_bShowHitText = true;
-    int damage = pCol->Get_Damage();
+    m_iHp -= pCol->Get_Damage();
 
-    // 체력 감소
-    m_iHp -= damage;
+    if (m_iHp <= 0 && !m_bIsDead)
+    {
+        m_bIsDead = true;
+        //ChangeState(nullptr);  // 상태 제거
+        //Safe_Delete(m_pAI);    // 행동 트리 제거
+    }
+}
 
-    /*if (m_iHp <= 0)
-        ChangeState(EState::Die);
-    else
-        ChangeState(EState::Hit);*/
+void CBoss::CheckAndUpdateBehaviorTree()
+{
+    if (m_pPairBoss && m_pPairBoss->IsDead() && m_bUseTeamTree)
+    {
+        m_bUseTeamTree = false;
+        BuildSoloBehaviorTree();  // 트리 변경
+    }
 }
 
 void CBoss::Apply_Gravity()

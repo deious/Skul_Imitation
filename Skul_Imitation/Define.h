@@ -23,7 +23,7 @@
 extern HWND    g_hWnd;
 
 enum DIRECTION { DIR_LEFT, DIR_RIGHT, DIR_UP, DIR_DOWN, DIR_LU, DIR_RU, DIR_END };
-enum OBJID { OBJ_PLAYER, OBJ_BULLET, OBJ_MONSTER, OBJ_BOSS, OBJ_MOUSE, OBJ_SHIELD, OBJ_BUTTON, OBJ_COLLIDER, OBJ_HEAD, OBJ_END };
+enum OBJID { OBJ_PLAYER, OBJ_PROJECTILE, OBJ_MONSTER, OBJ_BOSS, OBJ_MOUSE, OBJ_SHIELD, OBJ_BUTTON, OBJ_COLLIDER, OBJ_HEAD, OBJ_END };
 enum RENDERID { RENDER_PRIORITY, RENDER_GAMEOBJECT, RENDER_EFFECT, RENDER_UI, RENDER_END };
 enum CHANNELID { SOUND_EFFECT, SOUND_BGM, SOUND_END };
 enum SKULINFO { SKUL_IDLE, SKUL_WALK, SKUL_ATTACK, SKUL_ATTACK2, SKUL_ATTACK3, SKUL_SKILLA, SKUL_SKILLS, SKUL_END };
@@ -102,3 +102,23 @@ typedef struct tagFrame
 	ULONGLONG	dwTime;		// 애니메이션 구동 시간
 
 }FRAME;
+
+typedef struct Vec2
+{
+	float x, y;
+
+	Vec2() : x(0.f), y(0.f) {}
+	Vec2(float _x, float _y) : x(_x), y(_y) {}
+
+	Vec2 operator+(const Vec2& other) const { return Vec2(x + other.x, y + other.y); }
+	Vec2 operator-(const Vec2& other) const { return Vec2(x - other.x, y - other.y); }
+	Vec2 operator*(float scalar) const { return Vec2(x * scalar, y * scalar); }
+
+	float Length() const { return sqrtf(x * x + y * y); }
+
+	Vec2 Normalize() const
+	{
+		float len = Length();
+		return (len != 0) ? Vec2(x / len, y / len) : Vec2();
+	}
+}VEC2;

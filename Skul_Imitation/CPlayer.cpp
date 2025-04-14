@@ -270,7 +270,7 @@ void CPlayer::Create_AttackCollider(int iCombo)
 		m_tInfo.fX + offsetX,
 		m_tInfo.fY,
 		30.f, 20.f,                     // 콜라이더 크기
-		0.f, 0.2f,                      // 생성 지연 없음, 0.2초 유지
+		0.f, 0.1f,                      // 생성 지연 없음, 0.2초 유지
 		CAttackCollider::ColliderType::Static,
 		ETeam::Player,
 		damage                              // 데미지

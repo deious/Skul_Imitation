@@ -17,6 +17,13 @@
 #include "CBoss.h"
 #include "CSoundMgr.h"
 #include "CSceneMgr.h"
+#include "CBossController.h"
+
+//bool g_bIsTeamPatternTime = false;
+//float g_fTeamPatternTimer = 0.f;
+//int g_iTeamPatternIndex = 0;
+//int g_iWaitingBossID = -1;
+//bool g_bTeamPatternStarted = false;
 
 CBossStage::CBossStage()
 {
@@ -46,6 +53,7 @@ void CBossStage::Initialize()
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Samurai_Left.bmp", L"Samurai_Left");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Right.bmp", L"ZinSamurai_Right");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Left.bmp", L"ZinSamurai_Left");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/tempLightning.bmp", L"temp2");
 
     //CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Edit/BossTile.bmp", L"Tile");
     /*CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Player_Frame.bmp", L"pFrame");
@@ -54,7 +62,6 @@ void CBossStage::Initialize()
     //CLineMgr::Get_Instance()->Initialize();
 
     CObj* pPlayer = CSceneMgr::Get_Instance()->Get_Player();
-
 
     if (!pPlayer)
     {
@@ -70,11 +77,17 @@ void CBossStage::Initialize()
     //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create_Obj(0));
 
     CBoss* pBoss1 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(0));
-    //CBoss* pBoss2 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(1));
-    //pBoss1->Set_PairBoss(pBoss2);
-    //pBoss2->Set_PairBoss(pBoss1);
+    CBoss* pBoss2 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(1));
+    pBoss1->Set_PairBoss(pBoss2);
+    pBoss2->Set_PairBoss(pBoss1);
+
+    pController = new CBossController();
+    pController->Initialize(pBoss1, pBoss2);
+    pBoss1->Set_Controller(pController);
+    pBoss2->Set_Controller(pController);
+
     CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, pBoss1);
-    //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, pBoss2);
+    CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, pBoss2);
     //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create_Obj(1));
     /*pButton = CAbstractFactory<CButton>::Create_Obj(600.f, 400.f);
     pButton->Set_FrameKey(L"Exit");
@@ -99,6 +112,7 @@ int CBossStage::Update()
     CTileMgr::Get_Instance()->Update();
     CCameraMgr::Get_Instance()->Update();
     CUIMgr::Get_Instance()->Update();
+    pController->Update();
 
     return 0;
 }
