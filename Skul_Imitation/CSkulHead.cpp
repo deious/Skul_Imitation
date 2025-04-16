@@ -61,3 +61,13 @@ const EffectInfo& CSkulHead::GetPlaySkillSEffect() const
 {
 	return m_tEffectSet.tSkillBEffect;
 }
+
+const wstring CSkulHead::Get_SkulIconA() const
+{
+	return m_sSkulIcon[0];
+}
+
+const wstring CSkulHead::Get_SkulIconS() const
+{
+	return m_sSkulIcon[1];
+}

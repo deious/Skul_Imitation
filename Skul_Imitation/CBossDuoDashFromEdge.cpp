@@ -33,14 +33,16 @@ void CBossDuoDashFromEdge::Enter(CBoss* pBoss)
     float screenWidth = WINCX;
 
     // ID로 왼쪽/오른쪽 구분
-    if (pBoss->Get_ID() == 0)
+    if (pBoss->Get_ID() == 0)                        // 진짜 보스 새로 추가되면 교체해야 할 곳
+    {
         pBoss->Set_Pos(50.f, groundY);
+        pBoss->Set_Frame(0, 3, 2, 100);
+    }
     else
+    {
         pBoss->Set_Pos(screenWidth - 50.f, groundY);
-
-    // 대기 애니메이션 세팅 등 가능
-    //pBoss->Set_Frame(/*시작프레임*/, /*종료프레임*/, /*모션타입*/, /*속도*/);
-    pBoss->Set_Frame(0, 3, 2, 100);
+        pBoss->Set_Frame(0, 3, 3, 100);
+    }
 }
 
 void CBossDuoDashFromEdge::Update(CBoss* pBoss)
@@ -56,7 +58,10 @@ void CBossDuoDashFromEdge::Update(CBoss* pBoss)
         pBoss->Set_Speed(direction * m_fDashSpeed);
 
         m_bDashed = true;
-        pBoss->Set_Frame(0, 5, 9, 100);
+        if (pBoss->Get_ID() == 0)                       // 진짜 보스 새로 추가되면 교체해야 할 곳
+            pBoss->Set_Frame(0, 5, 9, 100);
+        else
+            pBoss->Set_Frame(0, 5, 10, 100);
 
         float x = pBoss->Get_Info()->fX + 50.f;
         float y = pBoss->Get_Info()->fY;

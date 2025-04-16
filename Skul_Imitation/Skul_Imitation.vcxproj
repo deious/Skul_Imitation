@@ -196,6 +196,7 @@
     <ClInclude Include="CUIHealthBar.h" />
     <ClInclude Include="CUIMgr.h" />
     <ClInclude Include="CUIPortrait.h" />
+    <ClInclude Include="CUISkillIcon.h" />
     <ClInclude Include="CUISkul.h" />
     <ClInclude Include="CUIWallet.h" />
     <ClInclude Include="CWalkState.h" />
@@ -277,6 +278,7 @@
     <ClCompile Include="CUIHealthBar.cpp" />
     <ClCompile Include="CUIMgr.cpp" />
     <ClCompile Include="CUIPortrait.cpp" />
+    <ClCompile Include="CUISkillIcon.cpp" />
     <ClCompile Include="CUISkul.cpp" />
     <ClCompile Include="CUIWallet.cpp" />
     <ClCompile Include="CWalkState.cpp" />

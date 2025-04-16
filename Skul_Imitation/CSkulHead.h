@@ -41,6 +41,8 @@ public:
     virtual const wchar_t* Get_IconKey() const = 0;
     virtual const wchar_t* Get_FrameKey(CPlayer* pPlayer) const = 0;
     virtual const wstring Get_SkulId() const = 0;
+    virtual const wstring Get_SkulIconA() const;
+    virtual const wstring Get_SkulIconS() const;
     //virtual unordered_map<ESkillType, FrameData> Get_SkillFrame() const = 0;
     virtual FRAME* Get_AllFrame() = 0;
 
@@ -51,4 +53,5 @@ protected:
     FRAME m_fFrame[SKUL_END];
     std::wstring sSkulName;
     SkulEffectSet m_tEffectSet;
+    wstring m_sSkulIcon[3];
 };

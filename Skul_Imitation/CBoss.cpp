@@ -403,14 +403,31 @@ void CBoss::Set_Gravity()
     m_bUseGravity = !m_bUseGravity;
 }
 
+void CBoss::Set_Invincibility(bool b)
+{
+    m_binvincibility = b;
+}
+
+void CBoss::Set_Controller(CBossController* pController)
+{
+    m_pController = pController;
+}
+
+CBossController* CBoss::Get_Controller() const
+{
+    return m_pController;
+}
+
 void CBoss::OnHit(CAttackCollider* pCol)
 {
     m_dwHitTime = GetTickCount64();
     m_bShowHitText = true;
-    m_iHp -= pCol->Get_Damage();
+    if (!m_binvincibility)
+        m_iHp -= pCol->Get_Damage();
 
     if (m_iHp <= 0 && !m_bIsDead)
     {
+        m_iHp = 0;
         m_bIsDead = true;
         //ChangeState(nullptr);  // 상태 제거
         //Safe_Delete(m_pAI);    // 행동 트리 제거

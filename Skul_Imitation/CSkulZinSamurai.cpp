@@ -17,6 +17,10 @@ CSkulZinSamurai::CSkulZinSamurai()
     m_fFrame[SKUL_SKILLS] = { 0, 5, 10, 70, 0 };
     sSkulName = L"ZinSamurai";
 
+    m_sSkulIcon[0] = L"ZinSamuraiAIcon";
+    m_sSkulIcon[1] = L"ZinSamuraiSIcon";
+    m_sSkulIcon[2] = L"ZinSamuraiSpecialIcon";
+
     m_tEffectSet.tHitEffect = {
         EFFECT_TYPE::HIT,
         L"Hit",

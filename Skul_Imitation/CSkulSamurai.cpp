@@ -19,6 +19,9 @@ CSkulSamurai::CSkulSamurai()
     m_fFrame[SKUL_SKILLS] = { 0, 5, 10, 50, 0 };
     sSkulName = L"Samurai";
 
+    m_sSkulIcon[0] = L"SamuraiAIcon";
+    m_sSkulIcon[1] = L"SamuraiSIcon";
+
     m_tEffectSet.tHitEffect = {
         EFFECT_TYPE::HIT,
         L"Hit",
