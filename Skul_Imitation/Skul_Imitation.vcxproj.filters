@@ -118,6 +118,12 @@
     <Filter Include="01. Obj\Skul">
       <UniqueIdentifier>{aad9d677-096b-40eb-8910-6cbc86b782a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Manager\EffectManager">
+      <UniqueIdentifier>{ecbe64fc-457d-499d-9813-83609e13a320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\RandomManager">
+      <UniqueIdentifier>{fb47b47d-6a56-4218-b26b-34d23682697f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -351,6 +357,18 @@
     <ClInclude Include="CBossWaitState.h">
       <Filter>01. Obj\01. Boss\State</Filter>
     </ClInclude>
+    <ClInclude Include="CTutorialUI.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CEffect.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CEffectMgr.h">
+      <Filter>Manager\EffectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CRandomMgr.h">
+      <Filter>Manager\RandomManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -538,6 +556,18 @@
     </ClCompile>
     <ClCompile Include="CBossWaitState.cpp">
       <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CTutorialUI.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffect.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectMgr.cpp">
+      <Filter>Manager\EffectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CRandomMgr.cpp">
+      <Filter>Manager\RandomManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

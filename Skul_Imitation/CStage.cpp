@@ -17,6 +17,7 @@
 #include "CBoss.h"
 #include "CSoundMgr.h"
 #include "CSceneMgr.h"
+#include "CTutorialUI.h"
 
 CStage::CStage()
 {
@@ -30,7 +31,7 @@ CStage::~CStage()
 void CStage::Initialize()
 {
     CCameraMgr::Get_Instance()->Set_Resolution(800, 600);
-    CCameraMgr::Get_Instance()->Set_MapSize(1796, 688);
+    CCameraMgr::Get_Instance()->Set_MapSize(3592, 688);
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/map.bmp", L"Ground");
 
     CObj* pPlayer = CSceneMgr::Get_Instance()->Get_Player();
@@ -55,22 +56,75 @@ void CStage::Initialize()
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamurai_Icon.bmp", L"ZinSamuraiIcon");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Skul/Skul_Head_Right.bmp", L"Skul_Head_Right");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Skul/Skul_Head_Left.bmp", L"Skul_Head_Left");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_Left");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_Right");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Samurai_Right.bmp", L"Samurai_Right");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Samurai_Left.bmp", L"Samurai_Left");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Right.bmp", L"ZinSamurai_Right");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Left.bmp", L"ZinSamurai_Left");
     //CLineMgr::Get_Instance()->Initialize();
     //CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create_Obj());
+    //CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, CAbstractFactory<CTutorialUI>::Create_Obj(150.f, 300.f));
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, CAbstractFactory<CTutorialUI>::Create_Obj());
     CObjMgr::Get_Instance()->Get_ObjList(OBJ_PLAYER).front()->Set_Pos(200.f, WINCY >> 1);
     //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create_Obj(0));
 
-    CBoss* pBoss1 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(0));
+    CObj* pButton = CAbstractFactory<CTutorialUI>::Create_Obj(100.f, 400.f);
+    pButton->Set_FrameKey(L"LArrowBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"좌측 이동");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(400.f, 400.f);
+    pButton->Set_FrameKey(L"RArrowBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"우측 이동");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(700.f, 400.f);
+    pButton->Set_FrameKey(L"ZBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"대쉬");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(1000.f, 400.f);
+    pButton->Set_FrameKey(L"XBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"공격(3회 연속 가능)");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(1300.f, 400.f);
+    pButton->Set_FrameKey(L"CBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"점프");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(1600.f, 400.f);
+    pButton->Set_FrameKey(L"ABtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"1번 스킬");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(1900.f, 400.f);
+    pButton->Set_FrameKey(L"SBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"2번 스킬");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(2200.f, 400.f);
+    pButton->Set_FrameKey(L"DBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"스컬 변경");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(2500.f, 400.f);
+    pButton->Set_FrameKey(L"IBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"인벤토리");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(2800.f, 400.f);
+    pButton->Set_FrameKey(L"FBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"상호작용");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+
+    //CBoss* pBoss1 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(0));
     //CBoss* pBoss2 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(1));
     //pBoss1->Set_PairBoss(pBoss2);
     //pBoss2->Set_PairBoss(pBoss1);
-    CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, pBoss1);
+    //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, pBoss1);
     //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, pBoss2);
     //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create_Obj(1));
     /*pButton = CAbstractFactory<CButton>::Create_Obj(600.f, 400.f);
@@ -80,7 +134,7 @@ void CStage::Initialize()
     CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIHealthBar>::Create_Obj());
     CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUISkul>::Create_Obj());*/
 
-    CTileMgr::Get_Instance()->Load_Tile(L"./Data/map.dat");
+    CTileMgr::Get_Instance()->Load_Tile(L"./Data/TutorialMap.dat");
     CSoundMgr::Get_Instance()->PlayBGM(L"TutorialBgm.wav", 1.f);
     /*for (int i = 0; i < 3; ++i)
     {

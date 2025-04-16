@@ -26,7 +26,7 @@ public:
 public:
 	void		ChangeState(CState* pNewState);
 	void		Update_PlayerRect();
-	void		Create_AttackCollider(int iCombo);
+	void		Create_AttackCollider(int iCombo, int type);
 	void		OnHit(CAttackCollider* pCol) override;
 	void		Swap_Awaken(CSkulHead* pAwaken);
 	bool		Move_Frame();
@@ -41,10 +41,15 @@ public:
 	void		Swap_Skul();
 	void		Set_Gravity(float f);
 	void		Set_Jump(bool b);
+	void		Set_JumpCntReset();
 	void		Set_Awaken();
+
+	void		Add_JumpCnt();
 
 	int			Get_CurFrame() const;
 	int			Get_EndFrame() const;
+	int			Get_JumpCnt() const;
+	int			Get_JumpMaxCnt() const;
 	float		Get_Speed() const;
 	float		Get_JumpPower() const;
 	float		Get_Gravity() const;
@@ -67,6 +72,7 @@ private:
 	CSkulHead*	m_pStoredSkul = nullptr;   // 보조 슬롯에 보관 중
 
 	int			m_iHp;
+	int			m_iJumpCnt;
 
 	bool		m_bJump;
 	bool		m_bUseGravity = true;
@@ -80,6 +86,8 @@ private:
 	const float GRAVITY_ACCEL = 0.5f;		// 중력 가속도 (프레임당 증가값)
 	const float GRAVITY_MAX = 10.f;			// 최대 낙하 속도 제한
 	const float JUMP_POWER = -10.f;
+
+	const int	m_iMaxJumpCnt = 2;
 
 	ULONGLONG m_dwHitTime = 0;
 	ULONGLONG m_dwLastDashTime = 0;   // 마지막 대시 시각

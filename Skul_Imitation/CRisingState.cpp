@@ -4,6 +4,7 @@
 #include "CFallState.h"
 #include "CDashState.h"
 #include "CKeyMgr.h"
+#include "CJumpStartState.h"
 
 void CRisingState::Enter(CPlayer* pPlayer)
 {
@@ -27,6 +28,13 @@ void CRisingState::Update(CPlayer* pPlayer)
     {
         pPlayer->Set_PosX(pPlayer->Get_Speed());
         pPlayer->Set_Direction(DIRECTION::DIR_RIGHT);
+    }
+
+    if (CKeyMgr::Get_Instance()->Key_Down('C') && pPlayer->Get_JumpCnt() < pPlayer->Get_JumpMaxCnt())
+    {
+        pPlayer->Add_JumpCnt();
+        pPlayer->ChangeState(new CJumpStartState());
+        return;
     }
 
     float gravity = pPlayer->Get_Gravity() + pPlayer->Get_GravityAccel();

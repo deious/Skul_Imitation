@@ -16,6 +16,7 @@ CLightningProjectile::CLightningProjectile(Vec2 pos, Vec2 dir)
         0.f, 2.f,       // delay, duration
         CAttackCollider::ColliderType::Follow,
         ETeam::Enemy,
+        ESkillType::Attack,
         20
     );
     pCol->Initialize();
