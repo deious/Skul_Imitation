@@ -1,23 +1,8 @@
-﻿  CCollisionMgr.cpp
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(518,41): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
+﻿  CSkulSamurai.cpp
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CSkulSamurai.cpp(123,134): warning C4244: '인수': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/CSkulSamurai.cpp'을(를) 컴파일하는 중)
   
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(521,43): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(528,44): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(585,19): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(586,18): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(594,36): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CCollisionMgr.cpp(600,37): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/CCollisionMgr.cpp'을(를) 컴파일하는 중)
+C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\CSkulSamurai.cpp(152,134): warning C4244: '인수': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/CSkulSamurai.cpp'을(를) 컴파일하는 중)
   
   Skul_Imitation.vcxproj -> C:\Users\gkstj\OneDrive\바탕 화면\Project\Skul_Imitation\Skul_Imitation\Debug\Skul_Imitation.exe

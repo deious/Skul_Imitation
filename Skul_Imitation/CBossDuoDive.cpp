@@ -54,6 +54,7 @@ void CBossDuoDive::Update(CBoss* pBoss)
                 100.f, 50.f, 0.f, 0.3f,
                 CAttackCollider::ColliderType::Follow,
                 ETeam::Enemy,
+                ESkillType::Attack,
                 30
             );
             pCol->Initialize();

@@ -8,6 +8,8 @@
 #include "CJumpStartState.h"
 #include "CObjMgr.h"
 #include "CBoss.h"
+#include "CEffectMgr.h"
+#include "CSoundMgr.h"
 
 CAttackState::CAttackState(int iCombo) : m_iCombo(iCombo)
 {
@@ -33,6 +35,10 @@ void CAttackState::Enter(CPlayer* pPlayer)
 
     int iStart, iEnd, iMotion;
     ULONGLONG dwFrameSpeed;
+    if (pPlayer->Get_Skul()->Get_SkulId() == L"Normal")
+        CSoundMgr::Get_Instance()->Play(L"Default_Attack.flac");
+    else
+        CSoundMgr::Get_Instance()->Play(L"Attack_Sound.wav");
     switch (m_iCombo)
     {
     case 0:
@@ -43,6 +49,7 @@ void CAttackState::Enter(CPlayer* pPlayer)
         iMotion = tempFrame[SKUL_ATTACK].iMotion;
         dwFrameSpeed = tempFrame[SKUL_ATTACK].dwFrameSpeed;
         pPlayer->Set_Frame(iStart, iEnd, iMotion, dwFrameSpeed); break;
+        //CEffectMgr::Get_Instance()->Add_Effect(pPlayer->Get_Skul()->GetPlayAttackEffect(), { pPlayer->Get_Info()->fX, pPlayer->Get_Info()->fY });
         //pPlayer->Set_Frame(0, 4, 6, 100); break; // 1Ÿ
     }
     case 1:
@@ -82,7 +89,7 @@ void CAttackState::Update(CPlayer* pPlayer)
 
     if (!m_bColliderSpawned && pPlayer->Get_CurFrame() == 2)
     {
-        pPlayer->Create_AttackCollider(m_iCombo);
+        pPlayer->Create_AttackCollider(m_iCombo, 0);
         m_bColliderSpawned = true;
     }
 

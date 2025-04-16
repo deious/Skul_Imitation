@@ -64,6 +64,7 @@ void CMenu::Render(HDC hDC)
 
 void CMenu::Release()
 {
-	CSoundMgr::Get_Instance()->StopAll();
+	//CSoundMgr::Get_Instance()->StopAll();
+	CSoundMgr::Get_Instance()->StopBGM();
 	CObjMgr::Get_Instance()->Delete_Object(OBJ_BUTTON);
 }

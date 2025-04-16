@@ -33,24 +33,56 @@ void CMainGame::Initialize()
 	/*m_hMemDC = CreateCompatibleDC(m_hDC);
 	m_hBackBmp = CreateCompatibleBitmap(m_hDC, WINCX, WINCY);
 	m_hOldBmp = (HBITMAP)SelectObject(m_hMemDC, m_hBackBmp);*/
+	AddFontResourceEx(L"./Image/Font/PF스타더스트.ttf", FR_PRIVATE, 0);
+	SendMessage(HWND_BROADCAST, WM_FONTCHANGE, 0, 0);
 	CSoundMgr::Get_Instance()->Initialize();
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Back.bmp", L"Back");
 	//CBmpMgr::Get_Instance()->Insert_Bmp(L"C:\\Users\\gkstj\\OneDrive\\바탕 화면\\Project\\Skul_Imitation\\Skul_Imitation\\Image\\Back.bmp", L"Back");
 	CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_MENU);
+	// UI 이미지
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Player_Frame.bmp", L"pFrame");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Hp_Bar.bmp", L"hBar");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Skul_Icon.bmp", L"sIcon");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Samurai_Icon.bmp", L"SamuraiIcon");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamurai_Icon.bmp", L"ZinSamuraiIcon");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Skul/Skul_Head_Right.bmp", L"Skul_Head_Right");
+
+	// 플레이어 이미지
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Skul/Skul_Head_Left.bmp", L"Skul_Head_Left");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Samurai_Right.bmp", L"Samurai_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Skul/Skul_Head_Right.bmp", L"Skul_Head_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/NoHead_Left.bmp", L"NPlayer_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/NoHead_Right.bmp", L"NPlayer_Right");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Samurai_Left.bmp", L"Samurai_Left");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Right.bmp", L"ZinSamurai_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Samurai_Right.bmp", L"Samurai_Right");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Left.bmp", L"ZinSamurai_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Right.bmp", L"ZinSamurai_Right");
+
+	// 튜토리얼 이미지
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/A_Button.bmp", L"ABtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/C_Button.bmp", L"CBtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/D_Button.bmp", L"DBtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/F_Button.bmp", L"FBtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/I_Button.bmp", L"IBtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/S_Button.bmp", L"SBtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/X_Button.bmp", L"XBtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/Z_Button.bmp", L"ZBtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/LeftArrow_Button.bmp", L"LArrowBtn");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/RightArrow_Button.bmp", L"RArrowBtn");
+	
+	// 이펙트 이미지
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dash_Smoke_left.bmp", L"LDash");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dash_Smoke_Right.bmp", L"RDash");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Double_Jump.bmp", L"Jump");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Player_Hit.bmp", L"Hit");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Normal_Attack_Left.bmp", L"LNAttack");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Normal_Attack_Right.bmp", L"RNAttack");
+	
+	
+	
+	
 	// 메인게임에 이미지들을 넣어놓고 가져다 쓰자
+
 
 	CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIPortrait>::Create_Obj());
 	CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIHealthBar>::Create_Obj());
@@ -119,7 +151,7 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
-	CSoundMgr::Destroy_Instance();
+	//CSoundMgr::Destroy_Instance();
 	CTileMgr::Destroy_Instance();
 	CSceneMgr::Destroy_Instance();
 	CBmpMgr::Destroy_Instance();
