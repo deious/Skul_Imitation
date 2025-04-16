@@ -29,6 +29,8 @@ public:
         return nullptr;
     }
 
+    void ChangeIcon(std::wstring iconType, const std::wstring& newKey);
+
 private:
     CUIMgr() = default;
     ~CUIMgr();

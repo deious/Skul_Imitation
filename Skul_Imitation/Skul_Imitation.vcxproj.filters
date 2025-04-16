@@ -369,6 +369,9 @@
     <ClInclude Include="CRandomMgr.h">
       <Filter>Manager\RandomManager</Filter>
     </ClInclude>
+    <ClInclude Include="CUISkillIcon.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -568,6 +571,9 @@
     </ClCompile>
     <ClCompile Include="CRandomMgr.cpp">
       <Filter>Manager\RandomManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CUISkillIcon.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

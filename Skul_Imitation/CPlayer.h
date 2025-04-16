@@ -43,6 +43,8 @@ public:
 	void		Set_Jump(bool b);
 	void		Set_JumpCntReset();
 	void		Set_Awaken();
+	void		Set_MaxHP(int iHp);
+	void		Set_HP(int iHp);
 
 	void		Add_JumpCnt();
 
@@ -50,6 +52,8 @@ public:
 	int			Get_EndFrame() const;
 	int			Get_JumpCnt() const;
 	int			Get_JumpMaxCnt() const;
+	int			Get_MaxHP() const;
+	int			Get_HP() const;
 	float		Get_Speed() const;
 	float		Get_JumpPower() const;
 	float		Get_Gravity() const;
@@ -71,8 +75,9 @@ private:
 	CSkulHead*	m_pSkul;
 	CSkulHead*	m_pStoredSkul = nullptr;   // 보조 슬롯에 보관 중
 
-	int			m_iHp;
+	int			m_iHp = 100;
 	int			m_iJumpCnt;
+	int			m_iMaxHp = 100;
 
 	bool		m_bJump;
 	bool		m_bUseGravity = true;
