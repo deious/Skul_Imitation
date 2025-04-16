@@ -38,13 +38,8 @@ void CPlayer::Initialize()
 	m_iHp = 100;
 	m_bDead = false;
 	m_pSkul = new CSkulHeadNormal();
-	//m_pSkul->Initialize();
 
 	m_pHitBox = new CHitBox(m_tInfo.fX, m_tInfo.fY, 30.f, 55.f);
-
-	/*CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");*/
-
 	m_pFrameKey = L"Player_Right";
 
 	m_tFrame.iStart = 0;
@@ -55,8 +50,6 @@ void CPlayer::Initialize()
 	m_tFrame.dwFrameSpeed = 200;
 
 	CSkulHead* pNewSkul = new CSkulSamurai();  // 새 스컬 생성
-	//CSkulHead* pNewSkul = new CSkulZinSamurai();
-	//pNewSkul->Initialize();
 
 	Set_Skul(pNewSkul);							// 테스트용 등록 나중에 변경 가능
 
@@ -85,29 +78,19 @@ void CPlayer::Late_Update()
 void CPlayer::Render(HDC hDC)
 {
 	m_pFrameKey = this->Get_Skul()->Get_FrameKey(this);
-	//if (m_eDir == DIRECTION::DIR_LEFT)
-	//{
-	//	//m_pFrameKey = L"Player_LEFT";
-	//	m_pFrameKey = this->Get_Skul()->Get_FrameKey(this);
-	//}
-	//else
-	//{
-	//	//m_pFrameKey = L"Player_RIGHT";
-	//	m_pFrameKey = this->Get_Skul()->Get_FrameKey(this);
-	//}
 
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 	POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
 
-	wchar_t hpText[32];
-	swprintf_s(hpText, L"HP: %d", m_iHp); // 플레이어 체력
+	//wchar_t hpText[32];
+	//swprintf_s(hpText, L"HP: %d", m_iHp); // 플레이어 체력
 
-	TextOut(hDC,
-		screenPos.x,
-		screenPos.y - 50,
-		hpText,
-		(int)wcslen(hpText)
-	);
+	//TextOut(hDC,
+	//	screenPos.x,
+	//	screenPos.y - 50,
+	//	hpText,
+	//	(int)wcslen(hpText)
+	//);
 
 	int drawX = screenPos.x - (int)(m_tInfo.fCX * 0.5f);
 	int drawY = screenPos.y - (int)(m_tInfo.fCY * 0.5f);
@@ -202,6 +185,16 @@ int CPlayer::Get_JumpMaxCnt() const
 	return m_iMaxJumpCnt;
 }
 
+int CPlayer::Get_MaxHP() const
+{
+	return m_iMaxHp;
+}
+
+int CPlayer::Get_HP() const
+{
+	return m_iHp;
+}
+
 float CPlayer::Get_Speed() const { return m_fSpeed; }
 float CPlayer::Get_JumpPower() const
 {
@@ -258,6 +251,16 @@ void CPlayer::Set_Awaken()
 		CSkulHead* pNewSkul = new CSkulZinSamurai();
 		Swap_Awaken(pNewSkul);
 	}
+}
+
+void CPlayer::Set_MaxHP(int iHp)
+{
+	m_iMaxHp = iHp;
+}
+
+void CPlayer::Set_HP(int iHp)
+{
+	m_iHp = iHp;
 }
 
 void CPlayer::Add_JumpCnt()
@@ -431,6 +434,9 @@ void CPlayer::Swap_Awaken(CSkulHead* pAwaken)
 	if (pUI)
 		pUI->Set_FrameKey(m_pSkul->Get_IconKey());
 
+	CUIMgr::Get_Instance()->ChangeIcon(L"A", m_pSkul->Get_SkulIconA());
+	CUIMgr::Get_Instance()->ChangeIcon(L"S", m_pSkul->Get_SkulIconS());
+
 	FRAME* tempFrame = m_pSkul->Get_AllFrame();
 	m_tFrame.iStart = tempFrame[SKUL_IDLE].iStart;
 	m_tFrame.iEnd = tempFrame[SKUL_IDLE].iEnd;
@@ -448,6 +454,9 @@ void CPlayer::Swap_Skul()
 	CUISkul* pUI = CUIMgr::Get_Instance()->Get_UI<CUISkul>();
 	if (pUI)
 		pUI->Set_FrameKey(m_pSkul->Get_IconKey());
+
+	CUIMgr::Get_Instance()->ChangeIcon(L"A", m_pSkul->Get_SkulIconA());
+	CUIMgr::Get_Instance()->ChangeIcon(L"S", m_pSkul->Get_SkulIconS());
 
 	FRAME* tempFrame = m_pSkul->Get_AllFrame();
 	m_tFrame.iStart = tempFrame[SKUL_IDLE].iStart;

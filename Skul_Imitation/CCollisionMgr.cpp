@@ -538,7 +538,7 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 		if (overlapY < overlapX) // Y축 충돌 우선
 		{
 			float curX = pPlayer->Get_Info()->fX;
-			const int margin = 50;
+			const int margin = 52;
 
 			if (playerRect.bottom > tileRect.top - margin && playerRect.top < tileRect.top)
 			{
@@ -610,24 +610,24 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 		//	//playerRect = *pPlayer->Get_Rect();
 		//	playerRect = pPlayer->Get_HitBox()->Get_Rect();
 		//}
-		const int margin = 13;//10이였음
+		const int margin = 10;//10이였음
 
 		if (overlapX <= overlapY)
 		{
-			float rightGap = abs(playerRect.right - tileRect.left);
-			float leftGap = abs(playerRect.left - tileRect.right);
+			float rightGap = abs(playerRect.right - tileRect.left);		// 우측 충돌
+			float leftGap = abs(playerRect.left - tileRect.right);		// 좌측 충돌
 
-			if (rightGap <= margin || leftGap <= margin)
+			if (rightGap <= margin || leftGap <= margin - 5)
 				continue;
 
 			// 왼쪽 벽 충돌
-			if (playerRect.right > tileRect.left && playerRect.left < tileRect.left)
+			if (playerRect.right >= tileRect.left && playerRect.left < tileRect.left)
 			{
 				pPlayer->Set_Pos(tileRect.left - halfW, pPlayer->Get_Info()->fY);
 				OutputDebugString(L"[오른쪽 이동 중 + 왼쪽 벽 충돌]\n");
 			}
 			// 오른쪽 벽 충돌
-			else if (playerRect.left < tileRect.right && playerRect.right > tileRect.right)
+			else if (playerRect.left <= tileRect.right && playerRect.right > tileRect.right)
 			{
 				pPlayer->Set_Pos(tileRect.right + halfW, pPlayer->Get_Info()->fY);
 			}

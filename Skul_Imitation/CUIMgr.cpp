@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CUIMgr.h"
+#include "CUISkillIcon.h"
 
 CUIMgr* CUIMgr::m_pInstance = nullptr;
 
@@ -16,6 +17,21 @@ void CUIMgr::Destroy_Instance()
     {
         delete m_pInstance;
         m_pInstance = nullptr;
+    }
+}
+
+void CUIMgr::ChangeIcon(std::wstring iconType, const std::wstring& newKey)
+{
+    for (auto& pUI : m_vecUI)
+    {
+        CUISkillIcon* pIcon = dynamic_cast<CUISkillIcon*>(pUI);
+        if (!pIcon) continue;
+
+        if (pIcon->Get_IconType() == iconType)
+        {
+            pIcon->Set_IconKey(newKey);
+            break;
+        }
     }
 }
 

@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "CUIHealthBar.h"
 #include "CBmpMgr.h"
+#include "CObjMgr.h"
+#include "CPlayer.h"
 
 void CUIHealthBar::Initialize()
 {
@@ -19,23 +21,51 @@ void CUIHealthBar::SetHP(int current, int max) {
 
 void CUIHealthBar::Render(HDC hDC)
 {
-    // 배경 바
-    //RECT bg = { (int)m_tInfo.fX, (int)m_tInfo.fY, (int)(m_tInfo.fX + 100), (int)(m_tInfo.fY + 10) };
-    //FillRect(hDC, &bg, (HBRUSH)GetStockObject(DKGRAY_BRUSH));
+    int curHp = dynamic_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_HP();
+    int maxHp = dynamic_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_MaxHP();
 
-    // 체력 바
-    //float ratio = (float)m_iCurrentHP / m_iMaxHP;
-    //RECT fg = { (int)m_tInfo.fX, (int)m_tInfo.fY, (int)(m_tInfo.fX + 100 * ratio), (int)(m_tInfo.fY + 10) };
-    //FillRect(hDC, &fg, (HBRUSH)GetStockObject(RED_BRUSH));
+    if (curHp <= 0)
+        return;
 
-    //// 텍스트
-    //std::wstring hpText = std::to_wstring(m_iCurrentHP) + L" / " + std::to_wstring(m_iMaxHP);
-    //TextOut(hDC, (int)m_tInfo.fX, (int)m_tInfo.fY - 15, hpText.c_str(), (int)hpText.length());
+    float ratio = ((float)(curHp) / maxHp);
+    int length = (int)(m_tInfo.fCX * ratio);
 
     HDC hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
     GdiTransparentBlt(hDC, (int)m_tInfo.fX, (int)m_tInfo.fY,
-        (int)m_tInfo.fCX, (int)m_tInfo.fCY, hMemDC, 0, 0,
-        (int)m_tInfo.fCX, (int)m_tInfo.fCY, RGB(255, 220, 255));
+        length, (int)m_tInfo.fCY, hMemDC, 0, 0,
+        length, (int)m_tInfo.fCY, RGB(255, 220, 255));
+
+    wchar_t szHpText[32] = {};
+    swprintf_s(szHpText, L"%d / %d", curHp, maxHp);
+
+    HFONT hFont = CreateFontW(
+        -8, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE,
+        HANGEUL_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+        ANTIALIASED_QUALITY, DEFAULT_PITCH | FF_DONTCARE,
+        L"./Image/Font/PF스타더스트.ttf"
+    );
+
+    HFONT hOldFont = (HFONT)SelectObject(hDC, hFont);
+
+    int textW = 60;
+    int textH = 12;
+
+    int centerX = (int)(m_tInfo.fX + m_tInfo.fCX * 0.5f);
+    int centerY = (int)(m_tInfo.fY + m_tInfo.fCY * 0.5f);
+
+    RECT rcText = {
+        centerX - textW / 2,
+        centerY - textH / 2,
+        centerX + textW / 2,
+        centerY + textH / 2
+    };
+
+    SetBkMode(hDC, TRANSPARENT);
+    SetTextColor(hDC, RGB(255, 255, 255));
+    DrawText(hDC, szHpText, -1, &rcText, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+
+    SelectObject(hDC, hOldFont);
+    DeleteObject(hFont);
 }
 
 int CUIHealthBar::Update()
