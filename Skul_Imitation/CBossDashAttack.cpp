@@ -64,6 +64,7 @@ void CBossDashAttack::Update(CBoss* pBoss)
             60.f, 30.f, 0.f, 0.2f,
             CAttackCollider::ColliderType::Static,
             ETeam::Enemy,
+            ESkillType::Attack,
             25
         );
         pCol->Initialize();

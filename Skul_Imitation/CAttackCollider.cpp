@@ -5,9 +5,9 @@
 #include <string>
 
 CAttackCollider::CAttackCollider(CObj* pOwner, float x, float y, float width, float height,
-    float delay, float duration, ColliderType type, ETeam team, int damage)
+    float delay, float duration, ColliderType type, ETeam team, ESkillType sType, int damage)
     : m_pOwner(pOwner), m_fDelay(delay), m_fDuration(duration), m_eType(type),
-    m_eTeam(team), m_iDamage(damage), m_fElapsedTime(0.f), m_bActive(false)
+    m_eTeam(team), m_eSType(sType), m_iDamage(damage), m_fElapsedTime(0.f), m_bActive(false)
 {
     m_tInfo.fX = x;
     m_tInfo.fY = y;
@@ -85,6 +85,10 @@ void CAttackCollider::Render(HDC hDC)
 void CAttackCollider::Release() {}
 bool CAttackCollider::IsActive() const { return m_bActive; }
 ETeam CAttackCollider::Get_Team() const { return m_eTeam; }
+ESkillType CAttackCollider::Get_SkillType() const
+{
+    return m_eSType;
+}
 int CAttackCollider::Get_Damage() const { return m_iDamage; }
 
 bool CAttackCollider::Get_Hit(CObj* pTarget) const { return m_HitTargets.count(pTarget) > 0; }

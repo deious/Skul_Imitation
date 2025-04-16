@@ -65,6 +65,7 @@ void CBossDuoDashFromEdge::Update(CBoss* pBoss)
             80.f, 60.f, 0.f, 1.f,
             CAttackCollider::ColliderType::Follow,
             ETeam::Enemy,
+            ESkillType::Attack,
             30
         );
         pCol->Initialize();

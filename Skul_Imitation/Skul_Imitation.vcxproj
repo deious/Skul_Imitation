@@ -157,6 +157,8 @@
     <ClInclude Include="CCollisionMgr.h" />
     <ClInclude Include="CDashState.h" />
     <ClInclude Include="CEdit.h" />
+    <ClInclude Include="CEffect.h" />
+    <ClInclude Include="CEffectMgr.h" />
     <ClInclude Include="CFallState.h" />
     <ClInclude Include="CHitBox.h" />
     <ClInclude Include="CIdleState.h" />
@@ -168,6 +170,7 @@
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CProjectile.h" />
     <ClInclude Include="CQuadTree.h" />
+    <ClInclude Include="CRandomMgr.h" />
     <ClInclude Include="CRisingState.h" />
     <ClInclude Include="CSkillState.h" />
     <ClInclude Include="CSkulHead.h" />
@@ -189,6 +192,7 @@
     <ClInclude Include="CStage.h" />
     <ClInclude Include="CTile.h" />
     <ClInclude Include="CTileMgr.h" />
+    <ClInclude Include="CTutorialUI.h" />
     <ClInclude Include="CUIHealthBar.h" />
     <ClInclude Include="CUIMgr.h" />
     <ClInclude Include="CUIPortrait.h" />
@@ -235,6 +239,8 @@
     <ClCompile Include="CCollisionMgr.cpp" />
     <ClCompile Include="CDashState.cpp" />
     <ClCompile Include="CEdit.cpp" />
+    <ClCompile Include="CEffect.cpp" />
+    <ClCompile Include="CEffectMgr.cpp" />
     <ClCompile Include="CFallState.cpp" />
     <ClCompile Include="CHitBox.cpp" />
     <ClCompile Include="CIdleState.cpp" />
@@ -246,6 +252,7 @@
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CProjectile.cpp" />
     <ClCompile Include="CQuadTree.cpp" />
+    <ClCompile Include="CRandomMgr.cpp" />
     <ClCompile Include="CRisingState.cpp" />
     <ClCompile Include="CSkillState.cpp" />
     <ClCompile Include="CSkulHead.cpp" />
@@ -266,6 +273,7 @@
     <ClCompile Include="CStage.cpp" />
     <ClCompile Include="CTile.cpp" />
     <ClCompile Include="CTileMgr.cpp" />
+    <ClCompile Include="CTutorialUI.cpp" />
     <ClCompile Include="CUIHealthBar.cpp" />
     <ClCompile Include="CUIMgr.cpp" />
     <ClCompile Include="CUIPortrait.cpp" />

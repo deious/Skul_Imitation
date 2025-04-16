@@ -61,6 +61,7 @@ void CIdleState::Update(CPlayer* pPlayer)
 
     if (CKeyMgr::Get_Instance()->Key_Down('C') && !pPlayer->Get_IsJump())
     {
+        pPlayer->Add_JumpCnt();
         pPlayer->ChangeState(new CJumpStartState());
         return;
     }

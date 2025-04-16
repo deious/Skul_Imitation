@@ -1,10 +1,13 @@
 #include "pch.h"
+#include "Define.h"
 #include "CCollisionMgr.h"
 #include "CCameraMgr.h"
 #include "CPlayer.h"
 #include "CAttackCollider.h"
 #include "CObjMgr.h"
 #include "CBoss.h"
+#include "CEffectMgr.h"
+#include "CSoundMgr.h"
 
 void CCollisionMgr::Collision_Rect(list<CObj*> DstList, list<CObj*> SrcList)
 {
@@ -469,6 +472,30 @@ void CCollisionMgr::CheckCollisionWithTargets(CObj* pCollider, list<CObj*>& targ
 			pAtkCol->Insert_Hit(pTarget);
 			pHitBox->Add_Hit();
 			pTarget->OnHit(dynamic_cast<CAttackCollider*>(pCollider));
+			if (auto au = dynamic_cast<CPlayer*>(pTarget))				// 종류별 설정 필요할듯 맞은게 플레이어일때 보스일때
+			{
+				dynamic_cast<CPlayer*>(pTarget)->Get_Skul()->PlayHitEffect();
+				CSoundMgr::Get_Instance()->Play(L"hit_blood.wav");
+			}
+
+			if (auto au = dynamic_cast<CBoss*>(pTarget))
+			{
+				if (pAtkCol->Get_SkillType() == ESkillType::Attack)
+				{
+					CEffectMgr::Get_Instance()->Add_Effect(dynamic_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_Skul()->GetPlayAttackEffect(), 
+						{(float)au->Get_HitBox()->Get_Center().x, (float)au->Get_HitBox()->Get_Center().y});
+				}
+				else if (pAtkCol->Get_SkillType() == ESkillType::SkillA)
+				{
+					CEffectMgr::Get_Instance()->Add_Effect(dynamic_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_Skul()->GetPlayAttackEffect(),
+						{ (float)au->Get_HitBox()->Get_Center().x, (float)au->Get_HitBox()->Get_Center().y });
+				}
+				else if (pAtkCol->Get_SkillType() == ESkillType::SkillS)
+				{
+					CEffectMgr::Get_Instance()->Add_Effect(dynamic_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_Skul()->GetPlaySkillSEffect(),
+						{ (float)au->Get_HitBox()->Get_Center().x, (float)au->Get_HitBox()->Get_Center().y });
+				}
+			}
 			pHitBox->Reset_HitCount();
 			pHitBox->Set_MaxHits(1);
 			//pCollider->Set_Dead();
@@ -511,13 +538,18 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 		if (overlapY < overlapX) // Y축 충돌 우선
 		{
 			float curX = pPlayer->Get_Info()->fX;
+			const int margin = 50;
 
-			if (playerRect.bottom > tileRect.top && playerRect.top < tileRect.top)
+			if (playerRect.bottom > tileRect.top - margin && playerRect.top < tileRect.top)
 			{
 				// 바닥 충돌
 				pPlayer->Set_Pos(curX, tileRect.top - halfH);
 				pPlayer->Set_Gravity(0.f);
 				pPlayer->Set_Jump(false);
+				if (auto player = dynamic_cast<CPlayer*>(pPlayer))
+				{
+					dynamic_cast<CPlayer*>(pPlayer)->Set_JumpCntReset();
+				}
 				pPlayer->OnTileCollision(tileRect.top - halfH);
 				//dynamic_cast<CPlayer*>(pPlayer)->Set_Gravity(0.f);
 				//dynamic_cast<CPlayer*>(pPlayer)->Set_Jump(false);
@@ -578,7 +610,7 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 		//	//playerRect = *pPlayer->Get_Rect();
 		//	playerRect = pPlayer->Get_HitBox()->Get_Rect();
 		//}
-		const int margin = 10;//10이였음
+		const int margin = 13;//10이였음
 
 		if (overlapX <= overlapY)
 		{
