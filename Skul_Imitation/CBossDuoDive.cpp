@@ -30,7 +30,7 @@ void CBossDuoDive::Enter(CBoss* pBoss)
     //float spawnX = pBoss->Get_Info()->fX;
     float spawnX = CObjMgr::Get_Instance()->Get_Player()->Get_Info()->fX;
     pBoss->Set_Pos(spawnX, -200.f);
-    pBoss->Set_Frame(0, 10, 8, 50);
+    pBoss->Set_Frame(0, 10, 8, 150);
 }
 
 void CBossDuoDive::Update(CBoss* pBoss)

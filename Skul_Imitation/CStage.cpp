@@ -18,6 +18,8 @@
 #include "CSoundMgr.h"
 #include "CSceneMgr.h"
 #include "CTutorialUI.h"
+#include "CUISkillIcon.h"
+#include "CUIMgr.h"
 
 CStage::CStage()
 {
@@ -65,14 +67,30 @@ void CStage::Initialize()
     //CLineMgr::Get_Instance()->Initialize();
     //CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create_Obj());
     //CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, CAbstractFactory<CTutorialUI>::Create_Obj(150.f, 300.f));
-    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, CAbstractFactory<CTutorialUI>::Create_Obj());
+    //CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, CAbstractFactory<CTutorialUI>::Create_Obj());
     CObjMgr::Get_Instance()->Get_ObjList(OBJ_PLAYER).front()->Set_Pos(200.f, WINCY >> 1);
     //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create_Obj(0));
+
+    std::wstring skillAKey = dynamic_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_Skul()->Get_SkulIconA();
+    std::wstring skillSKey = dynamic_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_Skul()->Get_SkulIconS();
+
+    CObj* pSkillAIcon = new CUISkillIcon(109.f, 517.5f, skillAKey, L"A");
+    CObj* pSkillSIcon = new CUISkillIcon(139.f, 517.5f, skillSKey, L"S");
+
+    pSkillAIcon->Initialize();
+    pSkillSIcon->Initialize();
+
+    CUIMgr::Get_Instance()->Add_UI(pSkillAIcon);
+    CUIMgr::Get_Instance()->Add_UI(pSkillSIcon);
+
+    /*CObjMgr::Get_Instance()->Add_UI(RENDER_UI, pSkillAIcon);
+    CObjMgr::Get_Instance()->Add_UI(RENDER_UI, pSkillSIcon);*/
 
     CObj* pButton = CAbstractFactory<CTutorialUI>::Create_Obj(100.f, 400.f);
     pButton->Set_FrameKey(L"LArrowBtn");
     dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"ÁÂÃø ÀÌµ¿");
     CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+    //CObjMgr::Get_Instance()->Add_UI(RENDER_UI, pButton);
 
     pButton = CAbstractFactory<CTutorialUI>::Create_Obj(400.f, 400.f);
     pButton->Set_FrameKey(L"RArrowBtn");

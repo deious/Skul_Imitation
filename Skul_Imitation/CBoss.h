@@ -58,15 +58,10 @@ public:
     void Set_Frame(int iStart, int iEnd, int iMotion, DWORD dwSpeed);
     void Set_FrameKey(const TCHAR* pKey);
     void Set_Gravity();
-    void Set_Controller(CBossController* pController)
-    {
-        m_pController = pController;
-    }
+    void Set_Controller(CBossController* pController);
+    void Set_Invincibility(bool b);
 
-    CBossController* Get_Controller() const
-    {
-        return m_pController;
-    }
+    CBossController* Get_Controller() const;
 
 private:
     int m_iBossID = 0;
@@ -87,6 +82,7 @@ private:
     bool m_bShowHitText = false;
     bool m_bIsDead = false;
     bool m_bUseTeamTree = true;
+    bool m_binvincibility = false;
     ULONGLONG m_dwHitTime = 0;
 
     //CHitBox m_HitBox;

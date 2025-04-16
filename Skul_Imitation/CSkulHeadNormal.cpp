@@ -19,6 +19,8 @@ CSkulHeadNormal::CSkulHeadNormal()
     m_fFrame[SKUL_SKILLA] = { 0, 3, 9, 50, 0 };
     m_fFrame[SKUL_SKILLS] = { 0, 1, 4, 200, 0 };
     sSkulName = L"Normal";
+    m_sSkulIcon[0] = L"SNormalAIcon";
+    m_sSkulIcon[1] = L"SNormalSIcon";
 
     m_tEffectSet.tHitEffect = {
         EFFECT_TYPE::HIT,

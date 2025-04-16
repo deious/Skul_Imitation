@@ -93,7 +93,7 @@ void CTutorialUI::Render(HDC hDC)
 
     // 텍스트
     HFONT hFont = CreateFontW(
-        24, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE,
+        -16, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE,
         HANGEUL_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
         ANTIALIASED_QUALITY, DEFAULT_PITCH | FF_DONTCARE,
         L"./Image/Font/PF스타더스트.ttf"

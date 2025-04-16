@@ -43,8 +43,14 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Player_Frame.bmp", L"pFrame");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Hp_Bar.bmp", L"hBar");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Skul_Icon.bmp", L"sIcon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/SkullThrowing.bmp", L"SNormalAIcon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/SkullBack.bmp", L"SNormalSIcon");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Samurai_Icon.bmp", L"SamuraiIcon");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamurai_Icon.bmp", L"ZinSamuraiIcon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/SamuraiA.bmp", L"SamuraiAIcon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/SamuraiS.bmp", L"SamuraiSIcon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamuraiA.bmp", L"ZinSamuraiAIcon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamuraiS.bmp", L"ZinSamuraiSIcon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamuraiSpecial.bmp", L"ZinSamuraiSpecialIcon");
 
 	// 플레이어 이미지
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Skul/Skul_Head_Left.bmp", L"Skul_Head_Left");
