@@ -23,12 +23,30 @@
 extern HWND    g_hWnd;
 
 enum DIRECTION { DIR_LEFT, DIR_RIGHT, DIR_UP, DIR_DOWN, DIR_LU, DIR_RU, DIR_END };
-enum OBJID { OBJ_PLAYER, OBJ_PROJECTILE, OBJ_MONSTER, OBJ_BOSS, OBJ_MOUSE, OBJ_SHIELD, OBJ_BUTTON, OBJ_COLLIDER, OBJ_HEAD, OBJ_END };
+enum OBJID { OBJ_PLAYER, OBJ_PROJECTILE, OBJ_MONSTER, OBJ_BOSS, OBJ_MOUSE, OBJ_TUTORIAL, OBJ_BUTTON, OBJ_COLLIDER, OBJ_HEAD, OBJ_EFFECT, OBJ_END };
 enum RENDERID { RENDER_PRIORITY, RENDER_GAMEOBJECT, RENDER_EFFECT, RENDER_UI, RENDER_END };
 enum CHANNELID { SOUND_EFFECT, SOUND_BGM, SOUND_END };
 enum SKULINFO { SKUL_IDLE, SKUL_WALK, SKUL_ATTACK, SKUL_ATTACK2, SKUL_ATTACK3, SKUL_SKILLA, SKUL_SKILLS, SKUL_END };
 
+//enum class SkillType
+//{
+//	Attack,
+//	SkillA,
+//	SkillB,
+//};
+
+enum class EFFECT_TYPE {
+	HIT,
+	DASH,
+	JUMP,
+	ATTACK,
+	SKILLA,
+	SKILLB,
+	DIE
+};
+
 enum class ESkillType {
+	Attack,
 	SkillA,
 	SkillS,
 	SkillD
@@ -122,3 +140,22 @@ typedef struct Vec2
 		return (len != 0) ? Vec2(x / len, y / len) : Vec2();
 	}
 }VEC2;
+
+struct EffectInfo {
+	EFFECT_TYPE eType;
+
+	const TCHAR* sFramekey;
+
+	Vec2 vOffset;     // 기준 위치 (캐릭터 위치 + 오프셋)
+	Vec2 vSize;       // 시각적 사이즈 (폭, 높이)
+
+	int iStartFrame;
+	int iEndFrame;
+	int iFrameSpeed;
+
+	float fScale = 1.f;
+	float fRotation = 0.f;
+
+	CHANNELID eSound;
+	bool bPlaySound = false;
+};

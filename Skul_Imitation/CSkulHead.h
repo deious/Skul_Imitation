@@ -11,6 +11,18 @@ struct FrameData {
     DWORD dwSpeed;
 };
 
+struct SkulEffectSet {
+    EffectInfo tHitEffect;
+    EffectInfo tLDashEffect;
+    EffectInfo tRDashEffect;
+    EffectInfo tJumpEffect;
+    EffectInfo tLAttackEffect;
+    EffectInfo tRAttackEffect;
+    EffectInfo tSkillAEffect;
+    EffectInfo tSkillBEffect;
+    EffectInfo tDieEffect;
+};
+
 class CSkulHead {
 public:
     virtual ~CSkulHead() {}
@@ -18,6 +30,14 @@ public:
     virtual void UseSkillA(CPlayer* pPlayer) = 0;
     virtual void UseSkillS(CPlayer* pPlayer) = 0;
     virtual void UseSkillD(CPlayer* pPlayer) = 0;
+    virtual void PlayHitEffect() const;
+    virtual void PlayDashEffect() const;
+    virtual void PlayJumpEffect() const;
+    virtual void PlayDieEffect() const;
+    const EffectInfo& GetPlayAttackEffect() const;
+    const EffectInfo& GetPlaySkillAEffect() const;
+    const EffectInfo& GetPlaySkillSEffect() const;
+    //virtual SkulEffectSet& Set_EffectSet(SkulEffectSet sEffec);
     virtual const wchar_t* Get_IconKey() const = 0;
     virtual const wchar_t* Get_FrameKey(CPlayer* pPlayer) const = 0;
     virtual const wstring Get_SkulId() const = 0;
@@ -30,4 +50,5 @@ protected:
     //unordered_map<ESkillType, FrameData> m_mapSkillFrames;
     FRAME m_fFrame[SKUL_END];
     std::wstring sSkulName;
+    SkulEffectSet m_tEffectSet;
 };

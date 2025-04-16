@@ -4,6 +4,8 @@
 #include "CKeyMgr.h"
 #include "CAttackState.h"
 #include "CIdleState.h"
+#include "CJumpStartState.h"
+#include "CSoundMgr.h"
 
 void CDashState::Enter(CPlayer* pPlayer)
 {
@@ -13,6 +15,8 @@ void CDashState::Enter(CPlayer* pPlayer)
     }
     m_dwStartTime = GetTickCount64();
     pPlayer->Set_Frame(0, 0, 2, 100);
+    pPlayer->Get_Skul()->PlayDashEffect();
+    CSoundMgr::Get_Instance()->Play(L"Default_Dash.wav");
 }
 
 void CDashState::Update(CPlayer* pPlayer)
@@ -30,6 +34,13 @@ void CDashState::Update(CPlayer* pPlayer)
     else
     {
         pPlayer->Set_PosX(pPlayer->Get_Speed() * 3.f);
+    }
+
+    if (CKeyMgr::Get_Instance()->Key_Down('C') && pPlayer->Get_JumpCnt() < pPlayer->Get_JumpMaxCnt())
+    {
+        pPlayer->Add_JumpCnt();
+        pPlayer->ChangeState(new CJumpStartState());
+        return;
     }
 
     if (GetTickCount64() - m_dwStartTime > pPlayer->Get_DashDuration())

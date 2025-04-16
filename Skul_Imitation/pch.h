@@ -17,6 +17,7 @@
 #include <vector>
 #include <functional>
 #include <unordered_set>
+#include <random>
 
 #include "fmod.h"
 #include "fmod.hpp"

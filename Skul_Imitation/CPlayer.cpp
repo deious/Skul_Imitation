@@ -45,7 +45,7 @@ void CPlayer::Initialize()
 	/*CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Left.bmp", L"Player_LEFT");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Skul_Right.bmp", L"Player_RIGHT");*/
 
-	m_pFrameKey = L"Player_RIGHT";
+	m_pFrameKey = L"Player_Right";
 
 	m_tFrame.iStart = 0;
 	m_tFrame.iEnd = 3;
@@ -192,6 +192,16 @@ int CPlayer::Get_EndFrame() const
 	return m_tFrame.iEnd;
 }
 
+int CPlayer::Get_JumpCnt() const
+{
+	return m_iJumpCnt;
+}
+
+int CPlayer::Get_JumpMaxCnt() const
+{
+	return m_iMaxJumpCnt;
+}
+
 float CPlayer::Get_Speed() const { return m_fSpeed; }
 float CPlayer::Get_JumpPower() const
 {
@@ -236,6 +246,11 @@ void CPlayer::Set_Jump(bool b)
 	m_bJump = b;
 }
 
+void CPlayer::Set_JumpCntReset()
+{
+	m_iJumpCnt = 0;
+}
+
 void CPlayer::Set_Awaken()
 {
 	if (m_pSkul->Get_SkulId() == L"Samurai")
@@ -245,7 +260,13 @@ void CPlayer::Set_Awaken()
 	}
 }
 
-void CPlayer::Create_AttackCollider(int iCombo)
+void CPlayer::Add_JumpCnt()
+{
+	if (m_iMaxJumpCnt > m_iJumpCnt)
+		m_iJumpCnt++;
+}
+
+void CPlayer::Create_AttackCollider(int iCombo, int type)
 {
 	float offsetX = (m_eDir == DIRECTION::DIR_RIGHT) ? 30.f : -30.f;
 	//float offsetY = -m_tInfo.fCY;
@@ -265,19 +286,57 @@ void CPlayer::Create_AttackCollider(int iCombo)
 		break;
 	}
 
-	auto* pCol = new CAttackCollider(
-		this,
-		m_tInfo.fX + offsetX,
-		m_tInfo.fY,
-		30.f, 20.f,                     // 콜라이더 크기
-		0.f, 0.1f,                      // 생성 지연 없음, 0.2초 유지
-		CAttackCollider::ColliderType::Static,
-		ETeam::Player,
-		damage                              // 데미지
-	);
-	pCol->Initialize();
-	CObjMgr::Get_Instance()->Add_Object(OBJ_COLLIDER, pCol);
-	//CObjMgr::Get_Instance()->Add_Object(OBJID::OBJ_COLLIDER, pCol);
+	if (type == 0)
+	{
+		auto* pCol = new CAttackCollider(
+			this,
+			m_tInfo.fX + offsetX,
+			m_tInfo.fY,
+			30.f, 20.f,                     // 콜라이더 크기
+			0.f, 0.1f,                      // 생성 지연 없음, 0.2초 유지
+			CAttackCollider::ColliderType::Static,
+			ETeam::Player,
+			ESkillType::Attack,
+			damage                              // 데미지
+		);
+		pCol->Initialize();
+		CObjMgr::Get_Instance()->Add_Object(OBJ_COLLIDER, pCol);
+		//CObjMgr::Get_Instance()->Add_Object(OBJID::OBJ_COLLIDER, pCol);
+	}
+	else if (type == 1)
+	{
+		auto* pCol = new CAttackCollider(
+			this,
+			m_tInfo.fX + offsetX,
+			m_tInfo.fY,
+			30.f, 20.f,                     // 콜라이더 크기
+			0.f, 0.1f,                      // 생성 지연 없음, 0.2초 유지
+			CAttackCollider::ColliderType::Static,
+			ETeam::Player,
+			ESkillType::SkillA,
+			damage                              // 데미지
+		);
+		pCol->Initialize();
+		CObjMgr::Get_Instance()->Add_Object(OBJ_COLLIDER, pCol);
+		//CObjMgr::Get_Instance()->Add_Object(OBJID::OBJ_COLLIDER, pCol);
+	}
+	if (type == 2)
+	{
+		auto* pCol = new CAttackCollider(
+			this,
+			m_tInfo.fX + offsetX,
+			m_tInfo.fY,
+			30.f, 20.f,                     // 콜라이더 크기
+			0.f, 0.1f,                      // 생성 지연 없음, 0.2초 유지
+			CAttackCollider::ColliderType::Static,
+			ETeam::Player,
+			ESkillType::SkillS,
+			damage                              // 데미지
+		);
+		pCol->Initialize();
+		CObjMgr::Get_Instance()->Add_Object(OBJ_COLLIDER, pCol);
+		//CObjMgr::Get_Instance()->Add_Object(OBJID::OBJ_COLLIDER, pCol);
+	}
 }
 
 void CPlayer::OnHit(CAttackCollider* pCol)
@@ -294,194 +353,6 @@ void CPlayer::OnHit(CAttackCollider* pCol)
 	if (m_iHp <= 0)
 		Set_Dead();
 }
-
-//void CPlayer::Key_Input()
-//{
-//	if (CKeyMgr::Get_Instance()->Key_Down('X') && !m_bJump)
-//	{
-//		if (!m_bAttack)
-//		{
-//			m_bAttack = true;
-//			m_iComboCount = 0;
-//			m_dwLastAttackTime = GetTickCount64();
-//			m_eCurMotion = MSTATE::ATTACK;
-//			m_bForceMotionChange = true;
-//		}
-//		else if (!m_bAttackInputQueued && m_iComboCount < 2)
-//		{
-//			m_bAttackInputQueued = true;
-//			m_dwLastAttackTime = GetTickCount64();
-//		}
-//		return;
-//	}
-//
-//	if (m_bAttack)
-//	{
-//		// 공격 외 키가 눌리면 공격 중단
-//		if (GetAsyncKeyState(VK_LEFT) || GetAsyncKeyState(VK_RIGHT) ||
-//			GetAsyncKeyState('C') || GetAsyncKeyState('Z') || GetAsyncKeyState('F'))
-//		{
-//			m_bAttack = false;
-//			m_iComboCount = 0;
-//			m_eCurMotion = MSTATE::IDLE;  // 또는 WALK, JUMP 등으로 바꾸기
-//			m_bForceMotionChange = true;
-//		}
-//
-//		return;
-//	}
-//
-//	// 공중일 때는 이동만 허용
-//	if (m_bJump)
-//	{
-//		if (GetAsyncKeyState(VK_LEFT))
-//		{
-//			m_tInfo.fX -= m_fSpeed;
-//			m_pFrameKey = L"Player_LEFT";
-//		}
-//		else if (GetAsyncKeyState(VK_RIGHT))
-//		{
-//			m_tInfo.fX += m_fSpeed;
-//			m_pFrameKey = L"Player_RIGHT";
-//		}
-//		return;
-//	}
-//
-//	if (GetAsyncKeyState(VK_LEFT))
-//	{
-//		m_tInfo.fX -= m_fSpeed;
-//		m_eCurMotion = MSTATE::WALK;
-//		m_pFrameKey = L"Player_LEFT";
-//	}
-//	else if (GetAsyncKeyState(VK_RIGHT))
-//	{
-//		m_tInfo.fX += m_fSpeed;
-//		m_eCurMotion = MSTATE::WALK;
-//		m_pFrameKey = L"Player_RIGHT";
-//	}
-//	else if (GetAsyncKeyState('Z'))					// 대쉬 -> 쿨 타임 필요
-//	{
-//		if (m_pFrameKey == L"Player_LEFT")
-//		{
-//			m_tInfo.fX += -m_fSpeed * 3.f;
-//		}
-//		else
-//		{
-//			m_tInfo.fX += m_fSpeed * 3.f;
-//		}
-//
-//		m_eCurMotion = MSTATE::DASH;
-//		//m_pFrameKey = L"Player_DASH";
-//	}
-//	else if (GetAsyncKeyState('F'))					// 상호작용
-//	{
-//		m_tInfo.fY += m_fSpeed;
-//		m_eCurMotion = MSTATE::INTERACTION;
-//		//m_pFrameKey = L"Player_INTERACTION";
-//	}
-//	else if (!m_bAttack && !m_bJump && m_eCurMotion != MSTATE::IDLE)
-//	{
-//		m_eCurMotion = MSTATE::IDLE;
-//		m_bForceMotionChange = true;
-//	}
-//	/*else 
-//	{
-//		m_eCurMotion = MSTATE::IDLE;
-//		m_bForceMotionChange = true;
-//	}*/
-//
-//}
-
-
-//void CPlayer::Apply_Gravity()
-//{
-//	//float fLandY = 0.f;
-//	//bool bOnGround = CLineMgr::Get_Instance()->Collision_Line(m_tInfo.fX, &fLandY);
-//
-//	//if (!bOnGround || m_tInfo.fY < fLandY)
-//	//{
-//	//	//m_bJump = true;
-//
-//	//	// 중력 증가
-//	//	m_fGravity += GRAVITY_ACCEL;
-//	//	if (m_fGravity > GRAVITY_MAX)
-//	//		m_fGravity = GRAVITY_MAX;
-//
-//	//	m_tInfo.fY += m_fGravity;
-//
-//	//	if (m_fGravity < 0.f && m_eCurMotion != MSTATE::RISING && m_eCurMotion != MSTATE::JUMPSTART)
-//	//	{
-//	//		m_eCurMotion = MSTATE::RISING;
-//	//		m_bForceMotionChange = true;
-//	//	}
-//	//	else if (m_fGravity > 0.f && m_eCurMotion != MSTATE::FALL)
-//	//	{
-//	//		m_eCurMotion = MSTATE::FALL;
-//	//		m_bForceMotionChange = true;
-//	//	}
-//	//}
-//	//else
-//	//{
-//	//	if (m_bJump || m_eCurMotion == MSTATE::FALL || m_eCurMotion == MSTATE::RISING)
-//	//	{
-//	//		m_bJump = false;
-//	//		m_fGravity = 0.f;
-//	//		m_tInfo.fY = fLandY;
-//
-//	//		m_eCurMotion = MSTATE::IDLE;
-//	//		m_bForceMotionChange = true;
-//	//	}
-//	//}
-//	float fLandY = 0.f;
-//	bool bOnGround = CLineMgr::Get_Instance()->Collision_Line(m_tInfo.fX, &fLandY);
-//
-//	if (!bOnGround || m_tInfo.fY < fLandY)
-//	{
-//		m_fGravity += GRAVITY_ACCEL;
-//		if (m_fGravity > GRAVITY_MAX)
-//			m_fGravity = GRAVITY_MAX;
-//
-//		m_tInfo.fY += m_fGravity;
-//
-//		// 공격 중이면 점프 상태로 전이하지 않음
-//		if (!m_bAttack)
-//		{
-//			if (m_fGravity < 0.f && m_eCurMotion != MSTATE::RISING && m_eCurMotion != MSTATE::JUMPSTART)
-//			{
-//				m_eCurMotion = MSTATE::RISING;
-//				m_bForceMotionChange = true;
-//			}
-//			else if (m_fGravity > 0.f && m_eCurMotion != MSTATE::FALL)
-//			{
-//				m_eCurMotion = MSTATE::FALL;
-//				m_bForceMotionChange = true;
-//			}
-//		}
-//	}
-//	else
-//	{
-//		if (m_bJump || m_eCurMotion == MSTATE::FALL || m_eCurMotion == MSTATE::RISING)
-//		{
-//			m_bJump = false;
-//			m_fGravity = 0.f;
-//			m_tInfo.fY = fLandY;
-//
-//			//if (!m_bAttack) // 공격 중이면 IDLE로 바꾸지 말 것
-//			//{
-//			//	m_eCurMotion = MSTATE::IDLE;
-//			//	m_bForceMotionChange = true;
-//			//}
-//			if (m_bAttack)
-//			{
-//				m_bAttack = false; // 점프 끝나면 공격도 초기화
-//				m_bAttackInputQueued = false;
-//				m_iComboCount = 0;
-//			}
-//
-//			m_eCurMotion = MSTATE::IDLE;
-//			m_bForceMotionChange = true;
-//		}
-//	}
-//}
 
 void CPlayer::Apply_Gravity()
 {

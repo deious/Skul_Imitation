@@ -6,7 +6,8 @@
 #include "CBossDuoShootingLightning.h"
 #include "CBossIdleState.h"
 #include "IState.h"
-#include "EBossStateType.h" 
+#include "EBossStateType.h"
+#include "CRandomMgr.h"
 
 static int g_iNextWaitBossID = -1;
 //static EBossStateType g_eNextTeamPattern = EBossStateType::None;
@@ -51,7 +52,8 @@ public:
             m_fTimer = 0.f;
             m_fSoloCooldown = 0.f;
 
-            int randPattern = rand() % 3;
+            //int randPattern = rand() % 3;
+            int randPattern = CRandomMgr::Get_Instance()->GetRandom(0, 2);
             g_iNextWaitBossID = (rand() % 2 == 0 ? m_pBossA->Get_ID() : m_pBossB->Get_ID());
             m_pBossA->ChangeState(CreateTeamPattern(randPattern));
             m_pBossB->ChangeState(CreateTeamPattern(randPattern));
@@ -73,7 +75,11 @@ public:
                 m_pBossB->Get_CurStateType() == EBossStateType::Wait)
                 return;*/
 
-            int pick = rand() % 2;
+            /*int pick = rand() % 2;
+            CBoss* candidate1 = (pick == 0) ? m_pBossA : m_pBossB;
+            CBoss* candidate2 = (pick == 0) ? m_pBossB : m_pBossA;*/
+            int pick = CRandomMgr::Get_Instance()->GetRandom(0, 1);
+
             CBoss* candidate1 = (pick == 0) ? m_pBossA : m_pBossB;
             CBoss* candidate2 = (pick == 0) ? m_pBossB : m_pBossA;
 
@@ -108,7 +114,8 @@ public:
             //    //m_pBossA->ChangeState(new CBossWaitState);
             //}
 
-            int iRand = rand() % 4;
+            //int iRand = rand() % 4;
+            int iRand = CRandomMgr::Get_Instance()->GetRandom(0, 3);
             if (soloBoss)
             {
                 soloBoss->ChangeState(CreateTeamPattern(iRand));

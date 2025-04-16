@@ -78,7 +78,8 @@ void CSceneMgr::Scene_Change(SCENEID eID)
 			break;
 		}
 
-		CSoundMgr::Get_Instance()->StopAll();
+		//CSoundMgr::Get_Instance()->StopAll();
+		CSoundMgr::Get_Instance()->StopBGM();
 		m_pScene->Initialize();
 
 		m_ePreScene = m_eCurScene;

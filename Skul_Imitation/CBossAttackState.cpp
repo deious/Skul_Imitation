@@ -25,6 +25,7 @@ void CBossAttackState::Update(CBoss* pBoss)
             80.f, 60.f, 0.f, 0.3f,
             CAttackCollider::ColliderType::Static,
             ETeam::Enemy,
+            ESkillType::Attack,
             30
         );
         pCol->Initialize();
