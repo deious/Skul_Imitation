@@ -51,6 +51,8 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamuraiA.bmp", L"ZinSamuraiAIcon");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamuraiS.bmp", L"ZinSamuraiSIcon");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamuraiSpecial.bmp", L"ZinSamuraiSpecialIcon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/BossPortrait.bmp", L"BossPortrait");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/BossHp_Bar.bmp", L"BossHp_Bar");
 
 	// 플레이어 이미지
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Skul/Skul_Head_Left.bmp", L"Skul_Head_Left");

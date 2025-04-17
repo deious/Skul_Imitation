@@ -357,9 +357,6 @@
     <ClInclude Include="CBossWaitState.h">
       <Filter>01. Obj\01. Boss\State</Filter>
     </ClInclude>
-    <ClInclude Include="CTutorialUI.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CEffect.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -370,6 +367,18 @@
       <Filter>Manager\RandomManager</Filter>
     </ClInclude>
     <ClInclude Include="CUISkillIcon.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIBossHealthBar.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIBossPortrait.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CTutorialUI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIWrite.h">
       <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>
@@ -560,9 +569,6 @@
     <ClCompile Include="CBossWaitState.cpp">
       <Filter>01. Obj\01. Boss\State</Filter>
     </ClCompile>
-    <ClCompile Include="CTutorialUI.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CEffect.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -573,6 +579,18 @@
       <Filter>Manager\RandomManager</Filter>
     </ClCompile>
     <ClCompile Include="CUISkillIcon.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIBossHealthBar.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIBossPortrait.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CTutorialUI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIWrite.cpp">
       <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>

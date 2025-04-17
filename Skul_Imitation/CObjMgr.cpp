@@ -2,6 +2,7 @@
 #include "CObjMgr.h"
 #include "CCollisionMgr.h"
 #include "CSceneMgr.h"
+#include "CBoss.h"
 
 CObjMgr* CObjMgr::m_pInstance = nullptr;
 
@@ -19,6 +20,24 @@ CObj* CObjMgr::Get_Player()
 	if (m_ObjList[OBJ_PLAYER].empty())
 		return nullptr;
 	return m_ObjList[OBJ_PLAYER].front(); 
+}
+
+CObj* CObjMgr::Get_Boss(int id)
+{
+	if (m_ObjList[OBJ_BOSS].empty())
+		return nullptr;
+	for (auto iter = m_ObjList[OBJ_BOSS].begin();
+		iter != m_ObjList[OBJ_BOSS].end(); )
+	{
+		if (dynamic_cast<CBoss*>(*iter)->Get_ID() == id)
+		{
+			return *iter;
+		}
+		else
+		{
+			iter++;
+		}
+	}
 }
 
 CObj* CObjMgr::Get_Target(OBJID eID, CObj* pObj)
