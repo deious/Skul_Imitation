@@ -12,6 +12,7 @@ private:
 
 public:
 	CObj*				Get_Player();
+	CObj*				Get_Boss(int Bossid);
 	CObj*				Get_Target(OBJID eID, CObj* pObj);
 	list<CObj*>&		Get_ObjList(OBJID eID);
 

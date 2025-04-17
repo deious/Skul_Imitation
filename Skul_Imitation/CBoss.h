@@ -48,6 +48,8 @@ public:
     bool ShouldSyncAttack() const;
 
     int   Get_ID();
+    int   Get_Hp();
+    int   Get_MaxHp();
     float Get_Speed();
     CBoss* Get_PairBoss() const;
     EBossStateType Get_CurStateType() const;
@@ -66,6 +68,7 @@ public:
 private:
     int m_iBossID = 0;
     int m_iHp;
+    int m_iMaxHp = 1000;
 
     float		m_fGravity = 0.f;
     float       m_fAITimer = 0.f;

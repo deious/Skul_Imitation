@@ -18,6 +18,9 @@
 #include "CSoundMgr.h"
 #include "CSceneMgr.h"
 #include "CBossController.h"
+#include "CUIBossPortrait.h"
+#include "CUIBossHealthBar.h"
+#include "CUIWrite.h"
 
 //bool g_bIsTeamPatternTime = false;
 //float g_fTeamPatternTimer = 0.f;
@@ -61,6 +64,10 @@ void CBossStage::Initialize()
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Skul_Icon.bmp", L"sIcon");*/
     //CLineMgr::Get_Instance()->Initialize();
 
+    CObj* CBossUI = new CUIBossPortrait();
+    CBossUI->Initialize();
+    CUIMgr::Get_Instance()->Add_UI(CBossUI);
+
     CObj* pPlayer = CSceneMgr::Get_Instance()->Get_Player();
 
     if (!pPlayer)
@@ -96,6 +103,16 @@ void CBossStage::Initialize()
     /*CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIPortrait>::Create_Obj());
     CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIHealthBar>::Create_Obj());
     CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUISkul>::Create_Obj());*/
+
+    CObj* CBossHpBar = new CUIBossHealthBar(0);
+    CUIMgr::Get_Instance()->Add_UI(CBossHpBar);
+    CBossHpBar = new CUIBossHealthBar(1);
+    CUIMgr::Get_Instance()->Add_UI(CBossHpBar);
+
+    CObj* CWriteBoard = new CUIWrite(355.f, 27.5f, 90.f, 19.f, L"레이아나 자매", 12);
+    CUIMgr::Get_Instance()->Add_UI(CWriteBoard);
+    CWriteBoard = new CUIWrite(340.f, 80.5f, 124.f, 14.f, L"황금갈기기사단 부관", 10);
+    CUIMgr::Get_Instance()->Add_UI(CWriteBoard);
 
     CTileMgr::Get_Instance()->Load_Tile(L"./Data/BossMap.dat");
     CSoundMgr::Get_Instance()->PlayBGM(L"BossBgm.wav", 1.f);
