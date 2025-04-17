@@ -15,5 +15,7 @@ private:
     float m_fWaitTime = 0.f;
     float m_fDiveSpeed = 25.f;
     float m_fTargetY = 400.f;
+    wstring m_sEffectKey;
+    EffectInfo m_tEffectInfo;
 };
 

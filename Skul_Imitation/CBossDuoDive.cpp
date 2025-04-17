@@ -5,6 +5,7 @@
 #include "CBossIdleState.h"
 #include "CPlayer.h"
 #include "CBossController.h"
+#include "CEffectMgr.h"
 
 void CBossDuoDive::Enter(CBoss* pBoss)
 {
@@ -25,12 +26,24 @@ void CBossDuoDive::Enter(CBoss* pBoss)
 
     m_bDived = false;
     m_fWaitTime = 0.f;
-
+    m_sEffectKey = L"BossDive";
     // 공중 위치로 세팅
     //float spawnX = pBoss->Get_Info()->fX;
     float spawnX = CObjMgr::Get_Instance()->Get_Player()->Get_Info()->fX;
     pBoss->Set_Pos(spawnX, -200.f);
     pBoss->Set_Frame(0, 10, 8, 150);
+
+    m_tEffectInfo.eType = EFFECT_TYPE::SKILLA;
+    m_tEffectInfo.sFramekey = m_sEffectKey.c_str();
+    m_tEffectInfo.vOffset = {0.f, -50.f};
+    m_tEffectInfo.vSize = Vec2(51.2f, 256.f); // 이펙트 크기
+    m_tEffectInfo.iStartFrame = 0;
+    m_tEffectInfo.iEndFrame = 9;
+    m_tEffectInfo.iFrameSpeed = 30;
+    m_tEffectInfo.fScale = 1.f;
+    m_tEffectInfo.fRotation = 0.f;
+
+    //CEffectMgr::Get_Instance()->Add_Effect(effect, { pBoss->Get_Info()->fX, pBoss->Get_Info()->fY }, pBoss);
 }
 
 void CBossDuoDive::Update(CBoss* pBoss)
@@ -48,7 +61,7 @@ void CBossDuoDive::Update(CBoss* pBoss)
         else
         {
             m_bDived = true;
-
+            CEffectMgr::Get_Instance()->Add_Effect(m_tEffectInfo, { pBoss->Get_Info()->fX, pBoss->Get_Info()->fY }, pBoss);
             CAttackCollider* pCol = new CAttackCollider(
                 pBoss, pBoss->Get_Info()->fX, 450.f,
                 100.f, 50.f, 0.f, 0.3f,

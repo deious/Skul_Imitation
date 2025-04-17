@@ -76,7 +76,7 @@ private:
 	CSkulHead*	m_pStoredSkul = nullptr;   // 보조 슬롯에 보관 중
 
 	int			m_iHp = 100;
-	int			m_iJumpCnt;
+	int			m_iJumpCnt = 0;
 	int			m_iMaxHp = 100;
 
 	bool		m_bJump;
@@ -89,7 +89,7 @@ private:
 	float		m_fDashSpeed = 3.f;
 
 	const float GRAVITY_ACCEL = 0.5f;		// 중력 가속도 (프레임당 증가값)
-	const float GRAVITY_MAX = 10.f;			// 최대 낙하 속도 제한
+	const float GRAVITY_MAX = 7.f;			// 최대 낙하 속도 제한
 	const float JUMP_POWER = -10.f;
 
 	const int	m_iMaxJumpCnt = 2;

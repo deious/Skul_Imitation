@@ -77,6 +77,14 @@ int CBoss::Update()
         m_pCurState->Update(this);
 
     m_tInfo.fX += m_fSpeed * DELTA_TIME;
+    if (m_tInfo.fX < 100.f)
+    {
+        m_tInfo.fX = 100.f;
+    }
+    else if (m_tInfo.fX > 700.f)
+    {
+        m_tInfo.fX = 700.f;
+    }
 
     __super::Update_Rect();
     Move_Frame();
@@ -88,7 +96,7 @@ void CBoss::Late_Update()
 {
     Apply_Gravity();
     //m_tInfo.fX += m_fSpeed * DELTA_TIME;
-    m_pHitBox->Set_Pos(m_tInfo.fX - 15.f, m_tInfo.fY);
+    m_pHitBox->Set_Pos(m_tInfo.fX, m_tInfo.fY);
     m_pHitBox->Update_Rect();
     //__super::Update_Rect();
     CCollisionMgr::PlayerToTile(this, CTileMgr::Get_Instance()->Get_Tree());

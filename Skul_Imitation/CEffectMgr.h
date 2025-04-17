@@ -8,14 +8,13 @@ class CEffectMgr
 public:
     static CEffectMgr* Get_Instance();
 
-    void Add_Effect(const EffectInfo& tInfo, const Vec2& vFinalPos);
+    void Add_Effect(const EffectInfo& tInfo, const Vec2& vFinalPos, CObj* pTarget = nullptr);
 
     void Update();
     void Render(HDC hDC);
     void Release();
 
 private:
-    // 생성은 내부 팩토리로 분리
-    CObj* Create_Effect(const EffectInfo& tInfo, const Vec2& vFinalPos);
+    CObj* Create_Effect(const EffectInfo& tInfo, const Vec2& vFinalPos, CObj* pTarget);
 };
 
