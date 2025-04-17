@@ -7,6 +7,7 @@
 #include "CBossController.h"
 
 constexpr float kStartWaitDuration = 1.f;
+float kPhaseInterval = 0.7f;
 
 void CBossDuoShootingLightning::Enter(CBoss* pBoss)
 {
@@ -43,7 +44,7 @@ void CBossDuoShootingLightning::Update(CBoss* pBoss)
 
     if (m_fElapsed >= kStartWaitDuration)
     {
-        if (m_iPhase < 3 && m_fElapsed >= m_iPhase * 0.3f)
+        if (m_iPhase < 3 && m_fElapsed >= kStartWaitDuration + m_iPhase * kPhaseInterval)
         {
             Vec2 bossPos(pBoss->Get_Info()->fX, pBoss->Get_Info()->fY);
             Vec2 firePos = bossPos + m_Offsets[m_iPhase];
@@ -52,7 +53,8 @@ void CBossDuoShootingLightning::Update(CBoss* pBoss)
             Vec2 playerPos(pPlayer->Get_Info()->fX, pPlayer->Get_Info()->fY);
             Vec2 dir = playerPos - firePos;
             dir.Normalize();
-            CObj* pProj = new CLightningProjectile(firePos, dir);
+
+            CObj* pProj = new CLightningProjectile(firePos, dir, pBoss->Get_ID());
             pProj->Initialize();
             CObjMgr::Get_Instance()->Add_Object(OBJ_PROJECTILE, pProj);
 

@@ -12,7 +12,7 @@ void CJumpStartState::Enter(CPlayer* pPlayer)
 	pPlayer->Set_Frame(0, 1, 3, 200);
     pPlayer->Set_Gravity(pPlayer->Get_JumpPower());
     pPlayer->Set_Jump(true);
-
+    pPlayer->Add_JumpCnt();
     pPlayer->Get_Skul()->PlayJumpEffect();
     CSoundMgr::Get_Instance()->Play(L"Default_Jump.wav");
 }
@@ -44,7 +44,7 @@ void CJumpStartState::Update(CPlayer* pPlayer)
 
     if (CKeyMgr::Get_Instance()->Key_Down('C') && pPlayer->Get_JumpCnt() < pPlayer->Get_JumpMaxCnt())
     {
-        pPlayer->Add_JumpCnt();
+        //pPlayer->Add_JumpCnt();
         pPlayer->ChangeState(new CJumpStartState());
         return;
     }

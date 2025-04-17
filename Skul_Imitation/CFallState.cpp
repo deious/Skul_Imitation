@@ -39,7 +39,7 @@ void CFallState::Update(CPlayer* pPlayer)
 
     if (CKeyMgr::Get_Instance()->Key_Down('C') && pPlayer->Get_JumpCnt() < pPlayer->Get_JumpMaxCnt())
     {
-        pPlayer->Add_JumpCnt();
+        //pPlayer->Add_JumpCnt();
         pPlayer->ChangeState(new CJumpStartState());
         return;
     }

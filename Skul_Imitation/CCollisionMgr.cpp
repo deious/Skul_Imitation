@@ -392,15 +392,15 @@ void CCollisionMgr::Collision_Attack()
 	{
 		if (!dynamic_cast<CAttackCollider*>(pCollider)->IsActive())
 		{
-			OutputDebugString(L"[충돌 검사 건너뜀] 비활성화 상태\n");
+			//OutputDebugString(L"[충돌 검사 건너뜀] 비활성화 상태\n");
 			continue;
 		}
 
 		ETeam team = dynamic_cast<CAttackCollider*>(pCollider)->Get_Team();
 
-		wchar_t szDebug[128];
+		/*wchar_t szDebug[128];
 		swprintf_s(szDebug, L"[콜라이더 검사 시작] 팀: %d\n", (int)team);
-		OutputDebugString(szDebug);
+		OutputDebugString(szDebug);*/
 
 		if (team == ETeam::Player)
 		{
@@ -459,7 +459,7 @@ void CCollisionMgr::CheckCollisionWithTargets(CObj* pCollider, list<CObj*>& targ
 		if (!pHitBox)
 			continue;
 
-		OutputDebugString(L"→ 충돌 검사 대상 접근\n");
+		//OutputDebugString(L"→ 충돌 검사 대상 접근\n");
 		if (CCollisionMgr::RectCollision(rcCollider, pTarget->Get_HitBox()->Get_Rect()))
 		{
 			if (pAtkCol->Get_Hit(pTarget))
@@ -498,7 +498,7 @@ void CCollisionMgr::CheckCollisionWithTargets(CObj* pCollider, list<CObj*>& targ
 			}
 			pHitBox->Reset_HitCount();
 			pHitBox->Set_MaxHits(1);
-			//pCollider->Set_Dead();
+			pCollider->Set_Dead();
 			break;
 		}
 	}
@@ -538,7 +538,7 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 		if (overlapY < overlapX) // Y축 충돌 우선
 		{
 			float curX = pPlayer->Get_Info()->fX;
-			const int margin = 52;
+			const int margin = 0;
 
 			if (playerRect.bottom > tileRect.top - margin && playerRect.top < tileRect.top)
 			{
@@ -610,15 +610,47 @@ void CCollisionMgr::PlayerToTile(CObj* pPlayer, CQuadTree* pQuadTree)
 		//	//playerRect = *pPlayer->Get_Rect();
 		//	playerRect = pPlayer->Get_HitBox()->Get_Rect();
 		//}
-		const int margin = 10;//10이였음
-
+		const int margin = 6;				// 좌측 : 10(이상 없음), 9(이상 없음), 8(이상 없음), 7(이상 없음), 6(이상 없음), 5(벽에 갇힘)
+											// 우측 : 10, 9, 8, 7, 6 -> 다뚫림 5(벽에 갇힘)
+		/*const int leftMargin = 10.f;
+		const int rightMargin = 15.f;*/
 		if (overlapX <= overlapY)
 		{
-			float rightGap = abs(playerRect.right - tileRect.left);		// 우측 충돌
-			float leftGap = abs(playerRect.left - tileRect.right);		// 좌측 충돌
+			//float rightGap = abs(playerRect.right - tileRect.left);		// 우측 충돌
+			//float leftGap = abs(playerRect.left - tileRect.right);		// 좌측 충돌
 
-			if (rightGap <= margin || leftGap <= margin - 5)
+			int rightGap = playerRect.right - tileRect.left;		// 우측 충돌
+			int leftGap = tileRect.right - playerRect.left;		// 좌측 충돌
+
+			//wchar_t szBuf[128];
+			//if (rightGap > 0 && rightGap < 15)  // 우측 충돌 조건 로그
+			//{
+			//	swprintf_s(szBuf, L"[우측] rightGap: %d, playerRight: %d, tileLeft: %d\n",
+			//		rightGap, playerRect.right, tileRect.left);
+			//	OutputDebugString(szBuf);
+			//}
+
+			//if (leftGap > 0 && leftGap < 15)  // 좌측 충돌 조건 로그
+			//{
+			//	swprintf_s(szBuf, L"[좌측] leftGap: %d, playerLeft: %d, tileRight: %d\n",
+			//		leftGap, playerRect.left, tileRect.right);
+			//	OutputDebugString(szBuf);
+			//}
+
+			if (rightGap <= margin || leftGap <= margin)
 				continue;
+
+			//if (rightGap <= rightMargin)
+			//{
+			//	pPlayer->Set_Pos(tileRect.left - halfW, pPlayer->Get_Info()->fY);
+			//	OutputDebugString(L"[오른쪽 이동 중 + 왼쪽 벽 충돌]\n");
+			//}
+			//else if (leftGap <= leftMargin)
+			//{
+			//	pPlayer->Set_Pos(tileRect.right + halfW, pPlayer->Get_Info()->fY);
+			//	OutputDebugString(L"[왼쪽 이동 중 + 오른쪽 벽 충돌]\n");
+			//}
+
 
 			// 왼쪽 벽 충돌
 			if (playerRect.right >= tileRect.left && playerRect.left < tileRect.left)
