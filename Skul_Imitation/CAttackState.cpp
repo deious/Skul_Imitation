@@ -107,11 +107,11 @@ void CAttackState::Update(CPlayer* pPlayer)
         }
     }
 
-    if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT) || CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
+    /*if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT) || CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
     {
         pPlayer->ChangeState(new CWalkState());
         return;
-    }
+    }*/
 
     if (CKeyMgr::Get_Instance()->Key_Down('C') && !pPlayer->Get_IsJump())
     {

@@ -15,5 +15,7 @@ private:
     bool m_bDashed = false;
     float m_fDashSpeed = 700.f;
     float m_fDashTime = 2.f;
+    wstring m_sEffectKey;
+    EffectInfo m_tEffect;
 };
 

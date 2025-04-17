@@ -4,6 +4,7 @@
 #include "CObjMgr.h"
 #include "CBossIdleState.h"
 #include "CPlayer.h"
+#include "CEffectMgr.h"
 
 void CBossDashAttack::Enter(CBoss* pBoss)
 {
@@ -29,12 +30,26 @@ void CBossDashAttack::Enter(CBoss* pBoss)
     if (fDirection > 0)
     {
         pBoss->Set_Frame(0, 4, 4, 100);
+        m_sEffectKey = L"BossDash_Right";
     }
     else
     {
         pBoss->Set_Frame(0, 4, 5, 100);
+        m_sEffectKey = L"BossDash_Left";
     }
 
+    EffectInfo effect;
+    effect.eType = EFFECT_TYPE::SKILLA;
+    effect.sFramekey = m_sEffectKey.c_str();
+    effect.vOffset;
+    effect.vSize = Vec2(173.f, 77.f); // 이펙트 크기
+    effect.iStartFrame = 0;
+    effect.iEndFrame = 5;
+    effect.iFrameSpeed = 50;
+    effect.fScale = 1.f;
+    effect.fRotation = 0.f;
+
+    CEffectMgr::Get_Instance()->Add_Effect(effect, { pBoss->Get_Info()->fX, pBoss->Get_Info()->fY });
     /*WCHAR szBuffer[128];
     swprintf_s(szBuffer, L"[Enter] 보스 방향: %.1f, 속도: %.1f\n", fDirection, pBoss->Get_Speed());
     OutputDebugString(szBuffer);*/

@@ -16,5 +16,6 @@ private:
     float m_fDashSpeed = 500.f;
     float m_fDashDuration = 1.f;
     float fDirection;
+    wstring m_sEffectKey;
 };
 
