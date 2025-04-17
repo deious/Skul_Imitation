@@ -33,7 +33,7 @@ void CBoss::Initialize()
     m_fSpeed = 3.f;
     m_fDistance = 100.f;
     //m_fVelocity = 20.f;
-    m_iHp = 100;
+    m_iHp = m_iMaxHp;
     m_bDead = false;
     // 보스 생성전 id set 해줘야 함
     m_eRender = RENDER_GAMEOBJECT;
@@ -105,15 +105,15 @@ void CBoss::Render(HDC hDC)
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
     POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
 
-    wchar_t hpText[32];
-    swprintf_s(hpText, L"HP: %d", m_iHp); // 보스 체력
+    //wchar_t hpText[32];
+    //swprintf_s(hpText, L"HP: %d", m_iHp); // 보스 체력
 
-    TextOut(hDC,
-        screenPos.x,
-        screenPos.y - 50,
-        hpText,
-        (int)wcslen(hpText)
-    );
+    //TextOut(hDC,
+    //    screenPos.x,
+    //    screenPos.y - 50,
+    //    hpText,
+    //    (int)wcslen(hpText)
+    //);
 
     int drawX = screenPos.x - (int)(m_tInfo.fCX * 0.5f);
     int drawY = screenPos.y - (int)(m_tInfo.fCY * 0.5f);
@@ -379,9 +379,19 @@ EBossStateType CBoss::Get_CurStateType() const
     return EBossStateType::None;
 }
 
+int CBoss::Get_Hp()
+{
+    return m_iHp;
+}
+
 void CBoss::Set_PairBoss(CBoss* pOther)
 {
     m_pPairBoss = pOther;
+}
+
+int CBoss::Get_MaxHp()
+{
+    return m_iMaxHp;
 }
 
 void CBoss::Set_Frame(int iStart, int iEnd, int iMotion, DWORD dwSpeed)
