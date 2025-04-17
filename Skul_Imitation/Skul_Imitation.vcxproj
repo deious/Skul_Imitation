@@ -147,6 +147,7 @@
     <ClInclude Include="CBossDive.h" />
     <ClInclude Include="CBossDuoDive.h" />
     <ClInclude Include="CBossDuoShootingLightning.h" />
+    <ClInclude Include="CUIBossHealthBar.h" />
     <ClInclude Include="CBossIdleState.h" />
     <ClInclude Include="CBossShootLightning.h" />
     <ClInclude Include="CBossStage.h" />
@@ -193,12 +194,14 @@
     <ClInclude Include="CTile.h" />
     <ClInclude Include="CTileMgr.h" />
     <ClInclude Include="CTutorialUI.h" />
+    <ClInclude Include="CUIBossPortrait.h" />
     <ClInclude Include="CUIHealthBar.h" />
     <ClInclude Include="CUIMgr.h" />
     <ClInclude Include="CUIPortrait.h" />
     <ClInclude Include="CUISkillIcon.h" />
     <ClInclude Include="CUISkul.h" />
     <ClInclude Include="CUIWallet.h" />
+    <ClInclude Include="CUIWrite.h" />
     <ClInclude Include="CWalkState.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="EBossStateType.h" />
@@ -230,6 +233,7 @@
     <ClCompile Include="CBossDive.cpp" />
     <ClCompile Include="CBossDuoDive.cpp" />
     <ClCompile Include="CBossDuoShootingLightning.cpp" />
+    <ClCompile Include="CUIBossHealthBar.cpp" />
     <ClCompile Include="CBossIdleState.cpp" />
     <ClCompile Include="CBossShootLightning.cpp" />
     <ClCompile Include="CBossStage.cpp" />
@@ -275,12 +279,14 @@
     <ClCompile Include="CTile.cpp" />
     <ClCompile Include="CTileMgr.cpp" />
     <ClCompile Include="CTutorialUI.cpp" />
+    <ClCompile Include="CUIBossPortrait.cpp" />
     <ClCompile Include="CUIHealthBar.cpp" />
     <ClCompile Include="CUIMgr.cpp" />
     <ClCompile Include="CUIPortrait.cpp" />
     <ClCompile Include="CUISkillIcon.cpp" />
     <ClCompile Include="CUISkul.cpp" />
     <ClCompile Include="CUIWallet.cpp" />
+    <ClCompile Include="CUIWrite.cpp" />
     <ClCompile Include="CWalkState.cpp" />
     <ClCompile Include="IState.cpp" />
     <ClCompile Include="pch.cpp">

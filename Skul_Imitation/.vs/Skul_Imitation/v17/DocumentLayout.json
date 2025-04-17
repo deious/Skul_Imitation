@@ -3,16 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CBoss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWrite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIWrite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWrite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIWrite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWallet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIWallet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CTutorialUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CTutorialUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CBossStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIHealthBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIHealthBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossHealthBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIBossHealthBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossPortrait.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIBossPortrait.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossPortrait.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIBossPortrait.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossHealthBar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIBossHealthBar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CMainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CMainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CBoss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CObjMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CObjMgr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIMgr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulZinSamurai.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -31,14 +95,6 @@
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CSkulSamurai.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CMainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CMainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHeadNormal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CSkulHeadNormal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -49,10 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUISkillIcon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CObjMgr.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -71,14 +123,6 @@
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUISkul.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWallet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIWallet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIHealthBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIHealthBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIPortrait.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUIPortrait.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -95,16 +139,8 @@
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CObj.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CBossStage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CUISkul.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CTutorialUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CTutorialUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -137,14 +173,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossWaitState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CBossWaitState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CBoss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CBoss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossWaitState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -235,10 +263,6 @@
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CHitBox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CObjMgr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D33E808-F63A-4AAF-A83B-276DF0C0EE7C}|Skul_Imitation.vcxproj|solutionrelative:CBossController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -293,11 +317,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "CAttackCollider.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CAttackCollider.cpp",
               "RelativeDocumentMoniker": "CAttackCollider.cpp",
@@ -306,12 +330,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-16T09:37:19.4Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "CSoundMgr.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSoundMgr.h",
               "RelativeDocumentMoniker": "CSoundMgr.h",
@@ -320,12 +343,11 @@
               "ViewState": "AQIAAC4AAAAAAAAAAAASwEQAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-16T11:28:55.337Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 47,
               "Title": "CSoundMgr.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSoundMgr.cpp",
               "RelativeDocumentMoniker": "CSoundMgr.cpp",
@@ -334,12 +356,11 @@
               "ViewState": "AQIAAJoAAAAAAAAAAAASwNEAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-16T11:27:03.783Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 17,
               "Title": "CPlayer.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CPlayer.cpp",
               "RelativeDocumentMoniker": "CPlayer.cpp",
@@ -353,202 +374,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CSkulSamurai.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulSamurai.cpp",
-              "RelativeDocumentMoniker": "CSkulSamurai.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulSamurai.cpp",
-              "RelativeToolTip": "CSkulSamurai.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAeAAAA",
+              "DocumentIndex": 1,
+              "Title": "CUIWrite.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWrite.cpp",
+              "RelativeDocumentMoniker": "CUIWrite.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWrite.cpp",
+              "RelativeToolTip": "CUIWrite.cpp",
+              "ViewState": "AQIAABwAAAAAAAAAAAASwEAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T01:19:49.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CSkulZinSamurai.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulZinSamurai.cpp",
-              "RelativeDocumentMoniker": "CSkulZinSamurai.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulZinSamurai.cpp",
-              "RelativeToolTip": "CSkulZinSamurai.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T01:19:56.686Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CMainGame.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CMainGame.cpp",
-              "RelativeDocumentMoniker": "CMainGame.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CMainGame.cpp",
-              "RelativeToolTip": "CMainGame.cpp",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADQAAABdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T17:33:26.739Z",
+              "WhenOpened": "2025-04-17T09:30:19.286Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CSkulHead.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHead.cpp",
-              "RelativeDocumentMoniker": "CSkulHead.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHead.cpp",
-              "RelativeToolTip": "CSkulHead.cpp",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAEcAAAAVAAAA",
+              "Title": "CBossStage.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossStage.cpp",
+              "RelativeDocumentMoniker": "CBossStage.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossStage.cpp",
+              "RelativeToolTip": "CBossStage.cpp",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAAAHEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T12:27:00.383Z",
+              "WhenOpened": "2025-04-15T19:12:53.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CSkulHead.h",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHead.h",
-              "RelativeDocumentMoniker": "CSkulHead.h",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHead.h",
-              "RelativeToolTip": "CSkulHead.h",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAADcAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T16:57:57.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CUIMgr.h",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.h",
-              "RelativeDocumentMoniker": "CUIMgr.h",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.h",
-              "RelativeToolTip": "CUIMgr.h",
-              "ViewState": "AQIAAAIAAAAAAAAAAAApwB8AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T18:15:45.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CUIMgr.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.cpp",
-              "RelativeDocumentMoniker": "CUIMgr.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.cpp",
-              "RelativeToolTip": "CUIMgr.cpp",
-              "ViewState": "AQIAAAEAAAAAAAAAAAASwBYAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T17:30:31.134Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "CStage.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CStage.cpp",
               "RelativeDocumentMoniker": "CStage.cpp",
               "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CStage.cpp",
               "RelativeToolTip": "CStage.cpp",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAFAAAAAeAAAA",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAAAFAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-16T01:05:15.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CSkulHeadNormal.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHeadNormal.cpp",
-              "RelativeDocumentMoniker": "CSkulHeadNormal.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHeadNormal.cpp",
-              "RelativeToolTip": "CSkulHeadNormal.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAEAAAA",
+              "DocumentIndex": 4,
+              "Title": "CTutorialUI.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CTutorialUI.cpp",
+              "RelativeDocumentMoniker": "CTutorialUI.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CTutorialUI.cpp",
+              "RelativeToolTip": "CTutorialUI.cpp",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAAAGYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T18:23:57.722Z",
+              "WhenOpened": "2025-04-16T15:04:52.188Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CUISkillIcon.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.cpp",
-              "RelativeDocumentMoniker": "CUISkillIcon.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.cpp",
-              "RelativeToolTip": "CUISkillIcon.cpp",
-              "ViewState": "AQIAACEAAAAAAAAAAAASwD4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T15:17:05.936Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CObjMgr.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.cpp",
-              "RelativeDocumentMoniker": "CObjMgr.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.cpp",
-              "RelativeToolTip": "CObjMgr.cpp",
-              "ViewState": "AQIAAH4AAAAAAAAAAAApwJAAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T17:40:48.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Define.h",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\Define.h",
-              "RelativeDocumentMoniker": "Define.h",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\Define.h",
-              "RelativeToolTip": "Define.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T17:29:35.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CUISkillIcon.h",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.h",
-              "RelativeDocumentMoniker": "CUISkillIcon.h",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.h",
-              "RelativeToolTip": "CUISkillIcon.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T15:16:48.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CUIPortrait.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIPortrait.cpp",
-              "RelativeDocumentMoniker": "CUIPortrait.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIPortrait.cpp",
-              "RelativeToolTip": "CUIPortrait.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T17:20:40.917Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CUISkul.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.cpp",
-              "RelativeDocumentMoniker": "CUISkul.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.cpp",
-              "RelativeToolTip": "CUISkul.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T17:52:13.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 3,
               "Title": "CUIWallet.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWallet.cpp",
               "RelativeDocumentMoniker": "CUIWallet.cpp",
@@ -561,20 +439,295 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 2,
+              "Title": "CUIWrite.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWrite.h",
+              "RelativeDocumentMoniker": "CUIWrite.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIWrite.h",
+              "RelativeToolTip": "CUIWrite.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-17T09:30:12.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CBoss.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.cpp",
+              "RelativeDocumentMoniker": "CBoss.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.cpp",
+              "RelativeToolTip": "CBoss.cpp",
+              "ViewState": "AQIAAFsAAAAAAAAAAAASwIEAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T19:16:33.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "CUIHealthBar.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIHealthBar.cpp",
               "RelativeDocumentMoniker": "CUIHealthBar.cpp",
               "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIHealthBar.cpp",
               "RelativeToolTip": "CUIHealthBar.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACgAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-16T17:20:30.286Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CUIBossHealthBar.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossHealthBar.cpp",
+              "RelativeDocumentMoniker": "CUIBossHealthBar.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossHealthBar.cpp",
+              "RelativeToolTip": "CUIBossHealthBar.cpp",
+              "ViewState": "AQIAAE8AAAAAAAAAAAASwGQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-17T08:11:00.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CUIBossPortrait.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossPortrait.cpp",
+              "RelativeDocumentMoniker": "CUIBossPortrait.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossPortrait.cpp",
+              "RelativeToolTip": "CUIBossPortrait.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-17T08:12:25.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CUIBossPortrait.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossPortrait.h",
+              "RelativeDocumentMoniker": "CUIBossPortrait.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossPortrait.h",
+              "RelativeToolTip": "CUIBossPortrait.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-17T08:12:03.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CUIBossHealthBar.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossHealthBar.h",
+              "RelativeDocumentMoniker": "CUIBossHealthBar.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIBossHealthBar.h",
+              "RelativeToolTip": "CUIBossHealthBar.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-17T08:10:53.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CUIMgr.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.cpp",
+              "RelativeDocumentMoniker": "CUIMgr.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.cpp",
+              "RelativeToolTip": "CUIMgr.cpp",
+              "ViewState": "AQIAAAEAAAAAAAAAAAASwBYAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T17:30:31.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CMainGame.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CMainGame.cpp",
+              "RelativeDocumentMoniker": "CMainGame.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CMainGame.cpp",
+              "RelativeToolTip": "CMainGame.cpp",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADYAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T17:33:26.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CBoss.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.h",
+              "RelativeDocumentMoniker": "CBoss.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.h",
+              "RelativeToolTip": "CBoss.h",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAADIAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-16T13:25:33.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CObjMgr.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.cpp",
+              "RelativeDocumentMoniker": "CObjMgr.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.cpp",
+              "RelativeToolTip": "CObjMgr.cpp",
+              "ViewState": "AQIAAAoAAAAAAAAAAAApwDAAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T17:40:48.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CObjMgr.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.h",
+              "RelativeDocumentMoniker": "CObjMgr.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.h",
+              "RelativeToolTip": "CObjMgr.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T16:27:13.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 19,
+              "Title": "CSkulZinSamurai.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulZinSamurai.cpp",
+              "RelativeDocumentMoniker": "CSkulZinSamurai.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulZinSamurai.cpp",
+              "RelativeToolTip": "CSkulZinSamurai.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T01:19:56.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CSkulSamurai.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulSamurai.cpp",
+              "RelativeDocumentMoniker": "CSkulSamurai.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulSamurai.cpp",
+              "RelativeToolTip": "CSkulSamurai.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T01:19:49.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CSkulHead.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHead.cpp",
+              "RelativeDocumentMoniker": "CSkulHead.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHead.cpp",
+              "RelativeToolTip": "CSkulHead.cpp",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAEcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T12:27:00.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CSkulHead.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHead.h",
+              "RelativeDocumentMoniker": "CSkulHead.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHead.h",
+              "RelativeToolTip": "CSkulHead.h",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAADcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-16T16:57:57.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CUIMgr.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.h",
+              "RelativeDocumentMoniker": "CUIMgr.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIMgr.h",
+              "RelativeToolTip": "CUIMgr.h",
+              "ViewState": "AQIAAAIAAAAAAAAAAAApwB8AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-16T18:15:45.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CSkulHeadNormal.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHeadNormal.cpp",
+              "RelativeDocumentMoniker": "CSkulHeadNormal.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHeadNormal.cpp",
+              "RelativeToolTip": "CSkulHeadNormal.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T18:23:57.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CUISkillIcon.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.cpp",
+              "RelativeDocumentMoniker": "CUISkillIcon.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.cpp",
+              "RelativeToolTip": "CUISkillIcon.cpp",
+              "ViewState": "AQIAACEAAAAAAAAAAAASwD4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T15:17:05.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Define.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\Define.h",
+              "RelativeDocumentMoniker": "Define.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\Define.h",
+              "RelativeToolTip": "Define.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-16T17:29:35.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CUISkillIcon.h",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.h",
+              "RelativeDocumentMoniker": "CUISkillIcon.h",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkillIcon.h",
+              "RelativeToolTip": "CUISkillIcon.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-16T15:16:48.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CUIPortrait.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIPortrait.cpp",
+              "RelativeDocumentMoniker": "CUIPortrait.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIPortrait.cpp",
+              "RelativeToolTip": "CUIPortrait.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T17:20:40.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CUISkul.cpp",
+              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.cpp",
+              "RelativeDocumentMoniker": "CUISkul.cpp",
+              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.cpp",
+              "RelativeToolTip": "CUISkul.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T17:52:13.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "CUIPortrait.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIPortrait.h",
               "RelativeDocumentMoniker": "CUIPortrait.h",
@@ -582,12 +735,11 @@
               "RelativeToolTip": "CUIPortrait.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T17:20:42.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T17:20:42.241Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 31,
               "Title": "CAbstractFactory.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CAbstractFactory.h",
               "RelativeDocumentMoniker": "CAbstractFactory.h",
@@ -595,12 +747,11 @@
               "RelativeToolTip": "CAbstractFactory.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T17:22:36.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T17:22:36.711Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "CUIHealthBar.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUIHealthBar.h",
               "RelativeDocumentMoniker": "CUIHealthBar.h",
@@ -608,12 +759,11 @@
               "RelativeToolTip": "CUIHealthBar.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T17:20:37.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T17:20:37.894Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "CObj.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObj.h",
               "RelativeDocumentMoniker": "CObj.h",
@@ -621,25 +771,11 @@
               "RelativeToolTip": "CObj.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T16:37:54.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T16:37:54.54Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "CBossStage.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossStage.cpp",
-              "RelativeDocumentMoniker": "CBossStage.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossStage.cpp",
-              "RelativeToolTip": "CBossStage.cpp",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAQwGMAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T19:12:53.107Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 34,
               "Title": "CUISkul.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CUISkul.h",
               "RelativeDocumentMoniker": "CUISkul.h",
@@ -647,25 +783,11 @@
               "RelativeToolTip": "CUISkul.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T15:16:05.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T15:16:05.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "CTutorialUI.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CTutorialUI.cpp",
-              "RelativeDocumentMoniker": "CTutorialUI.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CTutorialUI.cpp",
-              "RelativeToolTip": "CTutorialUI.cpp",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAAAF4AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T15:04:52.188Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "CPlayer.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CPlayer.h",
               "RelativeDocumentMoniker": "CPlayer.h",
@@ -673,12 +795,11 @@
               "RelativeToolTip": "CPlayer.h",
               "ViewState": "AQIAABsAAAAAAAAAAAAAAC0AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T14:40:48.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T14:40:48.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 37,
               "Title": "CBossIdleState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossIdleState.cpp",
               "RelativeDocumentMoniker": "CBossIdleState.cpp",
@@ -686,12 +807,11 @@
               "RelativeToolTip": "CBossIdleState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T13:46:25.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:46:25.841Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 38,
               "Title": "CBossIdleState.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossIdleState.h",
               "RelativeDocumentMoniker": "CBossIdleState.h",
@@ -699,12 +819,11 @@
               "RelativeToolTip": "CBossIdleState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T13:46:24.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:46:24.994Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 36,
               "Title": "CCollisionMgr.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CCollisionMgr.cpp",
               "RelativeDocumentMoniker": "CCollisionMgr.cpp",
@@ -712,12 +831,11 @@
               "RelativeToolTip": "CCollisionMgr.cpp",
               "ViewState": "AQIAANYBAAAAAAAAAAAiwHMCAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T17:16:26.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T17:16:26.368Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 39,
               "Title": "CBossDuoShootingLightning.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossDuoShootingLightning.cpp",
               "RelativeDocumentMoniker": "CBossDuoShootingLightning.cpp",
@@ -725,12 +843,11 @@
               "RelativeToolTip": "CBossDuoShootingLightning.cpp",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T02:37:48.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T02:37:48.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 40,
               "Title": "CBossDuoDashFromEdge.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossDuoDashFromEdge.cpp",
               "RelativeDocumentMoniker": "CBossDuoDashFromEdge.cpp",
@@ -738,12 +855,11 @@
               "RelativeToolTip": "CBossDuoDashFromEdge.cpp",
               "ViewState": "AQIAABUAAAAAAAAAAAAAACUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T10:10:08.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:10:08.379Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 42,
               "Title": "CBossWaitState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossWaitState.cpp",
               "RelativeDocumentMoniker": "CBossWaitState.cpp",
@@ -751,25 +867,11 @@
               "RelativeToolTip": "CBossWaitState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T13:23:13.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:23:13.913Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "CBoss.cpp",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.cpp",
-              "RelativeDocumentMoniker": "CBoss.cpp",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.cpp",
-              "RelativeToolTip": "CBoss.cpp",
-              "ViewState": "AQIAAJUBAAAAAAAAAAASwKkBAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T19:16:33.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 41,
               "Title": "CBossDuoDive.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossDuoDive.cpp",
               "RelativeDocumentMoniker": "CBossDuoDive.cpp",
@@ -777,25 +879,11 @@
               "RelativeToolTip": "CBossDuoDive.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T10:10:18.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:10:18.918Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "CBoss.h",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.h",
-              "RelativeDocumentMoniker": "CBoss.h",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBoss.h",
-              "RelativeToolTip": "CBoss.h",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAD0AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T13:25:33.632Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "CBossWaitState.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossWaitState.h",
               "RelativeDocumentMoniker": "CBossWaitState.h",
@@ -803,12 +891,11 @@
               "RelativeToolTip": "CBossWaitState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T13:23:12.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:23:12.456Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "CAttackState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CAttackState.cpp",
               "RelativeDocumentMoniker": "CAttackState.cpp",
@@ -816,12 +903,11 @@
               "RelativeToolTip": "CAttackState.cpp",
               "ViewState": "AQIAAAcAAAAAAAAAAABAwCYAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T10:09:57.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:09:57.432Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "CSkulZinSamurai.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulZinSamurai.h",
               "RelativeDocumentMoniker": "CSkulZinSamurai.h",
@@ -829,12 +915,11 @@
               "RelativeToolTip": "CSkulZinSamurai.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T12:39:33.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T12:39:33.491Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 48,
               "Title": "CJumpStartState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CJumpStartState.cpp",
               "RelativeDocumentMoniker": "CJumpStartState.cpp",
@@ -842,12 +927,11 @@
               "RelativeToolTip": "CJumpStartState.cpp",
               "ViewState": "AQIAAAEAAAAAAAAAAABAwBAAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T17:18:20.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T17:18:20.548Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 49,
               "Title": "CFallState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CFallState.cpp",
               "RelativeDocumentMoniker": "CFallState.cpp",
@@ -855,12 +939,11 @@
               "RelativeToolTip": "CFallState.cpp",
               "ViewState": "AQIAAAcAAAAAAAAAAABAwC4AAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T19:00:35.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T19:00:35.426Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 50,
               "Title": "CIdleState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CIdleState.cpp",
               "RelativeDocumentMoniker": "CIdleState.cpp",
@@ -868,12 +951,11 @@
               "RelativeToolTip": "CIdleState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T19:00:20.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T19:00:20.907Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 51,
               "Title": "CDashState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CDashState.cpp",
               "RelativeDocumentMoniker": "CDashState.cpp",
@@ -881,12 +963,11 @@
               "RelativeToolTip": "CDashState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T18:31:19.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T18:31:19.295Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 52,
               "Title": "CLineMgr.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CLineMgr.cpp",
               "RelativeDocumentMoniker": "CLineMgr.cpp",
@@ -894,12 +975,11 @@
               "RelativeToolTip": "CLineMgr.cpp",
               "ViewState": "AQIAABsAAAAAAAAAAAASwDAAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T11:33:46.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:33:46.091Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 53,
               "Title": "CLineMgr.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CLineMgr.h",
               "RelativeDocumentMoniker": "CLineMgr.h",
@@ -907,12 +987,11 @@
               "RelativeToolTip": "CLineMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T11:33:49.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:33:49.778Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 54,
               "Title": "CMyBmp.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CMyBmp.cpp",
               "RelativeDocumentMoniker": "CMyBmp.cpp",
@@ -920,12 +999,11 @@
               "RelativeToolTip": "CMyBmp.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T11:33:50.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:33:50.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 55,
               "Title": "CEdit.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CEdit.cpp",
               "RelativeDocumentMoniker": "CEdit.cpp",
@@ -933,12 +1011,11 @@
               "RelativeToolTip": "CEdit.cpp",
               "ViewState": "AQIAAFUAAAAAAAAAAABAwFcAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T11:33:44.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:33:44.742Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 56,
               "Title": "CBmpMgr.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBmpMgr.cpp",
               "RelativeDocumentMoniker": "CBmpMgr.cpp",
@@ -946,12 +1023,11 @@
               "RelativeToolTip": "CBmpMgr.cpp",
               "ViewState": "AQIAAAQAAAAAAAAAAABAwBgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T11:33:41.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:33:41.79Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 57,
               "Title": "CSceneMgr.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSceneMgr.cpp",
               "RelativeDocumentMoniker": "CSceneMgr.cpp",
@@ -959,12 +1035,11 @@
               "RelativeToolTip": "CSceneMgr.cpp",
               "ViewState": "AQIAAC4AAAAAAAAAAAApwFEAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T11:32:06.727Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:32:06.727Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 58,
               "Title": "CMenu.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CMenu.cpp",
               "RelativeDocumentMoniker": "CMenu.cpp",
@@ -972,12 +1047,11 @@
               "RelativeToolTip": "CMenu.cpp",
               "ViewState": "AQIAACwAAAAAAAAAAAApwEIAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T11:31:14.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:31:14.64Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 59,
               "Title": "CWalkState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CWalkState.cpp",
               "RelativeDocumentMoniker": "CWalkState.cpp",
@@ -985,12 +1059,11 @@
               "RelativeToolTip": "CWalkState.cpp",
               "ViewState": "AQIAABMAAAAAAAAAAABAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T10:21:31.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:21:31.368Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 60,
               "Title": "CLightningProjectile.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CLightningProjectile.cpp",
               "RelativeDocumentMoniker": "CLightningProjectile.cpp",
@@ -998,12 +1071,11 @@
               "RelativeToolTip": "CLightningProjectile.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T10:07:52.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:07:52.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 62,
               "Title": "CBossAttackState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossAttackState.cpp",
               "RelativeDocumentMoniker": "CBossAttackState.cpp",
@@ -1011,12 +1083,11 @@
               "RelativeToolTip": "CBossAttackState.cpp",
               "ViewState": "AQIAAAUAAAAAAAAAAAApwBsAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T09:40:39.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T09:40:39.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 63,
               "Title": "CHitBox.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CHitBox.cpp",
               "RelativeDocumentMoniker": "CHitBox.cpp",
@@ -1024,12 +1095,11 @@
               "RelativeToolTip": "CHitBox.cpp",
               "ViewState": "AQIAABsAAAAAAAAAAABIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T10:05:18.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:05:18.795Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 64,
               "Title": "CHitBox.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CHitBox.h",
               "RelativeDocumentMoniker": "CHitBox.h",
@@ -1037,12 +1107,11 @@
               "RelativeToolTip": "CHitBox.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T10:05:13.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:05:13.916Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 61,
               "Title": "CBossDashAttack.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossDashAttack.cpp",
               "RelativeDocumentMoniker": "CBossDashAttack.cpp",
@@ -1050,25 +1119,11 @@
               "RelativeToolTip": "CBossDashAttack.cpp",
               "ViewState": "AQIAACwAAAAAAAAAAAApwEIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-16T09:41:30.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T09:41:30.735Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "CObjMgr.h",
-              "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.h",
-              "RelativeDocumentMoniker": "CObjMgr.h",
-              "ToolTip": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CObjMgr.h",
-              "RelativeToolTip": "CObjMgr.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T16:27:13.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 65,
               "Title": "CBossController.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossController.h",
               "RelativeDocumentMoniker": "CBossController.h",
@@ -1076,12 +1131,11 @@
               "RelativeToolTip": "CBossController.h",
               "ViewState": "AQIAABkAAAAAAAAAAABAwEAAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T02:30:17.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T02:30:17.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 66,
               "Title": "CBossDuoShootingLightning.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossDuoShootingLightning.h",
               "RelativeDocumentMoniker": "CBossDuoShootingLightning.h",
@@ -1089,12 +1143,11 @@
               "RelativeToolTip": "CBossDuoShootingLightning.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T02:37:55.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T02:37:55.518Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 68,
               "Title": "pch.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\pch.h",
               "RelativeDocumentMoniker": "pch.h",
@@ -1102,12 +1155,11 @@
               "RelativeToolTip": "pch.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-16T02:29:35.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T02:29:35.844Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 67,
               "Title": "CBossController.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CBossController.cpp",
               "RelativeDocumentMoniker": "CBossController.cpp",
@@ -1115,12 +1167,11 @@
               "RelativeToolTip": "CBossController.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T19:20:10.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T19:20:10.351Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 69,
               "Title": "CDashState.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CDashState.h",
               "RelativeDocumentMoniker": "CDashState.h",
@@ -1128,12 +1179,11 @@
               "RelativeToolTip": "CDashState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T19:23:03.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T19:23:03.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 70,
               "Title": "CRisingState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CRisingState.cpp",
               "RelativeDocumentMoniker": "CRisingState.cpp",
@@ -1141,12 +1191,11 @@
               "RelativeToolTip": "CRisingState.cpp",
               "ViewState": "AQIAAAsAAAAAAAAAAABQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T18:59:34.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T18:59:34.54Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 71,
               "Title": "CSkillState.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkillState.cpp",
               "RelativeDocumentMoniker": "CSkillState.cpp",
@@ -1154,12 +1203,11 @@
               "RelativeToolTip": "CSkillState.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T19:00:01.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T19:00:01.97Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 72,
               "Title": "CAttackState.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CAttackState.h",
               "RelativeDocumentMoniker": "CAttackState.h",
@@ -1167,12 +1215,11 @@
               "RelativeToolTip": "CAttackState.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T18:31:18.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T18:31:18.622Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 73,
               "Title": "CEffectMgr.cpp",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CEffectMgr.cpp",
               "RelativeDocumentMoniker": "CEffectMgr.cpp",
@@ -1180,12 +1227,11 @@
               "RelativeToolTip": "CEffectMgr.cpp",
               "ViewState": "AQIAAAIAAAAAAAAAAABQwBkAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T17:15:37.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T17:15:37.238Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 74,
               "Title": "CEffectMgr.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CEffectMgr.h",
               "RelativeDocumentMoniker": "CEffectMgr.h",
@@ -1193,12 +1239,11 @@
               "RelativeToolTip": "CEffectMgr.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T15:10:21.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T15:10:21.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 75,
               "Title": "CSkulHeadNormal.h",
               "DocumentMoniker": "C:\\Users\\gkstj\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Project\\Skul_Imitation\\Skul_Imitation\\CSkulHeadNormal.h",
               "RelativeDocumentMoniker": "CSkulHeadNormal.h",
@@ -1206,12 +1251,11 @@
               "RelativeToolTip": "CSkulHeadNormal.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-15T17:35:02.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T17:35:02.62Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 76,
               "Title": "list",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\list",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\list",
