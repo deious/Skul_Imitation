@@ -8,7 +8,7 @@ public:
 
 public:
     void Initialize();
-    void Initialize(const EffectInfo& tInfo);
+    void Initialize(const EffectInfo& tInfo, const Vec2& vFinalPos, CObj* pFollowTarget = nullptr);
     int Update() override;
     void Late_Update() override;
     void Render(HDC hDC) override;
@@ -20,5 +20,7 @@ private:
     DWORD m_dwCreateTime;
     DWORD m_dwLastFrameTime;
     DWORD m_dwDuration;
+    CObj* m_pFollowTarget = nullptr;
+    EffectInfo m_tEffectInfo;
 };
 

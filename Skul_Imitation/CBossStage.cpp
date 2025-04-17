@@ -56,7 +56,13 @@ void CBossStage::Initialize()
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Samurai_Left.bmp", L"Samurai_Left");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Right.bmp", L"ZinSamurai_Right");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Left.bmp", L"ZinSamurai_Left");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/tempLightning.bmp", L"temp2");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Projectile_Right.bmp", L"Projectile_Right");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Projectile_Left.bmp", L"Projectile_Left");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Lightning_Right.bmp", L"Lightning_Right");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Lightning_Left.bmp", L"Lightning_Left");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/BossDash_Right.bmp", L"BossDash_Right");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/BossDash_Left.bmp", L"BossDash_Left");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/BossDive.bmp", L"BossDive");
 
     //CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Edit/BossTile.bmp", L"Tile");
     /*CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Player_Frame.bmp", L"pFrame");
@@ -147,16 +153,16 @@ void CBossStage::Late_Update()
 
 void CBossStage::Render(HDC hDC)
 {
-    OutputDebugString(L"[CBossStage::Render] 호출됨\n");
+    //OutputDebugString(L"[CBossStage::Render] 호출됨\n");
     HDC		hGroundDC = CBmpMgr::Get_Instance()->Find_Image(L"BossGround");
-    if (!hGroundDC)
+    /*if (!hGroundDC)
     {
         OutputDebugString(L"[오류] Ground 이미지를 찾을 수 없습니다!\n");
     }
     else
     {
         OutputDebugString(L"[성공] Ground 이미지 로드됨\n");
-    }
+    }*/
     //HDC		hGroundDC = CBmpMgr::Get_Instance()->Find_Image(L"pFrame");
 
     /*int		iScrollX = (INT)CScrollMgr::Get_Instance()->Get_ScrollX();
