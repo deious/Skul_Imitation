@@ -168,6 +168,7 @@ void CObjMgr::Release()
 			Safe_Delete(pObj);
 			return true;
 			});
+		//m_ObjList[i].remove(nullptr);
 	}
 }
 

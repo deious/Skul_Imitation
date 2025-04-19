@@ -20,6 +20,7 @@
 #include "CTutorialUI.h"
 #include "CUISkillIcon.h"
 #include "CUIMgr.h"
+#include "CGate.h"
 
 CStage::CStage()
 {
@@ -34,7 +35,7 @@ void CStage::Initialize()
 {
     CCameraMgr::Get_Instance()->Set_Resolution(800, 600);
     CCameraMgr::Get_Instance()->Set_MapSize(3592, 688);
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/map.bmp", L"Ground");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/TutorialMap.bmp", L"Ground");
 
     CObj* pPlayer = CSceneMgr::Get_Instance()->Get_Player();
 
@@ -136,6 +137,37 @@ void CStage::Initialize()
     pButton->Set_FrameKey(L"FBtn");
     dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"상호작용");
     CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    INFO tInfo = { 2800.f, 500.f, 200.f, 200.f };
+    CObj* pGate = new CGate(L"StageDoor", tInfo, 3);
+    dynamic_cast<CGate*>(pGate)->Set_Frame(0, 7, 50.f);
+
+    //dynamic_cast<CGate*>(pGate)->Set_NextSceneID(SC_STAGE2);
+    //dynamic_cast<CGate*>(pGate)->Set_Condition([]() -> bool {
+    //    const auto& monsters = CObjMgr::Get_Instance()->Get_ObjList(OBJ_MONSTER);
+    //    const auto& bosses = CObjMgr::Get_Instance()->Get_ObjList(OBJ_BOSS);
+
+    //    /*if (monsters.empty() && bosses.empty())
+    //        return true;*/
+
+    //    for (const auto& pMonster : monsters)
+    //    {
+    //        if (!pMonster) continue;
+    //        if (!pMonster->Get_Dead())
+    //            return false;
+    //    }
+
+    //    for (const auto& pBoss : bosses)
+    //    {
+    //        if (!pBoss) continue;
+    //        if (!pBoss->Get_Dead())
+    //            return false;
+    //    }
+
+    //    return true;
+    //    });
+
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pGate);
 
 
     //CBoss* pBoss1 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(0));
@@ -247,6 +279,7 @@ void CStage::Key_Input()
         //MessageBox(g_hWnd, L"p 클릭", _T("Fail"), MB_OK);
         //CTileMgr::Get_Instance()->Set_ShowTile();
         //CKeyMgr::Get_Instance()->Set_ShowAll();
-        CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_BOSS);
+        //CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_BOSS);
+        CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_NORMAL);
     }
 }

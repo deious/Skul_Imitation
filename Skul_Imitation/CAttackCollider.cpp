@@ -19,6 +19,7 @@ CAttackCollider::CAttackCollider(CObj* pOwner, float x, float y, float width, fl
 void CAttackCollider::Initialize()
 {
     m_eRender = RENDER_GAMEOBJECT;
+    m_bActive = false;
 }
 void CAttackCollider::Late_Update() {}
 

@@ -124,6 +124,15 @@
     <Filter Include="Manager\RandomManager">
       <UniqueIdentifier>{fb47b47d-6a56-4218-b26b-34d23682697f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\02. Monster">
+      <UniqueIdentifier>{d5ef6a49-e813-4eca-a992-08642bf0aa98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. NPC">
+      <UniqueIdentifier>{7bd65f48-9ec4-4c90-97ef-baebe367305f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. ETC">
+      <UniqueIdentifier>{2445a028-01bb-4e2c-af96-a9f4e43ea510}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -381,6 +390,27 @@
     <ClInclude Include="CUIWrite.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="CNormalStage.h">
+      <Filter>02. Scene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="CGate.h">
+      <Filter>01. Obj\03. NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CTrigger.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CKnightMonster.h">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CArcherMonster.h">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CArrow.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Skul_Imitation.cpp">
@@ -592,6 +622,27 @@
     </ClCompile>
     <ClCompile Include="CUIWrite.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CNormalStage.cpp">
+      <Filter>02. Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="CGate.cpp">
+      <Filter>01. Obj\03. NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CTrigger.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CKnightMonster.cpp">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CArcherMonster.cpp">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CArrow.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
