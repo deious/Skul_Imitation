@@ -9,7 +9,7 @@
 class CSceneMgr
 {
 public:
-	enum SCENEID { SC_TITLE, SC_MENU, SC_EDIT, SC_STAGE, SC_BOSS, SC_END };
+	enum SCENEID { SC_TITLE, SC_MENU, SC_EDIT, SC_STAGE, SC_NORMAL, SC_BOSS, SC_END };
 
 private:
 	CSceneMgr();
@@ -31,6 +31,9 @@ public:
 
 public:
 	static void			Destroy_Instance();
+	void RequestSceneChange(SCENEID eNextScene);
+
+	void ProcessSceneChange();
 
 private:
 	static CSceneMgr*	m_pInstance;
@@ -38,6 +41,9 @@ private:
 
 	SCENEID				m_eCurScene;
 	SCENEID				m_ePreScene;
+	SCENEID				m_eNextScene;
+
+	bool				m_bSceneChangeRequested = false;
 
 	CObj*				m_pPlayer = nullptr;
 

@@ -27,7 +27,7 @@ void CEffect::Initialize(const EffectInfo& tInfo, const Vec2& vFinalPos, CObj* p
 	m_tFrame.iStart = tInfo.iStartFrame;
 	Set_EffectFrame(tInfo.iStartFrame, tInfo.iEndFrame, tInfo.iFrameSpeed);
 
-	m_eRender = RENDER_EFFECT;
+	m_eRender = tInfo.rId;
 	m_pFrameKey = tInfo.sFramekey;
 
 	Set_Pos(vFinalPos.x, vFinalPos.y);
@@ -98,6 +98,11 @@ void CEffect::Set_EffectFrame(int start, int end, int speed)
 	m_dwCreateTime = GetTickCount64();
 	m_dwLastFrameTime = GetTickCount64();
 	m_dwDuration = (end - start + 1) * speed;
+}
+
+void CEffect::Set_Priority(RENDERID r_id)
+{
+	m_eRender = r_id;
 }
 
 void CEffect::Release()

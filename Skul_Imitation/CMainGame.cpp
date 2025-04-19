@@ -66,6 +66,12 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Left.bmp", L"ZinSamurai_Left");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Player/Zin_Samurai_Right.bmp", L"ZinSamurai_Right");
 
+	// 몬스터 이미지
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Monster/Knight_Right.bmp", L"Knight_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Monster/Knight_Left.bmp", L"Knight_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Monster/Archer_Right.bmp", L"Archer_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Monster/Archer_Left.bmp", L"Archer_Left");
+
 	// 튜토리얼 이미지
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/A_Button.bmp", L"ABtn");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/C_Button.bmp", L"CBtn");
@@ -85,7 +91,16 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Player_Hit.bmp", L"Hit");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Normal_Attack_Left.bmp", L"LNAttack");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Normal_Attack_Right.bmp", L"RNAttack");
-	
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Archer_AttackSign.bmp", L"AttackSign");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Arrow_Left.bmp", L"Arrow_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Arrow_Right.bmp", L"Arrow_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Monster_Appear.bmp", L"Monster_Appear");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Monster_Dead.bmp", L"Monster_Dead");
+
+	// NPC 및 문 이미지
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/NPC/Stage_Door.bmp", L"StageDoor");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/NPC/Dungeon_Entrance_Door.bmp", L"DungeonDoor");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/NPC/Boss_Entrance_Door.bmp", L"BossDoor");
 	
 	
 	
@@ -104,6 +119,7 @@ void CMainGame::Initialize()
 void CMainGame::Update()
 {
 	CSceneMgr::Get_Instance()->Update();
+	CSceneMgr::Get_Instance()->ProcessSceneChange();
 }
 
 void CMainGame::Late_Update()

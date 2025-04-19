@@ -447,6 +447,7 @@ void CBoss::OnHit(CAttackCollider* pCol)
     {
         m_iHp = 0;
         m_bIsDead = true;
+        m_bDead = true;
         //ChangeState(nullptr);  // 상태 제거
         //Safe_Delete(m_pAI);    // 행동 트리 제거
     }

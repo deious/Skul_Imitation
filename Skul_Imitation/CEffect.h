@@ -15,6 +15,7 @@ public:
     void Release() override;
 
     void Set_EffectFrame(int iStart, int iEnd, int iSpeed);
+    void Set_Priority(RENDERID r_id);
 
 private:
     DWORD m_dwCreateTime;
