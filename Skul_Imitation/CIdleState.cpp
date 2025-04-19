@@ -46,11 +46,11 @@ void CIdleState::Update(CPlayer* pPlayer)
         return;
     }
 
-    if (CKeyMgr::Get_Instance()->Key_Down('F'))
+    /*if (CKeyMgr::Get_Instance()->Key_Down('F'))
     {
         pPlayer->Set_Awaken();
         return;
-    }
+    }*/
 
     if (CKeyMgr::Get_Instance()->Key_Down('Z') && pPlayer->Dash_Check())
     {

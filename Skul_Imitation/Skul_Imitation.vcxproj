@@ -137,6 +137,8 @@
   <ItemGroup>
     <ClInclude Include="BehaviorNode.h" />
     <ClInclude Include="CAbstractFactory.h" />
+    <ClInclude Include="CArcherMonster.h" />
+    <ClInclude Include="CArrow.h" />
     <ClInclude Include="CAttackCollider.h" />
     <ClInclude Include="CAttackState.h" />
     <ClInclude Include="CBoss.h" />
@@ -147,6 +149,10 @@
     <ClInclude Include="CBossDive.h" />
     <ClInclude Include="CBossDuoDive.h" />
     <ClInclude Include="CBossDuoShootingLightning.h" />
+    <ClInclude Include="CGate.h" />
+    <ClInclude Include="CKnightMonster.h" />
+    <ClInclude Include="CMonster.h" />
+    <ClInclude Include="CTrigger.h" />
     <ClInclude Include="CUIBossHealthBar.h" />
     <ClInclude Include="CBossIdleState.h" />
     <ClInclude Include="CBossShootLightning.h" />
@@ -215,6 +221,7 @@
     <ClInclude Include="fmod_output.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="IState.h" />
+    <ClInclude Include="CNormalStage.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Skul_Imitation.h" />
@@ -223,6 +230,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BehaviorNode.cpp" />
+    <ClCompile Include="CArcherMonster.cpp" />
+    <ClCompile Include="CArrow.cpp" />
     <ClCompile Include="CAttackCollider.cpp" />
     <ClCompile Include="CAttackState.cpp" />
     <ClCompile Include="CBoss.cpp" />
@@ -233,6 +242,10 @@
     <ClCompile Include="CBossDive.cpp" />
     <ClCompile Include="CBossDuoDive.cpp" />
     <ClCompile Include="CBossDuoShootingLightning.cpp" />
+    <ClCompile Include="CGate.cpp" />
+    <ClCompile Include="CKnightMonster.cpp" />
+    <ClCompile Include="CMonster.cpp" />
+    <ClCompile Include="CTrigger.cpp" />
     <ClCompile Include="CUIBossHealthBar.cpp" />
     <ClCompile Include="CBossIdleState.cpp" />
     <ClCompile Include="CBossShootLightning.cpp" />
@@ -289,6 +302,7 @@
     <ClCompile Include="CUIWrite.cpp" />
     <ClCompile Include="CWalkState.cpp" />
     <ClCompile Include="IState.cpp" />
+    <ClCompile Include="CNormalStage.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

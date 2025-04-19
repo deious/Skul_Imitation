@@ -3,6 +3,7 @@
 #include "CObjMgr.h"
 #include "CBossStage.h"
 #include "CSoundMgr.h"
+#include "CNormalStage.h"
 
 CSceneMgr* CSceneMgr::m_pInstance = nullptr;
 
@@ -66,6 +67,9 @@ void CSceneMgr::Scene_Change(SCENEID eID)
 			m_pScene = new CStage;
 			//m_pScene = new CBossStage;
 			break;
+		case SC_NORMAL:
+			m_pScene = new CNormalStage;
+			break;
 
 		case SC_BOSS:
 			/*if (m_pPlayer)
@@ -125,5 +129,20 @@ void CSceneMgr::Destroy_Instance()
 	{
 		delete m_pInstance;
 		m_pInstance = nullptr;
+	}
+}
+
+void CSceneMgr::RequestSceneChange(SCENEID eNextScene)
+{
+	m_eNextScene = eNextScene;
+	m_bSceneChangeRequested = true;
+}
+
+void CSceneMgr::ProcessSceneChange()
+{
+	if (m_bSceneChangeRequested)
+	{
+		Scene_Change(m_eNextScene);
+		m_bSceneChangeRequested = false;
 	}
 }

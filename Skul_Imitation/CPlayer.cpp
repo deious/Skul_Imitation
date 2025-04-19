@@ -35,7 +35,7 @@ void CPlayer::Initialize()
 	m_fSpeed = 3.f;
 	m_fDistance = 100.f;
 	m_fVelocity = 20.f;
-	m_iHp = 100;
+	m_iHp = 1000;
 	m_bDead = false;
 	m_pSkul = new CSkulHeadNormal();
 
@@ -125,7 +125,7 @@ void CPlayer::Render(HDC hDC)
 		FrameRect(hDC, &rc, hBrush);
 		DeleteObject(hBrush);
 
-		if (GetTickCount64() - m_dwHitTime < 1000)
+		/*if (GetTickCount64() - m_dwHitTime < 1000)
 		{
 			if (m_bShowHitText)
 			{
@@ -133,7 +133,7 @@ void CPlayer::Render(HDC hDC)
 				TextOut(hDC, screen.x, screen.y, L"플레이어 맞았음!", lstrlen(L"플레이어 히트"));
 				m_bShowHitText = false;
 			}
-		}
+		}*/
 	}
 }
 
