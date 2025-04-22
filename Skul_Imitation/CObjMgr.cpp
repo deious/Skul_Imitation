@@ -40,6 +40,13 @@ CObj* CObjMgr::Get_Boss(int id)
 	}
 }
 
+CObj* CObjMgr::Get_Mouse()
+{
+	if (!m_ObjList[OBJ_MOUSE].empty())
+		return m_ObjList[OBJ_MOUSE].front();
+	return nullptr;
+}
+
 CObj* CObjMgr::Get_Target(OBJID eID, CObj* pObj)
 {
 	if (m_ObjList[eID].empty())
@@ -148,6 +155,22 @@ void CObjMgr::Render(HDC hDC)
 		}
 
 		m_RenderList[i].clear();
+
+		/*if (i != RENDER_MOUSE)
+		{
+			m_RenderList[i].sort([](CObj* pDst, CObj* pSrc)->bool
+				{
+					return pDst->Get_Info()->fY < pSrc->Get_Info()->fY;
+				});
+		}
+
+		for (auto iter = m_RenderList[i].begin();
+			iter != m_RenderList[i].end(); ++iter)
+		{
+			(*iter)->Render(hDC);
+		}
+
+		m_RenderList[i].clear();*/
 	}
 }
 
@@ -163,6 +186,9 @@ void CObjMgr::Release()
 	{
 		m_ObjList[i].remove_if([](CObj* pObj) {
 			if (pObj == CSceneMgr::Get_Instance()->Get_Player())
+				return false;
+
+			if (pObj->Get_Tag() == L"MOUSE")
 				return false;
 
 			Safe_Delete(pObj);

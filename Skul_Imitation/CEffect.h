@@ -16,6 +16,7 @@ public:
 
     void Set_EffectFrame(int iStart, int iEnd, int iSpeed);
     void Set_Priority(RENDERID r_id);
+    void Set_ScreenLock(bool b);
 
 private:
     DWORD m_dwCreateTime;
@@ -23,5 +24,7 @@ private:
     DWORD m_dwDuration;
     CObj* m_pFollowTarget = nullptr;
     EffectInfo m_tEffectInfo;
+
+    bool m_bScreenLock = false;
 };
 

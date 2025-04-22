@@ -25,10 +25,12 @@ void CEffect::Initialize(const EffectInfo& tInfo, const Vec2& vFinalPos, CObj* p
 	m_pFollowTarget = pTarget;
 
 	m_tFrame.iStart = tInfo.iStartFrame;
+	m_tFrame.iMotion = tInfo.iMotion;
 	Set_EffectFrame(tInfo.iStartFrame, tInfo.iEndFrame, tInfo.iFrameSpeed);
 
 	m_eRender = tInfo.rId;
 	m_pFrameKey = tInfo.sFramekey;
+	m_bScreenLock = tInfo.bScreenLock;
 
 	Set_Pos(vFinalPos.x, vFinalPos.y);
 }
@@ -70,8 +72,13 @@ void CEffect::Late_Update()
 void CEffect::Render(HDC hDC)
 {
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
+	if (!hMemDC)
+		return;
 	POINT screenPos = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
 
+	if (m_bScreenLock) // 이 값이 true면 화면 좌표 기준으로 고정
+		screenPos = { (int)m_tInfo.fX, (int)m_tInfo.fY };
+	
 	int drawX = screenPos.x - (int)(m_tInfo.fCX * 0.5f);
 	int drawY = screenPos.y - (int)(m_tInfo.fCY * 0.5f);
 
@@ -87,6 +94,33 @@ void CEffect::Render(HDC hDC)
 		(int)m_tInfo.fCY,
 		RGB(255, 0, 255)
 	);
+
+	//HDC hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
+
+	//int drawX, drawY;
+	//if (m_bScreenLock)
+	//{
+	//	// 화면 정중앙 고정 (카메라 무시)
+	//	drawX = (WINCX - (int)m_tInfo.fCX) / 2;
+	//	drawY = (WINCY - (int)m_tInfo.fCY) / 2;
+	//}
+	//else
+	//{
+	//	// 월드 좌표 → 카메라 보정
+	//	POINT screen = CCameraMgr::Get_Instance()->WorldToScreen((int)m_tInfo.fX, (int)m_tInfo.fY);
+	//	drawX = screen.x - (int)(m_tInfo.fCX * 0.5f);
+	//	drawY = screen.y - (int)(m_tInfo.fCY * 0.5f);
+	//}
+
+	//GdiTransparentBlt(hDC,
+	//	drawX, drawY,
+	//	(int)m_tInfo.fCX, (int)m_tInfo.fCY,
+	//	hMemDC,
+	//	m_tFrame.iStart * (int)m_tInfo.fCX,
+	//	m_tFrame.iMotion * (int)m_tInfo.fCY,
+	//	(int)m_tInfo.fCX, (int)m_tInfo.fCY,
+	//	RGB(255, 0, 255)
+	//);
 }
 
 void CEffect::Set_EffectFrame(int start, int end, int speed)
@@ -103,6 +137,11 @@ void CEffect::Set_EffectFrame(int start, int end, int speed)
 void CEffect::Set_Priority(RENDERID r_id)
 {
 	m_eRender = r_id;
+}
+
+void CEffect::Set_ScreenLock(bool b)
+{
+	m_bScreenLock = b;
 }
 
 void CEffect::Release()

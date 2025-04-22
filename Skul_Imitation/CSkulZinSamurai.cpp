@@ -27,7 +27,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(15.f, -10.f),    // vOffset
         Vec2(100.f, 100.f),     // vSize
         0, 10, 80,             // 프레임
-        1.0f, 0.0f            // 스케일, 회전
+        0, 1.0f, 0.0f            // 스케일, 회전
     };
 
     m_tEffectSet.tLDashEffect = {
@@ -36,7 +36,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(-20.f, 0.f),
         Vec2(100.f, 100.f),
         0, 12, 100,
-        1.2f, 0.0f
+        0, 1.2f, 0.0f
     };
 
     m_tEffectSet.tRDashEffect = {
@@ -45,7 +45,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(20.f, 0.f),
         Vec2(100.f, 100.f),
         0, 12, 100,
-        1.2f, 0.0f
+        0, 1.2f, 0.0f
     };
 
     m_tEffectSet.tJumpEffect = {
@@ -54,7 +54,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(0.f, 0.f),
         Vec2(150.f, 100.f),
         0, 9, 100,
-        1.0f, 0.0f
+        0, 1.0f, 0.0f
     };
 
     m_tEffectSet.tLAttackEffect = {
@@ -63,7 +63,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(15.f, -10.f),    // vOffset
         Vec2(200.f, 200.f),     // vSize
         0, 9, 80,             // 프레임
-        1.0f, 0.0f            // 스케일, 회전
+        0, 1.0f, 0.0f            // 스케일, 회전
     };
 
     m_tEffectSet.tRAttackEffect = {
@@ -72,7 +72,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(15.f, -10.f),    // vOffset
         Vec2(200.f, 200.f),     // vSize
         0, 9, 80,             // 프레임
-        1.0f, 0.0f            // 스케일, 회전
+        0, 1.0f, 0.0f            // 스케일, 회전
     };
 
     m_tEffectSet.tSkillAEffect = {
@@ -81,7 +81,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(-20.f, 0.f),
         Vec2(200.f, 200.f),
         0, 9, 80,
-        1.2f, 0.0f
+        0, 1.2f, 0.0f
     };
 
     m_tEffectSet.tSkillBEffect = {
@@ -90,7 +90,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(0.f, 0.f),
         Vec2(200.f, 200.f),
         0, 9, 80,
-        1.0f, 0.0f
+        0, 1.0f, 0.0f
     };
 
     m_tEffectSet.tDieEffect = {
@@ -99,7 +99,7 @@ CSkulZinSamurai::CSkulZinSamurai()
         Vec2(0.f, 0.f),
         Vec2(150.f, 100.f),
         0, 9, 100,
-        1.0f, 0.0f
+        0, 1.0f, 0.0f
     };
 }
 
@@ -205,5 +205,11 @@ const wstring CSkulZinSamurai::Get_SkulId() const
 FRAME* CSkulZinSamurai::Get_AllFrame()
 {
     return m_fFrame;
+}
+
+void CSkulZinSamurai::UseUltimate(CPlayer* pPlayer)
+{
+    OutputDebugString(L"[DEBUG] 궁극기 실행됨!\n");
+    pPlayer->StartMoonStrike();
 }
 

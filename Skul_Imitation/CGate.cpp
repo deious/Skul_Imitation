@@ -79,7 +79,7 @@ void CGate::Render(HDC hDC)
         (int)m_tInfo.fCY,
         RGB(255, 0, 255));
 
-    if (m_bPlayerInRange)
+    /*if (m_bPlayerInRange)
     {
         RECT rcText = {
             screen.x - 40,
@@ -90,7 +90,7 @@ void CGate::Render(HDC hDC)
         SetBkMode(hDC, TRANSPARENT);
         SetTextColor(hDC, RGB(255, 255, 255));
         DrawText(hDC, L"F: 다음 스테이지로", -1, &rcText, DT_CENTER | DT_SINGLELINE);
-    }
+    }*/
 }
 
 void CGate::Set_Frame(int iStart, int iEnd, DWORD dwSpeed)

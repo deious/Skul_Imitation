@@ -27,6 +27,8 @@ public:
 
     virtual void OnHit(CAttackCollider* pCol);
 
+    void OnHit(int damage) override;
+
 protected:
     void Apply_Gravity();
     void Set_Frame(int iStart, int iEnd, int iMotion, DWORD dwSpeed);

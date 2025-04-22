@@ -35,17 +35,24 @@ public:
 	virtual void	Render(HDC hDC)PURE;
 	virtual void	Release()PURE;
 	virtual void	Update_Rect();
+	virtual void	Set_AnimFinish();
 
 public:
 	virtual void	OnHit(CAttackCollider* pCol) {};
+	virtual void	OnHit(int damage);
 	virtual void	OnTileCollision(float landY) {};
 	virtual void	Set_Gravity(float gravity);
 	virtual void	Set_Jump(bool b);
 	virtual float	Get_Speed();
+	virtual void	Set_Tag(wstring name);
+	virtual wstring	Get_Tag();
+	//bool			Move_Frame();
+	bool			Is_AnimFinished() const;
+	virtual const std::wstring& Get_FrameKey() const { return m_pFrameKey; }
 
 protected:
 	//void			Update_Rect();
-	bool			Move_Frame();
+	virtual bool			Move_Frame();
 
 protected:
 	INFO			m_tInfo;
@@ -57,9 +64,11 @@ protected:
 	float			m_fSpeed;
 	float			m_fDistance;
 	float			m_fAngle;
-	bool			m_bDead;
+	bool			m_bDead = false;
+	bool			m_bAnimFinished = false;
 
 	CObj*			m_pTarget;
 	CHitBox*		m_pHitBox = nullptr;
 	const TCHAR*	m_pFrameKey;
+	wstring			m_sTag;
 };

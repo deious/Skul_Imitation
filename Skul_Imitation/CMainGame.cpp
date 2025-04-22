@@ -15,6 +15,10 @@
 #include "CUIHealthBar.h"
 #include "CUISkul.h"
 #include "CSoundMgr.h"
+#include "CUIInventory.h"
+#include "CUIEquipSlot.h"
+#include "CSkulItem.h"
+#include "CTimeMgr.h"
 
 CMainGame::CMainGame() :m_dwTime(GetTickCount64()), m_iFPS(0)
 {
@@ -53,6 +57,11 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamuraiSpecial.bmp", L"ZinSamuraiSpecialIcon");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/BossPortrait.bmp", L"BossPortrait");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/BossHp_Bar.bmp", L"BossHp_Bar");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Inventory.bmp", L"Inventory");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Samurai_Item.bmp", L"Samurai_Item");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/ZinSamurai_Item.bmp", L"ZinSamurai_Item");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Potion_Item.bmp", L"Potion_Item");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/UI/Skul_Item.bmp", L"Skul_Item");
 
 	// 플레이어 이미지
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Skul/Skul_Head_Left.bmp", L"Skul_Head_Left");
@@ -71,6 +80,43 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Monster/Knight_Left.bmp", L"Knight_Left");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Monster/Archer_Right.bmp", L"Archer_Right");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Monster/Archer_Left.bmp", L"Archer_Left");
+
+	// 보스 이미지
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Meteor_Attack_Left_1.bmp", L"Meteor_Attack_Left_1");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Meteor_Attack_Left_2.bmp", L"Meteor_Attack_Left_2");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Meteor_Attack_Right_1.bmp", L"Meteor_Attack_Right_1");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Meteor_Attack_Right_2.bmp", L"Meteor_Attack_Right_2");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Awaken_2.bmp", L"Awaken_2");											// 128 128 35
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Awaken_End_sheet.bmp", L"Awaken_End_sheet");							// 128 128 15
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_Idle.bmp", L"Boss_Idle");										// 128 128 9
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Dark_Dead_Body_sheet.bmp", L"Dark_Dead_Body_sheet");					// 128 128 48
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_Dash_Left.bmp", L"Boss_Dash_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_Dash_Right.bmp", L"Boss_Dash_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/Boss_Dive.bmp", L"Boss_Dive");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/BossBigDash_Left.bmp", L"BossBigDash_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/BossBigDash_Right.bmp", L"BossBigDash_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/BossDDash_Left.bmp", L"BossDDash_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/BossDDash_Right.bmp", L"BossDDash_Right");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/BossHoming_Left.bmp", L"BossHoming_Left");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Boss/BossHoming_Right.bmp", L"BossHoming_Right");
+
+	// 보스 이펙트
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Awaken_Electric_sheet.bmp", L"Awaken_Electric_sheet");				// 202 158 57
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Awaken_End_Flame-sheet.bmp", L"Awaken_End_Flame-sheet");			// 264 200 12
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Dead_Electric2_sheet.bmp", L"Dark_Dead_Electric2_sheet");		// 200 200 11
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Dead_Intro_sheet.bmp", L"Dark_Dead_Intro_sheet");				// 210 400 6
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Dead_Loop_sheet.bmp", L"Dark_Dead_Loop_sheet");				// 210 400 9
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Dead_Outro_sheet.bmp", L"Dark_Dead_Outro_sheet");				// 89  354 34
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_GoldenMeteor_Projectile_sheet.bmp", L"Dark_GoldenMeteor_Projectile_sheet");	// 128 128 11
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_HomingPierce_Orb_sheet.bmp", L"Dark_HomingPierce_Orb_sheet");	// 128 128 15
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Meteor_Ground_Smoke_sheet.bmp", L"Dark_Meteor_Ground_Smoke_sheet");	// 160 256 13 2
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Meteor_Ground_Thunder_Sign_sheet.bmp", L"Dark_Meteor_Ground_Thunder_Sign_sheet");	// 100 50 16
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Meteor_sheet.bmp", L"Dark_Meteor_sheet");		// 400 20 9
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Meteor_sheet_LEFT.bmp", L"Dark_Meteor_sheet_LEFT");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Meteor_Ground_Sign_sheet.bmp", L"Dark_Meteor_Ground_Sign_sheet");		// 800 300 5
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Dark_Meteor_Ground_Sign_sheet_Left.bmp", L"Dark_Meteor_Ground_Sign_sheet_Left");
+
+
 
 	// 튜토리얼 이미지
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Button/A_Button.bmp", L"ABtn");
@@ -96,21 +142,55 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Arrow_Right.bmp", L"Arrow_Right");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Monster_Appear.bmp", L"Monster_Appear");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Monster_Dead.bmp", L"Monster_Dead");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Moon.bmp", L"Moon");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Slash.bmp", L"Slash");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Effect/Finish.bmp", L"Finish");
 
 	// NPC 및 문 이미지
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/NPC/Stage_Door.bmp", L"StageDoor");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/NPC/Dungeon_Entrance_Door.bmp", L"DungeonDoor");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/NPC/Boss_Entrance_Door.bmp", L"BossDoor");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/NPC/TwinHead.bmp", L"TwinHead");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/NPC/Spider.bmp", L"Spider");
 	
 	
 	
 	// 메인게임에 이미지들을 넣어놓고 가져다 쓰자
 
+	CObj* pMouse = new CMouse;
+	if (!pMouse)
+	{
+		OutputDebugString(L"[ERROR] 마우스 생성 실패\n");
+	}
+	pMouse->Initialize();
+	pMouse->Set_Tag(L"MOUSE");
+	pMouse->Set_RenderID(RENDER_MOUSE);
+	CUIMgr::Get_Instance()->Set_Mouse(pMouse);
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_MOUSE, pMouse);
+	//CObjMgr::Get_Instance()->Add_UI(RENDER_MOUSE, pMouse);
+	/*CUIMgr::Get_Instance()->Add_UI(pMouse);*/
+
 
 	CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIPortrait>::Create_Obj());
 	CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUIHealthBar>::Create_Obj());
 	CUIMgr::Get_Instance()->Add_UI(CAbstractFactory<CUISkul>::Create_Obj());
-
+	CUIInventory* pInventory = new CUIInventory();
+	pInventory->Initialize();
+	pInventory->Set_Tag(L"Inventory");
+	CUIMgr::Get_Instance()->Add_UI(pInventory);
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_UI, pInventory);
+	CUIEquipSlot* pEquipSlot1 = new CUIEquipSlot(0);
+	pEquipSlot1->Set_Pos(284, 194);
+	pEquipSlot1->Set_Default(true);
+	CSkulItem* pDefault = new CSkulItem(L"Skul_Item");
+	pEquipSlot1->Set_Item(pDefault);
+	//pEquipSlot1->Set_Default(true);
+	CObj* pEquipSlot2 = new CUIEquipSlot(1);
+	pEquipSlot2->Initialize();
+	pEquipSlot2->Set_Pos(326, 194);
+	CUIMgr::Get_Instance()->Add_UI(pEquipSlot1);
+	CUIMgr::Get_Instance()->Add_UI(pEquipSlot2);
+	
 	m_hMemDC = CreateCompatibleDC(m_hDC);
 	m_hBackBmp = CreateCompatibleBitmap(m_hDC, WINCX, WINCY);
 	m_hOldBmp = (HBITMAP)SelectObject(m_hMemDC, m_hBackBmp);
@@ -119,6 +199,7 @@ void CMainGame::Initialize()
 void CMainGame::Update()
 {
 	CSceneMgr::Get_Instance()->Update();
+	CTimeMgr::Get_Instance()->Update();
 	CSceneMgr::Get_Instance()->ProcessSceneChange();
 }
 

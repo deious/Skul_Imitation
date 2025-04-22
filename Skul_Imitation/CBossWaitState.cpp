@@ -4,6 +4,7 @@
 
 void CBossWaitState::Enter(CBoss* pBoss)
 {
+	pBoss->Set_AnimStatus(false);
 	pBoss->Set_Speed(0.f);
 	pBoss->Set_Frame(0, 4, 13, 100);
 	pBoss->Set_Pos(250.f, 260.f);
@@ -16,6 +17,8 @@ void CBossWaitState::Enter(CBoss* pBoss)
 
 void CBossWaitState::Update(CBoss* pBoss)
 {
+	/*if (!pBoss || pBoss->IsDead())
+		return;*/
 	/*if (g_bIsTeamPatternTime)
 	{
 		pBoss->Set_Gravity();

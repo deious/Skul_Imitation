@@ -3,6 +3,7 @@
 #include "CBoss.h"
 #include "CObjMgr.h"
 #include "CBossIdleState.h"
+#include "CTimeMgr.h"
 
 void CBossAttackState::Enter(CBoss* pBoss)
 {

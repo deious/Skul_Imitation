@@ -15,6 +15,10 @@
 #include "CBossDuoShootingLightning.h"
 //#include "CBossStage.cpp"
 #include "CBossWaitState.h"
+#include "CBossAwakenState.h"
+#include "CRandomMgr.h"
+#include "CBossDieState.h"
+#include "CTimeMgr.h"
 
 CBoss::CBoss()
 {
@@ -65,16 +69,19 @@ void CBoss::Initialize()
 
 int CBoss::Update()
 {
+    if (m_pCurState)
+        m_pCurState->Update(this);
+
     if (m_bDead)
         return DEAD;
 
     //CheckAndUpdateBehaviorTree();
 
     /*if (m_pAI)
-        m_pAI->Run()*/;
+        m_pAI->Run();*/
 
-    if (m_pCurState)
-        m_pCurState->Update(this);
+    /*if (m_pCurState)
+        m_pCurState->Update(this);*/
 
     m_tInfo.fX += m_fSpeed * DELTA_TIME;
     if (m_tInfo.fX < 100.f)
@@ -126,6 +133,7 @@ void CBoss::Render(HDC hDC)
     int drawX = screenPos.x - (int)(m_tInfo.fCX * 0.5f);
     int drawY = screenPos.y - (int)(m_tInfo.fCY * 0.5f);
 
+
     GdiTransparentBlt(hDC,
         drawX,
         drawY,
@@ -138,6 +146,22 @@ void CBoss::Render(HDC hDC)
         (int)m_tInfo.fCY,
         RGB(255, 0, 255)
     );
+
+    /*else
+    {
+        GdiTransparentBlt(hDC,
+            drawX,
+            drawY,
+            (int)m_tInfo.fCX,
+            (int)m_tInfo.fCY,
+            hMemDC,
+            m_tFrame.iStart * (int)m_tInfo.fCX,
+            m_tFrame.iMotion * (int)m_tInfo.fCY,
+            (int)m_tInfo.fCX,
+            (int)m_tInfo.fCY,
+            RGB(0, 0, 0)
+        );
+    }*/
 
     if (CKeyMgr::Get_Instance()->Get_ShowAll())
     {
@@ -169,10 +193,19 @@ void CBoss::Render(HDC hDC)
 void CBoss::Release()
 {
     Safe_Delete(m_pHitBox);
+    Safe_Delete(m_pCurState);
+    m_pCurState = nullptr;
+    m_pPairBoss = nullptr;
 }
 
 void CBoss::ChangeState(IState<CBoss>* pNewState)
 {
+    /*if (IsDead() || m_pCurState == nullptr)
+        return;*/
+
+    if (IsDead())
+        return;
+
     if (m_pCurState)
         m_pCurState->Exit(this);
 
@@ -181,6 +214,9 @@ void CBoss::ChangeState(IState<CBoss>* pNewState)
 
     if (m_pCurState)
         m_pCurState->Enter(this);
+
+    /*if (IsCheck())
+        Set_Dead();*/
 }
 
 void CBoss::BuildBehaviorTree()
@@ -308,51 +344,91 @@ void CBoss::BuildBehaviorTree()
 
 void CBoss::BuildSoloBehaviorTree()
 {
-    if (m_pAI) delete m_pAI;
+    if (m_pAI)
+        m_pAI = nullptr;
 
-    m_pAI = new ActionNode([this]() {
-        static float soloElapsed = 0.f;
-        soloElapsed += DELTA_TIME;
+    SequenceNode* pRoot = new SequenceNode();
 
-        if (soloElapsed >= 2.0f)
+    SelectorNode* pAwakenOnlyOnce = new SelectorNode();
+    SequenceNode* pAwakenSeq = new SequenceNode();
+
+    pAwakenSeq->AddChild(new ActionNode([this]() {
+        if (!this->IsAwakened())
         {
-            soloElapsed = 0.f;
-            int pattern = rand() % 4;
-
-            switch (pattern)
-            {
-            case 0:
-                this->ChangeState(new CBossDashAttack());
-                break;
-            case 1:
-                this->ChangeState(new CBossDuoDive());
-                break;
-            case 2:
-                this->ChangeState(new CBossDashAttack());
-                break;
-            case 3:
-                this->ChangeState(new CBossDuoDive());
-                break;
-            }
+            this->ChangeState(new CBossAwakenState());
+            this->Set_AnimStatus(false);
+            return false;
         }
-
         return true;
-        });
+        }));
+
+    pAwakenSeq->AddChild(new ConditionNode([this]() {
+        return this->Is_AnimFinished();
+        }));
+
+    pAwakenSeq->AddChild(new ActionNode([this]() {
+        m_bAwakened = true;
+        return true;
+        }));
+
+    pAwakenOnlyOnce->AddChild(pAwakenSeq);
+
+    SelectorNode* pRandomSelector = new SelectorNode();
+
+    pRandomSelector->AddChild(new ActionNode([this]() {
+        int iRand = CRandomMgr::Get_Instance()->GetRandom(0, 3);
+        this->Set_AnimFinish();
+
+        switch (iRand)
+        {
+        case 0: this->ChangeState(new CBossDashAttack()); break;
+        case 1: this->ChangeState(new CBossDuoDashFromEdge()); break;
+        case 2: this->ChangeState(new CBossDuoShootingLightning()); break;
+        case 3: this->ChangeState(new CBossDuoDive()); break;
+        }
+        return false;
+        }));
+
+    pRandomSelector->AddChild(new ConditionNode([this]() {
+        return this->Is_AnimFinished();
+        }));
+
+    pRoot->AddChild(pAwakenOnlyOnce);
+    pRoot->AddChild(pRandomSelector);
+
+    m_pAI = pRoot;
 }
 
 bool CBoss::IsAwakened() const
 {
-    return false;
+    return m_bAwakened;
 }
 
 bool CBoss::IsDead() const
 {
-    return false;
+    return m_bDead;
 }
 
 bool CBoss::ShouldSyncAttack() const
 {
     return false;
+}
+
+void CBoss::OnHit(int damage)
+{
+    m_iHp -= damage;
+
+    if (m_iHp <= 0 && !m_bIsDead)
+    {
+        m_iHp = 0;
+        m_bIsDead = true;
+        ChangeState(new CBossDieState());
+    }
+}
+
+void CBoss::Recovery()
+{
+    m_iHp = m_iMaxHp;
 }
 
 int CBoss::Get_ID()
@@ -370,6 +446,11 @@ CBoss* CBoss::Get_PairBoss() const
     return m_pPairBoss;
 }
 
+bool CBoss::IsCheck() const
+{
+    return m_bIsDead;
+}
+
 void CBoss::Set_ID(int id)
 {
     m_iBossID = id;
@@ -382,6 +463,9 @@ void CBoss::Set_Speed(float fSpeed)
 
 EBossStateType CBoss::Get_CurStateType() const
 {
+    if (m_pCurState == nullptr)
+        return EBossStateType::None;        // 여긴 아님
+
     if (m_pCurState)
         return m_pCurState->GetType();
     return EBossStateType::None;
@@ -447,7 +531,8 @@ void CBoss::OnHit(CAttackCollider* pCol)
     {
         m_iHp = 0;
         m_bIsDead = true;
-        m_bDead = true;
+        ChangeState(new CBossDieState());
+        //m_bDead = true;
         //ChangeState(nullptr);  // 상태 제거
         //Safe_Delete(m_pAI);    // 행동 트리 제거
     }
@@ -483,4 +568,51 @@ void CBoss::Apply_Gravity()
         m_fGravity = 0.f;
         m_tInfo.fY = landY;
     }
+}
+
+bool CBoss::Move_Frame()
+{
+    WCHAR szLog[128];
+
+    // 현재 프레임 상태 로그
+    swprintf_s(szLog, L"[Move_Frame] 현재 프레임: %d / %d, 시간: %llu / %llu\n",
+        m_tFrame.iStart, m_tFrame.iEnd, m_tFrame.dwTime + m_tFrame.dwFrameSpeed, GetTickCount64());
+    OutputDebugStringW(szLog);
+    if (m_tFrame.dwTime + m_tFrame.dwFrameSpeed < GetTickCount64())
+    {
+        ++m_tFrame.iStart;
+        m_tFrame.dwTime = GetTickCount64();
+        swprintf_s(szLog, L"[Move_Frame] 프레임 증가됨 → iStart: %d\n", m_tFrame.iStart);
+        OutputDebugStringW(szLog);
+        if (m_tFrame.iStart > m_tFrame.iEnd)
+        {
+            m_tFrame.iStart = 0;
+            m_bAnimed = true;
+
+            OutputDebugStringW(L"[Move_Frame] 애니메이션 종료 → m_bAnimed = true\n");
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void CBoss::Set_AnimFinish()
+{
+    m_bAnimed = false;
+}
+
+bool CBoss::Is_AnimFinished()
+{
+    return m_bAnimed;
+}
+
+bool CBoss::Set_AnimStatus(bool state)
+{
+    return m_bAnimed = state;
+}
+
+void CBoss::Set_Awaken()
+{
+    m_bAwakened = true;
 }

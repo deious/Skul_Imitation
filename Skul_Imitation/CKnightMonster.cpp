@@ -11,6 +11,7 @@
 #include "CTileMgr.h"
 #include "CCollisionMgr.h"
 #include "CEffectMgr.h"
+#include "CTimeMgr.h"
 
 CKnightMonster::CKnightMonster() {}
 CKnightMonster::~CKnightMonster() {}

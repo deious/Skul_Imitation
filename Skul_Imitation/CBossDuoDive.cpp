@@ -6,9 +6,11 @@
 #include "CPlayer.h"
 #include "CBossController.h"
 #include "CEffectMgr.h"
+#include "CTimeMgr.h"
 
 void CBossDuoDive::Enter(CBoss* pBoss)
 {
+    pBoss->Set_AnimStatus(false);
     list<CObj*>& bossList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_PLAYER);
     for (CObj* pObj : bossList)
     {
@@ -31,23 +33,42 @@ void CBossDuoDive::Enter(CBoss* pBoss)
     //float spawnX = pBoss->Get_Info()->fX;
     float spawnX = CObjMgr::Get_Instance()->Get_Player()->Get_Info()->fX;
     pBoss->Set_Pos(spawnX, -200.f);
-    pBoss->Set_Frame(0, 10, 8, 150);
-
-    m_tEffectInfo.eType = EFFECT_TYPE::SKILLA;
-    m_tEffectInfo.sFramekey = m_sEffectKey.c_str();
-    m_tEffectInfo.vOffset = {0.f, -50.f};
-    m_tEffectInfo.vSize = Vec2(51.2f, 256.f); // ÀÌÆåÆ® Å©±â
-    m_tEffectInfo.iStartFrame = 0;
-    m_tEffectInfo.iEndFrame = 9;
-    m_tEffectInfo.iFrameSpeed = 30;
-    m_tEffectInfo.fScale = 1.f;
-    m_tEffectInfo.fRotation = 0.f;
+    if (pBoss->IsAwakened())
+    {
+        pBoss->Set_FrameKey(L"Boss_Dive");
+        pBoss->Set_Frame(0, 10, 0, 150);
+        m_tEffectInfo.eType = EFFECT_TYPE::SKILLA;
+        m_tEffectInfo.sFramekey = L"Dark_Dead_Outro_sheet";
+        m_tEffectInfo.vOffset = { 0.f, -50.f };
+        m_tEffectInfo.vSize = Vec2(89.f, 354.f); // ÀÌÆåÆ® Å©±â
+        m_tEffectInfo.iStartFrame = 0;
+        m_tEffectInfo.iEndFrame = 33;
+        m_tEffectInfo.iFrameSpeed = 10;
+        m_tEffectInfo.fScale = 1.f;
+        m_tEffectInfo.fRotation = 0.f;
+    }
+    else
+    {
+        pBoss->Set_Frame(0, 10, 8, 150);
+        m_tEffectInfo.eType = EFFECT_TYPE::SKILLA;
+        m_tEffectInfo.sFramekey = m_sEffectKey.c_str();
+        m_tEffectInfo.vOffset = { 0.f, -50.f };
+        m_tEffectInfo.vSize = Vec2(51.2f, 256.f); // ÀÌÆåÆ® Å©±â
+        m_tEffectInfo.iStartFrame = 0;
+        m_tEffectInfo.iEndFrame = 9;
+        m_tEffectInfo.iFrameSpeed = 30;
+        m_tEffectInfo.fScale = 1.f;
+        m_tEffectInfo.fRotation = 0.f;
+    }
 
     //CEffectMgr::Get_Instance()->Add_Effect(effect, { pBoss->Get_Info()->fX, pBoss->Get_Info()->fY }, pBoss);
 }
 
 void CBossDuoDive::Update(CBoss* pBoss)
 {
+    /*if (!pBoss || pBoss->IsDead())
+        return;*/
+
     m_fWaitTime += DELTA_TIME;
 
     if (!m_bDived && m_fWaitTime >= 0.5f)

@@ -9,6 +9,7 @@
 #include "CAttackCollider.h"
 #include "CObj.h"
 #include "CEffectMgr.h"
+#include "CTimeMgr.h"
 
 CMonster::CMonster()
 {
@@ -179,6 +180,33 @@ void CMonster::OnHit(CAttackCollider* pCol)
         m_iHp = 0;
         m_bIsDead = true;
         m_bDead = true;
+        Safe_Delete(m_pBehaviorTree);
+
+        EffectInfo effect;
+        effect.eType = EFFECT_TYPE::SKILLA;
+        effect.sFramekey = L"Monster_Dead";
+        effect.vOffset;
+        effect.vSize = Vec2(150.f, 150.f); // ÀÌÆåÆ® Å©±â
+        effect.iStartFrame = 0;
+        effect.iEndFrame = 10;
+        effect.iFrameSpeed = 50;
+        effect.fScale = 1.f;
+        effect.fRotation = 0.f;
+
+        CEffectMgr::Get_Instance()->Add_Effect(effect, { m_tInfo.fX, m_tInfo.fY });
+    }
+}
+
+void CMonster::OnHit(int damage)
+{
+    m_iHp -= damage;
+
+    if (m_iHp <= 0 && !m_bIsDead)
+    {
+        m_iHp = 0;
+        m_bIsDead = true;
+        m_bDead = true;
+
         Safe_Delete(m_pBehaviorTree);
 
         EffectInfo effect;

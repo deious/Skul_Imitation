@@ -8,5 +8,6 @@ enum class EBossStateType
     DuoDash,
     DuoDive,
     DuoLightning,
+    Awaken,
     None
 };

@@ -21,6 +21,7 @@
 #include "CUIBossPortrait.h"
 #include "CUIBossHealthBar.h"
 #include "CUIWrite.h"
+#include "CGate.h"
 
 //bool g_bIsTeamPatternTime = false;
 //float g_fTeamPatternTimer = 0.f;
@@ -91,7 +92,11 @@ void CBossStage::Initialize()
     //CObjMgr::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create_Obj(0));
 
     CBoss* pBoss1 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(0));
+    //pBoss1->Initialize();
+    //pBoss1->Set_ID(0);
     CBoss* pBoss2 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(1));
+    //pBoss2->Initialize();
+    //pBoss2->Set_ID(1);
     pBoss1->Set_PairBoss(pBoss2);
     pBoss2->Set_PairBoss(pBoss1);
 
@@ -119,6 +124,11 @@ void CBossStage::Initialize()
     CUIMgr::Get_Instance()->Add_UI(CWriteBoard);
     CWriteBoard = new CUIWrite(340.f, 80.5f, 124.f, 14.f, L"황금갈기기사단 부관", 10);
     CUIMgr::Get_Instance()->Add_UI(CWriteBoard);
+
+    /*INFO tInfo = { 400.f, 300.f, 200.f, 200.f };
+    CObj* pGate = new CGate(L"StageDoor", tInfo, 3);
+    dynamic_cast<CGate*>(pGate)->Set_Frame(0, 7, 50.f);
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TRIGGER, pGate);*/
 
     CTileMgr::Get_Instance()->Load_Tile(L"./Data/BossMap.dat");
     CSoundMgr::Get_Instance()->PlayBGM(L"BossBgm.wav", 1.f);

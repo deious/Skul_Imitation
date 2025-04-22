@@ -18,6 +18,7 @@ enum class EState
     Attack,
     Hit,
     Die,
+    Awanken
 };
 
 class CBossController;
@@ -40,11 +41,13 @@ public:
     void OnHit(CAttackCollider* pCol) override;
     void BuildSoloBehaviorTree();
     void CheckAndUpdateBehaviorTree();
-
+    void OnHit(int damage) override;
     void Apply_Gravity();
+    void Recovery();
 
     bool IsAwakened() const;
     bool IsDead() const;
+    bool IsCheck() const;
     bool ShouldSyncAttack() const;
 
     int   Get_ID();
@@ -62,6 +65,11 @@ public:
     void Set_Gravity();
     void Set_Controller(CBossController* pController);
     void Set_Invincibility(bool b);
+    bool Move_Frame() override;
+    bool Is_AnimFinished();
+    bool Set_AnimStatus(bool state);
+    void Set_AnimFinish() override;
+    void Set_Awaken();
 
     CBossController* Get_Controller() const;
 
@@ -75,17 +83,19 @@ private:
     float       m_fSpeed = 0.f;
 
     CBoss* m_pPairBoss;
-    BehaviorNode* m_pAI;
+    BehaviorNode* m_pAI = nullptr;
     IState<CBoss>* m_pCurState = nullptr;
 
     CBossController* m_pController = nullptr;
 
-    bool m_bAwakened;
+    bool m_bAwakened = false;
+    bool m_bAwakening = false;
     bool		m_bUseGravity = true;
     bool m_bShowHitText = false;
     bool m_bIsDead = false;
     bool m_bUseTeamTree = true;
     bool m_binvincibility = false;
+    bool m_bAnimed = false;
     ULONGLONG m_dwHitTime = 0;
 
     //CHitBox m_HitBox;

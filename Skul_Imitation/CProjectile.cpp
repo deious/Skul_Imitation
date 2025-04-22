@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CProjectile.h"
 #include "CBmpMgr.h"
+#include "CTimeMgr.h"
 
 CProjectile::CProjectile(Vec2 pos, Vec2 dir)
     : m_Pos(pos), m_Dir(dir.Normalize())

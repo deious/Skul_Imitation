@@ -1,11 +1,14 @@
 #pragma once
 #include "CObj.h"
 #include "CSkulHead.h"
+#include "CMoonPhase.h"
 
 //enum class MSTATE { IDLE, WALK, DASH, JUMPSTART, RISING, FALL, ATTACK, HIT, DEATH, INTERACTION, MS_END };
 class CState;
 
 //enum class EDirection { LEFT, RIGHT };
+//enum class MoonPhase { None, StartSlow, Moon, Flash, Damage, End };
+//MoonPhase m_eMoonPhase;
 
 class CPlayer : public CObj
 {
@@ -45,7 +48,8 @@ public:
 	void		Set_Awaken();
 	void		Set_MaxHP(int iHp);
 	void		Set_HP(int iHp);
-
+	
+	void		Heal(int hp);
 	void		Add_JumpCnt();
 
 	int			Get_CurFrame() const;
@@ -65,6 +69,8 @@ public:
 	DWORD		Get_DashDuration() const;
 	CSkulHead*	Get_Skul() const;
 
+	void		StartMoonStrike();
+
 private:
 	void		Apply_Gravity();
 
@@ -82,11 +88,14 @@ private:
 	bool		m_bJump;
 	bool		m_bUseGravity = true;
 	bool		m_bShowHitText = false;
+	bool		m_bMoonStrike = false;
+	bool		m_bPowerOverWhelming = false;
 
 	float		m_fVelocity;
 	float		m_fGravity = 0.f;
 	float		m_fTime;
 	float		m_fDashSpeed = 3.f;
+	float		m_fMoonTimer = 0.f;
 
 	const float GRAVITY_ACCEL = 0.5f;		// 중력 가속도 (프레임당 증가값)
 	const float GRAVITY_MAX = 7.f;			// 최대 낙하 속도 제한
@@ -100,4 +109,5 @@ private:
 	const DWORD m_dwDashCooldown = 2000;
 	const DWORD m_dwDashDuration = 300;
 
+	CMoonPhase m_eMoonPhase;
 };

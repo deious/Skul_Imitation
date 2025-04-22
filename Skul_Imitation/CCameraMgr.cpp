@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "CCameraMgr.h"
+#include "Define.h"
+#include "CTimeMgr.h"
 
 CCameraMgr::CCameraMgr()
 {
@@ -38,11 +40,32 @@ void CCameraMgr::Update()
         m_Pos.y = 0;
     else if (m_Pos.y > m_MapSize.cy - m_Resolution.cy)
         m_Pos.y = m_MapSize.cy - m_Resolution.cy;
+
+    if (m_fShakeTimer < m_fShakeDuration)
+    {
+        m_fShakeTimer += DELTA_TIME;
+
+        // ·£´ý Èçµé¸² ¿ÀÇÁ¼Â
+        int offsetX = (rand() % (int)(m_fShakeIntensity * 2)) - (int)m_fShakeIntensity;
+        int offsetY = (rand() % (int)(m_fShakeIntensity * 2)) - (int)m_fShakeIntensity;
+
+        m_ptShakeOffset.x = offsetX;
+        m_ptShakeOffset.y = offsetY;
+    }
+    else
+    {
+        m_ptShakeOffset.x = 0;
+        m_ptShakeOffset.y = 0;
+    }
 }
 
 POINT CCameraMgr::WorldToScreen(int x, int y) const 
 {
-    return { x - m_Pos.x, y - m_Pos.y };
+    /*return { x - m_Pos.x, y - m_Pos.y };*/
+    return {
+        x - m_Pos.x + m_ptShakeOffset.x,
+        y - m_Pos.y + m_ptShakeOffset.y
+    };
 }
 
 RECT CCameraMgr::Get_CameraRect() const 
@@ -64,6 +87,13 @@ void CCameraMgr::Set_MapSize(int width, int height)
 void CCameraMgr::Set_Resolution(int width, int height) 
 {
     m_Resolution = { width, height };
+}
+
+void CCameraMgr::StartShake(float duration, float intensity)
+{
+    m_fShakeDuration = duration;
+    m_fShakeTimer = 0.f;
+    m_fShakeIntensity = intensity;
 }
 
 POINT CCameraMgr::Get_CameraPos() const

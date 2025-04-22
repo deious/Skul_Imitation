@@ -7,6 +7,7 @@
 #include "CKeyMgr.h"
 #include "CAttackCollider.h"
 #include "CArrow.h"
+#include "CTimeMgr.h"
 
 CArcherMonster::CArcherMonster()
 {

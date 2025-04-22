@@ -333,13 +333,7 @@
     <ClInclude Include="CBossDuoDashFromEdge.h">
       <Filter>01. Obj\01. Boss\State</Filter>
     </ClInclude>
-    <ClInclude Include="CBossShootLightning.h">
-      <Filter>01. Obj\01. Boss\State</Filter>
-    </ClInclude>
     <ClInclude Include="CBossDashAttack.h">
-      <Filter>01. Obj\01. Boss\State</Filter>
-    </ClInclude>
-    <ClInclude Include="CBossDive.h">
       <Filter>01. Obj\01. Boss\State</Filter>
     </ClInclude>
     <ClInclude Include="CBossDuoDive.h">
@@ -409,6 +403,45 @@
       <Filter>01. Obj\02. Monster</Filter>
     </ClInclude>
     <ClInclude Include="CArrow.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossAwakenState.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CShopSlot.h">
+      <Filter>01. Obj\03. NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIInventory.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CItem.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CPotionItem.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkulItem.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIEquipSlot.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CMerchant.h">
+      <Filter>01. Obj\03. NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossDieState.h">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneEnding.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CNPC.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CMoonPhase.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -569,13 +602,7 @@
     <ClCompile Include="CBossDuoDashFromEdge.cpp">
       <Filter>01. Obj\01. Boss\State</Filter>
     </ClCompile>
-    <ClCompile Include="CBossShootLightning.cpp">
-      <Filter>01. Obj\01. Boss\State</Filter>
-    </ClCompile>
     <ClCompile Include="CBossDashAttack.cpp">
-      <Filter>01. Obj\01. Boss\State</Filter>
-    </ClCompile>
-    <ClCompile Include="CBossDive.cpp">
       <Filter>01. Obj\01. Boss\State</Filter>
     </ClCompile>
     <ClCompile Include="CBossDuoDive.cpp">
@@ -642,6 +669,42 @@
       <Filter>01. Obj\02. Monster</Filter>
     </ClCompile>
     <ClCompile Include="CArrow.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossAwakenState.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CShopSlot.cpp">
+      <Filter>01. Obj\03. NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIInventory.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CItem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CPotionItem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkulItem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIEquipSlot.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CMerchant.cpp">
+      <Filter>01. Obj\03. NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossDieState.cpp">
+      <Filter>01. Obj\01. Boss\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneEnding.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CNPC.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeMgr.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

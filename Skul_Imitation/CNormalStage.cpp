@@ -12,6 +12,7 @@
 #include "CTrigger.h"
 #include "CKnightMonster.h"
 #include "CArcherMonster.h"
+#include "CNPC.h"
 
 CNormalStage::CNormalStage()
 {
@@ -43,24 +44,24 @@ void CNormalStage::Initialize()
     RECT area = { 500, 300, 600, 400 };
 
     CObj* pTrigger = new CTrigger(area, []() {
-        /*std::vector<Vec2> spawnPositions = {
+        std::vector<Vec2> spawnPositions = {
             { 550.f, 380.f },
             { 590.f, 380.f },
             { 610.f, 380.f }
-        };*/
+        };
 
         std::vector<Vec2> spawnPositions_Archer = {
             { 570.f, 380.f },
             { 600.f, 380.f },
         };
 
-        /*for (const auto& pos : spawnPositions)
+        for (const auto& pos : spawnPositions)
         {
             CObj* knight = new CKnightMonster();
             knight->Set_Pos(pos.x, pos.y);
             knight->Initialize();
             CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, knight);
-        }*/
+        }
 
         for (const auto& pos : spawnPositions_Archer)
         {
@@ -72,6 +73,126 @@ void CNormalStage::Initialize()
         });
 
     CObjMgr::Get_Instance()->Add_Object(OBJ_TRIGGER, pTrigger);
+
+    area = { 700, 500, 800, 600 };
+
+    pTrigger = new CTrigger(area, []() {
+        std::vector<Vec2> spawnPositions = {
+            { 750.f, 500.f },
+            { 790.f, 500.f },
+            { 810.f, 500.f }
+        };
+
+        std::vector<Vec2> spawnPositions_Archer = {
+            { 770.f, 500.f },
+            { 800.f, 500.f },
+        };
+
+        for (const auto& pos : spawnPositions)
+        {
+            CObj* knight = new CKnightMonster();
+            knight->Set_Pos(pos.x, pos.y);
+            knight->Initialize();
+            CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, knight);
+        }
+
+        for (const auto& pos : spawnPositions_Archer)
+        {
+            CObj* Archer = new CArcherMonster();
+            Archer->Set_Pos(pos.x, pos.y);
+            Archer->Initialize();
+            CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, Archer);
+        }
+        });
+
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TRIGGER, pTrigger);
+
+    area = { 1400, 500, 1500, 600 };
+
+    pTrigger = new CTrigger(area, []() {
+        std::vector<Vec2> spawnPositions = {
+            { 1450.f, 500.f },
+            { 1480.f, 500.f },
+            { 1510.f, 500.f }
+        };
+
+        std::vector<Vec2> spawnPositions_Archer = {
+            { 1470.f, 500.f },
+            { 1500.f, 500.f },
+        };
+
+        for (const auto& pos : spawnPositions)
+        {
+            CObj* knight = new CKnightMonster();
+            knight->Set_Pos(pos.x, pos.y);
+            knight->Initialize();
+            CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, knight);
+        }
+
+        for (const auto& pos : spawnPositions_Archer)
+        {
+            CObj* Archer = new CArcherMonster();
+            Archer->Set_Pos(pos.x, pos.y);
+            Archer->Initialize();
+            CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, Archer);
+        }
+        });
+
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TRIGGER, pTrigger);
+
+    area = { 1600, 300, 1700, 400 };
+
+    pTrigger = new CTrigger(area, []() {
+        std::vector<Vec2> spawnPositions = {
+            { 1650.f, 350.f },
+            { 1680.f, 350.f },
+            { 1710.f, 350.f }
+        };
+
+        std::vector<Vec2> spawnPositions_Archer = {
+            { 1670.f, 350.f },
+            { 1700.f, 350.f },
+        };
+
+        for (const auto& pos : spawnPositions)
+        {
+            CObj* knight = new CKnightMonster();
+            knight->Set_Pos(pos.x, pos.y);
+            knight->Initialize();
+            CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, knight);
+        }
+
+        for (const auto& pos : spawnPositions_Archer)
+        {
+            CObj* Archer = new CArcherMonster();
+            Archer->Set_Pos(pos.x, pos.y);
+            Archer->Initialize();
+            CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, Archer);
+        }
+        });
+
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TRIGGER, pTrigger);
+
+    auto& monsterList = CObjMgr::Get_Instance()->Get_ObjList(OBJ_MONSTER);
+    bool allDead = true;
+    for (auto p : monsterList)
+    {
+        if (!p->Get_Dead())
+        {
+            allDead = false;
+            break;
+        }
+    }
+
+    if (allDead && !CObjMgr::Get_Instance()->Get_ObjList(OBJ_NPC).size())
+    {
+        INFO npcInfo = { 1325.f, 325.f, 150.f, 150.f };
+        CNPC* pNpc = new CNPC;
+        pNpc->Initialize();
+        pNpc->Set_Pos(npcInfo.fX, npcInfo.fY);
+        pNpc->Set_Activate(true);
+        CObjMgr::Get_Instance()->Add_Object(OBJ_NPC, pNpc);
+    }
 }
 
 int CNormalStage::Update()
@@ -129,6 +250,8 @@ void CNormalStage::Key_Input()
         //CTileMgr::Get_Instance()->Set_ShowTile();
         //CKeyMgr::Get_Instance()->Set_ShowAll();
         //CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_BOSS);
+        Release();
         CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_BOSS);
+        //Release();
     }
 }

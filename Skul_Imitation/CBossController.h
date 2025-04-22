@@ -34,11 +34,13 @@ private:
 private:
     CBoss* m_pBossA = nullptr;
     CBoss* m_pBossB = nullptr;
+    CBoss* survivor = nullptr;
 
     int iNum = 0;
-
+    int m_iPhase = 1;
     bool m_bDidFirstTeamPattern = false;
     bool m_bScheduledSecondBoss = false;
+    bool m_bUpdateStop = false;
     float m_fTimer = 0.f;
     float m_fSoloCooldown = 0.f;
     float m_fSecondBossDelay = 0.f;

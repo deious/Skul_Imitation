@@ -17,9 +17,12 @@
 #include "CUIMgr.h"
 #include "CSkulSamurai.h"
 #include "CSkulZinSamurai.h"
+#include "CUIInventory.h"
+#include "CTimeMgr.h"
+#include "CEffectMgr.h"
 
 
-CPlayer::CPlayer() : m_pCurState(nullptr), m_bJump(false), m_fGravity(0.f), m_fTime(0.f), m_pSkul(nullptr)
+CPlayer::CPlayer() : m_pCurState(nullptr), m_bJump(false), m_fGravity(0.f), m_fTime(0.f), m_pSkul(nullptr), m_eMoonPhase(CMoonPhase::None)
 {
 	ZeroMemory(&m_tPosin, sizeof(POINT));
 }
@@ -35,7 +38,7 @@ void CPlayer::Initialize()
 	m_fSpeed = 3.f;
 	m_fDistance = 100.f;
 	m_fVelocity = 20.f;
-	m_iHp = 1000;
+	m_iHp = 70;
 	m_bDead = false;
 	m_pSkul = new CSkulHeadNormal();
 
@@ -49,9 +52,9 @@ void CPlayer::Initialize()
 	m_tFrame.dwTime = GetTickCount64();
 	m_tFrame.dwFrameSpeed = 200;
 
-	CSkulHead* pNewSkul = new CSkulSamurai();  // 새 스컬 생성
+	//CSkulHead* pNewSkul = new CSkulSamurai();  // 새 스컬 생성
 
-	Set_Skul(pNewSkul);							// 테스트용 등록 나중에 변경 가능
+	//Set_Skul(pNewSkul);							// 테스트용 등록 나중에 변경 가능
 
 	m_eRender = RENDER_GAMEOBJECT;
 	ChangeState(new CIdleState());
@@ -60,6 +63,120 @@ void CPlayer::Initialize()
 int CPlayer::Update()
 {
 	//m_pHitBox->Set_Pos(m_tInfo.fX, m_tInfo.fY);
+	m_fMoonTimer += DELTA_TIME;
+	//m_pSkul->Get_SkulId() == L"ZinSamurai"
+	if (CKeyMgr::Get_Instance()->Key_Down('U'))
+	{
+		//static_cast<CSkulZinSamurai*>(m_pSkul)->UseUltimate(this);
+		OutputDebugString(L"[DEBUG] 궁극기 발동 조건 진입됨!\n");
+		StartMoonStrike();
+		//dynamic_cast<CSkulZinSamurai*>(m_pSkul)->UseUltimate(this);
+	}
+
+	if (CKeyMgr::Get_Instance()->Key_Down('M'))
+	{
+		m_bPowerOverWhelming = true;
+	}
+
+	switch (m_eMoonPhase)
+	{
+	case CMoonPhase::StartSlow:
+		if (m_fMoonTimer >= 0.2f)
+		{
+			EffectInfo moonEffect;
+			moonEffect.eType = EFFECT_TYPE::SKILLA;
+			moonEffect.sFramekey = L"Moon";
+			moonEffect.vOffset;
+			moonEffect.vSize = Vec2(524.f, 524.f); // 이펙트 크기
+			moonEffect.iStartFrame = 0;
+			moonEffect.iEndFrame = 11;
+			moonEffect.iFrameSpeed = 200;
+			moonEffect.fScale = 1.f;
+			moonEffect.fRotation = 0.f;
+			CEffectMgr::Get_Instance()->Add_Effect(moonEffect, { WINCX / 2, WINCY / 2 });
+			m_eMoonPhase = CMoonPhase::Moon;
+			m_fMoonTimer = 0.f;
+		}
+		break;
+
+	case CMoonPhase::Moon:
+		if (m_fMoonTimer >= 1.0f)
+		{
+			CTimeMgr::Get_Instance()->Set_GlobalTimeScale(0.2f);
+			EffectInfo flashEffect;
+			flashEffect.eType = EFFECT_TYPE::SKILLA;
+			flashEffect.sFramekey = L"Slash";
+			flashEffect.vOffset;
+			flashEffect.vSize = Vec2(400.f, 27.f); // 이펙트 크기
+			flashEffect.iStartFrame = 0;
+			flashEffect.iEndFrame = 5;
+			flashEffect.iFrameSpeed = 200;
+			flashEffect.fScale = 1.f;
+			flashEffect.fRotation = 0.f;
+			CEffectMgr::Get_Instance()->Add_Effect(flashEffect, { WINCX / 2, WINCY / 2 });
+			CCameraMgr::Get_Instance()->StartShake(0.4f, 8.f);
+			m_eMoonPhase = CMoonPhase::Flash;
+			m_fMoonTimer = 0.f;
+		}
+		break;
+
+	case CMoonPhase::Flash:
+		if (m_fMoonTimer >= 0.3f)
+		{
+			for (CObj* p : CObjMgr::Get_Instance()->Get_ObjList(OBJ_MONSTER))
+			{
+				if (!p->Get_Dead())
+				{
+					EffectInfo ImpactEffect;
+					ImpactEffect.eType = EFFECT_TYPE::SKILLA;
+					ImpactEffect.sFramekey = L"Finish";
+					ImpactEffect.vOffset;
+					ImpactEffect.vSize = Vec2(81.f, 62.f); // 이펙트 크기
+					ImpactEffect.iStartFrame = 0;
+					ImpactEffect.iEndFrame = 7;
+					ImpactEffect.iFrameSpeed = 200;
+					ImpactEffect.fScale = 1.f;
+					ImpactEffect.fRotation = 0.f;
+					CEffectMgr::Get_Instance()->Add_Effect(ImpactEffect, { p->Get_Info()->fX, p->Get_Info()->fX }, p);
+					p->OnHit(9999);
+				}
+					//p->OnHit(9999);
+			}
+
+			for (CObj* p : CObjMgr::Get_Instance()->Get_ObjList(OBJ_BOSS))
+			{
+				if (!p->Get_Dead())
+				{
+					EffectInfo ImpactEffect;
+					ImpactEffect.eType = EFFECT_TYPE::SKILLA;
+					ImpactEffect.sFramekey = L"Finish";
+					ImpactEffect.vOffset;
+					ImpactEffect.vSize = Vec2(81.f, 62.f); // 이펙트 크기
+					ImpactEffect.iStartFrame = 0;
+					ImpactEffect.iEndFrame = 7;
+					ImpactEffect.iFrameSpeed = 200;
+					ImpactEffect.fScale = 1.f;
+					ImpactEffect.fRotation = 0.f;
+					CEffectMgr::Get_Instance()->Add_Effect(ImpactEffect, { p->Get_Info()->fX, p->Get_Info()->fX }, p);
+					p->OnHit(9999);
+				}
+					//p->OnHit(9999);
+			}
+			m_eMoonPhase = CMoonPhase::Damage;
+			m_fMoonTimer = 0.f;
+		}
+		break;
+
+	case CMoonPhase::Damage:
+		if (m_fMoonTimer >= 0.5f)
+		{
+			CTimeMgr::Get_Instance()->Set_GlobalTimeScale(1.0f);
+			m_eMoonPhase = CMoonPhase::None;
+			m_bMoonStrike = false;
+		}
+		break;
+	}
+
 	__super::Update_Rect();
 
 	return NOEVENT;
@@ -229,6 +346,14 @@ DWORD CPlayer::Get_DashDuration() const
 
 CSkulHead* CPlayer::Get_Skul() const { return m_pSkul; }
 
+void CPlayer::StartMoonStrike()
+{
+	m_bMoonStrike = true;
+	m_eMoonPhase = CMoonPhase::StartSlow;
+	m_fMoonTimer = 0.f;
+	//CTimeMgr::Get_Instance()->Set_GlobalTimeScale(0.2f);
+}
+
 void CPlayer::Set_Gravity(float f)
 {
 	m_fGravity = f;
@@ -261,6 +386,15 @@ void CPlayer::Set_MaxHP(int iHp)
 void CPlayer::Set_HP(int iHp)
 {
 	m_iHp = iHp;
+}
+
+void CPlayer::Heal(int heal)
+{
+	m_iHp += heal;
+	if (m_iHp > m_iMaxHp)
+	{
+		m_iHp = m_iMaxHp;
+	}
 }
 
 void CPlayer::Add_JumpCnt()
@@ -344,6 +478,8 @@ void CPlayer::Create_AttackCollider(int iCombo, int type)
 
 void CPlayer::OnHit(CAttackCollider* pCol)
 {
+	if (m_bPowerOverWhelming)
+		return;
 	m_dwHitTime = GetTickCount64();
 	//MessageBox(g_hWnd, L"플레이어 히트", _T("Fail"), MB_OK);
 	if (GetTickCount64() - m_dwLastHitTime < 500)  // 0.5초 무적
@@ -436,6 +572,8 @@ void CPlayer::Swap_Awaken(CSkulHead* pAwaken)
 
 	CUIMgr::Get_Instance()->ChangeIcon(L"A", m_pSkul->Get_SkulIconA());
 	CUIMgr::Get_Instance()->ChangeIcon(L"S", m_pSkul->Get_SkulIconS());
+	CUIInventory* pInventory = dynamic_cast<CUIInventory*>(CUIMgr::Get_Instance()->Find_UI(L"Inventory"));
+	pInventory->AwakenSkul();
 
 	FRAME* tempFrame = m_pSkul->Get_AllFrame();
 	m_tFrame.iStart = tempFrame[SKUL_IDLE].iStart;

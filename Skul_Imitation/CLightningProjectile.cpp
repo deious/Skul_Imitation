@@ -3,6 +3,8 @@
 #include "CAttackCollider.h"
 #include "CObjMgr.h"
 #include "CEffectMgr.h"
+#include "CBoss.h"
+#include "CTimeMgr.h"
 
 CLightningProjectile::CLightningProjectile(Vec2 pos, Vec2 dir, int bossId)
     : CProjectile(pos, dir)
@@ -18,27 +20,48 @@ CLightningProjectile::CLightningProjectile(Vec2 pos, Vec2 dir, int bossId)
 
     if (direction > 0)
     {
-        m_pFrameKey = L"Projectile_Right";
-        m_sEffectKey = L"Lightning_Right";
+        if (dynamic_cast<CBoss*>(pBoss)->IsAwakened())
+        {
+            m_pFrameKey = L"Dark_HomingPierce_Orb_sheet";
+            m_tInfo.fCX = 128.f;
+            m_tInfo.fCY = 128.f;
+        }
+        else
+        {
+            m_pFrameKey = L"Projectile_Right";
+            m_sEffectKey = L"Lightning_Right";
+        }
     }
     else
     {
-        m_pFrameKey = L"Projectile_Left";
-        m_sEffectKey = L"Lightning_Left";
+        if (dynamic_cast<CBoss*>(pBoss)->IsAwakened())
+        {
+            m_pFrameKey = L"Dark_HomingPierce_Orb_sheet";
+            m_tInfo.fCX = 128.f;
+            m_tInfo.fCY = 128.f;
+        }
+        else
+        {
+            m_pFrameKey = L"Projectile_Left";
+            m_sEffectKey = L"Lightning_Left";
+        }
     }
 
-    EffectInfo effect;
-    effect.eType = EFFECT_TYPE::SKILLA;
-    effect.sFramekey = m_sEffectKey.c_str();
-    effect.vOffset;
-    effect.vSize = Vec2(96.f, 31.f); // ¿Ã∆Â∆Æ ≈©±‚
-    effect.iStartFrame = 0;
-    effect.iEndFrame = 19;
-    effect.iFrameSpeed = 50;
-    effect.fScale = 1.f;
-    effect.fRotation = 0.f;
+    if (!dynamic_cast<CBoss*>(pBoss)->IsAwakened())
+    {
+        EffectInfo effect;
+        effect.eType = EFFECT_TYPE::SKILLA;
+        effect.sFramekey = m_sEffectKey.c_str();
+        effect.vOffset;
+        effect.vSize = Vec2(96.f, 31.f); // ¿Ã∆Â∆Æ ≈©±‚
+        effect.iStartFrame = 0;
+        effect.iEndFrame = 19;
+        effect.iFrameSpeed = 50;
+        effect.fScale = 1.f;
+        effect.fRotation = 0.f;
 
-    CEffectMgr::Get_Instance()->Add_Effect(effect, pos);
+        CEffectMgr::Get_Instance()->Add_Effect(effect, pos);
+    }
  
     CAttackCollider* pCol = new CAttackCollider(
         this,
@@ -52,7 +75,14 @@ CLightningProjectile::CLightningProjectile(Vec2 pos, Vec2 dir, int bossId)
     );
     pCol->Initialize();
     CObjMgr::Get_Instance()->Add_Object(OBJ_COLLIDER, pCol);
-    Set_Frame(0, 19, 0, 150);
+    if (dynamic_cast<CBoss*>(pBoss)->IsAwakened())
+    {
+        Set_Frame(0, 14, 0, 130);
+    }
+    else
+    {
+        Set_Frame(0, 19, 0, 150);
+    }
 }
 
 int CLightningProjectile::Update()

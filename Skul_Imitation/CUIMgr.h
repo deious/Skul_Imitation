@@ -29,7 +29,11 @@ public:
         return nullptr;
     }
 
+    const std::vector<CObj*>& Get_UIList() const;
     void ChangeIcon(std::wstring iconType, const std::wstring& newKey);
+    CObj* Find_UI(const std::wstring& name);
+    void Set_Mouse(CObj* pMouse);
+    CObj* Get_Mouse() const;
 
 private:
     CUIMgr() = default;
@@ -38,5 +42,6 @@ private:
 private:
     static CUIMgr* m_pInstance;
     vector<CObj*> m_vecUI;
+    CObj* m_pMouse = nullptr;
 };
 

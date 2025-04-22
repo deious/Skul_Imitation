@@ -21,6 +21,12 @@
 #include "CUISkillIcon.h"
 #include "CUIMgr.h"
 #include "CGate.h"
+#include "CShopSlot.h"
+#include "CSkulItem.h"
+#include "CPotionItem.h"
+#include "CMouse.h"
+#include "CUIInventory.h"
+#include "CMerchant.h"
 
 CStage::CStage()
 {
@@ -133,14 +139,39 @@ void CStage::Initialize()
     dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"인벤토리");
     CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
 
-    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(2800.f, 400.f);
+    CObj* pMerchant = new CMerchant();
+    pMerchant->Set_Pos(2800.f, 475.f);
+    dynamic_cast<CMerchant*>(pMerchant)->Set_Frame(0, 7, 50.f);
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pMerchant);
+
+    CShopSlot* pSlot1 = new CShopSlot;
+    pSlot1->Initialize();
+    pSlot1->Set_Pos(2750.f, 500.f);
+    pSlot1->SetItem(new CSkulItem(L"Samurai_Item"), L"Samurai_Item");
+
+    CShopSlot* pSlot2 = new CShopSlot;
+    pSlot2->Initialize();
+    pSlot2->Set_Pos(2850.f, 500.f);
+    pSlot2->SetItem(new CPotionItem(L"Potion_Item"), L"Potion_Item");
+
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pSlot1);
+    CObjMgr::Get_Instance()->Add_Object(OBJ_UI, pSlot2);
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(2750.f, 400.f);
     pButton->Set_FrameKey(L"FBtn");
     dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"상호작용");
     CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
 
-    INFO tInfo = { 2800.f, 500.f, 200.f, 200.f };
+
+    pButton = CAbstractFactory<CTutorialUI>::Create_Obj(3050.f, 400.f);
+    pButton->Set_FrameKey(L"FBtn");
+    dynamic_cast<CTutorialUI*>(pButton)->Set_Text(L"상호작용");
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pButton);
+
+    INFO tInfo = { 3100.f, 500.f, 200.f, 200.f };
     CObj* pGate = new CGate(L"StageDoor", tInfo, 3);
     dynamic_cast<CGate*>(pGate)->Set_Frame(0, 7, 50.f);
+    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pGate);
 
     //dynamic_cast<CGate*>(pGate)->Set_NextSceneID(SC_STAGE2);
     //dynamic_cast<CGate*>(pGate)->Set_Condition([]() -> bool {
@@ -167,8 +198,6 @@ void CStage::Initialize()
     //    return true;
     //    });
 
-    CObjMgr::Get_Instance()->Add_Object(OBJ_TUTORIAL, pGate);
-
 
     //CBoss* pBoss1 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(0));
     //CBoss* pBoss2 = dynamic_cast<CBoss*>(CAbstractFactory<CBoss>::Create_Obj(1));
@@ -190,7 +219,11 @@ void CStage::Initialize()
     {
         CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, CAbstractFactory<CMonster>::Create_Obj(float(rand() % WINCX), float(rand() % WINCY)));
     }*/
-
+    //CUIInventory* pInventory = new CUIInventory();
+    //pInventory->Initialize();
+    //pInventory->Set_Tag(L"Inventory");
+    ////CUIMgr::Get_Instance()->Add_UI(pInventory);
+    //CObjMgr::Get_Instance()->Add_Object(OBJ_UI, pInventory);
 }
 
 int CStage::Update()
@@ -245,6 +278,7 @@ void CStage::Render(HDC hDC)
     CTileMgr::Get_Instance()->Render(hDC);
     CObjMgr::Get_Instance()->Render(hDC);
     CUIMgr::Get_Instance()->Render(hDC);
+    //CObjMgr::Get_Instance()->Render(hDC);
 }
 
 void CStage::Release()

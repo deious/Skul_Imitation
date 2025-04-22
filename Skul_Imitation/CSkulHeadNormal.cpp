@@ -28,7 +28,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(15.f, -10.f),    // vOffset
         Vec2(100.f, 100.f),     // vSize
         0, 10, 80,             // 프레임
-        1.0f, 0.0f            // 스케일, 회전
+        0, 1.0f, 0.0f            // 스케일, 회전
     };
 
     m_tEffectSet.tLDashEffect = {
@@ -37,7 +37,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(-20.f, 0.f),
         Vec2(100.f, 100.f),
         0, 12, 100,
-        1.2f, 0.0f
+        0, 1.2f, 0.0f
     };
 
     m_tEffectSet.tRDashEffect = {
@@ -46,7 +46,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(20.f, 0.f),
         Vec2(100.f, 100.f),
         0, 12, 100,
-        1.2f, 0.0f
+        0, 1.2f, 0.0f
     };
 
     m_tEffectSet.tJumpEffect = {
@@ -55,7 +55,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(0.f, 0.f),
         Vec2(150.f, 100.f),
         0, 9, 100,
-        1.0f, 0.0f
+        0, 1.0f, 0.0f
     };
 
     m_tEffectSet.tLAttackEffect = {
@@ -64,7 +64,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(15.f, -10.f),    // vOffset
         Vec2(200.f, 200.f),     // vSize
         0, 9, 80,             // 프레임
-        1.0f, 0.0f            // 스케일, 회전
+        0, 1.0f, 0.0f            // 스케일, 회전
     };
 
     m_tEffectSet.tRAttackEffect = {
@@ -73,7 +73,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(15.f, -10.f),    // vOffset
         Vec2(200.f, 200.f),     // vSize
         0, 9, 80,             // 프레임
-        1.0f, 0.0f            // 스케일, 회전
+        0, 1.0f, 0.0f            // 스케일, 회전
     };
 
     m_tEffectSet.tSkillAEffect = {
@@ -82,7 +82,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(-20.f, 0.f),
         Vec2(200.f, 200.f),
         0, 9, 80,
-        1.2f, 0.0f
+        0, 1.2f, 0.0f
     };
 
     m_tEffectSet.tSkillBEffect = {
@@ -91,7 +91,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(0.f, 0.f),
         Vec2(200.f, 200.f),
         0, 9, 80,
-        1.0f, 0.0f
+        0, 1.0f, 0.0f
     };
 
     m_tEffectSet.tDieEffect = {
@@ -100,7 +100,7 @@ CSkulHeadNormal::CSkulHeadNormal()
         Vec2(0.f, 0.f),
         Vec2(150.f, 100.f),
         0, 9, 100,
-        1.0f, 0.0f
+        0, 1.0f, 0.0f
     };
 }
 

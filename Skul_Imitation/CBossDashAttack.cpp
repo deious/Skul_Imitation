@@ -5,9 +5,11 @@
 #include "CBossIdleState.h"
 #include "CPlayer.h"
 #include "CEffectMgr.h"
+#include "CTimeMgr.h"
 
 void CBossDashAttack::Enter(CBoss* pBoss)
 {
+    pBoss->Set_AnimStatus(false);
     CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
 
     if (!pPlayer) return;
@@ -29,13 +31,29 @@ void CBossDashAttack::Enter(CBoss* pBoss)
     pBoss->Set_Speed(fDirection * m_fDashSpeed);
     if (fDirection > 0)
     {
-        pBoss->Set_Frame(0, 4, 4, 100);
-        m_sEffectKey = L"BossDash_Right";
+        if (pBoss->IsAwakened())
+        {
+            pBoss->Set_FrameKey(L"Boss_Dash_Right");
+            pBoss->Set_Frame(0, 4, 0, 100);
+        }
+        else
+        {
+            pBoss->Set_Frame(0, 4, 4, 100);
+            m_sEffectKey = L"BossDash_Right";
+        }
     }
     else
     {
-        pBoss->Set_Frame(0, 4, 5, 100);
-        m_sEffectKey = L"BossDash_Left";
+        if (pBoss->IsAwakened())
+        {
+            pBoss->Set_FrameKey(L"Boss_Dash_Left");
+            pBoss->Set_Frame(0, 4, 0, 100);
+        }
+        else
+        {
+            pBoss->Set_Frame(0, 4, 5, 100);
+            m_sEffectKey = L"BossDash_Left";
+        }
     }
 
     EffectInfo effect;
@@ -57,6 +75,9 @@ void CBossDashAttack::Enter(CBoss* pBoss)
 
 void CBossDashAttack::Update(CBoss* pBoss)
 {
+    /*if (!pBoss || pBoss->IsDead())
+        return;*/
+
     m_fElapsed += DELTA_TIME;
 
     CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
@@ -64,10 +85,10 @@ void CBossDashAttack::Update(CBoss* pBoss)
 
     float distance = abs(pBoss->Get_Info()->fX - pPlayer->Get_Info()->fX);
 
-    wchar_t szBuffer[128];
+    /*wchar_t szBuffer[128];
     swprintf_s(szBuffer, L"[Update] 시간: %.2f, 보스X: %.2f, 거리: %.2f, 속도: %.2f, m_bAttacked: %d\n",
         m_fElapsed, pBoss->Get_Info()->fX, distance, pBoss->Get_Speed(), m_bAttacked);
-    OutputDebugString(szBuffer);
+    OutputDebugString(szBuffer);*/
 
     if (!m_bAttacked && (distance < 30.f || m_fElapsed > 0.55f))
     {
@@ -98,6 +119,7 @@ void CBossDashAttack::Exit(CBoss* pBoss)
 {
     pBoss->Set_Speed(0.f);
 }
+
 
 EBossStateType CBossDashAttack::GetType()
 {

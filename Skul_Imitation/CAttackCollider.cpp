@@ -3,6 +3,7 @@
 #include "CKeyMgr.h"
 #include "CCameraMgr.h"
 #include <string>
+#include "CTimeMgr.h"
 
 CAttackCollider::CAttackCollider(CObj* pOwner, float x, float y, float width, float height,
     float delay, float duration, ColliderType type, ETeam team, ESkillType sType, int damage)

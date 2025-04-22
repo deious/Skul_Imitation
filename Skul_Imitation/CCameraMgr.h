@@ -1,7 +1,8 @@
 #pragma once
 #include <Windows.h>
 
-class CCameraMgr {
+class CCameraMgr 
+{
 public:
     CCameraMgr();
     virtual ~CCameraMgr();
@@ -16,6 +17,7 @@ public:
 
     void                Set_MapSize(int width, int height);
     void                Set_Resolution(int width, int height);
+    void                StartShake(float duration, float intensity);
 
     POINT               Get_CameraPos() const;
     RECT                WorldToScreenRect(const RECT& worldRect);
@@ -27,4 +29,9 @@ private:
     POINT               m_Target;
     SIZE                m_MapSize;
     SIZE                m_Resolution;
+
+    float               m_fShakeDuration = 0.f;
+    float               m_fShakeTimer = 0.f;
+    float               m_fShakeIntensity = 0.f;
+    POINT               m_ptShakeOffset = { 0, 0 };
 };

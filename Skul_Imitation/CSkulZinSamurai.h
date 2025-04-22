@@ -15,6 +15,8 @@ public:
 	const wstring Get_SkulId() const override;
 	FRAME* Get_AllFrame() override;
 
+	void UseUltimate(CPlayer* pPlayer);
+
 private:
 	int m_iSkillStep = 0;
 	float m_fSkillTimer = 0.f;

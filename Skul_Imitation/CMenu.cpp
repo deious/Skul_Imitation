@@ -5,6 +5,8 @@
 #include "CButton.h"
 #include "CBmpMgr.h"
 #include "CSoundMgr.h"
+#include "CKeyMgr.h"
+#include "CSceneMgr.h"
 
 
 CMenu::CMenu()
@@ -18,7 +20,7 @@ CMenu::~CMenu()
 
 void CMenu::Initialize()
 {
-	CObj* pButton = CAbstractFactory<CButton>::Create_Obj(200.f, 400.f);
+	/*CObj* pButton = CAbstractFactory<CButton>::Create_Obj(200.f, 400.f);
 	pButton->Set_FrameKey(L"Start");
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BUTTON, pButton);
 
@@ -28,7 +30,7 @@ void CMenu::Initialize()
 
 	pButton = CAbstractFactory<CButton>::Create_Obj(600.f, 400.f);
 	pButton->Set_FrameKey(L"Exit");
-	CObjMgr::Get_Instance()->Add_Object(OBJ_BUTTON, pButton);
+	CObjMgr::Get_Instance()->Add_Object(OBJ_BUTTON, pButton);*/
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Image/Title/Title.bmp", L"Title");
 	CSoundMgr::Get_Instance()->PlayBGM(L"TitleBgm.wav", 1.f);
@@ -37,7 +39,10 @@ void CMenu::Initialize()
 int CMenu::Update()
 {
 	CObjMgr::Get_Instance()->Update();
-
+	if (CKeyMgr::Get_Instance()->Key_Down(VK_RETURN))
+	{
+		CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::SC_STAGE);
+	}
 
 	return 0;
 }

@@ -4,6 +4,7 @@
 #include "CBossStage.h"
 #include "CSoundMgr.h"
 #include "CNormalStage.h"
+#include "CSceneEnding.h"
 
 CSceneMgr* CSceneMgr::m_pInstance = nullptr;
 
@@ -80,6 +81,8 @@ void CSceneMgr::Scene_Change(SCENEID eID)
 			m_pScene = new CBossStage;
 			//m_pScene = new CStage;
 			break;
+		case SC_ENDING:
+			m_pScene = new CSceneEnding();
 		}
 
 		//CSoundMgr::Get_Instance()->StopAll();

@@ -43,6 +43,9 @@ void CUIBossHealthBar::Late_Update()
 
 void CUIBossHealthBar::Render(HDC hDC)
 {
+    CBoss* pBoss = dynamic_cast<CBoss*>(CObjMgr::Get_Instance()->Get_Boss(m_iBossId));
+    if (!pBoss) return;
+
     int curHp = dynamic_cast<CBoss*>(CObjMgr::Get_Instance()->Get_Boss(m_iBossId))->Get_Hp();
     int maxHp = dynamic_cast<CBoss*>(CObjMgr::Get_Instance()->Get_Boss(m_iBossId))->Get_MaxHp();
 

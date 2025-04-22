@@ -43,7 +43,22 @@ float CObj::Get_Speed()
 	return m_fSpeed;
 }
 
+void CObj::Set_Tag(wstring name)
+{
+	m_sTag = name;
+}
+
+wstring CObj::Get_Tag()
+{
+	return m_sTag;
+}
+
 RENDERID CObj::Get_RenderID() { return m_eRender; }
+
+void CObj::OnHit(int damage)
+{
+
+}
 
 void CObj::Set_Gravity(float fGravity)
 {
@@ -58,6 +73,8 @@ void CObj::Update_Rect()
 	m_tRect.bottom = long(m_tInfo.fY + m_tInfo.fCY / 2.f);
 
 }
+
+void CObj::Set_AnimFinish() { m_bAnimFinished = false; }
 
 bool CObj::Move_Frame()
 {
@@ -83,3 +100,5 @@ bool CObj::Move_Frame()
 
 	return false;
 }
+
+bool CObj::Is_AnimFinished() const { return m_bAnimFinished; }
